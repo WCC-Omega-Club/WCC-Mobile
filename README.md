@@ -14,7 +14,7 @@ See: [Product Requirements](Development-Roadmap/Product-Requirements.md)<br /><b
 ####[ ] Design ~~(We are here.)<br />
 >Pre-Production: Planning, Graphic Mockups, & overall Software Architecture Outlining<br />
 
-See: [Software Development Methodology]() 
+See: [Software Development Methodology](Development-Roadmap/Software-Development-Methodology.md)<br /> 
 
 The main **WCC Mobile** parent-app will take up a [Model-View-Controller (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) software architecture pattern.<br />
 The _Model_, the _View_, and the _Controller_ refer to three distinct _**groups of classes**_ whose functions and interactions make up the lifecycle of the application.<br /><br />
