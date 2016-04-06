@@ -33,21 +33,24 @@ This modularity not only allows flexibility and future growth, but also makes it
 >[ ] _**In-Progress**_ Begin sketching data structure relationships. Work out necessary information flow between parent-app and sub-apps. Do more research on mobile app design and common practices.<br />
 >[ ] _**In-Progress**_ Ensure all developers have properly installed Visual Studio and Xamarin. Ensure all developers have played around with the tools, and created one or more simple sample applications. _Sample application should include a touch-event activated button that produces some desired result. (Due next meeting 4/11/16)_<br /><br />
 >Optional/Helpful Goals:<br />
->[ ] Become familiar with Unified Modeling Language (UML2.x) diagram notation and convention. These may be used to draw class diagrams and map their dependencies and relationships.<br />
->[ ] asdf<br /><br />
+>[ ] Become familiar with Unified Modeling Language (UML2.x) diagram notation and convention. We will probably use this format to draw class diagrams and map their dependencies and relationships.<br />
+>[ ] Write a brief _WCC-Mobile Programming Style Guide_. Having a consistent pattern of file trees, class member declarations, variable naming scheme, etc. will make it easier to read one another's code and know what to expect. (Some possibilities? http://stackoverflow.com/questions/4678178/style-guide-for-c).<br /><br />
 >Future Goals:<br />
 >[ ] Create small, sample/prototype implementation of MVC architecture. Test.<br />
 >[ ] Continue sketching/outlining structural relationships, in ever-increasing definition.<br />
+>[ ] "Finish" defining relationships between parent-app-MVC structure and sub-app structures. Ensure all information needed can theoretically be accessed by relevant structures. Of course, this is open to iteration and refactoring, as tests will tell.
 ***
 
+<br />
+####[ ] Implementation<br />
+>Coding: Develop and integrate increasingly well-defined prototypes as the product takes shape
+<br /><br />
 
+####[ ] Verification<br />
+>Thoroughly test software against as many normal-use and edge-use cases as possible. Fix code. Close bug reports.
+<br /><br />
 
-
-
-
-
-####Implementation<br />
-####Verification<br />
-####Maintenance<br />
-
+####[ ] Maintenance<br />
+>Release the product. Create additions and patches to the software. Update the software to handle changes in supporting elements.
+<br /><br />
 
