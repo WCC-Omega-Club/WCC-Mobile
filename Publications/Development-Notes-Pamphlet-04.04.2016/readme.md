@@ -2,7 +2,7 @@
 >TODO:<br />
 >I'm pretty sure Inkscape has an extension to make a multi-page .pdf out of disparate page files. Will look into. Regardless, let me just get these up here.<br />
 >For now, these are best printed directly from Windows Explorer. Deselect "Fit Picture To Frame".<br />
->--James @okeefejbh
+>--James
 
 ####Development Notes Pamphlet
 ######From Meeting 04.04.2016
