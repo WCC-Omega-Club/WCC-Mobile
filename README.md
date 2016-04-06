@@ -31,12 +31,11 @@ Potential Sub-App Features include:
 - Career Services
 - Counseling
 - Transfer Services
-- Student Involvement<br /><br />
+- Student Involvement
 
 It's important to note that this app exists **for the students.**<br />
-The underlying purpose is to help students, especially those who may be confused by the main WCC website, achieve their academic goals by getting access to the information they need in an **intuitive**, **simple** way.
-
-
+The underlying purpose is to help students, especially those who may be confused by the main WCC website, achieve their academic goals by getting access to the _information they need_ in an **intuitive**, **simple** way.<br /> <br/>
+For a complete list of sub-app concepts/requirements, see: (Product Requirements)
 
 ####[ ] Design<br />
 >Pre-Production: Planning, Graphic Mockups, & overall Software Architecture Outlining
