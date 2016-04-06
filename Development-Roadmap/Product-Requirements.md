@@ -1,6 +1,7 @@
 ###[x] ~~Concept/Requirements~~<br />
 >Basic idea for the app. Description of _what the product should do_. Usually results in a Product Requirements Document.<br />
-Go back to overall roadmap in main (README.md).
+
+Go back to overall roadmap in [main readme](../README.md).<br /><br />
 
 **App should have all the hallmarks and features of comparable college mobile apps.**<br /><br />
   Best Examples, see:<br />
