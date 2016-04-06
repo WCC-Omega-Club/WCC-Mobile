@@ -34,7 +34,8 @@ This modularity not only allows flexibility and future growth, but also makes it
 >[ ] _**In-Progress**_ Ensure all developers have properly installed Visual Studio and Xamarin. Ensure all developers have played around with the tools, and created one or more simple sample applications. _Sample application should include a touch-event activated button that produces some desired result. (Due next meeting 4/11/16)_<br /><br />
 >Optional/Helpful Goals:<br />
 >[ ] Become familiar with Unified Modeling Language (UML2.x) diagram notation and convention. We will probably use this format to draw class diagrams and map their dependencies and relationships.<br />
->[ ] Write a brief _WCC-Mobile Programming Style Guide_. Having a consistent pattern of file trees, class member declarations, variable naming scheme, etc. will make it easier to read one another's code and know what to expect. (Some possibilities? http://stackoverflow.com/questions/4678178/style-guide-for-c).<br /><br />
+>[ ] Write a brief _WCC-Mobile Programming Style Guide_. Having a consistent pattern of file trees, class member declarations, variable naming scheme, etc. will make it easier to read one another's code and know what to expect. (Some possibilities? http://stackoverflow.com/questions/4678178/style-guide-for-c).<br />
+>[ ] THIS IS A SEMI-PROFESSIONAL PROJECT. COMMENT YOUR CODE.<br /><br />
 >Future Goals:<br />
 >[ ] Create small, sample/prototype implementation of MVC architecture. Test.<br />
 >[ ] Continue sketching/outlining structural relationships, in ever-increasing definition.<br />
