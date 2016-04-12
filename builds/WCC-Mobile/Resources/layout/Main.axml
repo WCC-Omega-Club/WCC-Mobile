@@ -6,12 +6,13 @@
     p1:id="@+id/linearLayout1">
     <GridView
         p1:layout_width="fill_parent"
-        p1:layout_height="fill_parent"
-        p1:columnWidth="90dp"
-        p1:numColumns="4"
-        p1:verticalSpacing="10dp"
-        p1:horizontalSpacing="10dp"
+        p1:layout_height="wrap_content"
+        p1:columnWidth="25dp"
+        p1:numColumns="3"
+        p1:verticalSpacing="5dp"
+        p1:horizontalSpacing="1dp"
         p1:stretchMode="columnWidth"
         p1:gravity="center"
         p1:id="@+id/SubAppContainer" />
+<!-- p1:horizontalSpacing oesn't seem to affect anything. Neither does p1:columnWidth -->
 </LinearLayout>

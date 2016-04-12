@@ -1,0 +1,9 @@
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\WCCMobile.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\Mono.Android.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\mscorlib.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\System.Core.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\System.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\System.Xml.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\System.Xml.Linq.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\System.Runtime.Serialization.dll
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\x86\Release\android\assets\System.ServiceModel.Internals.dll

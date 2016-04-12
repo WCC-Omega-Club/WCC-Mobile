@@ -43,7 +43,7 @@ namespace WCCMobile
                 var intent = new Intent(Intent.ActionCall, uri);
                 StartActivity(intent);
             }
-            catch(Exception e)
+            catch(Exception) // From (Exception e). James 04.11.16
             {
                 //Log.Debug("o","pp");
                 Finish();

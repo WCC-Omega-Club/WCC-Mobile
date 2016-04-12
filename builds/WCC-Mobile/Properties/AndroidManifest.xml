@@ -3,5 +3,5 @@
 	<uses-sdk android:minSdkVersion="16" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<uses-permission android:name="android.permission.CALL_PRIVILEGED" />
-	<application android:label="WCCMobile"></application>
+	<application android:label="WCC Mobile"></application>
 </manifest>

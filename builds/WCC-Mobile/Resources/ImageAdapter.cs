@@ -44,9 +44,9 @@ namespace WCCMobile.Resources
             if (convertView == null)
             {  // if it's not recycled, initialize some attributes
                 imageView = new ImageView(context);
-                int size = parent.Width / MainActivity.singleR.SubAppContainer.NumColumns;
-                imageView.LayoutParameters = new AbsListView.LayoutParams(85, 85);//(position*size * 3 / 4, position* size * 3 / 4);//85,85
-                imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
+                //int size = parent.Width / MainActivity.singleR.SubAppContainer.NumColumns;
+                imageView.LayoutParameters = new AbsListView.LayoutParams(85*235/100, 85*475/100);//(position*size * 3 / 4, position* size * 3 / 4);//85,85
+                imageView.SetScaleType(ImageView.ScaleType.CenterInside);
                 imageView.SetPadding(8, 8, 8, 8);
             }
             else
