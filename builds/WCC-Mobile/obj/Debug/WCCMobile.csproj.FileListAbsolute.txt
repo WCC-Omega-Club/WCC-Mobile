@@ -66,5 +66,6 @@ E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\wccmainappicon_57x57.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\theme.xml
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb

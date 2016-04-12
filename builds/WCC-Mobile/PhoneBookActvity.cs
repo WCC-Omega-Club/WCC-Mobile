@@ -13,7 +13,7 @@ using Android.Util;
 using WCCMobile.Resources;
 namespace WCCMobile
 {
-    [Activity(Label = "PhoneBookActvity")]
+    [Activity(Label = "PhoneBook")]
     public class PhoneBookActvity : Activity
     {
         ListView PhoneBookList;
@@ -23,30 +23,45 @@ namespace WCCMobile
             this.SetContentView(Resource.Layout.PhoneBookLayout);
             PhoneBookList = (ListView)FindViewById(Resource.Id.PhoneBookList);
             PhoneBookList.Adapter = new YellowBookAdapter(this);
-            PhoneBookList.ItemClick += CallNumber;
-            // Create your application here
+            PhoneBookList.ItemClick += CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick
         }
         public override void OnBackPressed()
         {
             base.OnBackPressed();
             Finish();
         }
+        /// <summary>
+        /// Gets the clicked TextView and calls a substring of the .Text property - substring is 
+        /// the rest of the string after a return or newline char. Ex: '\r' , '\n'
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void CallNumber(object sender, AdapterView.ItemClickEventArgs args)
         {
-            TextView callbox = (TextView)args.View;
+            CallNumber(args.Position, this);
+        }
+        /// <summary>
+        /// Function to call numbers from YellowBook.txt - Any Activity can call this function provided
+        /// they pass themselves and the key to the number in the book
+        /// </summary>
+        /// <param name="PhoneKey"></param>
+        /// <param name="Caller"></param>
+        public static void CallNumber(int PhoneKey, Activity Caller)
+        {
             try
             {
+                string p2Call;// person to call
+                if (!YellowBookAdapter.getBook.TryGetValue(PhoneKey, out p2Call)) return;
+                Android.Util.Log.Debug("Call Function", "Successfully Found :" + p2Call);
                 int pos = 0;
-                while (callbox.Text[pos] != '\r' && callbox.Text[pos] != '\n') ++pos;
-                //Log.Debug("Info is :", callbox.Text.Substring(++pos));// 
-                var uri = Android.Net.Uri.Parse("tel:" + callbox.Text.Substring(++pos));
+                while (p2Call[pos] != '\r' && p2Call[pos] != '\n') ++pos;
+                var uri = Android.Net.Uri.Parse("tel:" + p2Call.Substring(++pos));
                 var intent = new Intent(Intent.ActionCall, uri);
-                StartActivity(intent);
+                Caller.StartActivity(intent);
             }
-            catch(Exception) // From (Exception e). James 04.11.16
+            catch (Exception)
             {
-                //Log.Debug("o","pp");
-                Finish();
+
             }
         }
     }

@@ -21,6 +21,12 @@ namespace WCCMobile
                 return singleton;
             }
         }
+        bool ready = false;
+        public  bool isReady
+        {
+            get { return ready; }
+            set { ready = value; }
+        }
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -31,8 +37,6 @@ namespace WCCMobile
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
-            
-           
         }
 
         /// <summary>
@@ -52,7 +56,7 @@ namespace WCCMobile
 
                 default:
                     Log.Debug("position", args.Position.ToString());
-                    isReady = true;
+                    isReady = true;// undefined buttons will just reset isReady
                     break;
             }
 
@@ -63,7 +67,9 @@ namespace WCCMobile
             base.OnBackPressed();
             Finish();//close the app for now
         }
-
+        /// <summary>
+        /// Called after OnCreate and Also when a SubbApp closes - resets isReady 
+        /// </summary>
         protected override void OnStart()
         {
             base.OnStart();
