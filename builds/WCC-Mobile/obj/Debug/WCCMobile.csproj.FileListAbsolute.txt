@@ -45,3 +45,26 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\upl
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\theme.xml
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.pdb
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.WCCMobile.apk
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.WCCMobile-Signed.apk
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.pdb
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\bin\WCCMobile.WCCMobile.apk
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\phonebooklayout.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\main.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\strings.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\icon.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\calendar_143x155.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\dining_services_115x169.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\mail_133x169.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\map_108x183.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\placeholder_128x185.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\library_127x179.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\wccmainappicon_57x57.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\theme.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb

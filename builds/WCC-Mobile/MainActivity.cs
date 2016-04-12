@@ -34,17 +34,25 @@ namespace WCCMobile
             
            
         }
+
+        /// <summary>
+        /// Start an activity that matches the case where case = args.Position in the GridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
-        {  
-            switch(args.Position)
-            { 
+        {
+            if (!isReady) return; // each app must be completed first
+            isReady = false;
+            switch (args.Position)
+            {
                 case 0:
                     StartActivity(typeof(PhoneBookActvity));
-                    //Log.Debug("position","activating first sub - app");
                     break;//start sub app at box '0' continue for each app;
 
                 default:
                     Log.Debug("position", args.Position.ToString());
+                    isReady = true;
                     break;
             }
 
@@ -54,6 +62,13 @@ namespace WCCMobile
         {
             base.OnBackPressed();
             Finish();//close the app for now
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            isReady = true;
+            Log.Debug("Belief", isReady.ToString());
         }
     }
 }
