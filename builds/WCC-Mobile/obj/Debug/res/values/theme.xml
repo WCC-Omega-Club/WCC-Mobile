@@ -1,0 +1,1 @@
+<resources><color name="theme_holo_light_background">#ffffffff</color><style name="Theme.Custom" parent="@android:style/Theme.Holo.Light"><item name="android:colorBackground">@color/theme_holo_light_background</item><item name="android:windowBackground">?android:attr/colorBackground</item></style></resources>

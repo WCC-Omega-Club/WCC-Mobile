@@ -42,5 +42,6 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\wccmainappicon_57x57.png
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\theme.xml
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
