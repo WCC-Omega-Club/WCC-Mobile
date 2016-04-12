@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="WCCMobile.WCCMobile" android:versionCode="1" android:versionName="1.0" android:installLocation="auto" android:theme="@android:style/Theme.Material.Light">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="WCCMobile.WCCMobile" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
   <!--suppress UsesMinSdkAttributes-->
   <uses-sdk android:minSdkVersion="16" />
   <uses-permission android:name="android.permission.CALL_PHONE" />
   <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <application android:label="WCC Mobile" android:theme="@android:style/Theme.Material.Light" android:name="mono.android.app.Application" android:allowBackup="true" android:icon="@drawable/wccmainappicon_57x57" android:debuggable="true">
-    <activity android:icon="@drawable/wccmainappicon_57x57" android:label="WCC Mobile" android:theme="@android:style/Theme.Material.Light" android:name="md59b15f7978abc4d0b2cebe92668d59436.MainActivity">
+  <application android:label="WCC Mobile" android:theme="@style/Theme.Custom" android:name="mono.android.app.Application" android:allowBackup="true" android:icon="@drawable/wccmainappicon_57x57" android:debuggable="true">
+    <activity android:icon="@drawable/wccmainappicon_57x57" android:label="WCC Mobile" android:name="md59b15f7978abc4d0b2cebe92668d59436.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
