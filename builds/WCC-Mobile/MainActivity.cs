@@ -9,7 +9,7 @@ using Android.Util;
 using WCCMobile.Resources;
 namespace WCCMobile
 {
-    [Activity(Label = "WCCMobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57")]
+    [Activity(Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57", Theme = "@android:style/Theme.Material.Light")]
     public class MainActivity : Activity
     {
         static MainActivity singleton = null;

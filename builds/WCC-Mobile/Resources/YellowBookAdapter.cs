@@ -80,7 +80,7 @@ namespace WCCMobile.Resources
                         YellowBook.Add(key++, name + newline + phone_number);
                     }
                 }
-                catch (IOException e)
+                catch (IOException) // From (Exception e). James 04.11.16
                 {
                     //log the exception
                 }
@@ -92,7 +92,7 @@ namespace WCCMobile.Resources
                         {
                             reader.Close();
                         }
-                        catch (IOException e)
+                        catch (IOException)
                         {
                             //log the exception
                         }
