@@ -1,108 +1,159 @@
-﻿Academic Support Center:
+﻿Academic Support Center
 9146066470
-Alumni:	
+asc2@sunywcc.edu
+Alumni
 9146066670
-Bookstore (on campus):	
+wcc.alumni@sunywcc.edu	
+Bookstore (on campus)
 9146066475
+No email available		
 Bookstore (FSA - for on-line book orders)	
 9143473858
-Business office:	
+sunywcc@bkstr.com	
+Business office
 9146066870
-Certificate of Residence:	
+bursar@sunywcc.edu
+Certificate of Residence	
 9146066870
-Clubs:	
+registrar@sunywcc.edu	
+Clubs
 9146066731
-Computer Helpdesk:	
+adam.frank@sunywcc.edu	
+Computer Helpdesk
 9146066665
-Continuing Education: (noncredit courses on main campus):
+helpdesk@sunywcc.edu
+Continuing Education (noncredit courses on main campus)
 9146066830
-Counseling:
+ContinuingEd@sunywcc.edu
+Counseling
 9146066381
-Cultural Events:	
+No email available
+Cultural Events
 9146066567
-Dining Services:
+paula.rubenstein@sunywcc.edu
+Dining Services
 9146066617
-Directions:
+donald.hennessey@sunywcc.edu
+Directions
 9146066600
-Disability Services:
+No email available
+Disability Services
 9146066552
-Educational Opportunity Center (Yonkers):
+disability.services@sunywcc.edu
+Educational Opportunity Center (Yonkers)
 9146067600
-English Language Institute:
+eoc-admissions@sunywcc.edu	
+English Language Institute
 9146066656
-Events (College):
+ESL@sunywcc.edu	
+Events (College)
 9146066900
-Extension Centers:	
+eileen.hart@sunywcc.edu	
+Extension Centers
 9146066832
-Foul Weather Closings - Valhalla Campus
+extensions@sunywcc.edu
+Foul-Weather-Closings-Valhalla-Campus
 9146066900
-Foul Weather Closings - Extension Site Location
+info@sunywcc.edu
+Foul-Weather-Closings-Extension-Site-Location
 9146066832
-General Information	
+info@sunywcc.edu
+General-Information	
 9146066600
-Immunizations:
+info@sunywcc.edu
+Immunizations
 9146066610
-Jobs:
+healthoffice@sunywcc.edu
+Jobs
 9146066760
+humanresources@sunywcc.edu	
 JobStar	
 9146066437
-Library:	
+joanne.conway@sunywcc.edu	
+Library	
 9146066965
-Mainstream Institute:
+reference@sunywcc.edu
+Mainstream-Institute
 9146066793
-Maintenance:
+mainstream@sunywcc.edu	
+Maintenance
 9146066980
-Media Services (Audiovisual):
+jane.kojac@sunywcc.edu
+Media Services (Audiovisual)
 9146066857
+mediasupport@sunywcc.edu
 Mount Vernon Extension Center
 9146067200
-Multicultural Programs and Services:
+MountVernon@sunywcc.edu
+Multicultural Programs and Services
 9146066237
-Native Plant Center:	
+No email available
+Native Plant Center
 9146067870
+WCC.NativePlant@sunywcc.edu	
 Online Education:	
 9146066827
+onlineeducation@sunywcc.edu
 Ossining Extension Center
 9146067400
+ossining@sunywcc.edu
 Peekskill Extension Center
 9146067300
+Peekskill@sunywcc.edu	
 Peekskill (Center for the Digital Arts) 
 9146067380
-Scholarships:	
+peekskill@sunywcc.edu
+Scholarships	
 9146066442
-Security:	
+scholarships@sunywcc.edu
+Security	
 9146066730
-Smart Arts:	
+security@sunywcc.edu
+Smart Arts
 9146066262
-Student Activities:	
+paula.rubenstein@sunywcc.edu
+Student Activities
 9146066731
-Student Government:	
+adam.frank@sunywcc.edu	
+Student Government
 9146066833
-Student ID:	
+adam.frank@sunywcc.edu	
+Student ID
 9146066730
-Switchboard:	
+security@sunywcc.edu
+Switchboard
 9146066600
-Testing – New Students:	
+info@sunywcc.edu
+Testing – New Students
 9146066969
-Transcripts:	
-9146066810
-Transfer:	
+testing.center@sunywcc.edu
+Transfer Services
 9146066760
-Tuition/Bills/Fees:	
-9146066870
+Robin.Graff@sunywcc.edu
 Transcript Office	
 9146066810
-Tutoring:	
+Transcript@sunywcc.edu
+Tuition/Bills/Fees
+9146066870
+bursar@sunywcc.edu
+Tutoring
 9146066470
-Westchester Community College Foundation:	
+No email available
+Westchester Community College Foundation
 9146066670
+WCCFoundation@sunywcc.edu
 White Plains (Center for the Arts)	
 9146067500
+arts@sunywcc.edu
 Viking News	
 9146066768
-Virginia Marx Children's Center:	
+eric.luther@sunywcc.edu	
+Virginia Marx Children's Center
 9146066644
+susan.zucker@sunywcc.edu
 Volunteer Office	
 9146066805
+adele.shansky@sunywcc.edu
 Yonkers Cross County Extension Center
 9146067100
+crosscounty@sunywcc.edu
