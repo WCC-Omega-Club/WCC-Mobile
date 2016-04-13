@@ -13,7 +13,7 @@ using Android.Util;
 using WCCMobile.Resources;
 namespace WCCMobile
 {
-    [Activity(Label = "PhoneBook")]
+    [Activity(Label = "Directory")]
     public class PhoneBookActvity : Activity
     {
         ListView PhoneBookList;
