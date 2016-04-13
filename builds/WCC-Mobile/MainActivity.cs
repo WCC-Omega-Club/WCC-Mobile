@@ -53,7 +53,26 @@ namespace WCCMobile
                 case 0:
                     StartActivity(typeof(PhoneBookActvity));
                     break;//start sub app at box '0' continue for each app;
-
+                case 1:
+                    BasicInfoActivity.setInfoTitle("DiningServices");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 2:
+                    BasicInfoActivity.setInfoTitle("Athletics");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 3:
+                    BasicInfoActivity.setInfoTitle("Counseling");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 4:
+                    BasicInfoActivity.setInfoTitle("Student Involvement");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 5:
+                    BasicInfoActivity.setInfoTitle("Career and Transfer Services");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
                 default:
                     Log.Debug("position", args.Position.ToString());
                     isReady = true;// undefined buttons will just reset isReady

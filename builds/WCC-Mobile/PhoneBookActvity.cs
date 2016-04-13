@@ -23,6 +23,7 @@ namespace WCCMobile
             this.SetContentView(Resource.Layout.PhoneBookLayout);
             PhoneBookList = (ListView)FindViewById(Resource.Id.PhoneBookList);
             PhoneBookList.Adapter = new YellowBookAdapter(this);
+            PhoneBookList.ItemLongClick += delegate { Log.Debug("email","held"); };// replace with similar CallNumber func
             PhoneBookList.ItemClick += CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick
         }
         public override void OnBackPressed()
@@ -55,7 +56,7 @@ namespace WCCMobile
                 Android.Util.Log.Debug("Call Function", "Successfully Found :" + p2Call);
                 int pos = 0;
                 while (p2Call[pos] != '\r' && p2Call[pos] != '\n') ++pos;
-                var uri = Android.Net.Uri.Parse("tel:" + p2Call.Substring(++pos));
+                var uri = Android.Net.Uri.Parse("tel:" + p2Call.Substring(++pos,10));
                 var intent = new Intent(Intent.ActionCall, uri);
                 Caller.StartActivity(intent);
             }

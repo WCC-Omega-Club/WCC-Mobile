@@ -97,14 +97,17 @@ namespace WCCMobile
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f070000
+			public const int BasicInfoList = 2131165184;
+			
+			// aapt resource value: 0x7f070003
+			public const int PhoneBookList = 2131165187;
+			
 			// aapt resource value: 0x7f070002
-			public const int PhoneBookList = 2131165186;
+			public const int SubAppContainer = 2131165186;
 			
 			// aapt resource value: 0x7f070001
-			public const int SubAppContainer = 2131165185;
-			
-			// aapt resource value: 0x7f070000
-			public const int linearLayout1 = 2131165184;
+			public const int linearLayout1 = 2131165185;
 			
 			static Id()
 			{
@@ -120,10 +123,13 @@ namespace WCCMobile
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int BasicInfoLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int PhoneBookLayout = 2130903041;
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int PhoneBookLayout = 2130903042;
 			
 			static Layout()
 			{
@@ -140,6 +146,9 @@ namespace WCCMobile
 			
 			// aapt resource value: 0x7f040001
 			public const int ApplicationName = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int DiningServices = 2130968578;
 			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
