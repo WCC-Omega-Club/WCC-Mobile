@@ -48,6 +48,7 @@ namespace WCCMobile
         {
             if (!isReady) return; // each app must be completed first
             isReady = false;
+            ImageAdapter.Label = args.Position;
             switch (args.Position)
             {
                 case 0:

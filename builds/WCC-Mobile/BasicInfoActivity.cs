@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using WCCMobile.Resources;
 using Java.IO;
 namespace WCCMobile
 {
@@ -26,6 +27,7 @@ namespace WCCMobile
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.BasicInfoLayout);
+            ActionBar.SetIcon(ImageAdapter.Label);
             BasicInfoList = (ListView)FindViewById(Resource.Id.BasicInfoList);
             Title = currenTitle.ToString();
             BasicInfoList.Adapter = new BasicInfoAdapter(this);

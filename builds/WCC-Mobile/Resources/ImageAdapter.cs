@@ -56,9 +56,14 @@ namespace WCCMobile.Resources
             imageView.SetImageResource(thumbIds[position]);
             return imageView;
         }
-
+        static int currentLabel = 0;
+        public static int Label
+        {
+            set { currentLabel = value; }
+            get { return  thumbIds[currentLabel]; }
+        }
         // references to our images
-        int[] thumbIds = { Resource.Drawable.calendar_143x155, Resource.Drawable.dining_services_115x169, Resource.Drawable.library_127x179, Resource.Drawable.mail_133x169
+       static readonly int[] thumbIds = { Resource.Drawable.calendar_143x155, Resource.Drawable.dining_services_115x169, Resource.Drawable.library_127x179, Resource.Drawable.mail_133x169
                          , Resource.Drawable.map_108x183, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185
                          , Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185
                          , Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185 };

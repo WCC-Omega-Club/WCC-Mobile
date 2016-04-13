@@ -21,6 +21,7 @@ namespace WCCMobile
         {
             base.OnCreate(savedInstanceState);
             this.SetContentView(Resource.Layout.PhoneBookLayout);
+            ActionBar.SetIcon(ImageAdapter.Label);
             PhoneBookList = (ListView)FindViewById(Resource.Id.PhoneBookList);
             PhoneBookList.Adapter = new YellowBookAdapter(this);
             PhoneBookList.ItemLongClick += delegate { Log.Debug("email","held"); };// replace with similar CallNumber func
