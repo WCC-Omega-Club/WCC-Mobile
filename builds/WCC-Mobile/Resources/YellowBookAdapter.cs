@@ -74,10 +74,11 @@ namespace WCCMobile.Resources
                     // do reading, usually loop until end of file reading  
                     string name;
                     string phone_number;
+                    string email;
                     int key = 0;
-                    while ((name = reader.ReadLine()) != null && (phone_number = reader.ReadLine()) != null)
+                    while ((name = reader.ReadLine()) != null && (phone_number = reader.ReadLine()) != null && (email = reader.ReadLine()) != null)
                     {
-                        YellowBook.Add(key++, name + newline + phone_number);
+                        YellowBook.Add(key++, name + newline + phone_number + newline + email);
                     }
                 }
                 catch (IOException) // From (Exception e). James 04.11.16

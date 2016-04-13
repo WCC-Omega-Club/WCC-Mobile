@@ -128,19 +128,22 @@
     <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\DiningServices.txt" />
+    <AndroidAsset Include="Assets\BasicInfoFiles\DiningServices.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Athletics.txt" />
+    <AndroidAsset Include="Assets\BasicInfoFiles\Athletics.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Counseling.txt" />
+    <AndroidAsset Include="Assets\BasicInfoFiles\Counseling.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Student Involvement.txt" />
+    <AndroidAsset Include="Assets\BasicInfoFiles\Student Involvement.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Career and Transfer Services.txt" />
+    <AndroidAsset Include="Assets\BasicInfoFiles\Career and Transfer Services.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\BusTrainSchedules\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

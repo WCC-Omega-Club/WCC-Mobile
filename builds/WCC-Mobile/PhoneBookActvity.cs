@@ -17,6 +17,7 @@ namespace WCCMobile
     public class PhoneBookActvity : Activity
     {
         ListView PhoneBookList;
+        private static readonly string empty_email_guard = "No email available";
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,7 +25,7 @@ namespace WCCMobile
             ActionBar.SetIcon(ImageAdapter.Label);
             PhoneBookList = (ListView)FindViewById(Resource.Id.PhoneBookList);
             PhoneBookList.Adapter = new YellowBookAdapter(this);
-            PhoneBookList.ItemLongClick += delegate { Log.Debug("email","held"); };// replace with similar CallNumber func
+            PhoneBookList.ItemLongClick += SendEmail;
             PhoneBookList.ItemClick += CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick
         }
         public override void OnBackPressed()
@@ -65,6 +66,46 @@ namespace WCCMobile
             {
 
             }
+        }
+        /// <summary>
+        /// Gets the clicked TextView and calls a substring of the .Text property - substring is 
+        /// the rest of the string after the return or newline character offset by +10.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        void SendEmail(object sender, AdapterView.ItemLongClickEventArgs args)
+        {
+
+            SendEmail(args.Position, this);
+
+        }
+
+        /// <summary>
+        /// Method to send emails to address listed in YellowBook.txt - Any Activity can call this
+        /// method provided they pass themselves and the key to the address in the book
+        /// </summary>
+        /// <param name="EmailKey"></param>
+        /// <param name="Mailer"></param>
+        public static void SendEmail(int EmailKey, Activity Mailer)
+        {
+            try
+            {
+                string p2Email;
+                if (!YellowBookAdapter.getBook.TryGetValue(EmailKey, out p2Email)) return;
+                Android.Util.Log.Debug("Email Function", "Successfully Found :" + p2Email);
+                int pos = 0;
+                while (p2Email[pos] != '\r' && p2Email[pos] != '\n') ++pos;
+                if (p2Email.Substring(pos + 12) != empty_email_guard)
+                {
+                    var intent = new Intent(Intent.ActionSend);
+                    Log.Debug("Email", p2Email.Substring(pos + 12));
+                    intent.PutExtra(Intent.ExtraEmail, new string[] { p2Email.Substring(pos + 12) });
+                    intent.SetType("message/rfc822");
+                    Mailer.StartActivity(intent);
+                }
+            }
+            catch (Exception e)
+            { }
         }
     }
 }

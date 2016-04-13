@@ -114,7 +114,7 @@ namespace WCCMobile
                     try
                     {
                         reader = new BufferedReader(
-                            new InputStreamReader(MainActivity.singleR.Assets.Open(currenTitle + ".txt")));
+                            new InputStreamReader(MainActivity.singleR.Assets.Open("BasicInfoFiles/"+currenTitle + ".txt")));
 
                         // do reading, usually loop until end of file reading  
                         string option;
