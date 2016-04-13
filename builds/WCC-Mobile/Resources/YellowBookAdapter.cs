@@ -17,6 +17,7 @@ namespace WCCMobile.Resources
     {
         Context context;
         static readonly string newline = System.Environment.NewLine;
+
         public YellowBookAdapter(Context c)
         {
             context = c;
@@ -41,12 +42,11 @@ namespace WCCMobile.Resources
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             TextView textItem;
-
+            
             if (convertView == null)
             {  // if it's not recycled, initialize some attributes
                 textItem = new TextView(context);
-                textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, 85);// new GridView.LayoutParams(85, 85);//85,85
-                //textItem.SetScaleType(ImageView.ScaleType.CenterCrop);
+                textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 10);
                 textItem.SetPadding(8, 8, 8, 8);
             }
             else
@@ -55,7 +55,7 @@ namespace WCCMobile.Resources
             }
             string info;
             YellowBook.TryGetValue(position,out info);
-            textItem.Text = info; //textItem.SetText(thumbIds[position]);
+            textItem.Text = info;
             return textItem;
         }
         static Dictionary<int, string> YellowBook = null;

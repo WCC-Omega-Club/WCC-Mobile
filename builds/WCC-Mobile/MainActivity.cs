@@ -21,6 +21,12 @@ namespace WCCMobile
                 return singleton;
             }
         }
+        bool ready = false;
+        public  bool isReady
+        {
+            get { return ready; }
+            set { ready = value; }
+        }
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -31,20 +37,46 @@ namespace WCCMobile
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
-            
-           
         }
+
+        /// <summary>
+        /// Start an activity that matches the case where case = args.Position in the GridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
-        {  
-            switch(args.Position)
-            { 
+        {
+            if (!isReady) return; // each app must be completed first
+            isReady = false;
+            ImageAdapter.Label = args.Position;
+            switch (args.Position)
+            {
                 case 0:
                     StartActivity(typeof(PhoneBookActvity));
-                    //Log.Debug("position","activating first sub - app");
                     break;//start sub app at box '0' continue for each app;
-
+                case 1:
+                    BasicInfoActivity.setInfoTitle("DiningServices");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 2:
+                    BasicInfoActivity.setInfoTitle("Athletics");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 3:
+                    BasicInfoActivity.setInfoTitle("Counseling");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 4:
+                    BasicInfoActivity.setInfoTitle("Student Involvement");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 5:
+                    BasicInfoActivity.setInfoTitle("Career and Transfer Services");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
                 default:
                     Log.Debug("position", args.Position.ToString());
+                    isReady = true;// undefined buttons will just reset isReady
                     break;
             }
 
@@ -54,6 +86,15 @@ namespace WCCMobile
         {
             base.OnBackPressed();
             Finish();//close the app for now
+        }
+        /// <summary>
+        /// Called after OnCreate and Also when a SubbApp closes - resets isReady 
+        /// </summary>
+        protected override void OnStart()
+        {
+            base.OnStart();
+            isReady = true;
+            Log.Debug("Belief", isReady.ToString());
         }
     }
 }
