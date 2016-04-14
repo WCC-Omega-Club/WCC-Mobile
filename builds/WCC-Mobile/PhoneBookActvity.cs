@@ -25,8 +25,8 @@ namespace WCCMobile
             ActionBar.SetIcon(ImageAdapter.Label);
             PhoneBookList = (ListView)FindViewById(Resource.Id.PhoneBookList);
             PhoneBookList.Adapter = new YellowBookAdapter(this);
-            PhoneBookList.ItemLongClick += SendEmail;
             PhoneBookList.ItemClick += CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick
+            PhoneBookList.ItemLongClick += SendEmail;
         }
         public override void OnBackPressed()
         {
@@ -79,7 +79,6 @@ namespace WCCMobile
             SendEmail(args.Position, this);
 
         }
-
         /// <summary>
         /// Method to send emails to address listed in YellowBook.txt - Any Activity can call this
         /// method provided they pass themselves and the key to the address in the book
@@ -95,7 +94,7 @@ namespace WCCMobile
                 Android.Util.Log.Debug("Email Function", "Successfully Found :" + p2Email);
                 int pos = 0;
                 while (p2Email[pos] != '\r' && p2Email[pos] != '\n') ++pos;
-                if (p2Email.Substring(pos + 12) != empty_email_guard)
+                if (!p2Email.Substring(pos + 12).Contains(empty_email_guard))
                 {
                     var intent = new Intent(Intent.ActionSend);
                     Log.Debug("Email", p2Email.Substring(pos + 12));

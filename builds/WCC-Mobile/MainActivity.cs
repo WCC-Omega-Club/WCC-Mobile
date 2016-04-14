@@ -7,6 +7,8 @@ using Android.Widget;
 using Android.OS;
 using Android.Util;
 using WCCMobile.Resources;
+using Java.IO;
+using Android.Graphics.Pdf;
 namespace WCCMobile
 {
     [Activity(Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57")]
@@ -37,14 +39,15 @@ namespace WCCMobile
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
+            
+            
         }
-
-        /// <summary>
-        /// Start an activity that matches the case where case = args.Position in the GridView
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
+/// <summary>
+/// Start an activity that matches the case where case = args.Position in the GridView
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="args"></param>
+void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
         {
             if (!isReady) return; // each app must be completed first
             isReady = false;
@@ -74,6 +77,11 @@ namespace WCCMobile
                     BasicInfoActivity.setInfoTitle("Career and Transfer Services");
                     StartActivity(typeof(BasicInfoActivity));
                     break;
+                case 6:
+                    // try { PackageManager.GetLaunchIntentForPackage("com.blackboard.android"); }
+                    // catch (Exception) { }
+                    StartExternalApp("com.blackboard.android",this);
+                    break;
                 default:
                     Log.Debug("position", args.Position.ToString());
                     isReady = true;// undefined buttons will just reset isReady
@@ -81,7 +89,24 @@ namespace WCCMobile
             }
 
         }
-
+        public static void StartExternalApp(string appPackageName, Activity Caller)
+        {
+            Log.Debug("Attempting to start app via package : ", appPackageName); 
+            try { Caller.StartActivity(Caller.PackageManager.GetLaunchIntentForPackage(appPackageName)); }
+            catch
+            {
+                try
+                { 
+                    Log.Debug("Attempting to enter the Store App via Google Play", appPackageName);
+                    Caller.StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("market://details?id=" + appPackageName)));
+                }
+                catch (Exception)//android.content.ActivityNotFoundException anfe
+                {
+                    Log.Debug("Attempting to enter the Store App via Browser", appPackageName);
+                    Caller.StartActivity(new Intent(Intent.ActionView, Android.Net.Uri.Parse("http://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
+            }
+        }
         public override void OnBackPressed()
         {
             base.OnBackPressed();
