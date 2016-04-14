@@ -85,12 +85,22 @@ namespace WCCMobile
             // create a new ImageView for each item referenced by the Adapter
             public override View GetView(int position, View convertView, ViewGroup parent)
             {
-                TextView textItem;                
+                TextView textItem;
                 if (convertView == null)
                 {  // if it's not recycled, initialize some attributes
                     textItem = new TextView(context);
-                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 10);
-                    textItem.SetPadding(30, 8, 8, 8);        
+                    if (textItem.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Portrait)
+                    {
+                        Android.Util.Log.Debug("switch to", "Portait");
+                        textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 10);
+                        textItem.SetPadding(8, 8, 8, 8);
+                    }
+                    else// this is side ways
+                    {
+                        Android.Util.Log.Debug("switch to", "LandScape");
+                        textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 5);
+                        textItem.SetPadding(8, 8, 8, 8);
+                    }
                 }
                 else
                 {

@@ -46,8 +46,19 @@ namespace WCCMobile.Resources
             if (convertView == null)
             {  // if it's not recycled, initialize some attributes
                 textItem = new TextView(context);
-                textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 7);
-                textItem.SetPadding(30, 16, 8, 16);
+                if (textItem.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Portrait)
+                {
+                    Android.Util.Log.Debug("switch to", "Portait");
+                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 10);
+                    textItem.SetPadding(8, 8, 8, 8);
+                }
+                else// this is side ways
+                {
+                    Android.Util.Log.Debug("switch to", "LandScape");
+                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 5);
+                    textItem.SetPadding(8, 8, 8, 8);
+                }
+                //var surfaceOrientation = WindowManager.DefaultDisplay.Rotation;
             }
             else
             {
@@ -55,17 +66,7 @@ namespace WCCMobile.Resources
             }
             string info;
             YellowBook.TryGetValue(position,out info);
-
-            // This just ensures that the phone number xxxxxxxxxx is presented in (xxx) xxx - xxxx format.
-            string info_copy = info;
-            string name = info_copy.Substring(0, info_copy.IndexOf(newline));
-            string phone_number = info_copy.Substring(info_copy.IndexOf(newline)+1, info_copy.LastIndexOf(newline)-info_copy.IndexOf(newline)-1);
-            string phone_number_formatted = '(' + phone_number.Substring(0, 3) + ") " + phone_number.Substring(3, 3) + " - " + phone_number.Substring(6);
-            string email = info_copy.Substring(info_copy.LastIndexOf(newline)+1);
-            string info2 = name+newline+phone_number_formatted+newline+email;
-            // End of phone number formatter
-
-            textItem.Text = info2;
+            textItem.Text = info;
             return textItem;
         }
         static Dictionary<int, string> YellowBook = null;
@@ -87,7 +88,7 @@ namespace WCCMobile.Resources
                     string email;
                     int key = 0;
                     while ((name = reader.ReadLine()) != null && (phone_number = reader.ReadLine()) != null && (email = reader.ReadLine()) != null)
-                    {                    
+                    {
                         YellowBook.Add(key++, name + newline + phone_number + newline + email);
                     }
                 }
