@@ -94,6 +94,7 @@ namespace WCCMobile
                         Android.Util.Log.Debug("switch to", "Portait");
                         textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 10);
                         textItem.SetPadding(8, 8, 8, 8);
+                        //textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 25);
                     }
                     else// this is side ways
                     {

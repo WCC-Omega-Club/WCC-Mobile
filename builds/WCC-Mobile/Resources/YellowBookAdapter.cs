@@ -49,8 +49,9 @@ namespace WCCMobile.Resources
                 if (textItem.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Portrait)
                 {
                     Android.Util.Log.Debug("switch to", "Portait");
-                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 10);
+                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 8);
                     textItem.SetPadding(8, 8, 8, 8);
+                    // textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 25);
                 }
                 else// this is side ways
                 {
@@ -66,7 +67,16 @@ namespace WCCMobile.Resources
             }
             string info;
             YellowBook.TryGetValue(position,out info);
-            textItem.Text = info;
+
+            string info_copy = info;
+            string name = info_copy.Substring(0, info_copy.IndexOf(newline));
+            string phone_number = info_copy.Substring(info_copy.IndexOf(newline)+1, info_copy.LastIndexOf(newline) - info_copy.IndexOf(newline)-1);            
+            string email = info_copy.Substring(info_copy.LastIndexOf(newline) + 1, info_copy.Length - info_copy.LastIndexOf(newline)-1);
+            
+            string phone_number_formatted = '(' + phone_number.Substring(0, 3) + ") " + phone_number.Substring(3, 3) + " - " + phone_number.Substring(6);
+
+            string info2 = name + newline + phone_number_formatted + newline + email;
+            textItem.Text = info2;
             return textItem;
         }
         static Dictionary<int, string> YellowBook = null;
