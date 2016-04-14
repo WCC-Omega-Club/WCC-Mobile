@@ -78,7 +78,26 @@ void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
                     StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 6:
+                    BasicInfoActivity.setInfoTitle("Financial Aid");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 7:
+                    BasicInfoActivity.setInfoTitle("Bursars Office");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 8:
+                    BasicInfoActivity.setInfoTitle("Registrar Office-Registration");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 9:
+                    BasicInfoActivity.setInfoTitle("Transit");
+                    StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 10:
                     StartExternalApp("com.blackboard.android",this);
+                    break;
+                case 11:
+                    StartExternalApp("com.microsoft.office.officehub", this);
                     break;
                 default:
                     Log.Debug("position", args.Position.ToString());
@@ -87,6 +106,13 @@ void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
             }
 
         }
+        /// <summary>
+        ///  Can be used by any sub App to launch external 3rd Party apps pass 
+        ///  the Activity that wishes to launch and the package name
+        ///  to get the package name search the app name on : http://apk-dl.com/ 
+        /// </summary>
+        /// <param name="appPackageName"></param>
+        /// <param name="Caller"></param>
         public static void StartExternalApp(string appPackageName, Activity Caller)
         {
             Log.Debug("Attempting to start app via package : ", appPackageName); 
