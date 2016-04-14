@@ -46,8 +46,8 @@ namespace WCCMobile.Resources
             if (convertView == null)
             {  // if it's not recycled, initialize some attributes
                 textItem = new TextView(context);
-                textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 8);
-                textItem.SetPadding(30, 8, 8, 8);
+                textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 7);
+                textItem.SetPadding(30, 16, 8, 16);
             }
             else
             {

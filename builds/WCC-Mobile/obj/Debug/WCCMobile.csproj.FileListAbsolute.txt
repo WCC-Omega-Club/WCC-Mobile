@@ -93,5 +93,6 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\ob
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\style.xml
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb

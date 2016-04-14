@@ -26,7 +26,7 @@ namespace WCCMobile
             PhoneBookList = (ListView)FindViewById(Resource.Id.PhoneBookList);
             PhoneBookList.Adapter = new YellowBookAdapter(this);
             PhoneBookList.ItemLongClick += SendEmail;
-            PhoneBookList.ItemClick += CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick
+            PhoneBookList.ItemClick += CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick            
         }
         public override void OnBackPressed()
         {

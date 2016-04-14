@@ -44,8 +44,8 @@ namespace WCCMobile
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int theme_holo_light_background = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int theme_holo_light_background = 2131099648;
 			
 			static Color()
 			{
@@ -166,8 +166,11 @@ namespace WCCMobile
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Theme_Custom = 2131099648;
+			// aapt resource value: 0x7f050001
+			public const int Theme_Custom = 2131034113;
+			
+			// aapt resource value: 0x7f050000
+			public const int list_text = 2131034112;
 			
 			static Style()
 			{

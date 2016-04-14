@@ -11,7 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int theme_holo_light_background=0x7f050000;
+        public static final int theme_holo_light_background=0x7f060000;
     }
     public static final class drawable {
         public static final int calendar_143x155=0x7f020000;
@@ -40,6 +40,7 @@ public final class R {
         public static final int Hello=0x7f040000;
     }
     public static final class style {
-        public static final int Theme_Custom=0x7f060000;
+        public static final int Theme_Custom=0x7f050001;
+        public static final int list_text=0x7f050000;
     }
 }

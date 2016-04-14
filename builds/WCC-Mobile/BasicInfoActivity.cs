@@ -85,12 +85,12 @@ namespace WCCMobile
             // create a new ImageView for each item referenced by the Adapter
             public override View GetView(int position, View convertView, ViewGroup parent)
             {
-                TextView textItem;
+                TextView textItem;                
                 if (convertView == null)
                 {  // if it's not recycled, initialize some attributes
                     textItem = new TextView(context);
                     textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 10);
-                    textItem.SetPadding(8, 8, 8, 8);
+                    textItem.SetPadding(30, 8, 8, 8);        
                 }
                 else
                 {
