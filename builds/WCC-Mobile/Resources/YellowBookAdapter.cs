@@ -42,7 +42,8 @@ namespace WCCMobile.Resources
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             TextView textItem;
-            
+            ListView lv = (ListView)parent;
+            lv.DividerHeight = 15;
             if (convertView == null)
             {  // if it's not recycled, initialize some attributes
                 textItem = new TextView(context);
@@ -50,14 +51,15 @@ namespace WCCMobile.Resources
                 {
                     Android.Util.Log.Debug("switch to", "Portait");
                     textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 8);
-                    textItem.SetPadding(8, 8, 8, 8);
-                    // textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 25);
+                    textItem.SetPadding(24, 8, 8, 8);
+
+                    //textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 25);
                 }
                 else// this is side ways
                 {
                     Android.Util.Log.Debug("switch to", "LandScape");
                     textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 5);
-                    textItem.SetPadding(8, 8, 8, 8);
+                    textItem.SetPadding(24, 8, 8, 8);
                 }
                 //var surfaceOrientation = WindowManager.DefaultDisplay.Rotation;
             }
@@ -68,11 +70,11 @@ namespace WCCMobile.Resources
             string info;
             YellowBook.TryGetValue(position,out info);
 
+            // Reinterprest Phone Number XXXXXXXXXX to (XXX) XXX - XXXX
             string info_copy = info;
             string name = info_copy.Substring(0, info_copy.IndexOf(newline));
             string phone_number = info_copy.Substring(info_copy.IndexOf(newline)+1, info_copy.LastIndexOf(newline) - info_copy.IndexOf(newline)-1);            
             string email = info_copy.Substring(info_copy.LastIndexOf(newline) + 1, info_copy.Length - info_copy.LastIndexOf(newline)-1);
-            
             string phone_number_formatted = '(' + phone_number.Substring(0, 3) + ") " + phone_number.Substring(3, 3) + " - " + phone_number.Substring(6);
 
             string info2 = name + newline + phone_number_formatted + newline + email;
