@@ -78,8 +78,6 @@ void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
                     StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 6:
-                    // try { PackageManager.GetLaunchIntentForPackage("com.blackboard.android"); }
-                    // catch (Exception) { }
                     StartExternalApp("com.blackboard.android",this);
                     break;
                 default:
