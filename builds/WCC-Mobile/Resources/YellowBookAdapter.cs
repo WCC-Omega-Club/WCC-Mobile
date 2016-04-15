@@ -10,14 +10,14 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Java.IO;
-
+using Android.Text;
 namespace WCCMobile.Resources
 {
     class YellowBookAdapter : BaseAdapter
-    {
+    { 
         Context context;
         static readonly string newline = System.Environment.NewLine;
-
+        readonly string bPoint = "<b>";
         public YellowBookAdapter(Context c)
         {
             context = c;
@@ -50,7 +50,7 @@ namespace WCCMobile.Resources
                 if (textItem.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Portrait)
                 {
                     Android.Util.Log.Debug("switch to", "Portait");
-                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 8);
+                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, ListView.LayoutParams.WrapContent);
                     textItem.SetPadding(24, 8, 8, 8);
 
                     //textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 25);
@@ -58,7 +58,7 @@ namespace WCCMobile.Resources
                 else// this is side ways
                 {
                     Android.Util.Log.Debug("switch to", "LandScape");
-                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, parent.Height / 5);
+                    textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, ListView.LayoutParams.WrapContent);
                     textItem.SetPadding(24, 8, 8, 8);
                 }
                 //var surfaceOrientation = WindowManager.DefaultDisplay.Rotation;
@@ -77,8 +77,10 @@ namespace WCCMobile.Resources
             string email = info_copy.Substring(info_copy.LastIndexOf(newline) + 1, info_copy.Length - info_copy.LastIndexOf(newline)-1);
             string phone_number_formatted = '(' + phone_number.Substring(0, 3) + ") " + phone_number.Substring(3, 3) + " - " + phone_number.Substring(6);
 
-            string info2 = name + newline + phone_number_formatted + newline + email;
-            textItem.Text = info2;
+            string input2 = "<b>" + name + "</b>" + "<br>" + "<i>" + phone_number_formatted + "</i>" + "<br>" + "<font color=\"#858585\">" + email + "</font>";
+            
+            textItem.SetText( Html.FromHtml( input2),TextView.BufferType.Spannable);
+            //textItem.Text = Android.Text.Html.FromHtml(bPoint + name + "</b>" + newline + phone_number_formatted + newline + email).ToString();
             return textItem;
         }
         static Dictionary<int, string> YellowBook = null;

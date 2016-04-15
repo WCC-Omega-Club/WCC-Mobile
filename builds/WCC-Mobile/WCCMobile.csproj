@@ -78,7 +78,6 @@
     <Compile Include="Resources\YellowBookAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\filename.pdf" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

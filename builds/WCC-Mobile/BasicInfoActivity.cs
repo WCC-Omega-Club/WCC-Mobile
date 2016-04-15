@@ -117,15 +117,16 @@ namespace WCCMobile
                     if (textItem.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Portrait)
                     {
                         Android.Util.Log.Debug("switch to", "Portait");
-                        textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, ListView.LayoutParams.WrapContent);
+                        textItem.LayoutParameters = new ListView.LayoutParams((parent.Width), ListView.LayoutParams.WrapContent);
                         textItem.SetPadding(20, 20, 10, 20);
-                        textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 20);
+                        textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 18);
                     }
                     else// this is side ways
                     {
                         Android.Util.Log.Debug("switch to", "LandScape");
-                        textItem.LayoutParameters = new ListView.LayoutParams(parent.Width, ListView.LayoutParams.WrapContent);
+                        textItem.LayoutParameters = new ListView.LayoutParams((parent.Width), ListView.LayoutParams.WrapContent);
                         textItem.SetPadding(20, 20, 10, 20);
+                        textItem.SetTextSize(Android.Util.ComplexUnitType.Dip, 18);
                     }
                 }
                 else
