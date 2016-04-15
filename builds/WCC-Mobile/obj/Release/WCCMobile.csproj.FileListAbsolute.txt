@@ -20,31 +20,6 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\Release\uploadflags.txt
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\obj\Release\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile-GUI-Test-Space-04.11.16-James-\builds\WCC-Mobile\bin\Release\WCCMobile.dll.mdb
-E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.dll
-E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.pdb
-E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.WCCMobile.apk
-E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.WCCMobile-Signed.apk
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.csprojResolveAssemblyReference.cache
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.pdb
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\bin\WCCMobile.WCCMobile.apk
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\layout\phonebooklayout.xml
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\layout\basicinfolayout.xml
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\layout\main.xml
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\values\strings.xml
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\icon.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\calendar_143x155.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\dining_services_115x169.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\mail_133x169.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\map_108x183.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\placeholder_128x185.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\library_127x179.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\wccmainappicon_57x57.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\values\theme.xml
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\R.cs.flag
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\uploadflags.txt
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.dll.mdb
-E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.dll
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.pdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.WCCMobile.apk
@@ -70,3 +45,27 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\ob
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\uploadflags.txt
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.dll.mdb
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.dll
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.pdb
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.WCCMobile.apk
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.WCCMobile-Signed.apk
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.dll
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.pdb
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\bin\WCCMobile.WCCMobile.apk
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\layout\phonebooklayout.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\layout\basicinfolayout.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\layout\main.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\values\strings.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\icon.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\calendar_143x155.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\dining_services_115x169.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\mail_133x169.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\map_108x183.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\placeholder_128x185.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\library_127x179.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\drawable\wccmainappicon_57x57.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\res\values\theme.xml
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\R.cs.flag
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\uploadflags.txt
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Release\WCCMobile.dll.mdb
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Release\WCCMobile.dll.mdb
