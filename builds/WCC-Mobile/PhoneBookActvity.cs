@@ -13,9 +13,14 @@ using Android.Util;
 using WCCMobile.Resources;
 namespace WCCMobile
 {
-    [Activity(Label = "PhoneBook")]
+    [Activity(Label = "PhoneBook", ParentActivity = typeof(WCCMobile.MainActivity))]
     public class PhoneBookActvity : Activity
     {
+        static ActivityAttribute attr = null;
+        static ActivityAttribute ATTR
+        {
+            get { return attr != null ? attr : attr = new ActivityAttribute(); }
+        }
         ListView PhoneBookList;
         private static readonly string empty_email_guard = "No email available";
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,6 +32,9 @@ namespace WCCMobile
             PhoneBookList.Adapter = new YellowBookAdapter(this);
             PhoneBookList.ItemClick += CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick
             PhoneBookList.ItemLongClick += SendEmail;
+
+            ATTR.MainLauncher = true;
+            ActionBar.SetIcon(Android.Resource.Color.Transparent);
         }
         public override void OnBackPressed()
         {

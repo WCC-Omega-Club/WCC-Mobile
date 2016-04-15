@@ -13,9 +13,14 @@ using WCCMobile.Resources;
 using Java.IO;
 namespace WCCMobile
 {
-    [Activity(Label = "BasicInfoActivity")]
+    [Activity(Label = "BasicInfoActivity", MainLauncher= false, ParentActivity = typeof(WCCMobile.MainActivity))]
     public class BasicInfoActivity : Activity
     {
+        static ActivityAttribute attr = null;
+        static ActivityAttribute ATTR
+        {
+           get { return attr != null ? attr : attr = new ActivityAttribute(); }
+        }
         ListView BasicInfoList;
         static StringBuilder currenTitle = new StringBuilder();
         public static void setInfoTitle(string newTitle)
@@ -27,13 +32,31 @@ namespace WCCMobile
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.BasicInfoLayout);
-            ActionBar.SetIcon(ImageAdapter.Label);
+
+            ATTR.MainLauncher = true;
+            ActionBar.SetIcon(Android.Resource.Color.Transparent);
+            
+
             BasicInfoList = (ListView)FindViewById(Resource.Id.BasicInfoList);
             Title = currenTitle.ToString();
             BasicInfoList.Adapter = new BasicInfoAdapter(this);
             BasicInfoList.ItemClick += GoToLink;
             // Create your application here
         }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
         void GoToLink(object sender, AdapterView.ItemClickEventArgs args)
         {
             //Android.Util.Log.Debug("option is", ((TextView)args.View).Text);

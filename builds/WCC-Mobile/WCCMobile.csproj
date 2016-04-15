@@ -129,7 +129,7 @@
     <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\DiningServices.txt" />
+    <AndroidAsset Include="Assets\BasicInfoFiles\Dining Services.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\BasicInfoFiles\Athletics.txt" />

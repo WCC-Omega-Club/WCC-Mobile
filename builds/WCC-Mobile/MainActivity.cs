@@ -11,7 +11,8 @@ using Java.IO;
 using Android.Graphics.Pdf;
 namespace WCCMobile
 {
-    [Activity(Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57")]
+    //[Activity(MainLauncher = true, ParentActivity = typeof(MainActivity))]
+    [Activity( Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57")]
     public class MainActivity : Activity
     {
         static MainActivity singleton = null;
@@ -32,7 +33,6 @@ namespace WCCMobile
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-           
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
             SubAppContainer = (GridView)FindViewById(Resource.Id.SubAppContainer);
@@ -58,7 +58,7 @@ void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
                     StartActivity(typeof(PhoneBookActvity));
                     break;//start sub app at box '0' continue for each app;
                 case 1:
-                    BasicInfoActivity.setInfoTitle("DiningServices");
+                    BasicInfoActivity.setInfoTitle("Dining Services");
                     StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 2:
