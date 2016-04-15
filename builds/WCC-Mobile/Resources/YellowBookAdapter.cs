@@ -17,7 +17,6 @@ namespace WCCMobile.Resources
     { 
         Context context;
         static readonly string newline = System.Environment.NewLine;
-        readonly string bPoint = "<b>";
         public YellowBookAdapter(Context c)
         {
             context = c;

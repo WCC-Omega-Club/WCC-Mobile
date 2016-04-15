@@ -5,14 +5,14 @@
   <uses-permission android:name="android.permission.CALL_PHONE" />
   <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
   <application android:label="WCC Mobile" android:theme="@style/Theme.Custom" android:name="mono.android.app.Application" android:allowBackup="true">
-    <activity android:label="BasicInfoActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.BasicInfoActivity" />
+    <activity android:label="BasicInfoActivity" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.BasicInfoActivity" />
     <activity android:icon="@drawable/wccmainappicon_57x57" android:label="WCC Mobile" android:name="md59b15f7978abc4d0b2cebe92668d59436.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="PhoneBook" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity" />
+    <activity android:label="PhoneBook" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="WCCMobile.WCCMobile.mono.MonoRuntimeProvider.__mono_init__" />
   </application>
 </manifest>
