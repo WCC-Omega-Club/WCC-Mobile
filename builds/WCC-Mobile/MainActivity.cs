@@ -24,8 +24,8 @@ namespace WCCMobile
                 return singleton;
             }
         }
-        bool ready = false;
-        public  bool isReady
+        static bool ready = false;
+        static public  bool isReady
         {
             get { return ready; }
             set { ready = value; }
@@ -39,7 +39,7 @@ namespace WCCMobile
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
-            
+            //ImageView i;
             
         }
 /// <summary>
@@ -49,6 +49,8 @@ namespace WCCMobile
 /// <param name="args"></param>
 void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
         {
+            ImageView iv = (ImageView)args.View;
+            
             if (!isReady) return; // each app must be completed first
             isReady = false;
             ImageAdapter.Label = args.Position;
@@ -101,6 +103,68 @@ void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
                     break;
                 default:
                     Log.Debug("position", args.Position.ToString());
+                    isReady = true;// undefined buttons will just reset isReady
+                    break;
+            }
+
+        }
+
+     public static   void StartSubApp(int args)
+        {
+            //ImageView iv = (ImageView)args.View;
+
+            if (!isReady) return; // each app must be completed first
+            isReady = false;
+            ImageAdapter.Label = args;
+            switch (args)
+            {
+                case 0:
+                    MainActivity.singleR.StartActivity(typeof(PhoneBookActvity));
+                    break;//start sub app at box '0' continue for each app;
+                case 1:
+                    BasicInfoActivity.setInfoTitle("Dining Services");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 2:
+                    BasicInfoActivity.setInfoTitle("Athletics");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 3:
+                    BasicInfoActivity.setInfoTitle("Counseling");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 4:
+                    BasicInfoActivity.setInfoTitle("Student Involvement");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 5:
+                    BasicInfoActivity.setInfoTitle("Career and Transfer Services");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 6:
+                    BasicInfoActivity.setInfoTitle("Financial Aid");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 7:
+                    BasicInfoActivity.setInfoTitle("Bursars Office");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 8:
+                    BasicInfoActivity.setInfoTitle("Registrar Office-Registration");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 9:
+                    BasicInfoActivity.setInfoTitle("Transit");
+                    MainActivity.singleR.StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 10:
+                    StartExternalApp("com.blackboard.android", MainActivity.singleR);
+                    break;
+                case 11:
+                    StartExternalApp("com.microsoft.office.officehub", MainActivity.singleR);
+                    break;
+                default:
+                    Log.Debug("position", args.ToString());
                     isReady = true;// undefined buttons will just reset isReady
                     break;
             }
