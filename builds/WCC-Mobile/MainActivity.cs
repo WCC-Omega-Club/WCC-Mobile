@@ -8,7 +8,11 @@ using Android.OS;
 using Android.Util;
 using WCCMobile.Resources;
 using Java.IO;
-using Android.Graphics.Pdf;
+using Android.Graphics;
+using System.Net;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 namespace WCCMobile
 {
     //[Activity(MainLauncher = true, ParentActivity = typeof(MainActivity))]
@@ -30,6 +34,7 @@ namespace WCCMobile
             get { return ready; }
             set { ready = value; }
         }
+        System.Collections.Generic.List<Bitmap> IMGSET = new System.Collections.Generic.List<Bitmap>();
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -39,18 +44,38 @@ namespace WCCMobile
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
-            //ImageView i;
-            
+            // SubAppContainer // <- maybe .Foreground? 
+
+
+            // Log.Debug("WebCode", HTMLSRC().Contains("Pikachu").ToString());
+            // Log.Debug("WebCode", HTMLSRC().Contains("http://www.sunywcc.edu/cms/wp-content/uploads/2011/12/programs_engineering.jpg").ToString());
+
+            int bg = -1;
+            int eg = -1;
+            foreach (Match m in Regex.Matches(HTMLSRC(), "(http(s?):)|([/|.|w|s])*.(?:jpg)"))//|gif|png
+            {
+                if (m.Value.Contains("http") && eg < 0) bg = m.Index;
+                else if (m.Value.Contains("jpg") && bg >= 0) eg = m.Index;
+                else bg = eg = -1;
+                if (bg >= 0 && eg >= 0)
+                {
+                    string s;
+                    Log.Debug(bg.ToString(), eg.ToString());s = htmlCode.Substring(bg, ((eg + 5) - bg));
+                    while (!char.IsLetter(s[s.Length - 1])) s = s.Remove(s.Length - 1, 1);
+                    Log.Debug("got ->",s);
+                    
+                    bg = eg = -1;
+                }
+            }
         }
-/// <summary>
-/// Start an activity that matches the case where case = args.Position in the GridView
-/// </summary>
-/// <param name="sender"></param>
-/// <param name="args"></param>
-void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
+        /// <summary>
+        /// Start an activity that matches the case where case = args.Position in the GridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
         {
-            ImageView iv = (ImageView)args.View;
-            
+            //Log.Debug("WebCode",getHTML());
             if (!isReady) return; // each app must be completed first
             isReady = false;
             ImageAdapter.Label = args.Position;
@@ -103,13 +128,13 @@ void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
                     break;
                 default:
                     Log.Debug("position", args.Position.ToString());
+
                     isReady = true;// undefined buttons will just reset isReady
                     break;
             }
 
         }
-
-     public static   void StartSubApp(int args)
+        public static   void StartSubApp(int args)
         {
             //ImageView iv = (ImageView)args.View;
 
@@ -209,6 +234,69 @@ void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
             isReady = true;
             Log.Debug("Belief", isReady.ToString());
         }
+        private Bitmap GetImageBitmapFromUrl(string url)
+        {
+            Bitmap imageBitmap = null;
+            using (var webClient = new System.Net.WebClient())
+            {
+                var imageBytes = webClient.DownloadData(url);
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+            return imageBitmap;
+        }
+        string htmlCode = null;
+        string HTMLSRC(string urlAddress = "http://www.sunywcc.edu/")
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                Stream receiveStream = response.GetResponseStream();
+                StreamReader readStream = null;
+
+                if (response.CharacterSet == null)
+                {
+                    readStream = new StreamReader(receiveStream);
+                }
+                else
+                {
+                    readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
+                }
+
+                string data = readStream.ReadToEnd();
+
+                response.Close();
+                readStream.Close();
+                return htmlCode = data;
+            }
+            return string.Empty;
+        }
+        public string getHTML(string url = "http://www.sunywcc.edu/")
+        {
+            //Create request for given url
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+
+            //Create response-object
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            //Take response stream
+            StreamReader sr = new StreamReader(response.GetResponseStream());
+
+            //Read response stream (html code)
+            string html = sr.ReadToEnd();
+
+            //Close streamreader and response
+            sr.Close();
+            response.Close();
+
+            //return source
+            return html;
+        }
     }
+
 }
 
