@@ -14,19 +14,27 @@ public final class R {
         public static final int theme_holo_light_background=0x7f050000;
     }
     public static final class drawable {
-        public static final int calendar_143x155=0x7f020000;
-        public static final int dining_services_115x169=0x7f020001;
-        public static final int icon=0x7f020002;
-        public static final int library_127x179=0x7f020003;
-        public static final int mail_133x169=0x7f020004;
-        public static final int map_108x183=0x7f020005;
-        public static final int placeholder_128x185=0x7f020006;
-        public static final int wccmainappicon_57x57=0x7f020007;
+        public static final int ic_athletics=0x7f020000;
+        public static final int ic_blackboard=0x7f020001;
+        public static final int ic_calendar=0x7f020002;
+        public static final int ic_career_services=0x7f020003;
+        public static final int ic_counseling=0x7f020004;
+        public static final int ic_dining_services=0x7f020005;
+        public static final int ic_directory=0x7f020006;
+        public static final int ic_library=0x7f020007;
+        public static final int ic_mail=0x7f020008;
+        public static final int ic_map=0x7f020009;
+        public static final int ic_student_involvement=0x7f02000a;
+        public static final int ic_transfer_services=0x7f02000b;
+        public static final int ic_transit=0x7f02000c;
+        public static final int placeholder_128x185=0x7f02000d;
+        public static final int wccmainappicon_57x57=0x7f02000e;
     }
     public static final class id {
         public static final int BasicInfoList=0x7f070000;
-        public static final int PhoneBookList=0x7f070003;
-        public static final int SubAppContainer=0x7f070002;
+        public static final int ImageContainer=0x7f070002;
+        public static final int PhoneBookList=0x7f070004;
+        public static final int SubAppContainer=0x7f070003;
         public static final int linearLayout1=0x7f070001;
     }
     public static final class layout {

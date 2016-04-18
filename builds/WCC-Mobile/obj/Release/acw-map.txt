@@ -10,6 +10,10 @@ WCCMobile.MainActivity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.MainActivi
 WCCMobile.MainActivity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
 WCCMobile.MainActivity;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
 wccmobile.MainActivity;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
+WCCMobile.MainActivity/IMGTimer, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.MainActivity_IMGTimer
+WCCMobile.MainActivity+IMGTimer, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.MainActivity_IMGTimer
+WCCMobile.MainActivity.IMGTimer;md59b15f7978abc4d0b2cebe92668d59436.MainActivity_IMGTimer
+wccmobile.MainActivity_IMGTimer;md59b15f7978abc4d0b2cebe92668d59436.MainActivity_IMGTimer
 WCCMobile.PhoneBookActvity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity
 WCCMobile.PhoneBookActvity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity
 WCCMobile.PhoneBookActvity;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity

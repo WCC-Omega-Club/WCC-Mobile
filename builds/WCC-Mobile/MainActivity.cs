@@ -22,7 +22,7 @@ namespace WCCMobile
     public class MainActivity : Activity
     {
         static MainActivity singleton = null;
-        public ImageView ImageContainer;
+        public static ImageView ImageContainer;
         public GridView SubAppContainer;
         public static MainActivity singleR
         {
@@ -345,30 +345,34 @@ namespace WCCMobile
         [Service]
         public class IMGTimer : Service
         {
+            public static IMGTimer imgSingleton= null;
             public override void OnCreate()
             {
                 base.OnCreate();
-                //DoWork();
+                if (imgSingleton == null)
+                {
+                    imgSingleton = this;
+                    DoWork();
+                }
             }
             public override IBinder OnBind(Intent intent)
             {
                 throw new NotImplementedException();
                 
             }
-            public void DoWork(ImageView imV)
+            public void DoWork()
             {
 
                 var t = new Thread(() => {
                     int i = 3;
 
-                    //ImageView imV2 = new ImageView;
-                    //imV2.SetAdjustViewBounds(true);
-                    //imV2.SetScaleType(ImageView.ScaleType.FitCenter);
-                    //imV2.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
-
-                    while (i > 0)
+                    while (MainActivity.singleR != null)
                     {
                         //We will add image swap in here!
+                    ImageView imV2 = MainActivity.ImageContainer;
+                    imV2.SetAdjustViewBounds(true);
+                    imV2.SetScaleType(ImageView.ScaleType.FitCenter);
+                        imV2.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
                         Log.Debug("DemoService", (i--).ToString());
                         Thread.Sleep(1000);
                         // set  animation after some time
@@ -379,6 +383,11 @@ namespace WCCMobile
                 }
                 );
                 t.Start();
+            }
+            public override void OnDestroy()
+            {
+                base.OnDestroy();
+                if (imgSingleton == this) imgSingleton = null;
             }
         }
     }
