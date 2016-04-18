@@ -22,6 +22,7 @@ namespace WCCMobile
     public class MainActivity : Activity
     {
         static MainActivity singleton = null;
+        public ImageView ImageContainer;
         public GridView SubAppContainer;
         public static MainActivity singleR
         {
@@ -75,6 +76,14 @@ namespace WCCMobile
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            //IMGTimer i = new IMGTimer();
+            ImageContainer = (ImageView)FindViewById(Resource.Id.ImageContainer);
+            ImageContainer.SetAdjustViewBounds(true);
+            ImageContainer.SetScaleType(ImageView.ScaleType.FitCenter);
+            ImageContainer.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+            //i.DoWork(ImageContainer);
+
             SubAppContainer = (GridView)FindViewById(Resource.Id.SubAppContainer);
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
@@ -95,55 +104,77 @@ namespace WCCMobile
             ImageAdapter.Label = args.Position;
             switch (args.Position)
             {
-                case 0:
+                case 0: // Map
+                    ImageView i = (ImageView)args.View;
+                    i.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+                    isReady = true;
+                    //StartActivity(typeof(PhoneBookActvity));
+                    break;//start sub app at box '0' continue for each app; 
+                case 1: // Directory
                     StartActivity(typeof(PhoneBookActvity));
-                    break;//start sub app at box '0' continue for each app;
-                case 1:
-                    BasicInfoActivity.setInfoTitle("Dining Services");
-                    StartActivity(typeof(BasicInfoActivity));
+                    //BasicInfoActivity.setInfoTitle("Dining Services");
+                    //StartActivity(typeof(BasicInfoActivity));
                     break;
-                case 2:
-                    BasicInfoActivity.setInfoTitle("Athletics");
-                    StartActivity(typeof(BasicInfoActivity));
+                case 2: // Mail
+                    StartExternalApp("com.microsoft.office.officehub", this);
+                    //BasicInfoActivity.setInfoTitle("Athletics");
+                    //StartActivity(typeof(BasicInfoActivity));
                     break;
-                case 3:
-                    BasicInfoActivity.setInfoTitle("Counseling");
-                    StartActivity(typeof(BasicInfoActivity));
+                case 3: // Blackboard
+                    StartExternalApp("com.blackboard.android", this);
+                    //BasicInfoActivity.setInfoTitle("Counseling");
+                    //StartActivity(typeof(BasicInfoActivity));
                     break;
-                case 4:
+                /* case 4: // Calendar
                     BasicInfoActivity.setInfoTitle("Student Involvement");
                     StartActivity(typeof(BasicInfoActivity));
+                    break; */
+                case 5: //Transit
+                    BasicInfoActivity.setInfoTitle("Transit");
+                    StartActivity(typeof(BasicInfoActivity));
+                    //BasicInfoActivity.setInfoTitle("Career and Transfer Services");
+                    //StartActivity(typeof(BasicInfoActivity));
                     break;
-                case 5:
+                /*case 6: // Library
+                    //BasicInfoActivity.setInfoTitle("Financial Aid");
+                    //StartActivity(typeof(BasicInfoActivity));
+                    break; */
+                case 7: // Athletics
+                    BasicInfoActivity.setInfoTitle("Athletics");
+                    StartActivity(typeof(BasicInfoActivity));
+                    //BasicInfoActivity.setInfoTitle("Bursars Office");
+                    //StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 8: // Career Services
+                    BasicInfoActivity.setInfoTitle("Career and Transfer Services");
+                    StartActivity(typeof(BasicInfoActivity));
+                    //BasicInfoActivity.setInfoTitle("Registrar Office-Registration");
+                    //StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 9: // Counseling
+                    BasicInfoActivity.setInfoTitle("Counseling");
+                    StartActivity(typeof(BasicInfoActivity));
+                    //BasicInfoActivity.setInfoTitle("Transit");
+                    //StartActivity(typeof(BasicInfoActivity));
+                    break;
+                case 10: // Dining Services
+                    BasicInfoActivity.setInfoTitle("Dining Services");
+                    StartActivity(typeof(BasicInfoActivity));
+                    //StartExternalApp("com.blackboard.android",this);
+                    break;
+                case 11: // Student Involvement
+                    BasicInfoActivity.setInfoTitle("Student Involvement");
+                    StartActivity(typeof(BasicInfoActivity));
+                    //StartExternalApp("com.microsoft.office.officehub", this);
+                    break;
+                case 12: // Transfer Services
                     BasicInfoActivity.setInfoTitle("Career and Transfer Services");
                     StartActivity(typeof(BasicInfoActivity));
                     break;
-                case 6:
-                    BasicInfoActivity.setInfoTitle("Financial Aid");
-                    StartActivity(typeof(BasicInfoActivity));
-                    break;
-                case 7:
-                    BasicInfoActivity.setInfoTitle("Bursars Office");
-                    StartActivity(typeof(BasicInfoActivity));
-                    break;
-                case 8:
-                    BasicInfoActivity.setInfoTitle("Registrar Office-Registration");
-                    StartActivity(typeof(BasicInfoActivity));
-                    break;
-                case 9:
-                    BasicInfoActivity.setInfoTitle("Transit");
-                    StartActivity(typeof(BasicInfoActivity));
-                    break;
-                case 10:
-                    StartExternalApp("com.blackboard.android",this);
-                    break;
-                case 11:
-                    StartExternalApp("com.microsoft.office.officehub", this);
-                    break;
                 default:
                     Log.Debug("position", args.Position.ToString());
-                    ImageView i = (ImageView)args.View;
-                    i.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+                    //ImageView i = (ImageView)args.View;
+                    //i.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
                     isReady = true;// undefined buttons will just reset isReady
                     break;
             }
@@ -317,18 +348,24 @@ namespace WCCMobile
             public override void OnCreate()
             {
                 base.OnCreate();
-                DoWork();
+                //DoWork();
             }
             public override IBinder OnBind(Intent intent)
             {
                 throw new NotImplementedException();
                 
             }
-            public void DoWork()
+            public void DoWork(ImageView imV)
             {
 
                 var t = new Thread(() => {
                     int i = 3;
+
+                    //ImageView imV2 = new ImageView;
+                    //imV2.SetAdjustViewBounds(true);
+                    //imV2.SetScaleType(ImageView.ScaleType.FitCenter);
+                    //imV2.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+
                     while (i > 0)
                     {
                         //We will add image swap in here!
@@ -337,6 +374,7 @@ namespace WCCMobile
                         // set  animation after some time
                         Log.Debug("DemoService", "Work complete");
                     }
+                    //imV = imV2;
                     StopSelf();
                 }
                 );

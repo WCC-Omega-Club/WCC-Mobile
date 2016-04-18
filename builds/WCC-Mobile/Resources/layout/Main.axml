@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
-    p1:orientation="horizontal"
+    p1:orientation="vertical"
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
     p1:id="@+id/linearLayout1">
+    <ImageView
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:background="#055981"
+        p1:id="@+id/ImageContainer" />
     <GridView
         p1:layout_width="fill_parent"
         p1:layout_height="wrap_content"
@@ -13,6 +18,7 @@
         p1:horizontalSpacing="1dp"
         p1:stretchMode="columnWidth"
         p1:gravity="center"
+        p1:background="#ffffff"
         p1:id="@+id/SubAppContainer" />
 <!-- p1:horizontalSpacing oesn't seem to affect anything. Neither does p1:columnWidth -->
 </LinearLayout>

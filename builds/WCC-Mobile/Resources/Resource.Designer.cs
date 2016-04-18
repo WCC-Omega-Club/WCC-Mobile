@@ -61,28 +61,49 @@ namespace WCCMobile
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int calendar_143x155 = 2130837504;
+			public const int ic_athletics = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int dining_services_115x169 = 2130837505;
+			public const int ic_blackboard = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Icon = 2130837506;
+			public const int ic_calendar = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int library_127x179 = 2130837507;
+			public const int ic_career_services = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int mail_133x169 = 2130837508;
+			public const int ic_counseling = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int map_108x183 = 2130837509;
+			public const int ic_dining_services = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int placeholder_128x185 = 2130837510;
+			public const int ic_directory = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int WCCMainAppIcon_57x57 = 2130837511;
+			public const int ic_library = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int ic_mail = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int ic_map = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int ic_student_involvement = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int ic_transfer_services = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int ic_transit = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int placeholder_128x185 = 2130837517;
+			
+			// aapt resource value: 0x7f02000e
+			public const int WCCMainAppIcon_57x57 = 2130837518;
 			
 			static Drawable()
 			{
@@ -100,11 +121,14 @@ namespace WCCMobile
 			// aapt resource value: 0x7f070000
 			public const int BasicInfoList = 2131165184;
 			
-			// aapt resource value: 0x7f070003
-			public const int PhoneBookList = 2131165187;
-			
 			// aapt resource value: 0x7f070002
-			public const int SubAppContainer = 2131165186;
+			public const int ImageContainer = 2131165186;
+			
+			// aapt resource value: 0x7f070004
+			public const int PhoneBookList = 2131165188;
+			
+			// aapt resource value: 0x7f070003
+			public const int SubAppContainer = 2131165187;
 			
 			// aapt resource value: 0x7f070001
 			public const int linearLayout1 = 2131165185;

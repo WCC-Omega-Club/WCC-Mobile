@@ -63,9 +63,25 @@ namespace WCCMobile.Resources
             get { return  thumbIds[currentLabel]; }
         }
         // references to our images
-       static readonly int[] thumbIds = { Resource.Drawable.calendar_143x155, Resource.Drawable.dining_services_115x169, Resource.Drawable.library_127x179, Resource.Drawable.mail_133x169
-                         , Resource.Drawable.map_108x183, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185
-                         , Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185
-                         , Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185, Resource.Drawable.placeholder_128x185 , Resource.Drawable.placeholder_128x185 , Resource.Drawable.placeholder_128x185 };
+       static readonly int[] thumbIds = {
+            Resource.Drawable.ic_map,
+            Resource.Drawable.ic_directory,
+            Resource.Drawable.ic_mail,
+            Resource.Drawable.ic_blackboard,
+            Resource.Drawable.ic_calendar,
+            Resource.Drawable.ic_transit,
+            Resource.Drawable.ic_library,
+            Resource.Drawable.ic_athletics,
+            Resource.Drawable.ic_career_services,
+            Resource.Drawable.ic_counseling,
+            Resource.Drawable.ic_dining_services,
+            Resource.Drawable.ic_student_involvement,
+            Resource.Drawable.ic_transfer_services,
+            Resource.Drawable.placeholder_128x185,
+            Resource.Drawable.placeholder_128x185,
+            Resource.Drawable.placeholder_128x185,
+            Resource.Drawable.placeholder_128x185,
+            Resource.Drawable.placeholder_128x185
+        };
     }
 }
