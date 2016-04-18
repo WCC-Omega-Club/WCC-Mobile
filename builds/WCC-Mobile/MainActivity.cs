@@ -28,13 +28,46 @@ namespace WCCMobile
                 return singleton;
             }
         }
+
+        public readonly static Random LOKI = new Random();
         static bool ready = false;
         static public  bool isReady
         {
             get { return ready; }
             set { ready = value; }
         }
-        System.Collections.Generic.List<Bitmap> IMGSET = new System.Collections.Generic.List<Bitmap>();
+        static System.Collections.Generic.List<Bitmap> IMGSET = null;// = new System.Collections.Generic.List<Bitmap>();
+        public static System.Collections.Generic.List<Bitmap> IMGSRC
+        {
+            get
+            {
+                if (IMGSET == null)
+                {
+                    IMGSET = new System.Collections.Generic.List<Bitmap>();
+                    int bg = -1;
+                    int eg = -1;
+                    foreach (Match m in Regex.Matches(HTMLSRC(), "(http(s?):)|([/|.|w|s])*.(?:jpg)"))//|gif|png
+                    {
+                        if (m.Value.Contains("http") && eg < 0) bg = m.Index;
+                        else if (m.Value.Contains("jpg") && bg >= 0) eg = m.Index;
+                        else bg = eg = -1;
+                        if (bg >= 0 && eg >= 0)
+                        {
+                            string nextSrc = htmlCode.Substring(bg, ((eg + 5) - bg));
+                            while (!char.IsLetter(nextSrc[nextSrc.Length - 1])) nextSrc = nextSrc.Remove(nextSrc.Length - 1, 1);
+                            //Log.Debug("got ->", s);
+                            bg = eg = -1;
+                            Bitmap nextImage;
+                            if((nextImage = GetImageBitmapFromUrl(nextSrc)) != null)
+                                IMGSET.Add(nextImage);
+                                
+                        }
+                    }
+                }
+
+                return IMGSET;
+            }
+        }
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -44,29 +77,6 @@ namespace WCCMobile
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
-            // SubAppContainer // <- maybe .Foreground? 
-
-
-            // Log.Debug("WebCode", HTMLSRC().Contains("Pikachu").ToString());
-            // Log.Debug("WebCode", HTMLSRC().Contains("http://www.sunywcc.edu/cms/wp-content/uploads/2011/12/programs_engineering.jpg").ToString());
-
-            int bg = -1;
-            int eg = -1;
-            foreach (Match m in Regex.Matches(HTMLSRC(), "(http(s?):)|([/|.|w|s])*.(?:jpg)"))//|gif|png
-            {
-                if (m.Value.Contains("http") && eg < 0) bg = m.Index;
-                else if (m.Value.Contains("jpg") && bg >= 0) eg = m.Index;
-                else bg = eg = -1;
-                if (bg >= 0 && eg >= 0)
-                {
-                    string s;
-                    Log.Debug(bg.ToString(), eg.ToString());s = htmlCode.Substring(bg, ((eg + 5) - bg));
-                    while (!char.IsLetter(s[s.Length - 1])) s = s.Remove(s.Length - 1, 1);
-                    Log.Debug("got ->",s);
-                    
-                    bg = eg = -1;
-                }
-            }
         }
         /// <summary>
         /// Start an activity that matches the case where case = args.Position in the GridView
@@ -75,6 +85,7 @@ namespace WCCMobile
         /// <param name="args"></param>
         void StartSubApp (object sender, AdapterView.ItemClickEventArgs args)
         {
+            
             //Log.Debug("WebCode",getHTML());
             if (!isReady) return; // each app must be completed first
             isReady = false;
@@ -128,7 +139,8 @@ namespace WCCMobile
                     break;
                 default:
                     Log.Debug("position", args.Position.ToString());
-
+                    ImageView i = (ImageView)args.View;
+                    i.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
                     isReady = true;// undefined buttons will just reset isReady
                     break;
             }
@@ -234,7 +246,7 @@ namespace WCCMobile
             isReady = true;
             Log.Debug("Belief", isReady.ToString());
         }
-        private Bitmap GetImageBitmapFromUrl(string url)
+        private static Bitmap GetImageBitmapFromUrl(string url)
         {
             Bitmap imageBitmap = null;
             using (var webClient = new System.Net.WebClient())
@@ -247,8 +259,8 @@ namespace WCCMobile
             }
             return imageBitmap;
         }
-        string htmlCode = null;
-        string HTMLSRC(string urlAddress = "http://www.sunywcc.edu/")
+        static string htmlCode = null;
+        static string HTMLSRC(string urlAddress = "http://www.sunywcc.edu/")
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();

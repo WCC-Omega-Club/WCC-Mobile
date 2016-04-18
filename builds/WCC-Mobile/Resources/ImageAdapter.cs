@@ -46,13 +46,14 @@ namespace WCCMobile.Resources
                 //imageView.Touch += delegate { MainActivity.StartSubApp(position);};
                 imageView.LayoutParameters = new AbsListView.LayoutParams(85*235/100, 85*475/100);//(position*size * 3 / 4, position* size * 3 / 4);//85,85
                 imageView.SetScaleType(ImageView.ScaleType.CenterInside);
-                imageView.SetPadding(8, 8, 8, 8);
+                imageView.SetPadding(8, 8, 8, 8); 
             }
             else
             {
                 imageView = (ImageView)convertView; 
             }
             imageView.SetImageResource(thumbIds[position]);
+            //imageView.SetImageBitmap(MainActivity.IMGSRC[3]);
             return imageView;
         }
         static int currentLabel = 0;
