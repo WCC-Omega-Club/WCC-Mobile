@@ -13,6 +13,8 @@ using System.Net;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
+
 namespace WCCMobile
 {
     //[Activity(MainLauncher = true, ParentActivity = typeof(MainActivity))]
@@ -77,6 +79,7 @@ namespace WCCMobile
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
+            StartService(new Intent(this,typeof(IMGTimer)));
         }
         /// <summary>
         /// Start an activity that matches the case where case = args.Position in the GridView
@@ -308,7 +311,39 @@ namespace WCCMobile
             //return source
             return html;
         }
-    }
+        [Service]
+        public class IMGTimer : Service
+        {
+            public override void OnCreate()
+            {
+                base.OnCreate();
+                DoWork();
+            }
+            public override IBinder OnBind(Intent intent)
+            {
+                throw new NotImplementedException();
+                
+            }
+            public void DoWork()
+            {
 
+                var t = new Thread(() => {
+                    int i = 3;
+                    while (i > 0)
+                    {
+                        //We will add image swap in here!
+                        Log.Debug("DemoService", (i--).ToString());
+                        Thread.Sleep(1000);
+                        // set  animation after some time
+                        Log.Debug("DemoService", "Work complete");
+                    }
+                    StopSelf();
+                }
+                );
+                t.Start();
+            }
+        }
+    }
+    
 }
 
