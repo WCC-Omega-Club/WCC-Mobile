@@ -21,6 +21,7 @@ namespace WCCMobile
     [Activity( Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57")]
     public class MainActivity : Activity
     {
+        static Thread imgThread = null;
         static MainActivity singleton = null;
         public static ImageView ImageContainer;
         public GridView SubAppContainer;
@@ -90,11 +91,12 @@ namespace WCCMobile
         }
         public void DoWork()
         {
-
-            var t = new Thread(() => {
+            
+             Thread t = new Thread(() => {
+               // imgThread = t;
                 int die = LOKI.Next(0, IMGSRC.Count);
-                //int die2 = die;
-                while (MainActivity.singleR != null)
+                 MainActivity mine = MainActivity.singleR;
+                while (MainActivity.singleR == mine && MainActivity.singleR != null)
                 {
                     RunOnUiThread(() =>
                     {
@@ -106,6 +108,7 @@ namespace WCCMobile
                     });
                     Thread.Sleep(6000);
                 }
+                Log.Debug("Thread", "DONE!");
             }
             );
             t.Start();

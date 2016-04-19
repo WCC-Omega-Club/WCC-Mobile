@@ -106,5 +106,6 @@ E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_student_involvement.pn
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_transfer_services.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_transit.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_directory.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
