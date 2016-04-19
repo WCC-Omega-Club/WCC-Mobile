@@ -72,20 +72,11 @@ E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\phonebooklayout.xml
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\basicinfolayout.xml
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\main.xml
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\strings.xml
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\icon.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\calendar_143x155.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\dining_services_115x169.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\mail_133x169.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\map_108x183.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\placeholder_128x185.png
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\library_127x179.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\wccmainappicon_57x57.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\theme.xml
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
-E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_athletics.png
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_blackboard.png
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_calendar.png
@@ -102,3 +93,18 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\ob
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_athletics.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_blackboard.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_calendar.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_career_services.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_counseling.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_dining_services.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_library.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_mail.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_map.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_student_involvement.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_transfer_services.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_transit.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_directory.png
+E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
+E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb

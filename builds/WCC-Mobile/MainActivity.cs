@@ -71,24 +71,44 @@ namespace WCCMobile
                 return IMGSET;
             }
         }
-        protected override void OnCreate(Bundle bundle)
+        protected  override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
-
-            //IMGTimer i = new IMGTimer();
             ImageContainer = (ImageView)FindViewById(Resource.Id.ImageContainer);
             ImageContainer.SetAdjustViewBounds(true);
             ImageContainer.SetScaleType(ImageView.ScaleType.FitCenter);
             ImageContainer.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
-            //i.DoWork(ImageContainer);
-
             SubAppContainer = (GridView)FindViewById(Resource.Id.SubAppContainer);
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
             SubAppContainer.ItemClick += StartSubApp;
-            StartService(new Intent(this,typeof(IMGTimer)));
+            //StartService(new Intent(this,typeof(IMGTimer)));
+            
+            DoWork();
+        }
+        public void DoWork()
+        {
+
+            var t = new Thread(() => {
+                int die = LOKI.Next(0, IMGSRC.Count);
+                //int die2 = die;
+                while (MainActivity.singleR != null)
+                {
+                    RunOnUiThread(() =>
+                    {
+                        die = (++die == IMGSRC.Count ? 0 : die);
+                        {
+                            ImageContainer.SetImageBitmap(IMGSRC[die]);
+                            //Log.Debug("position", "workaa");
+                        }
+                    });
+                    Thread.Sleep(6000);
+                }
+            }
+            );
+            t.Start();
         }
         /// <summary>
         /// Start an activity that matches the case where case = args.Position in the GridView
@@ -341,54 +361,6 @@ namespace WCCMobile
 
             //return source
             return html;
-        }
-        [Service]
-        public class IMGTimer : Service
-        {
-            public static IMGTimer imgSingleton= null;
-            public override void OnCreate()
-            {
-                base.OnCreate();
-                if (imgSingleton == null)
-                {
-                    imgSingleton = this;
-                    DoWork();
-                }
-            }
-            public override IBinder OnBind(Intent intent)
-            {
-                throw new NotImplementedException();
-                
-            }
-            public void DoWork()
-            {
-
-                var t = new Thread(() => {
-                    int i = 3;
-
-                    while (MainActivity.singleR != null)
-                    {
-                        //We will add image swap in here!
-                    ImageView imV2 = MainActivity.ImageContainer;
-                    imV2.SetAdjustViewBounds(true);
-                    imV2.SetScaleType(ImageView.ScaleType.FitCenter);
-                        imV2.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
-                        Log.Debug("DemoService", (i--).ToString());
-                        Thread.Sleep(1000);
-                        // set  animation after some time
-                        Log.Debug("DemoService", "Work complete");
-                    }
-                    //imV = imV2;
-                    StopSelf();
-                }
-                );
-                t.Start();
-            }
-            public override void OnDestroy()
-            {
-                base.OnDestroy();
-                if (imgSingleton == this) imgSingleton = null;
-            }
         }
     }
     
