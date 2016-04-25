@@ -1,0 +1,904 @@
+﻿ACC::117::Introduction to Financial Calculations
+ACC::118::Fundamental Accounting Principles
+ACC::119::Financial Accounting
+ACC::120::Managerial Accounting
+ACC::121::Payroll Accounting
+ACC::125::Survey of Accounting
+ACC::130::Computerized Accounting 1
+ACC::131::Computerized Accounting 2
+ACC::132::Federal Income Tax
+ACC::133::Coop Ed in Accounting 1
+ACC::140::Bookkeeper Capstone
+ACC::200::Computer Accounting with QuickBooks
+ACC::203::Intermediate Accounting 1
+ACC::204::Intermediate Accounting 2
+ACC::225::Accounting Directed Study
+ANTHR::101::Cultural Anthropology
+ANTHR::102::Intro to Archaeology
+ANTHR::103::Physical Anthropology
+ANTHR::120::Native People of North America
+ANTHR::201::Introduction to Linguistics
+ANTHR::210::Religions of the World
+ANTHR::215H::Magic, Myth and Ritual - Honors
+ARABC::101::Elementary Arabic 1
+ARABC::102::Elementary Arabic 2
+ARABC::103::Arabic Conversation 1
+ARABC::104::Arabic Conversation 2
+ARABC::201::Intermediate Arabic 1
+ART::100::Visual Arts Freshman Seminar
+ART::101::Drawing 1
+ART::102::Drawing 2
+ART::103::Painting 1
+ART::104::Painting 2
+ART::105::Sculpture 1
+ART::106::Sculpture 2
+ART::107::Art as Visual Experience
+ART::108::Art History 1: Ancient to Medieval
+ART::109::Art History 2: Renaissance to Modern
+ART::109A::Art History Survey 3: Art Since 1945
+ART::110::Printmaking 1
+ART::112::2D Design
+ART::112A::Digital Design
+ART::125::Digital Imaging 1
+ART::126::Digital Fundamentals for Photographers
+ART::128::History of Photography
+ART::129::Digital Photography 1
+ART::130::Visual Arts Seminar for Majors
+ART::131::Cooperative Education in Visual Arts Design 1
+ART::132::Cooperative Education in Visual Arts Design 2
+ART::133::Photography 1
+ART::139::Digital Photography 2
+ART::140::Portrait Photography 1
+ART::143::Art Therapy 1
+ART::145::Digital Illustration 1
+ART::147::Digital Animation 1
+ART::149::Intro to 3D Animation
+ART::152::Motion Graphics
+ART::153::Computer Photo Imaging
+ART::156::Publication Design 1: InDesign (MAC)
+ART::164::Lighting For Photography 1
+ART::169::Web Design 1
+ART::170::Mentored Final Portfolio
+ART::185::Documentary Photography 1
+ART::188::Photographic Projects
+ART::200::Digital Arts Projects
+ART::201::Drawing 3
+ART::212::3D Design
+ART::265::Graphic Design 1
+ART::270::Graphics Design 2
+ARTWS::101::Contemporary Painting 1
+ARTWS::102::Contemporary Painting 2
+ARTWS::106::Painting Fundamentals 1
+ARTWS::109::Painting Fundamentals 2
+ARTWS::111::Portrait Painting 1
+ARTWS::115::Life Painting 1
+ARTWS::116::Life Painting 2
+ARTWS::121::Traditional Painting 1
+ARTWS::122::Traditional Painting 2
+ARTWS::135::Chinese Watercolor Painting 1
+ARTWS::141::Landscape Painting 1
+ARTWS::151::Watercolor 1
+ARTWS::152::Watercolor 2
+ARTWS::160::Advanced Painting Seminar
+ARTWS::161::Dynamics of Drawing 1
+ARTWS::165::Portfolio Preparation/Presentation
+ARTWS::171::Life Drawing 1
+ARTWS::172::Life Drawing 2
+ARTWS::181::Portrait Drawing 1
+ARTWS::188::Illustration 1
+ARTWS::195::Drawing Fundamentals
+ARTWS::199::Drawing (Intermediate to Advanced)
+ARTWS::201::Traditional Sculpture 1
+ARTWS::202::Traditional Sculpture 2
+ARTWS::205::Contemporary Sculpture 1
+ARTWS::211::Life Sculpture
+ARTWS::271::Jewelry 1
+ARTWS::272::Jewelry 2
+ARTWS::281::Jewelry and Enameling
+ARTWS::288::Handbuilding/Wheel 1
+ARTWS::289::Handbuilding/Wheel 2
+ARTWS::295::Wheel Throwing 1
+ARTWS::301::Lost Wax Casting 1
+ARTWS::302::Lost Wax Casting 2
+ARTWS::341::Printmaking 1
+BIOL::101::Principles of Biological Science (and Lab)
+BIOL::103::Human Biology (and Lab)
+BIOL::109::Basic Anatomy and Physiology Lecture and Lab
+BIOL::115::General Biology 1 (and Lab)
+BIOL::115H::General Biology 1 (and Lab)-Honors
+BIOL::117::General Biology 2 (and Lab)
+BIOL::117H::General Biology 2 (and Lab)-Honors
+BIOL::121::Anatomy and Physiology 1 (and Lab)
+BIOL::123::Anatomy and Physiology 2 (and Lab)
+BIOL::128::Basics of Biotechnology
+BIOL::129::Basics of Biotechnology Lab
+BIOL::143::Environmental Science
+BIOL::144::Environmental Science (Lab)
+BIOL::147H::Psychobiology - Honors
+BIOL::155::Environmental Studies
+BIOL::159::Problems in Pollution
+BIOL::161::Biology of Human Sexuality
+BIOL::201::Pharmacology (Respiratory Care)
+BIOL::202::Pharmacology (for Nurses)
+BIOL::203::Basic Microbiology (and Lab)
+BIOL::221::General Microbiology (and Lab)
+BIOL::229::Cardiopulmonary Pathology (Respiratory Care)
+BIOL::236::Human Genetics
+BIOL::237::Human Genetics Lab
+HSERV::180::Psychosocial Issues in Addiction
+HSERV::181::Ethics in Addiction Counseling
+HSERV::182::Alcoholism, Substance Abuse and the Family
+HSERV::183::Addiction Counseling Methods
+HSERV::184::Addiction Field Experience 1
+HSERV::280::Addiction Group Counseling
+HSERV::281::Addiction Field Experience 2
+HSERV::282::Addiction Counseling Models
+HSERV::283::Addiction Field Experience 3
+CHEM::107::Inorganic Chemistry 1 (and Lab)
+CHEM::111::Inorganic Chemistry 2 (and Lab)
+CHEM::113::Principles of Inorganic Chemistry (and Lab)
+CHEM::117::Principles of Organic Chemistry (and Lab)
+CHEM::127::Introduction to Forensic Science (and Lab)
+CHEM::131::Introduction to Forensic Science
+CHEM::145::Biochemistry of Addiction (and Lab)
+CHEM::201::Organic Chemistry 1 (and Lab)
+CHEM::205::Organic Chemistry 2 (and Lab)
+CHINS::101::Elementary Chinese (Mandarin) 1
+CHINS::102::Elementary Chinese 2
+CHINS::103::Chinese Conversation 1
+CHINS::201::Intermediate Chinese 1
+CIVIL::101A::Architectural Drawings
+CIVIL::103::Intro to Technology
+CIVIL::115::Construction Methods and Materials and Lab
+CIVIL::130::Co-op Education in Civil Technology 1
+CIVIL::131::Co-op Education in Civil Technology 2
+CIVIL::201::Elements of Strength of Materials
+CIVIL::207::Structures
+CIVIL::211::Material Testing Lab
+CIVIL::214::Surveying 1
+CIVIL::215::Surveying 2
+CIVIL::216::Highway Design
+CIVIL::221::Strength of Materials
+CIVIL::222::Construction Estimating
+CIVIL::229::Materials Properties
+CIVIL::230::Environmental Problems and Controls and Lab
+CIVIL::231::Construction Management and CPM
+CIVIL::233::Contracts and Specifications
+CIVIL::235::Architectural Design
+CIVIL::250::Special Project Independent Study - A
+CIVIL::251::Special Project Independent Study - B
+CIVIL::252::Special Project Independent Study - C
+COMM::101::Understanding Mass Media
+COMM::101H::Understanding Mass Media - Honors
+COMM::103::Journalism and Democracy
+COMM::104::News Reporting and Writing
+COMM::106::Multimedia Journalism 1
+COMM::109::Speech Communication
+COMM::109H::Speech Communication – Honors
+COMM::110::Speech Communication for Non-native Speakers
+COMM::111::Voice and Diction
+COMM::115::Group Discussion and Decision Making
+COMM::115::Group Discussion and Decision Making
+COMM::116::Radio Production
+COMM::117::Radio and Television Announcing
+COMM::118::Broadcast Journalism
+COMM::119::Television Production 1
+COMM::121::Television Production 2
+COMM::205::Communications and Media Arts Internship 1
+COMM::206::Communications and Media Arts Internship 2
+CIS::110::Computer Information Systems
+CIS::120::Object-Oriented Programming Logic
+CIS::125::Co-Op Education in CIS 1
+CIS::126::Co-Op Education in CIS 2
+CIS::130::Computer Hardware
+CIS::135::PC Operating Systems
+CIS::140::Networking for Business
+CIS::145::Special Topics in Cybersecurity
+CIS::150::Internet Technologies
+CIS::155::Principles of Information Security (CIS)
+CIS::215::Management Information Systems
+CIS::215H::Management Information Systems — Honors
+CIS::220::Visual Basic for Business
+CIS::225::Database Management Systems
+CIS::235::Server Administration
+CIS::240::Network Security (CIS)
+CIS::245::Computer Penetration Testing
+CIS::260::Systems Analysis and Design
+CIS::270::Computer Forensics
+COMSC::100::Introduction to Computing Concepts
+COMSC::101::Computer Programming 1
+COMSC::106::IT Essentials 1: PC Hardware and Software
+COMSC::110::Computer Programming 2
+COMSC::116::LINUX Operating System
+COMSC::118::Introduction to Networks (CCNA1)
+COMSC::120::Internship in Computer Science
+COMSC::121::IT Essentials 2: NOS
+COMSC::123::Home Technology Integration
+COMSC::124::Routing & Switching Essentials (CCNA 2)
+COMSC::128::Scaling Networks (CCNA3)
+COMSC::130::Voice Over IP
+COMSC::132::Connecting Networks (CCNA4)
+COMSC::134::Network Administration
+COMSC::136::Advanced Routing Configuration
+COMSC::138::Remote Access
+COMSC::142::Network Security (CS)
+COMSC::145::Intro to Computer Forensics
+COMSC::201::Data Structures
+COMSC::207::Java Programming
+COMSC::208A::GUI Development
+COMSC::214::Web Programming
+COMSC::217::Computer Architecture
+CJ::101::Intro to the Criminal Justice System in the U.S.
+CJ::102::Basic Laws and Principals
+CJ::103::Introduction to Security
+CJ::104::Emergency Medical Care
+CJ::106::Criminal Investigations
+CJ::108::Administration of Justice
+CJ::110::Police Arrest Techniques
+CJ::111::Introduction to Criminology
+CJ::112::Traffic Control Function
+CJ::120::Global Terrorism
+CJ::130::Comparative Criminal Justice
+CJ::202::Juvenile Delinquency - Treatment and Control
+CJ::206::Drugs and the Justice System
+CJ::221::Criminal Justice Seminar
+CJ::230::Criminal Justice Internship 1
+CJ::235::Criminal Justice Internship 2
+COR::103B::Introduction to Corrections
+COR::111::Institutional Treatment of the Criminal and Delinquent
+COR::121::Probation and Parole
+COR::125::Critical Issues in Corrections
+POL::111::Introduction to Substantive Criminal Law
+POL::120::Police Organization and Management
+POL::201::Police-Community Relations
+POL::203::Principles of Investigation
+POL::205::Survey of Organized Crime
+POL::210::Supervision and Management of Police
+POL::211::Basic Criminal Law and Procedure
+POL::212::Police Supervision
+POL::213::Police Instructor Development
+DANCE::101::Elementary Modern Dance 1
+DANCE::102::Elementary Modern Dance 2
+DANCE::105::Movement Improvisation
+DANCE::107::Elementary Ballet
+DANCE::112::Latin Dance 1
+DANCE::115::Hip Hop 1
+DANCE::120::Broadway Jazz
+DANCE::121::Contemporary Jazz
+DANCE::122::Latin Dance 2
+DANCE::131::Jazz Dance Workshop
+DANCE::205::Choreography and Dance Performance Combined
+DANCE::207::Independent Study in Dance Performance
+EMS::100::EMS First Responder
+EMS::101::Emergency Medical Services 1
+EMS::110::Disaster Preparedness
+EMS::121::Paramedic 1, Lab and Clinical Studies
+EMS::122::Paramedic 2, Lab and Clinical Studies
+EMS::130::Pre-Hospital Pharmacology
+EMS::135::Introduction to EMS Research
+EMS::210::Comparative EMS Systems
+EMS::215::EMS Administration and Leadership
+EMS::217::Legal Aspects of EMS
+EMS::221::Paramedic 3
+EMS::222::Paramedic 4
+EMS::231::Paramedic 5
+ECE::170::Early Childhood Development
+ECE::171::Foundations of Early Childhood
+ECE::270::Observation and Assessment
+ECE::271::Early Childhood Field 1
+ECE::272::Infant/Toddler Environments
+ECE::273::Early Childhood Field 2
+ECE::274::Early Childhood Curriculum
+ECE::275::Early Childhood Field 3
+ECE::280::The Exceptional Child
+ECON::101::Macroeconomics
+ECON::101H::Macroeconomics-Honors
+ECON::102::Microeconomics
+ECON::102H::Microeconomics-Honors
+ECON::215::International Economics
+SS::105::Personal Finance
+ELEC::104N::Electrical Circuits - Verizon
+ELEC::120V::Network Fundamentals
+ELEC::121V::Network Infrastructure
+ELEC::122N::Digital Systems 1 - Verizon
+ELEC::123N::Digital Systems for Telecom 2
+ELEC::123V::Advanced Networking
+ELEC::124V::Electronics for Telecommunications
+ELEC::125N::Electronic Systems 2
+ELEC::128::Electrical Circuits
+ELEC::129::Digital Logic
+ELEC::134::Power Circuit Analysis
+ELEC::135::Voice/Telephone Telecommunications
+ELEC::136::Data Telecommunications
+ELEC::137::Alternating Current and Non-Sine Waves
+ELEC::138::Intro Telecommunications
+ELEC::139::Solar and Geothermal Technologies
+ELEC::140::Voice/Data Cabling Basics
+ELEC::160::Electronics
+ELEC::204::Electrical Machinery
+ELEC::205::Power Generation Systems
+ELEC::206::Powerplant Operation and Maintenance
+ELEC::207::Instrumentation and Control Systems
+ELEC::208::Computer Systems
+ELEC::211::Photovoltaic System Design
+ELEC::218::Introduction to Microprocessors
+ELEC::221V::Broadband Services
+ELEC::222V::Telecommunications Seminar
+ELEC::223::Digital Logic and Switching Circuits
+ELEC::224::Network Telecommunications
+ELEC::227::Electrical System Analysis
+ELEC::228::Energy Conversion & Power
+ELEC::229::Distribution Systems Components
+ELEC::230::Transmission Line Theory and Practice
+ELEC::239::Analog Circuits
+ELEC::240::Advanced Electronics
+ELEC::244::Advanced Passive and Active Laboratories
+ELEC::245::Nuclear Fundamentals
+ELEC::246::Reactor Materials
+ELEC::247::Radiation Detection
+ELEC::248::Reactor Theory
+ELEC::255::Circuits for Engineers
+ELEC::258::Computer-Based Instrumentation
+ELEC::261::Computer Diagnostics
+ELEC::262::Telecommunications Lab
+ELEC::264::Emerging Technologies
+ELEC::265::Network Transformation Analysis
+ELEC::266::Computer Applications for Electronics
+ELEC::267::Advanced Circuits for Engineers
+ELEC::271::Special Project/Independent Study - A
+ELEC::272::Special Project/Independent Study - B
+ELEC::273::Special Project/Independent Study - C
+ELEC::282::Electronic Communication
+ELEC::285::Emerging Digital Technology
+ENG::91::Writing for College 1
+ENG::92::Writing for College 2
+ENG::101::Writing and Research
+ENG::101H::Writing and Research - Honors
+ENG::102::Writing and Literature
+ENG::102H::Writing and Literature - Honors
+ENG::113::Reading and Writing Poetry
+ENG::115::Creative Writing
+ENG::116::Life Writing
+ENG::200::American Literature Through the 19th Century
+ENG::201::Modern American Authors
+ENG::202::Children's Literature
+ENG::203::African American Literature
+ENG::204::Literature of New York
+ENG::206H::Cambridge Literature Studies - Honors
+ENG::208::Literature of the Americas
+ENG::209::Short Story
+ENG::210H::The American Dream - Honors
+ENG::211::Modern Drama
+ENG::215::Introduction to Shakespeare
+ENG::217H::Holocaust Studies - Honors
+ENG::218::Literature and the Environment
+ENG::224H::Great Books - Honors
+ENG::226::Leadership and the Humanities
+ENG::227::Contemporary Global Literature
+ENG::240::Modern American Poetry
+ENG::241::Latin-American Short Stories
+ENG::242::Caribbean Literature
+ENG::243::Coming to America - Immigrant Lit
+ESL::94::Introduction to Academic Writing 1
+ESL::122::Introduction to Academic Writing 2
+FASH::105::Introduction to the Fashion Industry
+FASH::108::History of 20th Century Fashion
+FASH::115::Fashion Design Technology
+FASH::120::Garment Construction
+FASH::150::Flat Pattern Making and Design
+FASH::205::Textiles in the Global Marketplace
+FASH::206::Visual Merchandising and Display
+FASH::207::Retail and Fashion Internship
+FASH::215::International Fashion Buying
+FASH::220::Apparel and Design 1
+FASH::221::Apparel and Design 2
+FASH::230::Fashion Illustration Techniques
+FASH::231::Fashion Product Development
+FILM::100::Introduction to Film
+FILM::101::Film 1895 to 1945
+FILM::102::Film 1945 to Present
+FILM::103::The Great Directors
+FILM::109::Film — American Cinema
+FILM::113::Film Study — World Cinema
+FILM::114H::World Cinema — Honors
+FILM::115H::American Cinema —Honors
+FILM::120::Filmmaker's Workshop 1
+FILM::125::Writing for Film
+FILM::125H::Writing for Film - Honors
+FILM::130::Digital Storytelling
+FILM::140::Video Production
+FILM::142::Video Editing
+FILM::143::Advanced Video Editing
+FILM::145::Documentary Video
+FILM::150::Film Internship
+FILM::220::Fiction Into Film
+FILM::220H::Literature Into Film
+FIN::203::Managerial Finance
+FOODS::101::Exploring Culinary Arts
+FOODS::108::Food Service Operations Management
+FOODS::110::Practicum: Kitchen & Dining Room
+FOODS::111::Principles of Food Preparation
+FOODS::112::Principles of Food Preparation Lab
+FOODS::113::Quantity Food Production
+FOODS::114::Quantity Food Production Lab
+FOODS::115::Introduction to the Hospitality Industry
+FOODS::116::Menu Planning
+FOODS::215::Advanced Foods - Garde Manger
+FOODS::216::Advanced Foods - Garde Manger Lab
+FOODS::220::Advanced Foods - Multicultural Foods
+FOODS::221::Advanced Foods - Multicultural Foods Lab
+FOODS::230::Food & Beverage Purchasing and Cost Control
+FOODS::231::Practicum Buffet Catering
+FOODS::232::Advanced Foods - Advanced Baking
+FOODS::233::Advanced Foods - Advanced Baking Lab
+FOODS::234::Hospitality Seminar
+FOODS::250::Advanced Foods - Beverage Management and Services (and Lab)
+NUTR::101::Nutrition
+NUTR::105::Nutrition Care 1
+NUTR::107::Dietetic Seminar
+NUTR::109::Nutrition (Nursing)
+NUTR::115::Nutrition Care 2
+NUTR::118::Principles of Teaching Health Care
+NUTR::120::Foods (and Lab)
+NUTR::123::Food Service Systems Management
+NUTR::145::Clinical Practicum 1
+NUTR::205::Clinical Nutrition
+NUTR::211::Introduction to Nutrition Care
+NUTR::245::Clinical Practicum 2
+NUTR::247::Clinical Practicum 3
+FREN::101::Elementary French 1
+FREN::102::Elementary French 2
+FREN::103::Beginning French Conversation 1
+FREN::201::Intermediate French 1
+FREN::203::Intermediate French Conversation 1
+GEOG::101::World Geography
+GER::101::Elementary German 1
+GER::102::Elementary German 2
+GLBUS::201::Global Business
+GLBUS::203::Global Marketing
+HHP::101::Personal Training
+HHP::102::Personal Training Internship
+HHP::120::Trends in Fitness & Human Performance
+HHP::200::Exercise Physiology & Lab
+HIS::101::Western Civilization to 1648
+HIS::102::Western Civilization 2 1648-1914
+HIS::104::Global History to 1648
+HIS::106::Global History from 1648
+HIS::107H::Topics Global History-Honors
+HIS::110::U.S. History Colonial-1800
+HIS::111::19th Century U.S. History
+HIS::112::20th Century United States History
+HIS::112H::20th Century United States History-Honors
+HIS::114::US Constitutional History
+HIS::115::Modern Europe
+HIS::119::Modern Latin America
+HIS::121::African-American History
+HIS::128::African History to 1600
+HIS::129::Caribbean History
+HIS::131::Modern Africa
+HIS::133::African American History to 1865
+HIS::134::African American History from 1865 to Present
+HIS::218H::Cambridge History-Honors
+HIS::220::Great Trials in History
+HSERV::101::Introduction to Human Services
+HSERV::102::Human Behavior and Social Development/Lifespan
+HSERV::200::Ethnic and Cultural Diversity
+HSERV::224::Introduction to Research and Statistical Methods
+HSERV::260::Group Dynamics and Leadership
+HSERV::261::Human Services Field Experience 1
+HSERV::262::Methods in the Helping Process
+HSERV::263::Human Services Field Experience 2
+HSERV::264::Case Management
+HSERV::265::Human Services Field Experience 3
+HSERV::310::Group Dynamics - Teachers Center
+HSERV::311::Human Services 1 Field Experience - Teacher's Center
+HSERV::312::Methods in the Helping Process - Teacher's Center
+HSERV::313::Human Services 2 Field Experience - Teacher's Center
+HSERV::314::Ethnic and Cultural Diversity - Teacher's Center
+HSERV::315::Human Services 3 Field Experience - Teacher's Center
+INTER::101::Introduction To Schools and Teaching
+INTER::106H::Topics in History of Ideas-Honors
+INTER::108::Literature & Psychology
+INTER::115::Introduction to Standards
+INTER::129::Science Workshop
+INTER::200A::Initial Teaching Experience Program (ENG)
+INTER::200B::Initial Teaching Experience Program (SPA)
+INTER::200C::Initial Teaching Experience Program (MUS)
+INTER::200D::Initial Teaching Experience Program (ART)
+INTER::200E::Initial Teaching Experience Program (FILM)
+INTER::200F::Initial Teaching Experience Program (OFTEC)
+INTER::200G::Initial Teaching Experience Program (ART HIST)
+INTER::200J::Initial Teaching Experience Program (ART/DRAWING)
+INT::140E::Aspects of Renaissance Art: Art of the Italian Renaissance
+ITAL::101::Elementary Italian 1
+ITAL::102::Elementary Italian 2
+ITAL::103::Italian Conversation 1
+ITAL::104::Italy: Its Culture and Its People (in English)
+ITAL::105::Italian American Culture (in English)
+ITAL::106::Italian Conversation 2
+ITAL::110::Italian Conversation 2 - Independent Study
+ITAL::201::Intermediate Italian 1
+ITAL::201H::Intermediate Italian 1 - Honors
+ITAL::202::Intermediate Italian 2
+ITAL::202H::Intermediate Italian 2 - Honors
+ITAL::205::Intermediate Italian Conversation 1
+ITAL::206::Intermediate Italian Conversation 2
+ITAL::207::Learning Italian Through Cinema
+ITAL::250::Advanced Italian 1
+ITAL::251::Advanced Italian 2
+ITAL::251S::Advanced Italian - Honors
+JAPNS::101::Elementary Japanese 1
+JAPNS::102::Elementary Japanese 2
+LAW::101::Business Law 1
+LAW::102::Business Law 2
+LIN::201::Introduction to Linguistics
+MGT::101::Business Organization and Management
+MGT::103::Entrepreneurship
+MGT::130::Co-op Education in Business Administration 1
+MGT::131::Co-op Education in Business Administration 2
+MGT::201::Principles of Management
+MGT::205::Human Resource Management
+MKT::101::Marketing
+MKT::103::Professional Selling
+MKT::130::Co-op Education in Marketing 1
+MKT::131::Co-op Education in Marketing 2
+MKT::202::Internet Marketing
+MKT::203::Advertising
+MKT::203H::Advertising - Honors
+MKT::205::Market Research
+MKT::207::Consumer Behavior
+MKT::216::Marketing Management
+MKT::239::Market Internship
+MATH::92::Prealgebra
+MATH::93::Beginning Algebra
+MATH::94::Foundations of Mathematical Reasoning
+MATH::116::The Development of Mathematical Thought
+MATH::117::College Quantitative Reasoning
+MATH::118::Analytic Trigonometry with Applications
+MATH::120::The Nature of Mathematics
+MATH::120H::The Nature of Mathematics - Honors
+MATH::123::Math for Elementary School Teachers
+MATH::130::College Algebra: Functions & Models
+MATH::135::College Algebra with Trigonometry
+MATH::138::Elements of Geometry
+MATH::140::Statistics
+MATH::141::Business Statistics
+MATH::142::Statistics 2
+MATH::160::Precalculus for Business
+MATH::161::Precalculus (Functions & Coordinate Geometry)
+MATH::170H::History of Math - Honors
+MATH::178::Discrete Mathematics
+MATH::180::Calculus for Business
+MATH::181::Calculus 1
+MATH::191::Calculus 2
+MATH::204H::Mathematical Modeling-Honors
+MATH::207::Introduction to Numerical Analysis
+MATH::210::Mathematical Modeling
+MATH::215::Linear Algebra
+MATH::220::Introduction to Probability Theory
+MATH::230::Calculus 3
+MATH::240::Differential Equations
+MATH::250::Introduction to Mathematical Proof
+MATH::292::Mathematical Excursions
+MECH::103::Basic Drafting
+MECH::109::Intro to Engineering
+MECH::115::Intro to Nanotechnology
+MECH::119::Manufacturing Processes
+MECH::120::Mechanisms
+MECH::126::Statics
+MECH::127::Introduction to Thermodynamics
+MECH::130::Co-op Education in Mechanical Technology 1
+MECH::133::Co-op Education in Mechanical Technology 2
+MECH::134::Product Development
+MECH::144::Manufacturing 1
+MECH::145::Manufacturing 2
+MECH::156::Fluids
+MECH::162::CAD 1
+MECH::163::CAD 2
+MECH::164::CAD Revit 1
+MECH::204::Thermodynamics for Engineers
+MECH::205::Mechanics 2
+MECH::222::Computer/NC Programming
+MECH::224::CNC Programming
+MECH::227::Dynamics
+MECH::255::Solidworks
+MECH::265::CAD 3 3D Modeling
+MECH::267::CAD 4 Auto Architect
+MECH::268::Auto Desk Inventor
+MECH::270::CAD/CAM
+MECH::272::CAD 5 Advanced Auto Architect
+MECH::273::CAD 6 3D Studio Max
+MECH::277::CAD Civil 3D
+MECH::289::Manufacturing Process
+MUSIC::100::History of Western Music: Up to 1800
+MUSIC::101::History of Western Music: 1800 to Present
+MUSIC::102::History of Electronic Music
+MUSIC::103::History of Jazz
+MUSIC::110::Basic Musicianship
+MUSIC::110H::Basic Musicianship - Honors
+MUSIC::111::Music Theory 1
+MUSIC::112::Ear Training 1
+MUSIC::113::Ear Training 2
+MUSIC::120::Piano Class 1
+MUSIC::121::Piano Class 2
+MUSIC::122::Guitar Class 1
+MUSIC::123::Guitar Class 2
+MUSIC::130::Chorus 1
+MUSIC::131::Chorus 2
+MUSIC::132::Instrumental and Vocal Ensemble 1
+MUSIC::133::Instrumental and Vocal Ensemble 2
+MUSIC::133D::Independent Music Study
+MUSIC::141A::Applied Music — Strings 1
+MUSIC::141B::Applied Music — Strings 2
+MUSIC::141C::Applied Music — Strings 3
+MUSIC::141D::Applied Music — Strings 4
+MUSIC::142A::Applied Music — Voice 1
+MUSIC::142B::Applied Music — Voice 2
+MUSIC::142C::Applied Music — Voice 3
+MUSIC::142D::Applied Music — Voice 4
+MUSIC::143A::Applied Music — Winds 1
+MUSIC::143B::Applied Music — Winds 2
+MUSIC::143C::Applied Music — Winds 3
+MUSIC::143D::Applied Music — Winds 4
+MUSIC::144A::Applied Music — Piano 1
+MUSIC::144B::Applied Music — Piano 2
+MUSIC::144C::Applied Music — Piano 3
+MUSIC::144D::Applied Music — Piano 4
+MUSIC::145A::Applied Music — Percussion 1
+MUSIC::145B::Applied Music — Percussion 2
+MUSIC::145C::Applied Music — Percussion 3
+MUSIC::145D::Applied Music — Percussion 4
+MUSIC::146A::Applied Music — Guitar 1
+MUSIC::146B::Applied Music — Guitar 2
+MUSIC::146C::Applied Music — Guitar 3
+MUSIC::146D::Applied Music — Guitar 4
+MUSIC::147A::Applied Music — Brass 1
+MUSIC::147B::Applied Music — Brass 2
+MUSIC::147C::Applied Music — Brass 3
+MUSIC::147D::Applied Music — Brass 4
+MUSIC::148A::Applied Music — Composition 1
+MUSIC::148B::Applied Music — Composition 2
+MUSIC::148C::Applied Music — Composition 3
+MUSIC::148D::Applied Music — Composition 4
+MUSIC::150::Music Appreciation 1
+MUSIC::160::Introduction to Audio 1
+MUSIC::161::Introduction to MIDI Technology 1
+MUSIC::162::Introduction to MIDI Technology 2
+MUSIC::163::Electronic Music Composition
+MUSIC::164::Songwriting on the Computer
+MUSIC::165::Recording Engineering 1
+MUSIC::220::Piano Class 3
+MUSIC::221::Piano Class 4
+MUSIC::222::Guitar Class 3
+MUSIC::223::Guitar Class 4
+MUSIC::230::Chorus 3
+MUSIC::231::Chorus 4
+MUSIC::232::Instrumental and Vocal Ensemble 3
+MUSIC::233::Instrumental and Vocal Ensemble 4
+MUSIC::265::Recording Engineering 2
+ADN::120::ADN-Nursing 1, Fundamentals of Nursing (and Lab, and Clinical Study)
+ADN::131::ADN-Nursing 2, Mental Health Nursing/Maternity Nursing (and Lab, and Clinical Study)
+ADN::221::ADN-Nursing 3 (and Lab, and Clinical Study)
+ADN::231::ADN-Nursing 4 (and Clinical Study)
+NHSCI::101::Medical Terminology
+NURSE::102::Dosage Calculations
+MBC::120::Medical Office Administration
+MBC::160::Medical Billing and Information Management
+MBC::205::Medical Coding/ICD9
+MBC::210::Medical Coding/ICD 10
+MBC::220::Medical Coding/CPT4
+MBC::225::Medical Coding and Billing Internship
+OFTEC::110::Information Processing with Keyboarding
+OFTEC::112::Keyboard Speed Building
+OFTEC::120::Document Processing: Editing and Formatting
+OFTEC::125A::Keyboarding Essentials
+OFTEC::130::Co-op Education in Office Technologies 1
+OFTEC::131::Co-op Education in Office Technologies 2
+OFTEC::150::Office Administration
+OFTEC::155::Special Topics in Office Technologies
+OFTEC::210::Spreadsheet and Database Applications
+OFTEC::220::Document Design and Desktop Publishing
+OFTEC::230::Integrated Office Applications
+OFTEC::240::Business Communications
+PRLGL::101::Introduction to Paralegal Studies
+PRLGL::102::Legal Research & Writing
+PRLGL::104::Family Law
+PRLGL::105::Administrative Law
+PRLGL::106::Litigation
+PRLGL::108::Partnership and Corporation
+PRLGL::110::Estates, Wills, Trusts
+PRLGL::112::Torts & Investigation
+PRLGL::114::Real Property Law
+PRLGL::115::Criminal Law for Paralegals
+PRLGL::116::Computer Applications for the Law Office
+PRLGL::117::Immigration Law
+PRLGL::118::Paralegal Internship
+PRLGL::119::Medical Malpractice for Paralegals
+PRLGL::120::Health Care Law
+PRLGL::121::Elder Law
+PRLGL::122::Intellectual Property
+PRLGL::124::Contracts & Contract Administration
+PRLGL::125::Evidence Law for Paralegals
+PRLGL::126::Bankruptcy for Paralegals
+PRLGL::127::E-Discovery for Paralegals
+PHIL::101::Philosophy Ancient/Medieval
+PHIL::102::Philosophy/Modern
+PHIL::111::Philosophy of Love
+PHIL::150::Applied Logic
+PHIL::160::Ethics
+PHIL::161H::Seminar in Ethics-Honors
+PHIL::201H::Philosophy of Art-Honors
+PEC::110::Health and Fitness for Life
+PEC::136::Fitness - Soccer
+PEC::137::Fitness-Softball
+PEC::138::Fitness-Tennis
+PEC::139::Fitness - Volleyball
+PEC::140::Fitness - Golf
+PEC::142::Fitness-Badminton
+PEC::143::Fitness-Basketball
+PEC::158::Introduction to PE Activities
+PEC::111::Independent Study - Health & Sports for Life
+PEH::109::Lifeguarding/First Aid/CPR/AED
+PEH::110::Swimming for Fitness
+PEH::111::Learn to Swim
+PEH::116::First Aid/CPR/AED
+PEH::121::Beginning Judo
+PEH::122::Elementary Modern Dance 1
+PEH::123::Latin Dance 1
+PEH::124::Elementary Modern Dance 2
+PEH::125::Broadway Jazz
+PEH::126::Hip Hop 1
+PEH::128::Elementary Ballet
+PEH::130::Health Essentials
+PEH::132::Contemporary Jazz
+PEH::133::Latin Dance 2
+PEH::134::Choreography & Dance Performance Combined
+PEH::135::Jazz Dance Workshop
+PEH::146::Jazz Aerobics
+PEH::150::Independent Study in Dance Performance
+PEH::176::Movement Improvisation
+PEH::216::Aerobic Exercise
+PEH::218::Exercise and Conditioning
+PES::101::Intro to Bowling-League Play
+PES::104::Badminton-Tennis
+PES::169::Volleyball-Tennis
+PHYSC::101::Technical Physics 1 - Mechanics (and Lab)
+PHYSC::102::Technical Physics 2 - Heat, Light, Sound (and Lab)
+PHYSC::111::College Physics 1 (and Lab)
+PHYSC::112::College Physics 2 (and Lab)
+PHYSC::120::Physical Science Explorations
+PHYSC::121::Engineering Physics 1 (and Lab)
+PHYSC::122::Engineering Physics 2 (and Lab)
+PHYSC::129::Introduction to Oceanography (and Lab)
+PHYSC::131::Physics for Telecommunications/Verizon
+PHYSC::134H::Science, Pseudoscience and Critical Thinking - Honors
+PHYSC::143::Earth Science (and Lab)
+PHYSC::143H::Earth Science (and Lab) - Honors
+PHYSC::145::Weather and Forecasting (and Lab)
+PHYSC::151::Astronomy (and Lab)
+PHYSC::154H::Life in the Universe - Honors
+PHYSC::159::The Solar System
+PHYSC::162::Climate Change and Our Future
+PHYSC::165::Principles of Energy
+PHYSC::205H::Cambridge Science - Honors
+PHYSC::271::Special Project/Independent Study - A
+PHYSC::272::Special Project/Independent Study - B
+PHYSC::273::Special Project/Independent Study - C
+PHYSC::292::Physical Geography (and Lab)
+POLSC::102::American Government and Issues
+POLSC::102H::American Government and Issues-Honors
+POLSC::104::American Politics and Policies - New Online Course Available
+POLSC::107::State and Local Government
+POLSC::111::Introduction to World Politics
+POLSC::111H::Introduction to World Politics - Honors
+POLSC::112H::International Law and Organizations-Honors
+POLSC::113::Middle Eastern Politics
+POLSC::115::Comparative Politics
+PSYCH::101::General Psychology
+PSYCH::101H::General Psychology - Honors
+PSYCH::103::Abnormal Psychology
+PSYCH::103H::Abnormal Psychology - Honors
+PSYCH::107::Social Psychology
+PSYCH::109::Developmental Psychology: Childhood
+PSYCH::110::Developmental Psychology: Adolescence
+PSYCH::111::Human Sexuality
+PSYCH::112H::Theories of Personality - Honors
+PSYCH::113::Stress & Self-Management
+PSYCH::114::Developmental Psychology: Adult & Aging
+PSYCH::116::Developmental Psychology: Lifespan
+PSYCH::201::Behavioral Statistics
+PSYCH::204::Abnormal Psychology: Childhood and Adolescence
+PSYCH::204H::Abnormal Psychology: Childhood and Adolescence
+SS::103::Applying Psychology
+RAD::101::Radiographic Technique 1 (and Lab)
+RAD::103::Radiographic Positioning 1 (and Lab)
+RAD::105::Radiographic Technique 2 (and Lab)
+RAD::107::Radiographic Positioning 2 (and Lab)
+RAD::112::Radiologic Terms, Ethics & Law
+RAD::114::Radiologic Science Patient Care
+RAD::116::Intro to Radiation Protection
+RAD::141::Clinical Education 1
+RAD::142::Clinical Education 2
+RAD::143::Clinical Education 3
+RAD::200::Radiographic Technique 3
+RAD::202::Advanced Imaging
+RAD::203::Radiographic Positioning 3
+RAD::207::Special Radiographic Imaging
+RAD::221::Radiographic Pathology
+RAD::223::Sectional Anatomy
+RAD::224::Radiation Protection and Biology
+RAD::241::Clinical Education 4
+RAD::242::Clinical Education 5
+RAD::243::Clinical Education 6
+COLSC::101::College Success
+READ::93::Foundations of College Reading
+READ::105::Analytical Reading
+RESP::101A::Respiratory Care 1
+RESP::102::Respiratory Care 1 Lab
+RESP::103A::Respiratory Care 2
+RESP::104::Respiratory Care 2 Lab
+RESP::141::Clinical Experience 1
+RESP::143::Clinical Experience 2
+RESP::145::Summer Clinical Experience 1
+RESP::201A::Respiratory Care 3
+RESP::202A::Respiratory Care 3 Lab
+RESP::203A::Respiratory Care 4
+RESP::204A::Respiratory Care 4 Lab
+RESP::206::Case Presentations
+RESP::241::Clinical Experience 3
+RESP::243::Clinical Experience 4
+RESP::245::Summer Clinical Experience 2
+RUSSN::101::Elementary Russian 1
+ASL::101::American Sign Language 1
+ASL::102::American Sign Language 2
+SS::101::Introduction to Behavioral Science
+SS::102::Introduction to Social Science
+SS::110::Liberal Arts/Social Science Internship - A
+SS::112::Liberal Arts/Social Science Internship - B
+SS::114::Liberal Arts/Social Science Internship - C
+SOC::101::Introduction to Sociology
+SOC::101H::Introduction to Sociology - Honors
+SOC::102::Marriage and the Family
+SOC::103::Social Problems
+SOC::104::Urban Sociology
+SOC::106::Pluralism in America
+SPAN::101::Elementary Spanish 1
+SPAN::102::Elementary Spanish 2
+SPAN::103::Spanish Conversation 1
+SPAN::104::Spanish Conversation 2
+SPAN::106::Spanish Grammar and Composition 1 (For native Spanish speakers)
+SPAN::107::Spanish Grammar and Composition 2 (For native Spanish speakers)
+SPAN::201::Intermediate Spanish 1
+SPAN::201H::Intermediate Spanish 1 - Honors
+SPAN::202::Intermediate Spanish 2
+SPAN::202H::Intermediate Spanish 2 - Honors
+SPAN::203::Advanced Spanish 1
+SPAN::204::Advanced Spanish 2
+SPS::105::Career Development
+THEAT::101::Introduction to the Theatre
+THEAT::103::Western Drama
+THEAT::105::Technical Theatre Fundamentals
+THEAT::108::Stagecraft Workshop 1
+THEAT::110::Stagecraft Workshop 2
+THEAT::111::Acting 1
+THEAT::113::Acting 2
+THEAT::117A::Drama Improvisation
+THEAT::121::Theatre Practicum 1
+THEAT::122::Theatre Practicum 2
+THEAT::201::Acting 3
+THEAT::202::Theatre Practicum 3
+VET::101::Introduction to Veterinary Technology
+VET::102::Animal Biology
+VET::103::Microbiology for Veterinary Technologists
+VET::104::Veterinary Disease and Pathology
+VET::105::Veterinary Pharmacology
+VET::110::Small Animal Nursing
+VET::200::Veterinary Office Practice
+VET::201::Anesthesia and Surgical Procedures for Veterinary Technologists
+VET::202::Clinical Lab Techniques for Veterinary Technologists
+VET::203::Farm Animal Nursing
+VET::204::Dental Techniques for Veterinary Technologists
+VET::205::Veterinary Radiography
+VET::206::Veterinary Technology Externship 1
+VET::207::Veterinary Technology Externship 2
+VET::208::Veterinary Technology Externship 3

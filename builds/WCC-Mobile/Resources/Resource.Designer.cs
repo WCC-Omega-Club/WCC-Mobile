@@ -28,6 +28,28 @@ namespace WCCMobile
 		{
 		}
 		
+		public partial class Array
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int days_array = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int locations_array = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int meridian_array = 2131034114;
+			
+			static Array()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Array()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -44,8 +66,8 @@ namespace WCCMobile
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int theme_holo_light_background = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int theme_holo_light_background = 2131099648;
 			
 			static Color()
 			{
@@ -118,20 +140,98 @@ namespace WCCMobile
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int BasicInfoList = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int BasicInfoList = 2131230720;
 			
-			// aapt resource value: 0x7f070002
-			public const int ImageContainer = 2131165186;
+			// aapt resource value: 0x7f08001c
+			public const int ImageContainer = 2131230748;
 			
-			// aapt resource value: 0x7f070004
-			public const int PhoneBookList = 2131165188;
+			// aapt resource value: 0x7f08001e
+			public const int PhoneBookList = 2131230750;
 			
-			// aapt resource value: 0x7f070003
-			public const int SubAppContainer = 2131165187;
+			// aapt resource value: 0x7f08001d
+			public const int SubAppContainer = 2131230749;
 			
-			// aapt resource value: 0x7f070001
-			public const int linearLayout1 = 2131165185;
+			// aapt resource value: 0x7f08000a
+			public const int bldgLabel = 2131230730;
+			
+			// aapt resource value: 0x7f08000b
+			public const int bldgSpinner = 2131230731;
+			
+			// aapt resource value: 0x7f080006
+			public const int courseLabel = 2131230726;
+			
+			// aapt resource value: 0x7f080005
+			public const int courseName = 2131230725;
+			
+			// aapt resource value: 0x7f080007
+			public const int courseSpinner = 2131230727;
+			
+			// aapt resource value: 0x7f080011
+			public const int dayLabel = 2131230737;
+			
+			// aapt resource value: 0x7f080012
+			public const int daySpinner = 2131230738;
+			
+			// aapt resource value: 0x7f08001b
+			public const int delCourse = 2131230747;
+			
+			// aapt resource value: 0x7f080010
+			public const int delDay = 2131230736;
+			
+			// aapt resource value: 0x7f080017
+			public const int endTime = 2131230743;
+			
+			// aapt resource value: 0x7f080016
+			public const int endTimeLabel = 2131230742;
+			
+			// aapt resource value: 0x7f080008
+			public const int idLabel = 2131230728;
+			
+			// aapt resource value: 0x7f080009
+			public const int idSpinner = 2131230729;
+			
+			// aapt resource value: 0x7f080001
+			public const int linearLayout1 = 2131230721;
+			
+			// aapt resource value: 0x7f080003
+			public const int linearLayout2 = 2131230723;
+			
+			// aapt resource value: 0x7f080004
+			public const int linearLayout3 = 2131230724;
+			
+			// aapt resource value: 0x7f080015
+			public const int merSpinner1 = 2131230741;
+			
+			// aapt resource value: 0x7f080018
+			public const int merSpinner2 = 2131230744;
+			
+			// aapt resource value: 0x7f08001a
+			public const int openCourse = 2131230746;
+			
+			// aapt resource value: 0x7f08000f
+			public const int openDay = 2131230735;
+			
+			// aapt resource value: 0x7f08000c
+			public const int roomLabel = 2131230732;
+			
+			// aapt resource value: 0x7f08000d
+			public const int roomText = 2131230733;
+			
+			// aapt resource value: 0x7f080019
+			public const int saveCourse = 2131230745;
+			
+			// aapt resource value: 0x7f08000e
+			public const int saveDay = 2131230734;
+			
+			// aapt resource value: 0x7f080002
+			public const int scrollView1 = 2131230722;
+			
+			// aapt resource value: 0x7f080014
+			public const int startTime = 2131230740;
+			
+			// aapt resource value: 0x7f080013
+			public const int startTimeLabel = 2131230739;
 			
 			static Id()
 			{
@@ -150,10 +250,13 @@ namespace WCCMobile
 			public const int BasicInfoLayout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int CourseLayout = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int PhoneBookLayout = 2130903042;
+			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int PhoneBookLayout = 2130903043;
 			
 			static Layout()
 			{
@@ -168,14 +271,17 @@ namespace WCCMobile
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
-			
 			// aapt resource value: 0x7f040002
-			public const int DiningServices = 2130968578;
+			public const int ApplicationName = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int DiningServices = 2130968579;
+			
+			// aapt resource value: 0x7f040001
+			public const int Hello = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int days_prompt = 2130968576;
 			
 			static String()
 			{
@@ -190,8 +296,8 @@ namespace WCCMobile
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Theme_Custom = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int Theme_Custom = 2131165184;
 			
 			static Style()
 			{
