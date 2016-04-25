@@ -79,8 +79,12 @@ namespace WCCMobile
             SetContentView(Resource.Layout.Main);
             ImageContainer = (ImageView)FindViewById(Resource.Id.ImageContainer);
             ImageContainer.SetAdjustViewBounds(true);
-            ImageContainer.SetScaleType(ImageView.ScaleType.FitCenter);
+            ImageContainer.SetScaleType(ImageView.ScaleType.FitXy);
             ImageContainer.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+
+            LinearLayout l = (LinearLayout)FindViewById(Resource.Id.linearLayout1);
+            ImageContainer.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, 400);
+
             SubAppContainer = (GridView)FindViewById(Resource.Id.SubAppContainer);
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);

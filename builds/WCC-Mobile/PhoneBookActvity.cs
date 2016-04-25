@@ -13,7 +13,7 @@ using Android.Util;
 using WCCMobile.Resources;
 namespace WCCMobile
 {
-    [Activity(Label = "PhoneBook", ParentActivity = typeof(WCCMobile.MainActivity))]
+    [Activity(Label = "Directory", ParentActivity = typeof(WCCMobile.MainActivity))]
     public class PhoneBookActvity : Activity
     {
         static ActivityAttribute attr = null;

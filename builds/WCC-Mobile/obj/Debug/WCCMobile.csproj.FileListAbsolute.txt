@@ -91,8 +91,6 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\ob
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_transit.png
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_directory.png
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_athletics.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_blackboard.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_calendar.png
@@ -109,3 +107,5 @@ E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_directory.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
