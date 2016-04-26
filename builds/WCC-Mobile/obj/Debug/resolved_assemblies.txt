@@ -1,9 +1,9 @@
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\WCCMobile.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\Mono.Android.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\mscorlib.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Core.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Xml.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Xml.Linq.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Runtime.Serialization.dll
-E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.ServiceModel.Internals.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\WCCMobile.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\Mono.Android.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\mscorlib.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Core.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Xml.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Xml.Linq.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.Runtime.Serialization.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\assemblies\System.ServiceModel.Internals.dll

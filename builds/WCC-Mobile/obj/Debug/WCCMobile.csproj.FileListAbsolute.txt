@@ -29,3 +29,35 @@ E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.pdb
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.WCCMobile.apk
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.WCCMobile-Signed.apk
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.pdb
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\bin\WCCMobile.WCCMobile.apk
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\phonebooklayout.xml
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\basicinfolayout.xml
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\main.xml
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\strings.xml
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\placeholder_128x185.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\wccmainappicon_57x57.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\theme.xml
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_athletics.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_blackboard.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_calendar.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_career_services.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_counseling.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_dining_services.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_library.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_mail.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_map.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_student_involvement.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_transfer_services.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_transit.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_directory.png
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
+C:\Users\James O'Keefe\Documents\GitHub\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb

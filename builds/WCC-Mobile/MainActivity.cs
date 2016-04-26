@@ -72,6 +72,7 @@ namespace WCCMobile
                 return IMGSET;
             }
         }
+
         protected  override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -130,10 +131,8 @@ namespace WCCMobile
             switch (args.Position)
             {
                 case 0: // Map
-                    ImageView i = (ImageView)args.View;
-                    i.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+                    AlertNotImplemented();
                     isReady = true;
-                    //StartActivity(typeof(PhoneBookActvity));
                     break;//start sub app at box '0' continue for each app; 
                 case 1: // Directory
                     StartActivity(typeof(PhoneBookActivity));
@@ -150,20 +149,24 @@ namespace WCCMobile
                     //BasicInfoActivity.setInfoTitle("Counseling");
                     //StartActivity(typeof(BasicInfoActivity));
                     break;
-                /* case 4: // Calendar
-                    BasicInfoActivity.setInfoTitle("Student Involvement");
-                    StartActivity(typeof(BasicInfoActivity));
-                    break; */
+                 case 4: // Calendar
+                    AlertNotImplemented();
+                    isReady = true;
+                    //BasicInfoActivity.setInfoTitle("Student Involvement");
+                    //StartActivity(typeof(BasicInfoActivity));
+                    break; 
                 case 5: //Transit
                     BasicInfoActivity.setInfoTitle("Transit");
                     StartActivity(typeof(BasicInfoActivity));
                     //BasicInfoActivity.setInfoTitle("Career and Transfer Services");
                     //StartActivity(typeof(BasicInfoActivity));
                     break;
-                /*case 6: // Library
+                case 6: // Library
+                    AlertNotImplemented();
+                    isReady = true;
                     //BasicInfoActivity.setInfoTitle("Financial Aid");
                     //StartActivity(typeof(BasicInfoActivity));
-                    break; */
+                    break; 
                 case 7: // Athletics
                     BasicInfoActivity.setInfoTitle("Athletics");
                     StartActivity(typeof(BasicInfoActivity));
@@ -366,6 +369,23 @@ namespace WCCMobile
 
             //return source
             return html;
+        }
+
+        public void AlertNotImplemented()
+        {
+            AlertDialog.Builder a = new AlertDialog.Builder(this);
+            AlertDialog alertNotImpl = a.Create();
+
+            alertNotImpl.SetTitle("Sorry!");
+            alertNotImpl.SetMessage("This feature has not yet been implemented.\n\nPlease try again later.");
+            alertNotImpl.SetButton("OK", (senderAlert, args) => {
+                Toast.MakeText(this, "Cancelled!", ToastLength.Short).Show();
+            });
+
+            alertNotImpl.Show();
+
+
+
         }
     }
     
