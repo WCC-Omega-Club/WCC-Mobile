@@ -1,0 +1,59 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+# Conflicts:
+#	builds/WCC-Mobile/ContactsActvity.cs
+#	builds/WCC-Mobile/MainActivity.cs
+#	builds/WCC-Mobile/bin/Debug/WCCMobile.WCCMobile-Signed.apk
+#	builds/WCC-Mobile/bin/Debug/WCCMobile.WCCMobile.apk
+#	builds/WCC-Mobile/bin/Debug/WCCMobile.dll
+#	builds/WCC-Mobile/bin/Debug/WCCMobile.dll.mdb
+#	builds/WCC-Mobile/bin/Debug/WCCMobile.dllWCCMobile.dll.mdb
+#	builds/WCC-Mobile/bin/Debug/WCCMobile.pdb
+#	builds/WCC-Mobile/obj/Debug/WCCMobile.csproj.FileListAbsolute.txt
+#	builds/WCC-Mobile/obj/Debug/WCCMobile.dll
+#	builds/WCC-Mobile/obj/Debug/WCCMobile.pdb
+#	builds/WCC-Mobile/obj/Debug/android/AndroidManifest.xml
+#	builds/WCC-Mobile/obj/Debug/android/bin/WCCMobile.WCCMobile.apk
+#	builds/WCC-Mobile/obj/Debug/android/bin/classes.dex
+#	builds/WCC-Mobile/obj/Debug/android/bin/packaged_resources
+#	builds/WCC-Mobile/obj/Debug/android/bin/resources_and_assemblies
+#	builds/WCC-Mobile/obj/Debug/android/manifest/AndroidManifest.xml
+#	builds/WCC-Mobile/obj/Debug/assemblies/WCCMobile.dll
+#	builds/WCC-Mobile/obj/Debug/assemblies/WCCMobile.dll.mdb
+#	builds/WCC-Mobile/obj/Debug/assemblies/WCCMobile.dllWCCMobile.dll.mdb
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 2 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   builds/WCC-Mobile/.vs/WCCMobile/v14/.suo
+#	new file:   builds/WCC-Mobile/Assets/BasicInfoFiles/Courses.txt
+#	modified:   builds/WCC-Mobile/ContactsActvity.cs
+#	new file:   builds/WCC-Mobile/CourseActivity.cs
+#	modified:   builds/WCC-Mobile/MainActivity.cs
+#	new file:   builds/WCC-Mobile/Resources/layout/CourseLayout.axml
+#	modified:   builds/WCC-Mobile/Resources/layout/Main.axml
+#	new file:   builds/WCC-Mobile/Resources/values/days.xml
+#	new file:   builds/WCC-Mobile/Resources/values/locations.xml
+#	new file:   builds/WCC-Mobile/Resources/values/meridian.xml
+#	modified:   builds/WCC-Mobile/obj/Debug/WCCMobile.csproj.FileListAbsolute.txt
+#	modified:   builds/WCC-Mobile/obj/Debug/android/AndroidManifest.xml
+#	modified:   builds/WCC-Mobile/obj/Debug/android/manifest/AndroidManifest.xml
+#	renamed:    builds/WCC-Mobile/obj/Debug/10.71.34.101_5555.deployment -> builds/WCC-Mobile/obj/Debug/emulator-5554.deployment
+#	modified:   builds/WCC-Mobile/obj/Debug/res/layout/main.xml
+#	modified:   builds/WCC-Mobile/obj/Debug/resolved_assemblies.txt
+#	modified:   builds/WCC-Mobile/obj/Debug/sdks.cache
+#
+
