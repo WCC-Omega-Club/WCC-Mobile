@@ -10,10 +10,10 @@ WCCMobile.MainActivity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.MainActivi
 WCCMobile.MainActivity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
 WCCMobile.MainActivity;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
 wccmobile.MainActivity;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
-WCCMobile.PhoneBookActvity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity
-WCCMobile.PhoneBookActvity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity
-WCCMobile.PhoneBookActvity;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity
-wccmobile.PhoneBookActvity;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity
+WCCMobile.ContactsActvity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.ContactsActvity
+WCCMobile.ContactsActvity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.ContactsActvity
+WCCMobile.ContactsActvity;md59b15f7978abc4d0b2cebe92668d59436.ContactsActvity
+wccmobile.ContactsActvity;md59b15f7978abc4d0b2cebe92668d59436.ContactsActvity
 WCCMobile.Resources.ImageAdapter, WCCMobile;md5f3a53e1b9332f0a71eefea84a7afa83b.ImageAdapter
 WCCMobile.Resources.ImageAdapter, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5f3a53e1b9332f0a71eefea84a7afa83b.ImageAdapter
 WCCMobile.Resources.ImageAdapter;md5f3a53e1b9332f0a71eefea84a7afa83b.ImageAdapter

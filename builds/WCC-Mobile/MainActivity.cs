@@ -59,7 +59,7 @@ namespace WCCMobile
                         {
                             string nextSrc = htmlCode.Substring(bg, ((eg + 5) - bg));
                             while (!char.IsLetter(nextSrc[nextSrc.Length - 1])) nextSrc = nextSrc.Remove(nextSrc.Length - 1, 1);
-                            //Log.Debug("got ->", s);
+                            Log.Debug("got ->", nextSrc);
                             bg = eg = -1;
                             Bitmap nextImage;
                             if((nextImage = GetImageBitmapFromUrl(nextSrc)) != null)
@@ -80,7 +80,8 @@ namespace WCCMobile
             ImageContainer = (ImageView)FindViewById(Resource.Id.ImageContainer);
             ImageContainer.SetAdjustViewBounds(true);
             ImageContainer.SetScaleType(ImageView.ScaleType.FitCenter);
-            ImageContainer.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+            //Log.Debug("here",IMGSRC.Count.ToString());
+            //ImageContainer.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
             SubAppContainer = (GridView)FindViewById(Resource.Id.SubAppContainer);
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
@@ -134,7 +135,7 @@ namespace WCCMobile
                     //StartActivity(typeof(PhoneBookActvity));
                     break;//start sub app at box '0' continue for each app; 
                 case 1: // Directory
-                    StartActivity(typeof(PhoneBookActvity));
+                    StartActivity(typeof(ContactsActvity));
                     //BasicInfoActivity.setInfoTitle("Dining Services");
                     //StartActivity(typeof(BasicInfoActivity));
                     break;
@@ -213,7 +214,7 @@ namespace WCCMobile
             switch (args)
             {
                 case 0:
-                    MainActivity.singleR.StartActivity(typeof(PhoneBookActvity));
+                    MainActivity.singleR.StartActivity(typeof(ContactsActvity));
                     break;//start sub app at box '0' continue for each app;
                 case 1:
                     BasicInfoActivity.setInfoTitle("Dining Services");
@@ -317,7 +318,7 @@ namespace WCCMobile
             return imageBitmap;
         }
         static string htmlCode = null;
-        static string HTMLSRC(string urlAddress = "http://www.sunywcc.edu/")
+        static string HTMLSRC(string urlAddress = "https://web.archive.org/web/20150306045453/http://www.sunywcc.edu/?")//http://www.sunywcc.edu/
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
