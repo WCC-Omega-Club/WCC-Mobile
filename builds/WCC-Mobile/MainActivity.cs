@@ -135,7 +135,7 @@ namespace WCCMobile
                     //StartActivity(typeof(PhoneBookActvity));
                     break;//start sub app at box '0' continue for each app; 
                 case 1: // Directory
-                    StartActivity(typeof(ContactsActvity));
+                    StartActivity(typeof(PhoneBookActivity));
                     //BasicInfoActivity.setInfoTitle("Dining Services");
                     //StartActivity(typeof(BasicInfoActivity));
                     break;
@@ -214,7 +214,7 @@ namespace WCCMobile
             switch (args)
             {
                 case 0:
-                    MainActivity.singleR.StartActivity(typeof(ContactsActvity));
+                    MainActivity.singleR.StartActivity(typeof(PhoneBookActivity));
                     break;//start sub app at box '0' continue for each app;
                 case 1:
                     BasicInfoActivity.setInfoTitle("Dining Services");

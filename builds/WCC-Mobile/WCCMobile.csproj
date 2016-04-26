@@ -84,7 +84,7 @@
   <ItemGroup>
     <Compile Include="BasicInfoActivity.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="ContactsActvity.cs" />
+    <Compile Include="PhoneBookActivity.cs" />
     <Compile Include="Resources\ImageAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
