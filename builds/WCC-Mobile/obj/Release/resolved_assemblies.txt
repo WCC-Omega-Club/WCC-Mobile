@@ -1,9 +1,0 @@
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\WCCMobile.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\Mono.Android.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\mscorlib.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\System.Core.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\System.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\System.Xml.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\System.Xml.Linq.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\System.Runtime.Serialization.dll
-C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Release\android\assets\System.ServiceModel.Internals.dll
