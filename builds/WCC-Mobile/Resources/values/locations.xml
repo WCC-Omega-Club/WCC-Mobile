@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <string-array name="locations_array">
@@ -16,3 +17,23 @@
     <item>Yonkers</item>
   </string-array>
 </resources>
+=======
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="locations_array">
+    <item>Academic Arts Building</item>
+    <item>Classroom Building</item>
+    <item>Gateway Center</item>
+    <item>Health Science Building</item>
+    <item>Library</item>
+    <item>Physical Education Building</item>
+    <item>Science Building</item>
+    <item>Student Center</item>
+    <item>Technologies Building</item>
+    <item>Mount Vernon</item>
+    <item>Ossining</item>
+    <item>Peekskill</item>
+    <item>Yonkers</item>
+  </string-array>
+</resources>
+>>>>>>> origin/master

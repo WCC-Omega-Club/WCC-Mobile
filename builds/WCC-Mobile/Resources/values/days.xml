@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <string name="days_prompt">Choose a day</string>
@@ -11,3 +12,18 @@
     <item>Sunday</item>
   </string-array>
 </resources>
+=======
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string name="days_prompt">Choose a day</string>
+  <string-array name="days_array">
+    <item>Monday</item>
+    <item>Tuesday</item>
+    <item>Wesnesday</item>
+    <item>Thursday</item>
+    <item>Friday</item>
+    <item>Saturday</item>
+    <item>Sunday</item>
+  </string-array>
+</resources>
+>>>>>>> origin/master

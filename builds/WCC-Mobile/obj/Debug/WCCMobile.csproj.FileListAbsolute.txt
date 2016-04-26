@@ -76,6 +76,7 @@ C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\ob
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_directory.png
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
 E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll
@@ -92,6 +93,8 @@ E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\strings.xml
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\placeholder_128x185.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\wccmainappicon_57x57.png
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\theme.xml
+=======
+>>>>>>> origin/master
 =======
 >>>>>>> origin/master
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\ic_athletics.png
@@ -111,3 +114,5 @@ E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
 E:\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
 E:\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.dll.mdb
+C:\Users\James\Desktop\WCC App GitHub\WCC-Mobile\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb

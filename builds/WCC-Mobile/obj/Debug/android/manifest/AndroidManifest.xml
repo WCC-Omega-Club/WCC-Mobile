@@ -14,7 +14,11 @@
       </intent-filter>
     </activity>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <activity android:label="PhoneBook" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActivity" />
+=======
+    <activity android:label="Directory" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity" />
+>>>>>>> origin/master
 =======
     <activity android:label="Directory" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActvity" />
 >>>>>>> origin/master
