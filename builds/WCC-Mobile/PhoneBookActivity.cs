@@ -133,12 +133,14 @@ namespace WCCMobile
 
                 while (p2Call[pos] != '\r' && p2Call[pos] != '\n') ++pos;
                 alert.SetTitle(p2Call.Substring(0, pos));
-                var uri = Android.Net.Uri.Parse("tel: " + p2Call.Substring(++pos, 10));
+                //alert.SetMessage("What would you like to do?".ToString());
+
+                var uri = Android.Net.Uri.Parse("Call: " + p2Call.Substring(++pos, 10));
 
                 alert.SetButton2(uri.ToString(), delegate { var intent = new Intent(Intent.ActionCall, uri); Caller.StartActivity(intent); });
                 if (!p2Call.Substring(--pos + 12).Contains(empty_email_guard))
                 {
-                    alert.SetButton3("email: " + p2Call.Substring(pos + 12).ToString(),
+                    alert.SetButton3("Email: " + p2Call.Substring(pos + 12).ToString(),
                     delegate
                     {
                         var intent = new Intent(Intent.ActionSend);

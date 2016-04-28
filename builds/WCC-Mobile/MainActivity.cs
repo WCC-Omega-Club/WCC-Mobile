@@ -84,8 +84,13 @@ namespace WCCMobile
             ImageContainer.SetScaleType(ImageView.ScaleType.FitXy);
             ImageContainer.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
 
-            LinearLayout l = (LinearLayout)FindViewById(Resource.Id.linearLayout1);
-            ImageContainer.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, 400);
+            //LinearLayout l = (LinearLayout)FindViewById(Resource.Id.linearLayout1);
+            //ImageContainer.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, 400);
+
+            LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, 400);
+            l.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 205, Resources.DisplayMetrics);
+            ImageContainer.LayoutParameters = l;
+
             SubAppContainer = (GridView)FindViewById(Resource.Id.SubAppContainer);
             singleton = this;
             SubAppContainer.Adapter = new ImageAdapter(this);
@@ -130,24 +135,25 @@ namespace WCCMobile
             ImageAdapter.Label = args.Position;
             switch (args.Position)
             {
+
+                //case 0: // Map
+                    //ImageView i = (ImageView)args.View;
+                    //i.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
+                    //isReady = true;
+                    
+                    //break;//start sub app at box '0' continue for each app; 
                 case 0: // Map
                     AlertNotImplemented();
                     isReady = true;
                     break;//start sub app at box '0' continue for each app; 
                 case 1: // Directory
                     StartActivity(typeof(PhoneBookActivity));
-                    //BasicInfoActivity.setInfoTitle("Dining Services");
-                    //StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 2: // Mail
                     StartExternalApp("com.microsoft.office.officehub", this);
-                    //BasicInfoActivity.setInfoTitle("Athletics");
-                    //StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 3: // Blackboard
                     StartExternalApp("com.blackboard.android", this);
-                    //BasicInfoActivity.setInfoTitle("Counseling");
-                    //StartActivity(typeof(BasicInfoActivity));
                     break;
                  case 4: // Calendar
                     AlertNotImplemented();
@@ -158,8 +164,6 @@ namespace WCCMobile
                 case 5: //Transit
                     BasicInfoActivity.setInfoTitle("Transit");
                     StartActivity(typeof(BasicInfoActivity));
-                    //BasicInfoActivity.setInfoTitle("Career and Transfer Services");
-                    //StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 6: // Library
                     AlertNotImplemented();
@@ -170,44 +174,37 @@ namespace WCCMobile
                 case 7: // Athletics
                     BasicInfoActivity.setInfoTitle("Athletics");
                     StartActivity(typeof(BasicInfoActivity));
-                    //BasicInfoActivity.setInfoTitle("Bursars Office");
-                    //StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 8: // Career Services
                     BasicInfoActivity.setInfoTitle("Career and Transfer Services");
                     StartActivity(typeof(BasicInfoActivity));
-                    //BasicInfoActivity.setInfoTitle("Registrar Office-Registration");
-                    //StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 9: // Counseling
                     BasicInfoActivity.setInfoTitle("Counseling");
                     StartActivity(typeof(BasicInfoActivity));
-                    //BasicInfoActivity.setInfoTitle("Transit");
-                    //StartActivity(typeof(BasicInfoActivity));
                     break;
                 case 10: // Dining Services
                     BasicInfoActivity.setInfoTitle("Dining Services");
                     StartActivity(typeof(BasicInfoActivity));
-                    //StartExternalApp("com.blackboard.android",this);
                     break;
                 case 11: // Student Involvement
                     BasicInfoActivity.setInfoTitle("Student Involvement");
                     StartActivity(typeof(BasicInfoActivity));
-                    //StartExternalApp("com.microsoft.office.officehub", this);
                     break;
                 case 12: // Transfer Services
                     BasicInfoActivity.setInfoTitle("Career and Transfer Services");
                     StartActivity(typeof(BasicInfoActivity));
                     break;
                 default:
-                    Log.Debug("position", args.Position.ToString());
-                    //ImageView i = (ImageView)args.View;
-                    //i.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
-                    isReady = true;// undefined buttons will just reset isReady
+                    AlertNotImplemented();
+                    //Log.Debug("position", args.Position.ToString());
+
+                    //isReady = true;// undefined buttons will just reset isReady
                     break;
             }
 
         }
+
         public static   void StartSubApp(int args)
         {
             //ImageView iv = (ImageView)args.View;
@@ -269,6 +266,20 @@ namespace WCCMobile
             }
 
         }
+        public void AlertNotImplemented()
+        {
+            AlertDialog.Builder a = new AlertDialog.Builder(this);
+            AlertDialog alertNotImpl = a.Create();
+            alertNotImpl.DismissEvent += delegate { isReady = true; };
+            alertNotImpl.SetTitle("Sorry!");
+            alertNotImpl.SetMessage("This feature has not yet been implemented.\n\nPlease try again later.");
+            alertNotImpl.SetButton("OK", (sender, args) =>
+            {
+                Toast.MakeText(this, "Action Cancelled", ToastLength.Short).Show();
+                isReady = true;
+            });
+            alertNotImpl.Show();
+        }
         /// <summary>
         ///  Can be used by any sub App to launch external 3rd Party apps pass 
         ///  the Activity that wishes to launch and the package name
@@ -321,8 +332,8 @@ namespace WCCMobile
             }
             return imageBitmap;
         }
-        static string htmlCode = null;
-        static string HTMLSRC(string urlAddress = "https://web.archive.org/web/20150306045453/http://www.sunywcc.edu/?")//http://www.sunywcc.edu/
+        static string htmlCode = null;//https://web.archive.org/web/20150306045453/http://www.sunywcc.edu/?
+        static string HTMLSRC(string urlAddress = "http://www.sunywcc.edu/")//http://www.sunywcc.edu/
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -370,23 +381,7 @@ namespace WCCMobile
             //return source
             return html;
         }
-
-        public void AlertNotImplemented()
-        {
-            AlertDialog.Builder a = new AlertDialog.Builder(this);
-            AlertDialog alertNotImpl = a.Create();
-
-            alertNotImpl.SetTitle("Sorry!");
-            alertNotImpl.SetMessage("This feature has not yet been implemented.\n\nPlease try again later.");
-            alertNotImpl.SetButton("OK", (senderAlert, args) => {
-                Toast.MakeText(this, "Cancelled!", ToastLength.Short).Show();
-            });
-
-            alertNotImpl.Show();
-
-
-
-        }
+    
     }
     
 }
