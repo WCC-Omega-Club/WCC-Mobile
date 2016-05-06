@@ -43,7 +43,7 @@ namespace WCCMobile.Resources
             TextView textItem;
             ListView lv = (ListView)parent;
             lv.DividerHeight = 15;
-            if (convertView == null)
+            if (convertView == null) 
             {  // if it's not recycled, initialize some attributes
                 textItem = new TextView(context);
                 if (textItem.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Portrait)
