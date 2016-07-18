@@ -1,0 +1,187 @@
+\hypertarget{class_w_c_c_mobile_1_1_info_pane}{}\section{W\+C\+C\+Mobile.\+Info\+Pane Class Reference}
+\label{class_w_c_c_mobile_1_1_info_pane}\index{W\+C\+C\+Mobile.\+Info\+Pane@{W\+C\+C\+Mobile.\+Info\+Pane}}
+Inheritance diagram for W\+C\+C\+Mobile.\+Info\+Pane\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_w_c_c_mobile_1_1_info_pane}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries State} \{ {\bfseries Closed}, 
+{\bfseries Opened}, 
+{\bfseries Fully\+Opened}
+ \}\hypertarget{class_w_c_c_mobile_1_1_info_pane_a771339a51702ed505cd36b8c973c5153}{}\label{class_w_c_c_mobile_1_1_info_pane_a771339a51702ed505cd36b8c973c5153}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_w_c_c_mobile_1_1_info_pane_ae925e23fa98234101c549cc9a038503d}{Info\+Pane} (Context context)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} class. \end{DoxyCompactList}\item 
+\hyperlink{class_w_c_c_mobile_1_1_info_pane_a36d1b1d35905f3ae02cf64f791c54349}{Info\+Pane} (Context context, I\+Attribute\+Set attrs)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} class. \end{DoxyCompactList}\item 
+\hyperlink{class_w_c_c_mobile_1_1_info_pane_af14668954e11cc545a5d63aa6787e73c}{Info\+Pane} (Context context, I\+Attribute\+Set attrs, int def\+Style)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} class. \end{DoxyCompactList}\item 
+void \hyperlink{class_w_c_c_mobile_1_1_info_pane_a236327622ae5c4d3b3725a0d3ebd880a}{Set\+State} (State new\+State, bool animated=true)
+\begin{DoxyCompactList}\small\item\em Sets the state of this instance of \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} offset status. \end{DoxyCompactList}\item 
+override bool \hyperlink{class_w_c_c_mobile_1_1_info_pane_a30c1c1fb3ecea8f9a2c2f8b7c7c0cadf}{On\+Touch\+Event} (Motion\+Event e)
+\begin{DoxyCompactList}\small\item\em Called when \mbox{[}touch event\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_w_c_c_mobile_1_1_info_pane_a618d2d1015417dfef2664c42b0c37ff1}{Dispatch\+Draw} (Android.\+Graphics.\+Canvas canvas)
+\begin{DoxyCompactList}\small\item\em Dispatches the draw. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_w_c_c_mobile_1_1_info_pane_a531dc065a09acf3e692f91f9620bc010}{Opened}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} is opened. \end{DoxyCompactList}\item 
+bool \hyperlink{class_w_c_c_mobile_1_1_info_pane_afedca359f93cda198f4b1b0d59c187d9}{Fully\+Opened}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether \mbox{[}fully opened\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ State $>$ {\bfseries State\+Changed}\hypertarget{class_w_c_c_mobile_1_1_info_pane_a38144d3db3575dce5322a154f4a20c08}{}\label{class_w_c_c_mobile_1_1_info_pane_a38144d3db3575dce5322a154f4a20c08}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!Info\+Pane@{Info\+Pane}}
+\index{Info\+Pane@{Info\+Pane}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{Info\+Pane(\+Context context)}{InfoPane(Context context)}}]{\setlength{\rightskip}{0pt plus 5cm}W\+C\+C\+Mobile.\+Info\+Pane.\+Info\+Pane (
+\begin{DoxyParamCaption}
+\item[{Context}]{context}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_c_c_mobile_1_1_info_pane_ae925e23fa98234101c549cc9a038503d}{}\label{class_w_c_c_mobile_1_1_info_pane_ae925e23fa98234101c549cc9a038503d}
+
+
+Initializes a new instance of the \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context.\\
+\hline
+\end{DoxyParams}
+\index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!Info\+Pane@{Info\+Pane}}
+\index{Info\+Pane@{Info\+Pane}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{Info\+Pane(\+Context context, I\+Attribute\+Set attrs)}{InfoPane(Context context, IAttributeSet attrs)}}]{\setlength{\rightskip}{0pt plus 5cm}W\+C\+C\+Mobile.\+Info\+Pane.\+Info\+Pane (
+\begin{DoxyParamCaption}
+\item[{Context}]{context, }
+\item[{I\+Attribute\+Set}]{attrs}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_c_c_mobile_1_1_info_pane_a36d1b1d35905f3ae02cf64f791c54349}{}\label{class_w_c_c_mobile_1_1_info_pane_a36d1b1d35905f3ae02cf64f791c54349}
+
+
+Initializes a new instance of the \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context.\\
+\hline
+{\em attrs} & The attrs.\\
+\hline
+\end{DoxyParams}
+\index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!Info\+Pane@{Info\+Pane}}
+\index{Info\+Pane@{Info\+Pane}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{Info\+Pane(\+Context context, I\+Attribute\+Set attrs, int def\+Style)}{InfoPane(Context context, IAttributeSet attrs, int defStyle)}}]{\setlength{\rightskip}{0pt plus 5cm}W\+C\+C\+Mobile.\+Info\+Pane.\+Info\+Pane (
+\begin{DoxyParamCaption}
+\item[{Context}]{context, }
+\item[{I\+Attribute\+Set}]{attrs, }
+\item[{int}]{def\+Style}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_c_c_mobile_1_1_info_pane_af14668954e11cc545a5d63aa6787e73c}{}\label{class_w_c_c_mobile_1_1_info_pane_af14668954e11cc545a5d63aa6787e73c}
+
+
+Initializes a new instance of the \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context.\\
+\hline
+{\em attrs} & The attrs.\\
+\hline
+{\em def\+Style} & The definition style.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!Dispatch\+Draw@{Dispatch\+Draw}}
+\index{Dispatch\+Draw@{Dispatch\+Draw}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{Dispatch\+Draw(\+Android.\+Graphics.\+Canvas canvas)}{DispatchDraw(Android.Graphics.Canvas canvas)}}]{\setlength{\rightskip}{0pt plus 5cm}override void W\+C\+C\+Mobile.\+Info\+Pane.\+Dispatch\+Draw (
+\begin{DoxyParamCaption}
+\item[{Android.\+Graphics.\+Canvas}]{canvas}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_w_c_c_mobile_1_1_info_pane_a618d2d1015417dfef2664c42b0c37ff1}{}\label{class_w_c_c_mobile_1_1_info_pane_a618d2d1015417dfef2664c42b0c37ff1}
+
+
+Dispatches the draw. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em canvas} & The canvas.\\
+\hline
+\end{DoxyParams}
+\index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!On\+Touch\+Event@{On\+Touch\+Event}}
+\index{On\+Touch\+Event@{On\+Touch\+Event}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{On\+Touch\+Event(\+Motion\+Event e)}{OnTouchEvent(MotionEvent e)}}]{\setlength{\rightskip}{0pt plus 5cm}override bool W\+C\+C\+Mobile.\+Info\+Pane.\+On\+Touch\+Event (
+\begin{DoxyParamCaption}
+\item[{Motion\+Event}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_c_c_mobile_1_1_info_pane_a30c1c1fb3ecea8f9a2c2f8b7c7c0cadf}{}\label{class_w_c_c_mobile_1_1_info_pane_a30c1c1fb3ecea8f9a2c2f8b7c7c0cadf}
+
+
+Called when \mbox{[}touch event\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The e.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!Set\+State@{Set\+State}}
+\index{Set\+State@{Set\+State}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{Set\+State(\+State new\+State, bool animated=true)}{SetState(State newState, bool animated=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void W\+C\+C\+Mobile.\+Info\+Pane.\+Set\+State (
+\begin{DoxyParamCaption}
+\item[{State}]{new\+State, }
+\item[{bool}]{animated = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_w_c_c_mobile_1_1_info_pane_a236327622ae5c4d3b3725a0d3ebd880a}{}\label{class_w_c_c_mobile_1_1_info_pane_a236327622ae5c4d3b3725a0d3ebd880a}
+
+
+Sets the state of this instance of \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} offset status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & The new state.\\
+\hline
+{\em animated} & if set to {\ttfamily true} \mbox{[}animated\mbox{]}.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!Fully\+Opened@{Fully\+Opened}}
+\index{Fully\+Opened@{Fully\+Opened}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{Fully\+Opened}{FullyOpened}}]{\setlength{\rightskip}{0pt plus 5cm}bool W\+C\+C\+Mobile.\+Info\+Pane.\+Fully\+Opened\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_w_c_c_mobile_1_1_info_pane_afedca359f93cda198f4b1b0d59c187d9}{}\label{class_w_c_c_mobile_1_1_info_pane_afedca359f93cda198f4b1b0d59c187d9}
+
+
+Gets a value indicating whether \mbox{[}fully opened\mbox{]}. 
+
+{\ttfamily true} if \mbox{[}fully opened\mbox{]}; otherwise, {\ttfamily false}. \index{W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}!Opened@{Opened}}
+\index{Opened@{Opened}!W\+C\+C\+Mobile\+::\+Info\+Pane@{W\+C\+C\+Mobile\+::\+Info\+Pane}}
+\subsubsection[{\texorpdfstring{Opened}{Opened}}]{\setlength{\rightskip}{0pt plus 5cm}bool W\+C\+C\+Mobile.\+Info\+Pane.\+Opened\hspace{0.3cm}{\ttfamily [get]}}\hypertarget{class_w_c_c_mobile_1_1_info_pane_a531dc065a09acf3e692f91f9620bc010}{}\label{class_w_c_c_mobile_1_1_info_pane_a531dc065a09acf3e692f91f9620bc010}
+
+
+Gets a value indicating whether this \hyperlink{class_w_c_c_mobile_1_1_info_pane}{Info\+Pane} is opened. 
+
+{\ttfamily true} if opened; otherwise, {\ttfamily false}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Controls/Info\+Pane.\+cs\end{DoxyCompactItemize}

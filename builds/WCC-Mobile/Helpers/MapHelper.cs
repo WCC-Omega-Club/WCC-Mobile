@@ -14,11 +14,20 @@ using Android.Gms.Maps;
 
 namespace WCCMobile
 {
-
-    class GetMapHelper : Java.Lang.Object, IOnMapReadyCallback, IDisposable
+    /// <summary>
+    /// This class is not currently to be used. It should be removed as we 
+    /// are using MapView as the map control not MapFragment.
+    /// </summary>
+    /// <seealso cref="Java.Lang.Object" />
+    /// <seealso cref="Android.Gms.Maps.IOnMapReadyCallback" />
+    /// <seealso cref="System.IDisposable" />
+    public class GetMapHelper : Java.Lang.Object, IOnMapReadyCallback, IDisposable
     {
+        
         TaskCompletionSource<GoogleMap> tcs;
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetMapHelper"/> class.
+        /// </summary>
         public GetMapHelper()
         {
         }
