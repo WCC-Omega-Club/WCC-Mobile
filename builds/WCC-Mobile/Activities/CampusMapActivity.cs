@@ -35,7 +35,6 @@ public class CampusMapActivity
 
     CampusMapFragment mapFragment;
     ScheduleFragment scheduleFragment;
-    //RentalFragment rentalFragment;
 
     DrawerLayout drawer;
     Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
@@ -199,7 +198,7 @@ public class CampusMapActivity
         drawer.CloseDrawers();
     }
 
-    void SwitchTo(Android.Support.V4.App.Fragment fragment)
+    private void SwitchTo(Android.Support.V4.App.Fragment fragment)
     {
         if (fragment.IsVisible)
             return;
@@ -346,8 +345,37 @@ public class CampusMapActivity
             return true;
         return base.OnOptionsItemSelected(item);
     }
-
-    protected override void OnNewIntent(Intent intent)
+        /// <summary>
+        /// This is called for activities that set launchMode to "singleTop" in
+        /// their package, or if a client used the <c><see cref="F:Android.Content.ActivityFlags.SingleTop" /></c>
+        /// flag when calling <c><see cref="M:Android.Content.ContextWrapper.StartActivity(Android.Content.Intent)" /></c>.
+        /// </summary>
+        /// <param name="intent">The new intent that was started for the activity.</param>
+        /// <remarks>
+        /// <para tool="javadoc-to-mdoc">This is called for activities that set launchMode to "singleTop" in
+        /// their package, or if a client used the <c><see cref="F:Android.Content.ActivityFlags.SingleTop" /></c>
+        /// flag when calling <c><see cref="M:Android.Content.ContextWrapper.StartActivity(Android.Content.Intent)" /></c>.  In either case, when the
+        /// activity is re-launched while at the top of the activity stack instead
+        /// of a new instance of the activity being started, onNewIntent() will be
+        /// called on the existing instance with the Intent that was used to
+        /// re-launch it.
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">An activity will always be paused before receiving a new intent, so
+        /// you can count on <c><see cref="M:Android.App.Activity.OnResume" /></c> being called after this method.
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">Note that <c><see cref="P:Android.App.Activity.Intent" /></c> still returns the original Intent.  You
+        /// can use <c><see cref="P:Android.App.Activity.Intent" /></c> to update it to this new Intent.</para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <format type="text/html">
+        ///     <a href="http://developer.android.com/reference/android/app/Activity.html#onNewIntent(android.content.Intent)" target="_blank">[Android Documentation]</a>
+        ///   </format>
+        /// </para>
+        /// </remarks>
+        /// <since version="Added in API level 1" />
+        /// <altmember cref="P:Android.App.Activity.Intent" />
+        /// <altmember cref="P:Android.App.Activity.Intent" />
+        /// <altmember cref="M:Android.App.Activity.OnResume" />
+        protected override void OnNewIntent(Intent intent)
     {
         base.OnNewIntent(intent);
         try
@@ -359,22 +387,103 @@ public class CampusMapActivity
         {
         }
     }
-
+        /// <summary>
+        /// Called after <c><see cref="M:Android.App.Activity.OnCreate(Android.OS.Bundle)" /></c> &amp;mdash; or after <c><see cref="M:Android.App.Activity.OnRestart" /></c> when
+        /// the activity had been stopped, but is now again being displayed to the
+        /// user.
+        /// </summary>
+        /// <remarks>
+        /// <para tool="javadoc-to-mdoc">Called after <c><see cref="M:Android.App.Activity.OnCreate(Android.OS.Bundle)" /></c> &amp;mdash; or after <c><see cref="M:Android.App.Activity.OnRestart" /></c> when
+        /// the activity had been stopped, but is now again being displayed to the
+        /// user.  It will be followed by <c><see cref="M:Android.App.Activity.OnResume" /></c>.
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <i>Derived classes must call through to the super class's
+        /// implementation of this method.  If they do not, an exception will be
+        /// thrown.</i>
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <format type="text/html">
+        ///     <a href="http://developer.android.com/reference/android/app/Activity.html#onStart()" target="_blank">[Android Documentation]</a>
+        ///   </format>
+        /// </para>
+        /// </remarks>
+        /// <since version="Added in API level 1" />
+        /// <altmember cref="M:Android.App.Activity.OnCreate(Android.OS.Bundle)" />
+        /// <altmember cref="M:Android.App.Activity.OnStop" />
+        /// <altmember cref="M:Android.App.Activity.OnResume" />
     protected override void OnStart()
     {
         if (client != null)
             client.Connect();
         base.OnStart();
     }
-
+        /// <summary>
+        /// Called when you are no longer visible to the user.
+        /// </summary>
+        /// <remarks>
+        /// <para tool="javadoc-to-mdoc">Called when you are no longer visible to the user.  You will next
+        /// receive either <c><see cref="M:Android.App.Activity.OnRestart" /></c>, <c><see cref="M:Android.App.Activity.OnDestroy" /></c>, or nothing,
+        /// depending on later user activity.
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">Note that this method may never be called, in low memory situations
+        /// where the system does not have enough memory to keep your activity's
+        /// process running after its <c><see cref="M:Android.App.Activity.OnPause" /></c> method is called.
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <i>Derived classes must call through to the super class's
+        /// implementation of this method.  If they do not, an exception will be
+        /// thrown.</i>
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <format type="text/html">
+        ///     <a href="http://developer.android.com/reference/android/app/Activity.html#onStop()" target="_blank">[Android Documentation]</a>
+        ///   </format>
+        /// </para>
+        /// </remarks>
+        /// <since version="Added in API level 1" />
+        /// <altmember cref="M:Android.App.Activity.OnRestart" />
+        /// <altmember cref="M:Android.App.Activity.OnResume" />
+        /// <altmember cref="M:Android.App.Activity.OnSaveInstanceState(Android.OS.Bundle)" />
+        /// <altmember cref="M:Android.App.Activity.OnDestroy" />
     protected override void OnStop()
     {
         if (client != null)
             client.Disconnect();
         base.OnStop();
     }
-
-    protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        /// <summary>
+        /// Called when an activity you launched exits, giving you the requestCode
+        /// you started it with, the resultCode it returned, and any additional
+        /// data from it.
+        /// </summary>
+        /// <param name="requestCode">The integer request code originally supplied to
+        /// startActivityForResult(), allowing you to identify who this
+        /// result came from.</param>
+        /// <param name="resultCode">The integer result code returned by the child activity
+        /// through its setResult().</param>
+        /// <param name="data">An Intent, which can return result data to the caller
+        /// (various data can be attached to Intent "extras").</param>
+        /// <remarks>
+        /// <para tool="javadoc-to-mdoc">Called when an activity you launched exits, giving you the requestCode
+        /// you started it with, the resultCode it returned, and any additional
+        /// data from it.  The <format type="text/html"><var>resultCode</var></format> will be
+        /// <c><see cref="F:Android.App.Result.Canceled" /></c> if the activity explicitly returned that,
+        /// didn't return any result, or crashed during its operation.
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">You will receive this call immediately before onResume() when your
+        /// activity is re-starting.</para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <format type="text/html">
+        ///     <a href="http://developer.android.com/reference/android/app/Activity.html#onActivityResult(int, int, android.content.Intent)" target="_blank">[Android Documentation]</a>
+        ///   </format>
+        /// </para>
+        /// </remarks>
+        /// <since version="Added in API level 1" />
+        /// <altmember cref="M:Android.App.Activity.StartActivityForResult(Android.Content.Intent, System.Int32)" />
+        /// <altmember cref="M:Android.App.Activity.CreatePendingResult(System.Int32, Android.Content.Intent, Android.Content.Intent)" />
+        /// <altmember cref="M:Android.App.Activity.SetResult(Android.App.Result)" />
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
     {
         if (requestCode == ConnectionFailureResolutionRequest)
         {
@@ -449,18 +558,26 @@ public class CampusMapActivity
         if (ScheduleObserver.Instance.LastScheduleItems != null)
             OnNext(ScheduleObserver.Instance.LastScheduleItems);
     }
-
+        /// <summary>
+        /// Called when [disconnected].
+        /// </summary>
     public void OnDisconnected()
     {
 
     }
-
-    public void OnConnectionFailed(ConnectionResult p0)
+        /// <summary>
+        /// Called when [connection failed].
+        /// </summary>
+        /// <param name="p0">The p0.</param>
+        public void OnConnectionFailed(ConnectionResult p0)
     {
 
     }
-
-    public void OnConnectionSuspended(int reason)
+        /// <summary>
+        /// Called when [connection suspended].
+        /// </summary>
+        /// <param name="reason">The reason.</param>
+        public void OnConnectionSuspended(int reason)
     {
 
     }
@@ -563,7 +680,7 @@ class DrawerAroundAdapter : BaseAdapter
         this.manager =  ScheduleManager.Obtain(context);
         this.starDrawable = XamSvg.SvgFactory.GetDrawable(context.Resources, Resource.Raw.star_depressed);
         this.currentSchedule = new HashSet<Int32>();
-        LoadFavorites();
+        LoadSchedule();
     }
 
     public void SetSchedule(ScheduleItem[] schedule)
@@ -572,7 +689,7 @@ class DrawerAroundAdapter : BaseAdapter
         NotifyDataSetChanged();
     }
 
-    async void LoadFavorites()
+    async void LoadSchedule()
     {
         //if (manager.LastSchedule != null)
         //    currentSchedule = manager.LastScheduleItems;
@@ -583,7 +700,7 @@ class DrawerAroundAdapter : BaseAdapter
 
     public void Refresh()
     {
-        LoadFavorites();
+        LoadSchedule();
     }
 
     public override Java.Lang.Object GetItem(int position)
@@ -605,20 +722,20 @@ class DrawerAroundAdapter : BaseAdapter
             view = inflater.Inflate(Resource.Layout.DrawerAroundItem, parent, false);
         }
 
-        var star = view.FindViewById<ImageView>(Resource.Id.aroundStar);
-        var stationName = view.FindViewById<TextView>(Resource.Id.aroundStation1);
-        var stationNameSecond = view.FindViewById<TextView>(Resource.Id.aroundStation2);
-        var bikes = view.FindViewById<TextView>(Resource.Id.aroundBikes);
-        var racks = view.FindViewById<TextView>(Resource.Id.aroundRacks);
+        var navigate = view.FindViewById<ImageView>(Resource.Id.aroundStar);
+        var scheduleItemName = view.FindViewById<TextView>(Resource.Id.aroundStation1);
+        var scheduleItemSecondName = view.FindViewById<TextView>(Resource.Id.aroundStation2);
+        var timeSlot = view.FindViewById<TextView>(Resource.Id.aroundBikes);
+        var description = view.FindViewById<TextView>(Resource.Id.aroundRacks);
 
-        var station = schedule[position];
-        star.SetImageDrawable(starDrawable);
-        star.Visibility = currentSchedule.Contains(station.Id) ? ViewStates.Visible : ViewStates.Invisible;
+        var scheduleItem = schedule[position];
+        navigate.SetImageDrawable(starDrawable);
+        navigate.Visibility = currentSchedule.Contains(scheduleItem.Id) ? ViewStates.Visible : ViewStates.Invisible;
 
-        stationName.Text = station.Street;//StationUtils.CutStationName (station.Name, out secondPart);
-        stationNameSecond.Text = station.Name;
-        bikes.Text = station.BikeCount.ToString();
-        racks.Text = station.EmptySlotCount.ToString();
+        scheduleItemName.Text = scheduleItem.Street;//StationUtils.CutStationName (station.Name, out secondPart);
+        scheduleItemSecondName.Text = scheduleItem.Name;
+        timeSlot.Text = scheduleItem.BikeCount.ToString();
+        description.Text = scheduleItem.EmptySlotCount.ToString();
 
         return view;
     }
