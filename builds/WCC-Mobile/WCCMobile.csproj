@@ -158,47 +158,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\BaseActivity.cs" />
-    <Compile Include="Activities\CampusMapActivity.cs" />
-    <Compile Include="Activities\ContactsActvity.cs" />
-    <Compile Include="Activities\CourseActivity.cs" />
-    <Compile Include="Fragments\ScheduleFragment.cs" />
-    <Compile Include="Activities\SettingsActivity.cs" />
-    <Compile Include="Adapters\GenericAdapter.cs" />
-    <Compile Include="Adapters\ScheduleManager.cs" />
-    <Compile Include="Controls\InfoBarController.cs" />
-    <Compile Include="Extensions\AndroidExtensions.cs" />
-    <Compile Include="Extensions\AnimationExtensions.cs" />
-    <Compile Include="Controls\InfoPane.cs" />
-    <Compile Include="Controls\PinFactory.cs" />
-    <Compile Include="Activities\BasicInfoActivity.cs" />
-    <Compile Include="Activities\MainActivity.cs" />
-    <Compile Include="Activities\PhoneBookActivity.cs" />
-    <Compile Include="Fragments\CampusMapFragment.cs" />
-    <Compile Include="Fragments\ICampusSection.cs" />
-    <Compile Include="Fragments\ScheduleHistory.cs" />
-    <Compile Include="Helpers\LocationUtils.cs" />
-    <Compile Include="Helpers\MapHelper.cs" />
-    <Compile Include="Helpers\ScheduleObserver.cs" />
-    <Compile Include="Helpers\CheckGooglePlayServices.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\ScheduleItem.cs" />
-    <Compile Include="Models\ScheduleRootObject.cs" />
+    <Compile Include="Source\Activities\BaseActivity.cs" />
+    <Compile Include="Source\Activities\CampusMapActivity.cs" />
+    <Compile Include="Source\Activities\ContactsActvity.cs" />
+    <Compile Include="Source\Activities\CourseActivity.cs" />
+    <Compile Include="Source\Fragments\ScheduleFragment.cs" />
+    <Compile Include="Source\Activities\SettingsActivity.cs" />
+    <Compile Include="Source\Adapters\GenericAdapter.cs" />
+    <Compile Include="Source\Adapters\ScheduleManager.cs" />
+    <Compile Include="Source\Controls\InfoBarController.cs" />
+    <Compile Include="Source\Extensions\AndroidExtensions.cs" />
+    <Compile Include="Source\Extensions\AnimationExtensions.cs" />
+    <Compile Include="Source\Controls\InfoPane.cs" />
+    <Compile Include="Source\Controls\PinFactory.cs" />
+    <Compile Include="Source\Activities\BasicInfoActivity.cs" />
+    <Compile Include="Source\Activities\MainActivity.cs" />
+    <Compile Include="Source\Activities\PhoneBookActivity.cs" />
+    <Compile Include="Source\Fragments\CampusMapFragment.cs" />
+    <Compile Include="Source\Fragments\ICampusSection.cs" />
+    <Compile Include="Source\Helpers\ScheduleHistory.cs" />
+    <Compile Include="Source\Helpers\LocationUtils.cs" />
+    <Compile Include="Source\Helpers\MapHelper.cs" />
+    <Compile Include="Source\Helpers\ScheduleObserver.cs" />
+    <Compile Include="Source\Helpers\CheckGooglePlayServices.cs" />
+    <Compile Include="Source\Models\Location.cs" />
+    <Compile Include="Source\Models\ScheduleItem.cs" />
+    <Compile Include="Source\Models\ScheduleRootObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ImageAdapter.cs" />
+    <Compile Include="Source\Adapters\ImageAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
-    <Compile Include="Resources\YellowBookAdapter.cs" />
-    <Compile Include="Storage\BitmapCache.cs" />
-    <Compile Include="Storage\DiskCache.cs" />
-    <Compile Include="Storage\LRUCache.cs" />
-    <Compile Include="SwitchableFab.cs" />
-    <Compile Include="Extensions\ViewExtensions.cs" />
-    <Compile Include="ViewPagerAdapter.cs" />
+    <Compile Include="Source\Adapters\YellowBookAdapter.cs" />
+    <Compile Include="Source\Storage\BitmapCache.cs" />
+    <Compile Include="Source\Storage\DiskCache.cs" />
+    <Compile Include="Source\Storage\LRUCache.cs" />
+    <Compile Include="Source\SwitchableFab.cs" />
+    <Compile Include="Source\Extensions\ViewExtensions.cs" />
+    <Compile Include="Source\Adapters\ViewPagerAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
-    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Source\Assets\AboutAssets.txt" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\MapLayout.axml" />
     <AndroidResource Include="Resources\layout\InfoFooterLayout.axml" />
@@ -220,40 +220,40 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\YellowBook.txt" />
+    <AndroidAsset Include="Source\Assets\YellowBook.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Dining Services.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Dining Services.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Athletics.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Athletics.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Counseling.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Counseling.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Student Involvement.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Student Involvement.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Career and Transfer Services.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Career and Transfer Services.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\BusTrainSchedules\" />
+    <Folder Include="Source\Assets\BusTrainSchedules\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Transit.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Transit.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Financial Aid.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Financial Aid.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Bursars Office.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Bursars Office.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Registrar Office-Registration.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Registrar Office-Registration.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BasicInfoFiles\Courses.txt" />
+    <AndroidAsset Include="Source\Assets\BasicInfoFiles\Courses.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_athletics.png" />

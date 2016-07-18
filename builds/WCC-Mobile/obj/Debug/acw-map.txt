@@ -1,7 +1,3 @@
-OnMapReadyClass, WCCMobile;md535326bb472cdd9f44910684775f21888.OnMapReadyClass
-OnMapReadyClass, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md535326bb472cdd9f44910684775f21888.OnMapReadyClass
-OnMapReadyClass;md535326bb472cdd9f44910684775f21888.OnMapReadyClass
-OnMapReadyClass;md535326bb472cdd9f44910684775f21888.OnMapReadyClass
 WCCMobile.BaseActivity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.BaseActivity
 WCCMobile.BaseActivity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.BaseActivity
 WCCMobile.BaseActivity;md59b15f7978abc4d0b2cebe92668d59436.BaseActivity
@@ -66,14 +62,6 @@ WCCMobile.MainActivity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.MainActivi
 WCCMobile.MainActivity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
 WCCMobile.MainActivity;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
 wccmobile.MainActivity;md59b15f7978abc4d0b2cebe92668d59436.MainActivity
-WCCMobile.GoogleMapActivity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.GoogleMapActivity
-WCCMobile.GoogleMapActivity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.GoogleMapActivity
-WCCMobile.GoogleMapActivity;md59b15f7978abc4d0b2cebe92668d59436.GoogleMapActivity
-wccmobile.GoogleMapActivity;md59b15f7978abc4d0b2cebe92668d59436.GoogleMapActivity
-WCCMobile.OnMapReadyClass, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.OnMapReadyClass
-WCCMobile.OnMapReadyClass, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.OnMapReadyClass
-WCCMobile.OnMapReadyClass;md59b15f7978abc4d0b2cebe92668d59436.OnMapReadyClass
-wccmobile.OnMapReadyClass;md59b15f7978abc4d0b2cebe92668d59436.OnMapReadyClass
 WCCMobile.PhoneBookActivity, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActivity
 WCCMobile.PhoneBookActivity, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActivity
 WCCMobile.PhoneBookActivity;md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActivity
@@ -94,10 +82,6 @@ WCCMobile.GetMapHelper, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.GetMapHelp
 WCCMobile.GetMapHelper, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.GetMapHelper
 WCCMobile.GetMapHelper;md59b15f7978abc4d0b2cebe92668d59436.GetMapHelper
 wccmobile.GetMapHelper;md59b15f7978abc4d0b2cebe92668d59436.GetMapHelper
-WCCMobile.MyMapFragment, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.MyMapFragment
-WCCMobile.MyMapFragment, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.MyMapFragment
-WCCMobile.MyMapFragment;md59b15f7978abc4d0b2cebe92668d59436.MyMapFragment
-wccmobile.MyMapFragment;md59b15f7978abc4d0b2cebe92668d59436.MyMapFragment
 WCCMobile.SwitchableFab, WCCMobile;md59b15f7978abc4d0b2cebe92668d59436.SwitchableFab
 WCCMobile.SwitchableFab, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b15f7978abc4d0b2cebe92668d59436.SwitchableFab
 WCCMobile.SwitchableFab;md59b15f7978abc4d0b2cebe92668d59436.SwitchableFab

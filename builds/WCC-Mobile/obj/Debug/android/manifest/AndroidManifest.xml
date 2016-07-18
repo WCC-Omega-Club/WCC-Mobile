@@ -33,7 +33,6 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="Google Map" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.GoogleMapActivity" />
     <activity android:label="Directory" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="WCCMobile.WCCMobile.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->

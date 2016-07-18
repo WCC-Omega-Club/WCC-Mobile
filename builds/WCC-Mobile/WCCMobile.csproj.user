@@ -4,6 +4,6 @@
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
     <SelectedDevice>Nexus5KitKat</SelectedDevice>
     <AndroidDesignerPreferredTheme>Theme.Material.Light.DarkActionBar</AndroidDesignerPreferredTheme>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>
