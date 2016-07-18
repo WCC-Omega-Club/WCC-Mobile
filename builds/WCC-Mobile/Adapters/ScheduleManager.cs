@@ -10,7 +10,7 @@ namespace WCCMobile
 
         private readonly string ScheduleKey = "schedule_key";
         public object LastSchedule { get; internal set; }
-        public static event EventHandler FavoritesChanged;
+        public static event EventHandler ScheduleChanged;
        // public static Func<object, object, object> ScheduleChanged { get; internal set; }
         private static ScheduleManager instance;
         Context context;

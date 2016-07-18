@@ -36,7 +36,7 @@ namespace WCCMobile
             SetContentView(Resource.Layout.BasicInfoLayout);
 
             ATTR.MainLauncher = true;
-            ActionBar.SetIcon(Android.Resource.Color.Transparent);
+            //ActionBar.SetIcon(Android.Resource.Color.Transparent);
             
 
             BasicInfoList = (ListView)FindViewById(Resource.Id.BasicInfoList);
