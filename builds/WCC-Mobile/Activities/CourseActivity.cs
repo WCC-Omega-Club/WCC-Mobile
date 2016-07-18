@@ -193,8 +193,8 @@ namespace WCCMobile
             Spinner merSpinner2 = FindViewById<Spinner>(Resource.Id.merSpinner2);
             merSpinner2.Adapter = merAdapter;
             #endregion
-            ActionBar.SetIcon(ImageAdapter.Label);
-            ActionBar.SetIcon(Android.Resource.Color.Transparent);
+            //ActionBar.SetIcon(ImageAdapter.Label);
+           // ActionBar.SetIcon(Android.Resource.Color.Transparent);
             ATTR.MainLauncher = true;
         }
 

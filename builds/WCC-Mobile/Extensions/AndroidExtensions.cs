@@ -9,7 +9,7 @@ public static class AndroidExtensions
     static float density;
     static ColorDrawable defaultBgColor;
     /// <summary>
-    /// Initializes the specified context.
+    /// Initializes the static <see cref="AndroidExtensions"/> using <paramref name="context"/>.
     /// </summary>
     /// <param name="context">The context.</param>
     public static void Initialize(Context context)
@@ -37,7 +37,8 @@ public static class AndroidExtensions
         }
     }
     /// <summary>
-    /// To the pixels.
+    /// Converts dp to pixels.
+    /// Screen display helper.
     /// </summary>
     /// <param name="dp">The dp.</param>
     /// <returns></returns>

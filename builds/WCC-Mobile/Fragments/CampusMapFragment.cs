@@ -56,7 +56,7 @@ namespace WCCMobile
 
         bool loading;
         bool showedStale;
-        FlashBarController flashBar;
+        InfoBarController flashBar;
         IMenuItem searchItem;
         ScheduleManager scheduleManager;
         TextView lastUpdateText;
@@ -166,7 +166,7 @@ namespace WCCMobile
             mapFragment.OnCreate(savedInstanceState);
             lastUpdateText = view.FindViewById<TextView>(Resource.Id.UpdateTimeText);
             SetupInfoPane(view);
-            flashBar = new FlashBarController(view);
+            flashBar = new InfoBarController(view);
             streetViewFragment = pane.FindViewById<StreetViewPanoramaView>(Resource.Id.streetViewPanorama);
             streetViewFragment.OnCreate(savedInstanceState);
 

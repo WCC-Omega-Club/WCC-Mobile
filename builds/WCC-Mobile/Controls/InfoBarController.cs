@@ -4,12 +4,12 @@ using Android.Widget;
 
 namespace WCCMobile
 {
-	public class FlashBarController
+	public class InfoBarController
 	{
 		FrameLayout layout;
 		TextView text;
 
-		public FlashBarController (View parentView)
+		public InfoBarController (View parentView)
 		{
 			layout = parentView.FindViewById<FrameLayout> (Resource.Id.FlashBarLayout);
 			text = parentView.FindViewById<TextView> (Resource.Id.FlashBarText);

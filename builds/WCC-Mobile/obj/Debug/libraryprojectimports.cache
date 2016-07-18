@@ -2,19 +2,19 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\FFImageLoading.Platform\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\FFImageLoading.Platform.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile-Course-Manager\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\FFImageLoading.Platform.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>
