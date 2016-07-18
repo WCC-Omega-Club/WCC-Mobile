@@ -19,7 +19,7 @@ namespace WCCMobile
 			base.OnCreate(savedInstanceState);
 		}
 
-		public override Android.Views.View OnCreateView (Android.Views.LayoutInflater inflater, Android.Views.ViewGroup container, Android.OS.Bundle savedInstanceState)
+		/*public override Android.Views.View OnCreateView (Android.Views.LayoutInflater inflater, Android.Views.ViewGroup container, Android.OS.Bundle savedInstanceState)
 		{
 			if (container == null)
 				return null;
@@ -33,7 +33,7 @@ namespace WCCMobile
 
 			return view;
 
-		}
+		}*/
 
 		public override void OnResume ()
 		{

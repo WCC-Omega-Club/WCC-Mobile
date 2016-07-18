@@ -55,7 +55,7 @@ namespace WCCMobile
             if (null != map)
                 return false;
 
-            mapfrag = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
+            mapfrag = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.Map);
 
           /*  var mapReadyCallback = new OnMapReadyClass();
 

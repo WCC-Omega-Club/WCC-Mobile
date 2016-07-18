@@ -12,16 +12,22 @@
   <uses-permission android:name="android.permission.CALL_PHONE" />
   <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBltyBPLJBRYR2bKEfefZYivoKhyW3e70w" />
-  <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-  <application android:label="WCC Mobile" android:theme="@style/Theme.Custom" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+  <application android:label="WCCMobile" android:theme="@style/WCCMobileTheme" android:icon="@drawable/wccmainappicon_57x57" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBltyBPLJBRYR2bKEfefZYivoKhyW3e70w" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <activity android:configChanges="orientation|screenSize" android:label="Campus Map" android:launchMode="singleTop" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:screenOrientation="portrait" android:theme="@style/WCCMobileTheme" android:name="md59b15f7978abc4d0b2cebe92668d59436.CampusMapActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.SEARCH" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
     <activity android:label="PhoneBook" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.ContactsActvity" />
     <activity android:label="CourseActivity" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.CourseActivity" />
     <activity android:label="BasicInfoActivity" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.BasicInfoActivity" />
-    <activity android:icon="@drawable/wccmainappicon_57x57" android:label="WCC Mobile" android:name="md59b15f7978abc4d0b2cebe92668d59436.MainActivity">
+    <activity android:icon="@drawable/wccmainappicon_57x57" android:label="WCC Mobile" android:theme="@style/WCCMobileTheme" android:name="md59b15f7978abc4d0b2cebe92668d59436.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
@@ -29,7 +35,6 @@
     </activity>
     <activity android:label="Google Map" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.GoogleMapActivity" />
     <activity android:label="Directory" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActivity" />
-    <activity android:label="TestActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.TestActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="WCCMobile.WCCMobile.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
