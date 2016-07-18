@@ -43,14 +43,15 @@ namespace WCCMobile
         {
             base.OnCreate(savedInstanceState);
             this.SetContentView(Resource.Layout.PhoneBookLayout);
-            ActionBar.SetIcon(ImageAdapter.Label);
+            //ActionBar.SetIcon(ImageAdapter.Label);
+            //this.SupportActionBar.SetIcon(ImageAdapter.Label);
             PhoneBookList = (ListView)FindViewById(Resource.Id.PhoneBookList);
             PhoneBookList.Adapter = new YellowBookAdapter(this);
             PhoneBookList.ItemClick += AlertContact;//CallNumber;// Binds the CallNumber function to the PhoneBook ItemClick
             //PhoneBookList.ItemLongClick += SendEmail;
 
             ATTR.MainLauncher = true;
-            ActionBar.SetIcon(Android.Resource.Color.Transparent);
+            //SupportActionBar.SetIcon(Android.Resource.Color.Transparent);
         }
         /// <summary>
         /// Called when the activity has detected the user's press of the back

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
     <SelectedDevice>Nexus5KitKat</SelectedDevice>
-    <AndroidDesignerPreferredTheme>Theme.Custom</AndroidDesignerPreferredTheme>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <AndroidDesignerPreferredTheme>Theme.Material.Light.DarkActionBar</AndroidDesignerPreferredTheme>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

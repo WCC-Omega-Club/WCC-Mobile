@@ -19,7 +19,7 @@ using Android.Support.V7.App;
 namespace WCCMobile
 {
     //[Activity(MainLauncher = true, ParentActivity = typeof(MainActivity))]
-    [Activity( Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57")]
+    [Activity( Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57", Theme ="@style/WCCMobileTheme")]
     public class MainActivity : AppCompatActivity
     {
         static Thread imgThread = null;
@@ -169,8 +169,7 @@ namespace WCCMobile
                     
                     //break;//start sub app at box '0' continue for each app; 
                 case 0: // Map
-                    AlertNotImplemented();
-                    isReady = true;
+                    StartActivity(typeof(CampusMapActivity));
                     break;//start sub app at box '0' continue for each app; 
                 case 1: // Directory
                     StartActivity(typeof(PhoneBookActivity));

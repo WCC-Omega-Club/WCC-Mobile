@@ -2,7 +2,7 @@ package md59b15f7978abc4d0b2cebe92668d59436;
 
 
 public class GoogleMapActivity
-	extends android.app.Activity
+	extends android.support.v7.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer,
 		com.google.android.gms.maps.OnMapReadyCallback

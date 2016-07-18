@@ -8,7 +8,7 @@ namespace WCCMobile {
     public static class ViewExtensions
     {
         /// <summary>
-        /// Inflates the and bind text view.
+        /// Inflates and binds text view.
         /// </summary>
         /// <param name="parentView">The parent view.</param>
         /// <param name="textViewResourceId">The text view resource identifier.</param>
@@ -60,7 +60,7 @@ namespace WCCMobile {
         /// <param name="imageViewResourceId">The image view resource identifier.</param>
         /// <param name="imageUrl">The image URL.</param>
         /// <returns></returns>
-       /* public static ImageViewAsync InflateAndBindRemoteImageView(this View parentView, int imageViewResourceId, string imageUrl)
+        public static ImageViewAsync InflateAndBindRemoteImageView(this View parentView, int imageViewResourceId, string imageUrl)
         {
             ImageViewAsync imageView = null;
 
@@ -70,12 +70,12 @@ namespace WCCMobile {
 
                 if (imageView != null)
                 {
-                    ImageService.Instance.LoadUrl(imageUrl).Transform(new CircleTransformation()).Into(imageView);
+                //    ImageService.Instance.LoadUrl(imageUrl).Transform(new CircleTransformation()).Into(imageView);
                 }
             }
 
             return imageView;
-        }*/
+        }
         /// <summary>
         /// Inflates and binds local image view by resource.
         /// </summary>

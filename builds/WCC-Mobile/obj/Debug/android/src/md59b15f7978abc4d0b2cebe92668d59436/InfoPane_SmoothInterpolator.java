@@ -5,14 +5,13 @@ public class InfoPane_SmoothInterpolator
 	extends java.lang.Object
 	implements
 		mono.android.IGCUserPeer,
-		android.view.animation.Interpolator,
 		android.animation.TimeInterpolator
 {
 /** @hide */
 	public static final String __md_methods;
 	static {
 		__md_methods = 
-			"n_getInterpolation:(F)F:GetGetInterpolation_FHandler:Android.Views.Animations.IInterpolatorInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
+			"n_getInterpolation:(F)F:GetGetInterpolation_FHandler:Android.Animation.ITimeInterpolatorInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
 			"";
 		mono.android.Runtime.register ("WCCMobile.InfoPane+SmoothInterpolator, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", InfoPane_SmoothInterpolator.class, __md_methods);
 	}
