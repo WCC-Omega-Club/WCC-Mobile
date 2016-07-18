@@ -31,7 +31,7 @@ namespace WCCMobile {
             return textView;
         }
         /// <summary>
-        /// Inflates and binds edit text.
+        /// Inflates and binds the editable textview to <paramref name="parentView"/>.
         /// </summary>
         /// <param name="parentView">The parent view.</param>
         /// <param name="textViewResourceId">The text view resource identifier.</param>
@@ -54,7 +54,7 @@ namespace WCCMobile {
             return editText;
         }
         /// <summary>
-        /// Inflates the and bind remote image view.
+        /// Inflates an imageview to <paramref name="parentView"/>.
         /// </summary>
         /// <param name="parentView">The parent view.</param>
         /// <param name="imageViewResourceId">The image view resource identifier.</param>
@@ -77,7 +77,7 @@ namespace WCCMobile {
             return imageView;
         }
         /// <summary>
-        /// Inflates and binds local image view by resource.
+        /// Inflates and binds local image view by resource to <paramref name="parentView"/>.
         /// </summary>
         /// <param name="parentView">The parent view.</param>
         /// <param name="imageViewResourceId">The image view resource identifier.</param>
