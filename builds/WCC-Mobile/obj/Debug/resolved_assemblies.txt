@@ -18,6 +18,7 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\XamSvg.Droid.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\XamSvg.Shared.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Java.Interop.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.Android.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.Android.Export.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\mscorlib.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\System.Core.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\System.dll

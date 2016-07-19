@@ -91,6 +91,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
@@ -162,6 +163,9 @@
     <Compile Include="Activities\CampusMapActivity.cs" />
     <Compile Include="Activities\ContactsActvity.cs" />
     <Compile Include="Activities\CourseActivity.cs" />
+    <Compile Include="Controls\SlideUpState.cs" />
+    <Compile Include="Controls\SlidingUpPanel.cs" />
+    <Compile Include="Controls\SlidingUpPanelEventArgs.cs" />
     <Compile Include="Fragments\ScheduleFragment.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="Adapters\GenericAdapter.cs" />
@@ -213,6 +217,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\DrawerHeader.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FooterSlideUp.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -473,6 +480,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Animator\frag_slide_out.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\attrs.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets')" />

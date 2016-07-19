@@ -62,6 +62,7 @@ namespace WCCMobile
         TextView lastUpdateText;
         PinFactory pinFactory;
         InfoPane pane;
+        SlidingUpPanelLayout slideUpPanel; 
         SvgBitmapDrawable starOnDrawable;
         SvgBitmapDrawable starOffDrawable;
         
@@ -168,10 +169,37 @@ namespace WCCMobile
             SetupInfoPane(view);
             flashBar = new InfoBarController(view);
             streetViewFragment = pane.FindViewById<StreetViewPanoramaView>(Resource.Id.streetViewPanorama);
+            SetUpSlideUpPane(view);
             streetViewFragment.OnCreate(savedInstanceState);
 
             return view;
         }
+
+        public void SetUpSlideUpPane(View view)
+        {
+            
+            slideUpPanel = view.FindViewById<SlidingUpPanelLayout>(Resource.Id.sliding_layout);
+
+            slideUpPanel.ShadowDrawable = Resources.GetDrawable(Resource.Drawable.ic_map_footer_details_down);
+            slideUpPanel.AnchorPoint = 0.3f;
+            slideUpPanel.PanelExpanded += (s, e) => Log.Info(Tag, "PanelExpanded");
+            slideUpPanel.PanelCollapsed += (s, e) => Log.Info(Tag, "PanelCollapsed");
+            slideUpPanel.PanelAnchored += (s, e) => Log.Info(Tag, "PanelAnchored");
+            slideUpPanel.PanelSlide += (s, e) =>
+            {
+                if (e.SlideOffset < 0.2)
+                {
+                    slideUpPanel.ShowContextMenu();
+                }
+                else
+                {
+                   // if (!slideUpPanel.IsShowing)
+                    //    SupportActionBar.Show();
+                }
+            };
+
+        }
+
 
         /// <summary>
         /// Sets up the information pane.
@@ -520,7 +548,7 @@ namespace WCCMobile
             var stationsToUpdate = courses.Where(station =>
             {
                 Marker marker;
-                var stats = station.BikeCount + "|" + station.EmptySlotCount;
+                var stats = station.Occurence + "|" + station.EmptySlotCount;
                 if (existingMarkers.TryGetValue(station.Id, out marker))
                 {
                     if (marker.Snippet == stats && !showedStale)
@@ -538,9 +566,9 @@ namespace WCCMobile
                     return pinFactory.GetClosedPin(w, h);
                 else if (!station.Installed)
                     return pinFactory.GetNonInstalledPin(w, h);
-                var ratio = (float)TruncateDigit(station.BikeCount / ((float)station.Capacity), 2);
+                var ratio = (float)TruncateDigit(station.Occurence / ((float)station.Capacity), 2);
                 return pinFactory.GetPin(ratio,
-                    station.BikeCount,
+                    station.Occurence,
                     w, h,
                     alpha: alpha);
             }));
@@ -549,14 +577,14 @@ namespace WCCMobile
             {
                 var pin = pins[station.Id];
 
-                var snippet = station.BikeCount + "|" + station.EmptySlotCount;
+                var snippet = station.Occurence + "|" + station.EmptySlotCount;
                 if (station.Locked)
                     snippet = string.Empty;
                 else if (!station.Installed)
                     snippet = "not_installed";
 
                 var markerOptions = new MarkerOptions()
-          .SetTitle(station.Id + "|" + station.Street + "|" + station.Name)
+          .SetTitle(station.Id + "|" + station.Major + "|" + station.Name)
           .SetSnippet(snippet)
           .SetPosition(new Android.Gms.Maps.Model.LatLng(station.Location.Lat, station.Location.Lon))
           .SetIcon(BitmapDescriptorFactory.FromBitmap(pin));
@@ -822,7 +850,7 @@ namespace WCCMobile
             {
                 var opts = new MarkerOptions()
       .SetPosition(startLatLng)
-                .SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueViolet));
+                .SetIcon(BitmapDescriptorFactory.DefaultMarker(Resource.Drawable.pin));
                 var marker = map.AddMarker(opts);
                 var animator = ObjectAnimator.OfObject(marker, "position", new LatLngEvaluator(), startLatLng, finalLatLng);
                 animator.SetDuration(1000);

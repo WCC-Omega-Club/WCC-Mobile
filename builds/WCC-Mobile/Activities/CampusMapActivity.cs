@@ -732,9 +732,9 @@ class DrawerAroundAdapter : BaseAdapter
         navigate.SetImageDrawable(starDrawable);
         navigate.Visibility = currentSchedule.Contains(scheduleItem.Id) ? ViewStates.Visible : ViewStates.Invisible;
 
-        scheduleItemName.Text = scheduleItem.Street;//StationUtils.CutStationName (station.Name, out secondPart);
+        scheduleItemName.Text = scheduleItem.Major;//StationUtils.CutStationName (station.Name, out secondPart);
         scheduleItemSecondName.Text = scheduleItem.Name;
-        timeSlot.Text = scheduleItem.BikeCount.ToString();
+        timeSlot.Text = scheduleItem.Occurence.ToString();
         description.Text = scheduleItem.EmptySlotCount.ToString();
 
         return view;

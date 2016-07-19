@@ -43,4 +43,6 @@
         android:textSize="8sp" />
     <include
         layout="@layout/InfoFooterLayout" />
+    <include
+        layout="@layout/FooterSlideUp" />
 </FrameLayout>

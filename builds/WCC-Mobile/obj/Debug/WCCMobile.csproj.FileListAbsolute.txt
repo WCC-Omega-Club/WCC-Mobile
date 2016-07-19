@@ -129,10 +129,14 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\animator\frag_slide_in.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\animator\frag_slide_out.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\footerslideup.xml
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\attrs.xml
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Java.Interop.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Microsoft.CSharp.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Mono.Android.dll.mdb
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Mono.Android.Export.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Mono.CSharp.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\mscorlib.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\System.ComponentModel.Composition.dll.mdb
@@ -146,6 +150,7 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\System.Xml.Linq.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Java.Interop.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.Android.dll.mdb
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.Android.Export.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.CSharp.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\mscorlib.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
