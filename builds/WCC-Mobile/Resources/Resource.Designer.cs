@@ -2369,62 +2369,59 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0200a6
 			public const int locked = 2130837670;
 			
-			// aapt resource value: 0x7f0200a7
-			public const int logo = 2130837671;
+			// aapt resource value: 0x7f0200b8
+			public const int notification_template_icon_bg = 2130837688;
 			
-			// aapt resource value: 0x7f0200b9
-			public const int notification_template_icon_bg = 2130837689;
+			// aapt resource value: 0x7f0200a7
+			public const int pane_item_bg = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int pane_item_bg = 2130837672;
+			public const int pane_item_bg_normal = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int pane_item_bg_normal = 2130837673;
+			public const int pane_item_bg_selected = 2130837673;
 			
 			// aapt resource value: 0x7f0200aa
-			public const int pane_item_bg_selected = 2130837674;
+			public const int pattern = 2130837674;
 			
 			// aapt resource value: 0x7f0200ab
-			public const int pattern = 2130837675;
+			public const int pin = 2130837675;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int pin = 2130837676;
+			public const int placeholder_128x185 = 2130837676;
 			
 			// aapt resource value: 0x7f0200ad
-			public const int placeholder_128x185 = 2130837677;
+			public const int places_ic_clear = 2130837677;
 			
 			// aapt resource value: 0x7f0200ae
-			public const int places_ic_clear = 2130837678;
+			public const int places_ic_search = 2130837678;
 			
 			// aapt resource value: 0x7f0200af
-			public const int places_ic_search = 2130837679;
+			public const int powered_by_google_dark = 2130837679;
 			
 			// aapt resource value: 0x7f0200b0
-			public const int powered_by_google_dark = 2130837680;
+			public const int powered_by_google_light = 2130837680;
 			
 			// aapt resource value: 0x7f0200b1
-			public const int powered_by_google_light = 2130837681;
+			public const int privated = 2130837681;
 			
 			// aapt resource value: 0x7f0200b2
-			public const int privated = 2130837682;
+			public const int star_off = 2130837682;
 			
 			// aapt resource value: 0x7f0200b3
-			public const int star_off = 2130837683;
+			public const int star_on = 2130837683;
 			
 			// aapt resource value: 0x7f0200b4
-			public const int star_on = 2130837684;
+			public const int temporary = 2130837684;
 			
 			// aapt resource value: 0x7f0200b5
-			public const int temporary = 2130837685;
+			public const int texture_pattern = 2130837685;
 			
 			// aapt resource value: 0x7f0200b6
-			public const int texture_pattern = 2130837686;
+			public const int time_cell_bg = 2130837686;
 			
 			// aapt resource value: 0x7f0200b7
-			public const int time_cell_bg = 2130837687;
-			
-			// aapt resource value: 0x7f0200b8
-			public const int WCCMainAppIcon_57x57 = 2130837688;
+			public const int WCCMainAppIcon_57x57 = 2130837687;
 			
 			static Drawable()
 			{
@@ -3407,22 +3404,22 @@ namespace WCCMobile
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int bike = 2131099648;
+			public const int bike_number = 2131099648;
 			
 			// aapt resource value: 0x7f060001
-			public const int bike_number = 2131099649;
+			public const int bike_separator = 2131099649;
 			
 			// aapt resource value: 0x7f060002
-			public const int bike_separator = 2131099650;
+			public const int clock = 2131099650;
 			
 			// aapt resource value: 0x7f060003
-			public const int clock = 2131099651;
+			public const int ic_lock = 2131099651;
 			
 			// aapt resource value: 0x7f060004
-			public const int ic_lock = 2131099652;
+			public const int map_placeholder = 2131099652;
 			
 			// aapt resource value: 0x7f060005
-			public const int map_placeholder = 2131099653;
+			public const int min = 2131099653;
 			
 			// aapt resource value: 0x7f060006
 			public const int not_installed = 2131099654;

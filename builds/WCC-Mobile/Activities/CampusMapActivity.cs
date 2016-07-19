@@ -43,7 +43,7 @@ public class CampusMapActivity
 
     DrawerAroundAdapter aroundAdapter;
     GoogleApiClient client;
-
+   
     Typeface menuNormalTf, menuHighlightTf;
         /// <summary>
         /// Gets the current fragment.
@@ -81,8 +81,9 @@ public class CampusMapActivity
         {
             base.OnCreate(bundle);
 
-            Xamarin.Insights.Initialize("0d4fce398ef6007c41608174cd08dca7ea995c7a", this);
+            Xamarin.Insights.Initialize("0988898ef6007c41608174cd08dca7ea995c7a", this);
             Xamarin.Insights.ForceDataTransmission = true;
+            Title = "WCCMobile";
             AndroidExtensions.Initialize(this);
             this.drawer = new DrawerLayout(this);
             this.drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
@@ -172,13 +173,7 @@ public class CampusMapActivity
             case 1:
                 if (scheduleFragment == null)
                 {
-                    /*favoriteFragment = new ScheduleFragment(this, id =>
-                    {
-                        SwitchTo(mapFragment);
-                        mapFragment.CenterAndOpenOnMap(id,
-                            zoom: 17,
-                            animDurationID: Android.Resource.Integer.ConfigLongAnimTime);
-                    });*/
+                    
                 }
                 SwitchTo(scheduleFragment);
                 break;
@@ -232,8 +227,8 @@ public class CampusMapActivity
             }
             else
             {
-                    t.Add(Resource.Id.contentPanel, fragment, name);
-                    //t.Add(Resource.Id.content_frame, fragment, name);
+                    t.Add(Resource.Id.content_frame, fragment, name);
+                   
             }
             section.RefreshData();
         }
@@ -245,7 +240,7 @@ public class CampusMapActivity
         for (int i = 0; i < 2; i++)
         {
             var view = drawerMenu.GetChildAt(i);
-            var text = view.FindViewById<TextView>(Resource.Id.text);
+            var text = view.FindViewById<TextView>(Resource.Id.roomText);
             if (i == pos)
                 text.SetTypeface(text.Typeface, TypefaceStyle.Bold);
             else
@@ -544,11 +539,11 @@ public class CampusMapActivity
         var location = LocationServices.FusedLocationApi.GetLastLocation(client);
         if (location == null)
             return;
-        var stations = ScheduleObserver.GetStationsAround(value,
+        var events = ScheduleObserver.GetEventsAround(value,
                   new Location { Lat = location.Latitude, Lon = location.Longitude },
                   minDistance: 1,
                   maxItems: 4);
-        RunOnUiThread(() => aroundAdapter.SetSchedule(stations));
+        RunOnUiThread(() => aroundAdapter.SetSchedule(events));
     }
 
     #endregion
@@ -691,10 +686,7 @@ class DrawerAroundAdapter : BaseAdapter
 
     async void LoadSchedule()
     {
-        //if (manager.LastSchedule != null)
-        //    currentSchedule = manager.LastScheduleItems;
-       // else
-          //  currentSchedule = await manager.GetScheduleItemIdsAsync();
+     
         NotifyDataSetChanged();
     }
 
@@ -732,7 +724,7 @@ class DrawerAroundAdapter : BaseAdapter
         navigate.SetImageDrawable(starDrawable);
         navigate.Visibility = currentSchedule.Contains(scheduleItem.Id) ? ViewStates.Visible : ViewStates.Invisible;
 
-        scheduleItemName.Text = scheduleItem.Major;//StationUtils.CutStationName (station.Name, out secondPart);
+        scheduleItemName.Text = scheduleItem.Major;
         scheduleItemSecondName.Text = scheduleItem.Name;
         timeSlot.Text = scheduleItem.Occurence.ToString();
         description.Text = scheduleItem.EmptySlotCount.ToString();
@@ -747,13 +739,34 @@ class DrawerAroundAdapter : BaseAdapter
             return schedule == null ? 0 : schedule.Length;
         }
     }
-
-    public override bool IsEnabled(int position)
+        /// <summary>
+        /// Returns true if the item at the specified position is not a separator.
+        /// </summary>
+        /// <param name="position">Index of the item</param>
+        /// <returns>
+        /// To be added.
+        /// </returns>
+        /// <remarks>
+        /// <para tool="javadoc-to-mdoc">Returns true if the item at the specified position is not a separator.
+        /// (A separator is a non-selectable, non-clickable item).
+        /// The result is unspecified if position is invalid. An <c><see cref="T:Java.Lang.ArrayIndexOutOfBoundsException" /></c>
+        /// should be thrown in that case for fast failure.</para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <format type="text/html">
+        ///     <a href="http://developer.android.com/reference/android/widget/BaseAdapter.html#isEnabled(int)" target="_blank">[Android Documentation]</a>
+        ///   </format>
+        /// </para>
+        /// </remarks>
+        /// <since version="Added in API level 1" />
+        public override bool IsEnabled(int position)
     {
         return true;
     }
-
-    public override bool AreAllItemsEnabled()
+        /// <summary>
+        /// Ares all items enabled.
+        /// </summary>
+        /// <returns></returns>
+        public override bool AreAllItemsEnabled()
     {
         return false;
     }

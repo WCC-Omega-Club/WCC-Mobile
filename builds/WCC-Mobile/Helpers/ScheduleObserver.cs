@@ -41,7 +41,7 @@ namespace WCCMobile
                 private set;
             }
 
-            public static ScheduleItem[] GetStationsAround(ScheduleItem[] stations, Location location, double minDistance = 100, int maxItems = 4)
+            public static ScheduleItem[] GetEventsAround(ScheduleItem[] stations, Location location, double minDistance = 100, int maxItems = 4)
             {
                 var dic = new SortedDictionary<double, ScheduleItem>();
                 foreach (var s in stations)

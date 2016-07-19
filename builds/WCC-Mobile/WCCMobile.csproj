@@ -384,9 +384,6 @@
     <AndroidResource Include="Resources\drawable\locked.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\privated.png" />
   </ItemGroup>
   <ItemGroup>
@@ -405,7 +402,7 @@
     <AndroidResource Include="Resources\values\colors-wccmobile.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Raw\bike.svg" />
+    <AndroidResource Include="Resources\Raw\min.svg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Raw\bike_number.svg" />

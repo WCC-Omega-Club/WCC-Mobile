@@ -3041,12 +3041,12 @@ containing a value of this type.
         public static int map_menu=0x7f0f0000;
     }
     public static final class raw {
-        public static int bike=0x7f060000;
-        public static int bike_number=0x7f060001;
-        public static int bike_separator=0x7f060002;
-        public static int clock=0x7f060003;
-        public static int ic_lock=0x7f060004;
-        public static int map_placeholder=0x7f060005;
+        public static int bike_number=0x7f060000;
+        public static int bike_separator=0x7f060001;
+        public static int clock=0x7f060002;
+        public static int ic_lock=0x7f060003;
+        public static int map_placeholder=0x7f060004;
+        public static int min=0x7f060005;
         public static int not_installed=0x7f060006;
         public static int pattern=0x7f060007;
         public static int pin=0x7f060008;

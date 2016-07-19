@@ -175,11 +175,11 @@ namespace WCCMobile
                 int pos = 0;
                 Android.Support.V7.App.AlertDialog.Builder a = new Android.Support.V7.App.AlertDialog.Builder(Caller);
                 Android.Support.V7.App.AlertDialog alert = a.Create();
-
+                
                 while (p2Call[pos] != '\r' && p2Call[pos] != '\n') ++pos;
                 alert.SetTitle(p2Call.Substring(0, pos));
                 var uri = Android.Net.Uri.Parse("tel: " + p2Call.Substring(++pos, 10));
-
+                
                 alert.SetButton(1, uri.ToString(), delegate { var intent = new Intent(Intent.ActionCall, uri); Caller.StartActivity(intent); });
                 if (!p2Call.Substring(--pos + 12).Contains(empty_email_guard))
                 {

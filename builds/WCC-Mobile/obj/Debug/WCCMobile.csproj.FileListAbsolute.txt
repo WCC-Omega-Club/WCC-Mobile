@@ -95,14 +95,12 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\info_pane_vert_div
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\list_selector_bg.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\lock.png
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\locked.png
-D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\logo.png
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\privated.png
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\star_off.png
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\star_on.png
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\temporary.png
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\drawable\time_cell_bg.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\colors-wccmobile.xml
-D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\raw\bike.svg
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\raw\bike_number.svg
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\raw\bike_separator.svg
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\raw\clock.svg
@@ -131,7 +129,7 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\R.cs.flag
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\footerslideup.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\attrs.xml
-D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\raw\min.svg
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Java.Interop.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Microsoft.CSharp.dll.mdb

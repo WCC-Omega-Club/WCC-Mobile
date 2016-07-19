@@ -33,7 +33,7 @@ namespace WCCMobile
         /// <param name="cacheName">Name of the cache.</param>
         /// <param name="version">The version.</param>
         /// <returns></returns>
-        public static BitmapCache CreateCache(Android.Content.Context context, string cacheName, string version = "1.0")
+        public static BitmapCache CreateCache(Context context, string cacheName, string version = "1.0")
         {
             return new BitmapCache(DiskCache.CreateCache(context, cacheName, version));
         }

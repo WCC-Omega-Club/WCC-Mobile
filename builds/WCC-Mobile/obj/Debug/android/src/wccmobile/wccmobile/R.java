@@ -2707,25 +2707,24 @@ containing a value of this type.
         public static final int list_selector_bg=0x7f0200a4;
         public static final int lock=0x7f0200a5;
         public static final int locked=0x7f0200a6;
-        public static final int logo=0x7f0200a7;
-        public static final int notification_template_icon_bg=0x7f0200b9;
-        public static final int pane_item_bg=0x7f0200a8;
-        public static final int pane_item_bg_normal=0x7f0200a9;
-        public static final int pane_item_bg_selected=0x7f0200aa;
-        public static final int pattern=0x7f0200ab;
-        public static final int pin=0x7f0200ac;
-        public static final int placeholder_128x185=0x7f0200ad;
-        public static final int places_ic_clear=0x7f0200ae;
-        public static final int places_ic_search=0x7f0200af;
-        public static final int powered_by_google_dark=0x7f0200b0;
-        public static final int powered_by_google_light=0x7f0200b1;
-        public static final int privated=0x7f0200b2;
-        public static final int star_off=0x7f0200b3;
-        public static final int star_on=0x7f0200b4;
-        public static final int temporary=0x7f0200b5;
-        public static final int texture_pattern=0x7f0200b6;
-        public static final int time_cell_bg=0x7f0200b7;
-        public static final int wccmainappicon_57x57=0x7f0200b8;
+        public static final int notification_template_icon_bg=0x7f0200b8;
+        public static final int pane_item_bg=0x7f0200a7;
+        public static final int pane_item_bg_normal=0x7f0200a8;
+        public static final int pane_item_bg_selected=0x7f0200a9;
+        public static final int pattern=0x7f0200aa;
+        public static final int pin=0x7f0200ab;
+        public static final int placeholder_128x185=0x7f0200ac;
+        public static final int places_ic_clear=0x7f0200ad;
+        public static final int places_ic_search=0x7f0200ae;
+        public static final int powered_by_google_dark=0x7f0200af;
+        public static final int powered_by_google_light=0x7f0200b0;
+        public static final int privated=0x7f0200b1;
+        public static final int star_off=0x7f0200b2;
+        public static final int star_on=0x7f0200b3;
+        public static final int temporary=0x7f0200b4;
+        public static final int texture_pattern=0x7f0200b5;
+        public static final int time_cell_bg=0x7f0200b6;
+        public static final int wccmainappicon_57x57=0x7f0200b7;
     }
     public static final class id {
         public static final int BasicInfoList=0x7f0b0074;
@@ -3041,12 +3040,12 @@ containing a value of this type.
         public static final int map_menu=0x7f0f0000;
     }
     public static final class raw {
-        public static final int bike=0x7f060000;
-        public static final int bike_number=0x7f060001;
-        public static final int bike_separator=0x7f060002;
-        public static final int clock=0x7f060003;
-        public static final int ic_lock=0x7f060004;
-        public static final int map_placeholder=0x7f060005;
+        public static final int bike_number=0x7f060000;
+        public static final int bike_separator=0x7f060001;
+        public static final int clock=0x7f060002;
+        public static final int ic_lock=0x7f060003;
+        public static final int map_placeholder=0x7f060004;
+        public static final int min=0x7f060005;
         public static final int not_installed=0x7f060006;
         public static final int pattern=0x7f060007;
         public static final int pin=0x7f060008;

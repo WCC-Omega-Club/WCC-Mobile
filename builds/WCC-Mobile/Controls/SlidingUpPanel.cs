@@ -15,7 +15,7 @@ namespace WCCMobile
 {
     public class SlidingUpPanelLayout : ViewGroup
     {
-        private new const string Tag = "SlidingUpPanelLayout";
+        private new readonly string Tag = "SlidingUpPanelLayout";
         private const int DefaultPanelHeight = 68;
         private const int DefaultShadowHeight = 4;
         private const int DefaultMinFlingVelocity = 400;
@@ -94,7 +94,12 @@ namespace WCCMobile
                 Invalidate();
             }
         }
-
+        /// <summary>
+        /// Gets or sets the height of the panel.
+        /// </summary>
+        /// <value>
+        /// The height of the panel.
+        /// </value>
         public int PanelHeight
         {
             get { return panelHeight; }
@@ -104,13 +109,18 @@ namespace WCCMobile
                 RequestLayout();
             }
         }
-
-        public View DragView
+        /// <summary>
+        /// Gets or sets the drag view.
+        /// </summary>
+        /// <value>
+        /// The drag view.
+        /// </value>
+         public View DragView
         {
             get { return dragView; }
             set { dragView = value; }
         }
-
+        //
         public float AnchorPoint
         {
             get { return anchorPoint; }
