@@ -18,11 +18,11 @@ namespace WCCMobile.Models
         [JsonProperty("id")]
         public int Id { get; set; }
         [JsonProperty("s")]
-        public string Street { get; set; }
+        public string Major { get; set; }
         [JsonProperty("n")]
         public string Name { get; set; }
         [JsonProperty("st")]
-        public int StationType { get; set; }
+        public int BuildType { get; set; }
         [JsonProperty("b")]
         public bool b { get; set; }
         [JsonProperty("su")]
@@ -43,7 +43,7 @@ namespace WCCMobile.Models
         [JsonProperty("dx")]
         public int dx { get; set; }
         [JsonProperty("ba")]
-        public int BikeCount { get; set; }
+        public int Occurence { get; set; }
         [JsonProperty("bx")]
         public int bx { get; set; }
 
@@ -61,7 +61,7 @@ namespace WCCMobile.Models
         }
 
         [JsonIgnore]
-        public int Capacity { get { return BikeCount + EmptySlotCount; } }
+        public int Capacity { get { return Occurence + EmptySlotCount; } }
 
 
 
@@ -74,12 +74,12 @@ namespace WCCMobile.Models
         [JsonIgnore]
         public bool Temporary
         {
-            get { return StationType == 2; }
+            get { return BuildType == 2; }
         }
         [JsonIgnore]
         public bool Locked
         {
-            get { return !Temporary && (b || (EmptySlotCount == 0 && BikeCount == 0)); }
+            get { return !Temporary && (b || (EmptySlotCount == 0 && Occurence == 0)); }
         }
 
         public override bool Equals(object obj)

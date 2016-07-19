@@ -62,6 +62,7 @@ namespace WCCMobile
         TextView lastUpdateText;
         PinFactory pinFactory;
         InfoPane pane;
+        SlidingUpPanelLayout slideUpPanel; 
         SvgBitmapDrawable starOnDrawable;
         SvgBitmapDrawable starOffDrawable;
         
@@ -168,10 +169,37 @@ namespace WCCMobile
             SetupInfoPane(view);
             flashBar = new InfoBarController(view);
             streetViewFragment = pane.FindViewById<StreetViewPanoramaView>(Resource.Id.streetViewPanorama);
+            SetUpSlideUpPane(view);
             streetViewFragment.OnCreate(savedInstanceState);
 
             return view;
         }
+
+        public void SetUpSlideUpPane(View view)
+        {
+            
+            slideUpPanel = view.FindViewById<SlidingUpPanelLayout>(Resource.Id.sliding_layout);
+
+            slideUpPanel.ShadowDrawable = Resources.GetDrawable(Resource.Drawable.ic_map_footer_details_down);
+            slideUpPanel.AnchorPoint = 0.3f;
+            slideUpPanel.PanelExpanded += (s, e) => Log.Info(Tag, "PanelExpanded");
+            slideUpPanel.PanelCollapsed += (s, e) => Log.Info(Tag, "PanelCollapsed");
+            slideUpPanel.PanelAnchored += (s, e) => Log.Info(Tag, "PanelAnchored");
+            slideUpPanel.PanelSlide += (s, e) =>
+            {
+                if (e.SlideOffset < 0.2)
+                {
+                    slideUpPanel.ShowContextMenu();
+                }
+                else
+                {
+                   // if (!slideUpPanel.IsShowing)
+                    //    SupportActionBar.Show();
+                }
+            };
+
+        }
+
 
         /// <summary>
         /// Sets up the information pane.
@@ -200,7 +228,7 @@ namespace WCCMobile
 
 
             // Setup info pane
-            SetSvgImage(pane, Resource.Id.bikeImageView, Resource.Raw.bike);
+            SetSvgImage(pane, Resource.Id.bikeImageView, Resource.Raw.min);
             SetSvgImage(pane, Resource.Id.lockImageView, Resource.Raw.ic_lock);
             SetSvgImage(pane, Resource.Id.stationLock, Resource.Raw.station_lock);
             SetSvgImage(pane, Resource.Id.bikeNumberImg, Resource.Raw.bike_number);
@@ -237,6 +265,9 @@ namespace WCCMobile
 
             googleMap.MyLocationEnabled = true;
             googleMap.UiSettings.MyLocationButtonEnabled = false;
+            googleMap.UiSettings.IndoorLevelPickerEnabled = true;
+            googleMap.TrafficEnabled = true;
+            googleMap.BuildingsEnabled = true;
             googleMap.MapClick += HandleMapClick;
             googleMap.MarkerClick += HandleMarkerClick;
 
@@ -290,20 +321,15 @@ namespace WCCMobile
         /// <param name="e">The <see cref="StreetViewPanorama.StreetViewPanoramaClickEventArgs"/> instance containing the event data.</param>
         private void HandleMapButtonClick(object sender, StreetViewPanorama.StreetViewPanoramaClickEventArgs e)
         {
-            var stations = dataProvider.LastScheduleItems;
-            if (stations == null || currentShownID == -1)
+            var items = dataProvider.LastScheduleItems;
+            if (items == null || currentShownID == -1)
                 return;
 
-            var stationIndex = Array.FindIndex(stations, s => s.Id == currentShownID);
-            if (stationIndex == -1)
+            var itemIndex = Array.FindIndex(items, s => s.Id == currentShownID);
+            if (itemIndex == -1)
                 return;
-            var station = stations[stationIndex];
-
-            //var data = new Dictionary<string, string>();
-            //data.Add("Station", station.Name);
-            //Xamarin.Insights.Track("Navigate to Station", data);
-            
-            var location = station.LocationUrl;
+            var item = items[itemIndex];
+            var location = item.LocationUrl;
             var uri = Android.Net.Uri.Parse(location);
             var intent = new Intent(Intent.ActionView, uri);
             StartActivity(intent);
@@ -452,25 +478,7 @@ namespace WCCMobile
             if (currentShownID == -1)
                 return;
             var starButton = (ImageButton)sender;
-           /* var favorites = scheduleManager.LastSchedule ?? scheduleManager.GetScheduleItemIDs();
-            bool contained = favorites.Contains(currentShownID);
-            if (contained)
-            {
-                starButton.SetImageDrawable(starOffDrawable);
-                scheduleManager.RemoveFromSchedule(currentShownID);
-
-               // var data = new Dictionary<string, string>();
-               // data.Add("Station", currentShownID.ToString());
-               // Xamarin.Insights.Track("Removed Favorited", data);
-            }
-            else
-            {
-                starButton.SetImageDrawable(starOnDrawable);
-                scheduleManager.AddToSchedule(currentShownID);
-               // var data = new Dictionary<string, string>();
-               // data.Add("Station", currentShownID.ToString());
-               // Xamarin.Insights.Track("Added Favorited", data);
-            }*/
+        
         }
         /// <summary>
         /// Fills up map.
@@ -500,8 +508,7 @@ namespace WCCMobile
             }
             catch (Exception e)
             {
-                e.Data["method"] = "FillUpMaps";
-                Xamarin.Insights.Report(e);
+               
                 Android.Util.Log.Debug("DataFetcher", e.ToString());
             }
 
@@ -517,11 +524,11 @@ namespace WCCMobile
         /// <returns></returns>
         private async Task SetSchedulePins(ScheduleItem[] courses, float alpha = 1)
         {
-            var stationsToUpdate = courses.Where(station =>
+            var scheduleItemsToUpdate = courses.Where(item =>
             {
                 Marker marker;
-                var stats = station.BikeCount + "|" + station.EmptySlotCount;
-                if (existingMarkers.TryGetValue(station.Id, out marker))
+                var stats = item.Occurence + "|" + item.EmptySlotCount;
+                if (existingMarkers.TryGetValue(item.Id, out marker))
                 {
                     if (marker.Snippet == stats && !showedStale)
                         return false;
@@ -530,37 +537,37 @@ namespace WCCMobile
                 return true;
             }).ToArray();
 
-            var pins = await Task.Run(() => stationsToUpdate.ToDictionary(station => station.Id, station =>
+            var pins = await Task.Run(() => scheduleItemsToUpdate.ToDictionary(item => item.Id, item =>
             {
                 var w = 24.ToPixels();
                 var h = 40.ToPixels();
-                if (station.Locked)
+                if (item.Locked)
                     return pinFactory.GetClosedPin(w, h);
-                else if (!station.Installed)
+                else if (!item.Installed)
                     return pinFactory.GetNonInstalledPin(w, h);
-                var ratio = (float)TruncateDigit(station.BikeCount / ((float)station.Capacity), 2);
+                var ratio = (float)TruncateDigit(item.Occurence / ((float)item.Capacity), 2);
                 return pinFactory.GetPin(ratio,
-                    station.BikeCount,
+                    item.Occurence,
                     w, h,
                     alpha: alpha);
             }));
 
-            foreach (var station in stationsToUpdate)
+            foreach (var scheduleItem in scheduleItemsToUpdate)
             {
-                var pin = pins[station.Id];
+                var pin = pins[scheduleItem.Id];
 
-                var snippet = station.BikeCount + "|" + station.EmptySlotCount;
-                if (station.Locked)
+                var snippet = scheduleItem.Occurence + "|" + scheduleItem.EmptySlotCount;
+                if (scheduleItem.Locked)
                     snippet = string.Empty;
-                else if (!station.Installed)
+                else if (!scheduleItem.Installed)
                     snippet = "not_installed";
 
                 var markerOptions = new MarkerOptions()
-          .SetTitle(station.Id + "|" + station.Street + "|" + station.Name)
+          .SetTitle(scheduleItem.Id + "|" + scheduleItem.Major + "|" + scheduleItem.Name)
           .SetSnippet(snippet)
-          .SetPosition(new Android.Gms.Maps.Model.LatLng(station.Location.Lat, station.Location.Lon))
+          .SetPosition(new Android.Gms.Maps.Model.LatLng(scheduleItem.Location.Lat, scheduleItem.Location.Lon))
           .SetIcon(BitmapDescriptorFactory.FromBitmap(pin));
-                existingMarkers[station.Id] = map.AddMarker(markerOptions);
+                existingMarkers[scheduleItem.Id] = map.AddMarker(markerOptions);
             }
         }
         /// <summary>
@@ -599,18 +606,16 @@ namespace WCCMobile
         /// <param name="marker">The marker.</param>
         public void OpenScheduleItemWithMarker(Marker marker)
         {
-            //if (string.IsNullOrEmpty (marker.Title) || string.IsNullOrEmpty (marker.Snippet))
-            //		return;
-
-            var name = pane.FindViewById<TextView>(Resource.Id.InfoViewName);
-            var name2 = pane.FindViewById<TextView>(Resource.Id.InfoViewSecondName);
-            var bikes = pane.FindViewById<TextView>(Resource.Id.InfoViewBikeNumber);
-            var slots = pane.FindViewById<TextView>(Resource.Id.InfoViewSlotNumber);
+           
+            var id = pane.FindViewById<TextView>(Resource.Id.InfoViewName);
+            var name = pane.FindViewById<TextView>(Resource.Id.InfoViewSecondName);
+            var major = pane.FindViewById<TextView>(Resource.Id.InfoViewBikeNumber);
+            var timeslots = pane.FindViewById<TextView>(Resource.Id.InfoViewSlotNumber);
             var starButton = pane.FindViewById<ImageButton>(Resource.Id.StarButton);
 
             var splitTitle = marker.Title.Split('|');
-            name.Text = splitTitle[1];
-            name2.Text = splitTitle[2];
+            id.Text = splitTitle[1];
+            name.Text = splitTitle[2];
 
             currentShownID = int.Parse(splitTitle[0]);
             currentShownMarker = marker;
@@ -623,14 +628,12 @@ namespace WCCMobile
             if (!isLocked && !isNotInstalled)
             {
                 var splitNumbers = marker.Snippet.Split('|');
-                bikes.Text = splitNumbers[0];
-                slots.Text = splitNumbers[1];
+                major.Text = splitNumbers[0];
+                timeslots.Text = splitNumbers[1];
             }
 
-            var favs = scheduleManager.LastSchedule ?? scheduleManager.GetScheduleItemIDs();
-            /*bool activated = favs.Contains(currentShownID);
-            starButton.SetImageDrawable(activated ? starOnDrawable : starOffDrawable);
-            */
+            var scheds = scheduleManager.LastSchedule ?? scheduleManager.GetScheduleItemIDs();
+           
             var streetView = streetPanorama;
             streetView.SetPosition(marker.Position);
 
@@ -672,37 +675,7 @@ namespace WCCMobile
                 v.Text = "-";
                 v.SetTextColor(Color.Rgb(0x90, 0x90, 0x90));
             }
-         /*  HashSet<ScheduleItem> [] history = new HashSet<ScheduleItem>();//(await scheduleHistory.GetScheduleHistory(ID)).ToArray();
-            if (ID != currentShownID || history.Length == 0)
-                return;
-            
-            var previousValue = history[0].Value;
-            for (int i = 0; i < Math.Min(historyTimes.Length, history.Length - 1); i++)
-            {
-                var h = history[i + 1];
-
-                var timeText = pane.FindViewById<TextView>(historyTimes[i]);
-                var is24 = Android.Text.Format.DateFormat.Is24HourFormat(Activity);
-                timeText.Text = h.Key.ToLocalTime().ToString((is24 ? "HH" : "hh") + ":mm");
-
-                var valueText = pane.FindViewById<TextView>(historyValues[i]);
-                var comparison = h.Value.CompareTo(previousValue);
-                if (comparison == 0)
-                {
-                    valueText.Text = "=";
-                }
-                else if (comparison > 0)
-                {
-                    valueText.Text = (h.Value - previousValue).ToString() + UpArrow;
-                    valueText.SetTextColor(Color.Rgb(0x66, 0x99, 0x00));
-                }
-                else
-                {
-                    valueText.Text = (previousValue - h.Value).ToString() + DownArrow;
-                    valueText.SetTextColor(Color.Rgb(0xcc, 00, 00));
-                }
-                previousValue = h.Value;
-            }*/
+        
         }
         /// <summary>
         /// Centers the map on location.
@@ -822,7 +795,7 @@ namespace WCCMobile
             {
                 var opts = new MarkerOptions()
       .SetPosition(startLatLng)
-                .SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueViolet));
+                .SetIcon(BitmapDescriptorFactory.DefaultMarker(Resource.Drawable.pin));
                 var marker = map.AddMarker(opts);
                 var animator = ObjectAnimator.OfObject(marker, "position", new LatLngEvaluator(), startLatLng, finalLatLng);
                 animator.SetDuration(1000);

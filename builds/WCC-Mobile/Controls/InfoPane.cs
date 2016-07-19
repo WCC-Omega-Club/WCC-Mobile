@@ -1,20 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Android.Animation;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-using Runnable = Java.Lang.Runnable;
 using Android.Views.Animations;
-using WCCMobile;
 
 namespace WCCMobile
 {
@@ -169,7 +161,7 @@ namespace WCCMobile
         /// Sets a new offset for the infopane with respect to the global layout.
         /// </summary>
         /// <param name="newOffset">The new offset.</param>
-        void SetNewOffset(int newOffset)
+        private void SetNewOffset(int newOffset)
         {
             if (state == State.Closed)
             {
@@ -308,7 +300,7 @@ namespace WCCMobile
             return (stateBeforeTracking == State.FullyOpened ? e.GetY() >= startY : e.GetY() <= startY);
         }
         /// <summary>
-        /// Dispatches the draw.
+        /// Dispatches the drawer.
         /// </summary>
         /// <param name="canvas">The canvas.</param>
         protected override void DispatchDraw(Android.Graphics.Canvas canvas)

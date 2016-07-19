@@ -9,11 +9,8 @@ namespace WCCMobile
   
         public class ScheduleObserver : IObservable<ScheduleItem[]>
         {
-            const string ProntoApiEndpoint = "http://bikenowapp.azurewebsites.net/cron/latest_stations.json";
+            
 
-            public static readonly Func<ScheduleItem, bool> AvailableBikeStationPredicate = s => s.BikeCount > 1 && s.EmptySlotCount > 1;
-
-           // HttpClient client = new HttpClient();
             TimeSpan freshnessTimeout;
             string savedData;
             
@@ -44,7 +41,7 @@ namespace WCCMobile
                 private set;
             }
 
-            public static ScheduleItem[] GetStationsAround(ScheduleItem[] stations, Location location, double minDistance = 100, int maxItems = 4)
+            public static ScheduleItem[] GetEventsAround(ScheduleItem[] stations, Location location, double minDistance = 100, int maxItems = 4)
             {
                 var dic = new SortedDictionary<double, ScheduleItem>();
                 foreach (var s in stations)
@@ -110,8 +107,7 @@ namespace WCCMobile
                         }
                         catch (Exception e)
                         {
-                            //Android.Util.Log.Error("ProntoDownloader", e.ToString());
-                            //Xamarin.Insights.Report(e);
+                            
                             if (attempt >= 3)
                             {
                                 attempt = 0;
@@ -153,6 +149,7 @@ namespace WCCMobile
 
             class ScheduleSubscriber : IDisposable
             {
+                //
                 Func<ScheduleSubscriber, bool> unsubscribe;
 
                 public ScheduleSubscriber(Func<ScheduleSubscriber, bool> unsubscribe, IObserver<ScheduleItem[]> observer)

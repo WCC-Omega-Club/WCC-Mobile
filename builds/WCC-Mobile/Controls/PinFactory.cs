@@ -15,7 +15,7 @@ namespace WCCMobile
     {
         Dictionary<int, Bitmap> pinCache = new Dictionary<int, Bitmap>();
         Bitmap closedPin, notInstalledPin;
-
+        #region Colors
         readonly Color baseLightGreenColor = Color.Rgb(0x99, 0xcc, 0x00);
         readonly Color baseLightRedColor = Color.Rgb(0xff, 0x44, 0x44);
         readonly Color baseDarkGreenColor = Color.Rgb(0x66, 0x99, 0x00);
@@ -24,7 +24,7 @@ namespace WCCMobile
         readonly Color fillColor = Color.Rgb(0x01, 0x02, 0x03);
         readonly Color bottomFillColor = Color.Rgb(0xaa, 0xbb, 0xcc);
         readonly Color borderColor = Color.Rgb(0xcf, 0xcf, 0xcf);
-
+        #endregion
         Context context;
 
         Paint textPaint;

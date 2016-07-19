@@ -28,7 +28,7 @@ namespace WCCMobile
         Drawable srcFirst, srcSecond;
         ColorStateList backgroundTintFirst, backgroundTintSecond;
         /// <summary>
-        /// The checked state set
+        /// The checked state attribute.
         /// </summary>
         static readonly int[] CheckedStateSet = {
             Android.Resource.Attribute.StateChecked
@@ -68,7 +68,7 @@ namespace WCCMobile
         /// Initializes a new instance of the <see cref="SwitchableFab"/> class.
         /// </summary>
         /// <param name="handle">The handle.</param>
-        /// <param name="own">The own.</param>
+        /// <param name="own">The jni ownership handle enumeration.</param>
         public SwitchableFab(IntPtr handle, JniHandleOwnership own)
             : base(handle, own)
         {

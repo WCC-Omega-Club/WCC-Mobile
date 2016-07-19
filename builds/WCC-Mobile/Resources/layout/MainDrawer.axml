@@ -22,7 +22,7 @@
         android:background="@android:color/white"
         android:layout_gravity="start">
         <ImageView
-            android:src="@drawable/logo"
+            android:src="@drawable/ic_map"
             android:paddingLeft="24dp"
             android:paddingRight="128dp"
             android:paddingTop="0dp"

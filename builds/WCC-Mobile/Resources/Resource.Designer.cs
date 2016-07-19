@@ -379,6 +379,9 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0100e0
 			public const int collapseIcon = 2130772192;
 			
+			// aapt resource value: 0x7f010135
+			public const int collapsedHeight = 2130772277;
+			
 			// aapt resource value: 0x7f0100fd
 			public const int collapsedTitleGravity = 2130772221;
 			
@@ -481,6 +484,9 @@ namespace WCCMobile
 			// aapt resource value: 0x7f010076
 			public const int dividerVertical = 2130772086;
 			
+			// aapt resource value: 0x7f010139
+			public const int dragView = 2130772281;
+			
 			// aapt resource value: 0x7f0100b4
 			public const int drawableSize = 2130772148;
 			
@@ -540,6 +546,12 @@ namespace WCCMobile
 			
 			// aapt resource value: 0x7f01010a
 			public const int fabSize = 2130772234;
+			
+			// aapt resource value: 0x7f010137
+			public const int fadeColor = 2130772279;
+			
+			// aapt resource value: 0x7f010138
+			public const int flingVelocity = 2130772280;
 			
 			// aapt resource value: 0x7f01010e
 			public const int foregroundInsidePadding = 2130772238;
@@ -718,6 +730,9 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0100c2
 			public const int overlapAnchor = 2130772162;
 			
+			// aapt resource value: 0x7f01013a
+			public const int overlay = 2130772282;
+			
 			// aapt resource value: 0x7f0100e8
 			public const int paddingEnd = 2130772200;
 			
@@ -798,6 +813,9 @@ namespace WCCMobile
 			
 			// aapt resource value: 0x7f010074
 			public const int selectableItemBackgroundBorderless = 2130772084;
+			
+			// aapt resource value: 0x7f010136
+			public const int shadowHeight = 2130772278;
 			
 			// aapt resource value: 0x7f0100bd
 			public const int showAsAction = 2130772157;
@@ -2351,62 +2369,59 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0200a6
 			public const int locked = 2130837670;
 			
-			// aapt resource value: 0x7f0200a7
-			public const int logo = 2130837671;
+			// aapt resource value: 0x7f0200b8
+			public const int notification_template_icon_bg = 2130837688;
 			
-			// aapt resource value: 0x7f0200b9
-			public const int notification_template_icon_bg = 2130837689;
+			// aapt resource value: 0x7f0200a7
+			public const int pane_item_bg = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int pane_item_bg = 2130837672;
+			public const int pane_item_bg_normal = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int pane_item_bg_normal = 2130837673;
+			public const int pane_item_bg_selected = 2130837673;
 			
 			// aapt resource value: 0x7f0200aa
-			public const int pane_item_bg_selected = 2130837674;
+			public const int pattern = 2130837674;
 			
 			// aapt resource value: 0x7f0200ab
-			public const int pattern = 2130837675;
+			public const int pin = 2130837675;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int pin = 2130837676;
+			public const int placeholder_128x185 = 2130837676;
 			
 			// aapt resource value: 0x7f0200ad
-			public const int placeholder_128x185 = 2130837677;
+			public const int places_ic_clear = 2130837677;
 			
 			// aapt resource value: 0x7f0200ae
-			public const int places_ic_clear = 2130837678;
+			public const int places_ic_search = 2130837678;
 			
 			// aapt resource value: 0x7f0200af
-			public const int places_ic_search = 2130837679;
+			public const int powered_by_google_dark = 2130837679;
 			
 			// aapt resource value: 0x7f0200b0
-			public const int powered_by_google_dark = 2130837680;
+			public const int powered_by_google_light = 2130837680;
 			
 			// aapt resource value: 0x7f0200b1
-			public const int powered_by_google_light = 2130837681;
+			public const int privated = 2130837681;
 			
 			// aapt resource value: 0x7f0200b2
-			public const int privated = 2130837682;
+			public const int star_off = 2130837682;
 			
 			// aapt resource value: 0x7f0200b3
-			public const int star_off = 2130837683;
+			public const int star_on = 2130837683;
 			
 			// aapt resource value: 0x7f0200b4
-			public const int star_on = 2130837684;
+			public const int temporary = 2130837684;
 			
 			// aapt resource value: 0x7f0200b5
-			public const int temporary = 2130837685;
+			public const int texture_pattern = 2130837685;
 			
 			// aapt resource value: 0x7f0200b6
-			public const int texture_pattern = 2130837686;
+			public const int time_cell_bg = 2130837686;
 			
 			// aapt resource value: 0x7f0200b7
-			public const int time_cell_bg = 2130837687;
-			
-			// aapt resource value: 0x7f0200b8
-			public const int WCCMainAppIcon_57x57 = 2130837688;
+			public const int WCCMainAppIcon_57x57 = 2130837687;
 			
 			static Drawable()
 			{
@@ -2424,47 +2439,47 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0074
 			public const int BasicInfoList = 2131427444;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int FlashBarLayout = 2131427522;
+			// aapt resource value: 0x7f0b00c7
+			public const int FlashBarLayout = 2131427527;
 			
-			// aapt resource value: 0x7f0b00c3
-			public const int FlashBarText = 2131427523;
+			// aapt resource value: 0x7f0b00c8
+			public const int FlashBarText = 2131427528;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int ImageContainer = 2131427514;
+			// aapt resource value: 0x7f0b00bf
+			public const int ImageContainer = 2131427519;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int InfoViewBikeNumber = 2131427495;
-			
-			// aapt resource value: 0x7f0b00a4
-			public const int InfoViewName = 2131427492;
-			
-			// aapt resource value: 0x7f0b00a5
-			public const int InfoViewSecondName = 2131427493;
+			// aapt resource value: 0x7f0b00ac
+			public const int InfoViewBikeNumber = 2131427500;
 			
 			// aapt resource value: 0x7f0b00a9
-			public const int InfoViewSlotNumber = 2131427497;
+			public const int InfoViewName = 2131427497;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int Map = 2131427521;
+			// aapt resource value: 0x7f0b00aa
+			public const int InfoViewSecondName = 2131427498;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int PaneHeaderView = 2131427490;
+			// aapt resource value: 0x7f0b00ae
+			public const int InfoViewSlotNumber = 2131427502;
 			
-			// aapt resource value: 0x7f0b00d1
-			public const int PhoneBookList = 2131427537;
+			// aapt resource value: 0x7f0b00c6
+			public const int Map = 2131427526;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int StarButton = 2131427491;
+			// aapt resource value: 0x7f0b00a7
+			public const int PaneHeaderView = 2131427495;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int SubAppContainer = 2131427515;
+			// aapt resource value: 0x7f0b00d6
+			public const int PhoneBookList = 2131427542;
 			
-			// aapt resource value: 0x7f0b00c4
-			public const int UpdateTimeText = 2131427524;
+			// aapt resource value: 0x7f0b00a8
+			public const int StarButton = 2131427496;
 			
-			// aapt resource value: 0x7f0b00c5
-			public const int action0 = 2131427525;
+			// aapt resource value: 0x7f0b00c0
+			public const int SubAppContainer = 2131427520;
+			
+			// aapt resource value: 0x7f0b00c9
+			public const int UpdateTimeText = 2131427529;
+			
+			// aapt resource value: 0x7f0b00ca
+			public const int action0 = 2131427530;
 			
 			// aapt resource value: 0x7f0b0065
 			public const int action_bar = 2131427429;
@@ -2490,8 +2505,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0066
 			public const int action_context_bar = 2131427430;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int action_divider = 2131427529;
+			// aapt resource value: 0x7f0b00ce
+			public const int action_divider = 2131427534;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_divider = 2131427331;
@@ -2544,11 +2559,11 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0026
 			public const int beginning = 2131427366;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int bikeImageView = 2131427496;
+			// aapt resource value: 0x7f0b00ad
+			public const int bikeImageView = 2131427501;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int bikeNumberImg = 2131427507;
+			// aapt resource value: 0x7f0b00b8
+			public const int bikeNumberImg = 2131427512;
 			
 			// aapt resource value: 0x7f0b007e
 			public const int bldgLabel = 2131427454;
@@ -2562,8 +2577,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b004f
 			public const int buttonPanel = 2131427407;
 			
-			// aapt resource value: 0x7f0b00c6
-			public const int cancel_action = 2131427526;
+			// aapt resource value: 0x7f0b00cb
+			public const int cancel_action = 2131427531;
 			
 			// aapt resource value: 0x7f0b0036
 			public const int center = 2131427382;
@@ -2577,8 +2592,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b005d
 			public const int checkbox = 2131427421;
 			
-			// aapt resource value: 0x7f0b00cc
-			public const int chronometer = 2131427532;
+			// aapt resource value: 0x7f0b00d1
+			public const int chronometer = 2131427537;
 			
 			// aapt resource value: 0x7f0b003e
 			public const int clip_horizontal = 2131427390;
@@ -2586,20 +2601,20 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b003f
 			public const int clip_vertical = 2131427391;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int clockImg = 2131427501;
+			// aapt resource value: 0x7f0b00b2
+			public const int clockImg = 2131427506;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int collapseActionView = 2131427370;
 			
-			// aapt resource value: 0x7f0b00dc
-			public const int companyTextView = 2131427548;
+			// aapt resource value: 0x7f0b00e1
+			public const int companyTextView = 2131427553;
 			
 			// aapt resource value: 0x7f0b0055
 			public const int contentPanel = 2131427413;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int content_frame = 2131427518;
+			// aapt resource value: 0x7f0b00c3
+			public const int content_frame = 2131427523;
 			
 			// aapt resource value: 0x7f0b007a
 			public const int courseLabel = 2131427450;
@@ -2655,8 +2670,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b001a
 			public const int disableHome = 2131427354;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int drawer_layout = 2131427516;
+			// aapt resource value: 0x7f0b00c1
+			public const int drawer_layout = 2131427521;
 			
 			// aapt resource value: 0x7f0b0067
 			public const int edit_query = 2131427431;
@@ -2670,8 +2685,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b008a
 			public const int endTimeLabel = 2131427466;
 			
-			// aapt resource value: 0x7f0b00d0
-			public const int end_padder = 2131427536;
+			// aapt resource value: 0x7f0b00d5
+			public const int end_padder = 2131427541;
 			
 			// aapt resource value: 0x7f0b002e
 			public const int enterAlways = 2131427374;
@@ -2700,35 +2715,38 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0043
 			public const int @fixed = 2131427395;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int historyTime1 = 2131427502;
+			// aapt resource value: 0x7f0b00a4
+			public const int follow = 2131427492;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int historyTime2 = 2131427503;
-			
-			// aapt resource value: 0x7f0b00b0
-			public const int historyTime3 = 2131427504;
-			
-			// aapt resource value: 0x7f0b00b1
-			public const int historyTime4 = 2131427505;
-			
-			// aapt resource value: 0x7f0b00b2
-			public const int historyTime5 = 2131427506;
+			// aapt resource value: 0x7f0b00b3
+			public const int historyTime1 = 2131427507;
 			
 			// aapt resource value: 0x7f0b00b4
-			public const int historyValue1 = 2131427508;
+			public const int historyTime2 = 2131427508;
 			
 			// aapt resource value: 0x7f0b00b5
-			public const int historyValue2 = 2131427509;
+			public const int historyTime3 = 2131427509;
 			
 			// aapt resource value: 0x7f0b00b6
-			public const int historyValue3 = 2131427510;
+			public const int historyTime4 = 2131427510;
 			
 			// aapt resource value: 0x7f0b00b7
-			public const int historyValue4 = 2131427511;
+			public const int historyTime5 = 2131427511;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int historyValue5 = 2131427512;
+			// aapt resource value: 0x7f0b00b9
+			public const int historyValue1 = 2131427513;
+			
+			// aapt resource value: 0x7f0b00ba
+			public const int historyValue2 = 2131427514;
+			
+			// aapt resource value: 0x7f0b00bb
+			public const int historyValue3 = 2131427515;
+			
+			// aapt resource value: 0x7f0b00bc
+			public const int historyValue4 = 2131427516;
+			
+			// aapt resource value: 0x7f0b00bd
+			public const int historyValue5 = 2131427517;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int home = 2131427333;
@@ -2757,35 +2775,38 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b004a
 			public const int image = 2131427402;
 			
-			// aapt resource value: 0x7f0b00cf
-			public const int info = 2131427535;
+			// aapt resource value: 0x7f0b00d4
+			public const int info = 2131427540;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int infoPane = 2131427489;
+			// aapt resource value: 0x7f0b00a6
+			public const int infoPane = 2131427494;
+			
+			// aapt resource value: 0x7f0b00a2
+			public const int infobox = 2131427490;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int item_touch_helper_previous_elevation = 2131427328;
 			
-			// aapt resource value: 0x7f0b00dd
-			public const int jobTitleTextView = 2131427549;
+			// aapt resource value: 0x7f0b00e2
+			public const int jobTitleTextView = 2131427554;
 			
 			// aapt resource value: 0x7f0b003a
 			public const int left = 2131427386;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int left_drawer = 2131427519;
+			// aapt resource value: 0x7f0b00c4
+			public const int left_drawer = 2131427524;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int left_drawer_around = 2131427520;
+			// aapt resource value: 0x7f0b00c5
+			public const int left_drawer_around = 2131427525;
 			
 			// aapt resource value: 0x7f0b0017
 			public const int light = 2131427351;
 			
-			// aapt resource value: 0x7f0b00ca
-			public const int line1 = 2131427530;
+			// aapt resource value: 0x7f0b00cf
+			public const int line1 = 2131427535;
 			
-			// aapt resource value: 0x7f0b00ce
-			public const int line3 = 2131427534;
+			// aapt resource value: 0x7f0b00d3
+			public const int line3 = 2131427539;
 			
 			// aapt resource value: 0x7f0b0075
 			public const int linearLayout1 = 2131427445;
@@ -2802,20 +2823,20 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b004c
 			public const int list_item = 2131427404;
 			
-			// aapt resource value: 0x7f0b00aa
-			public const int lockImageView = 2131427498;
+			// aapt resource value: 0x7f0b00af
+			public const int lockImageView = 2131427503;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int media_actions = 2131427528;
+			// aapt resource value: 0x7f0b00cd
+			public const int media_actions = 2131427533;
 			
-			// aapt resource value: 0x7f0b00de
-			public const int menu_mylocation = 2131427550;
+			// aapt resource value: 0x7f0b00e3
+			public const int menu_mylocation = 2131427555;
 			
-			// aapt resource value: 0x7f0b00e0
-			public const int menu_refresh = 2131427552;
+			// aapt resource value: 0x7f0b00e5
+			public const int menu_refresh = 2131427557;
 			
-			// aapt resource value: 0x7f0b00df
-			public const int menu_search = 2131427551;
+			// aapt resource value: 0x7f0b00e4
+			public const int menu_search = 2131427556;
 			
 			// aapt resource value: 0x7f0b0089
 			public const int merSpinner1 = 2131427465;
@@ -2829,11 +2850,17 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0042
 			public const int mini = 2131427394;
 			
+			// aapt resource value: 0x7f0b00a5
+			public const int more_info = 2131427493;
+			
 			// aapt resource value: 0x7f0b0021
 			public const int multiply = 2131427361;
 			
-			// aapt resource value: 0x7f0b00db
-			public const int nameTextView = 2131427547;
+			// aapt resource value: 0x7f0b00a3
+			public const int name = 2131427491;
+			
+			// aapt resource value: 0x7f0b00e0
+			public const int nameTextView = 2131427552;
 			
 			// aapt resource value: 0x7f0b0094
 			public const int navigation_header_container = 2131427476;
@@ -2862,29 +2889,29 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0034
 			public const int pin = 2131427380;
 			
-			// aapt resource value: 0x7f0b00d4
-			public const int place_autocomplete_clear_button = 2131427540;
-			
-			// aapt resource value: 0x7f0b00d6
-			public const int place_autocomplete_powered_by_google = 2131427542;
-			
-			// aapt resource value: 0x7f0b00d8
-			public const int place_autocomplete_prediction_primary_text = 2131427544;
-			
 			// aapt resource value: 0x7f0b00d9
-			public const int place_autocomplete_prediction_secondary_text = 2131427545;
+			public const int place_autocomplete_clear_button = 2131427545;
+			
+			// aapt resource value: 0x7f0b00db
+			public const int place_autocomplete_powered_by_google = 2131427547;
+			
+			// aapt resource value: 0x7f0b00dd
+			public const int place_autocomplete_prediction_primary_text = 2131427549;
+			
+			// aapt resource value: 0x7f0b00de
+			public const int place_autocomplete_prediction_secondary_text = 2131427550;
+			
+			// aapt resource value: 0x7f0b00dc
+			public const int place_autocomplete_progress = 2131427548;
 			
 			// aapt resource value: 0x7f0b00d7
-			public const int place_autocomplete_progress = 2131427543;
+			public const int place_autocomplete_search_button = 2131427543;
 			
-			// aapt resource value: 0x7f0b00d2
-			public const int place_autocomplete_search_button = 2131427538;
+			// aapt resource value: 0x7f0b00d8
+			public const int place_autocomplete_search_input = 2131427544;
 			
-			// aapt resource value: 0x7f0b00d3
-			public const int place_autocomplete_search_input = 2131427539;
-			
-			// aapt resource value: 0x7f0b00d5
-			public const int place_autocomplete_separator = 2131427541;
+			// aapt resource value: 0x7f0b00da
+			public const int place_autocomplete_separator = 2131427546;
 			
 			// aapt resource value: 0x7f0b0006
 			public const int progress_circular = 2131427334;
@@ -2913,8 +2940,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0082
 			public const int saveDay = 2131427458;
 			
-			// aapt resource value: 0x7f0b00da
-			public const int scheduleRow = 2131427546;
+			// aapt resource value: 0x7f0b00df
+			public const int scheduleRow = 2131427551;
 			
 			// aapt resource value: 0x7f0b0022
 			public const int screen = 2131427362;
@@ -2982,6 +3009,9 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b001e
 			public const int showTitle = 2131427358;
 			
+			// aapt resource value: 0x7f0b00a1
+			public const int sliding_layout = 2131427489;
+			
 			// aapt resource value: 0x7f0b0093
 			public const int snackbar_action = 2131427475;
 			
@@ -3018,20 +3048,20 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0087
 			public const int startTimeLabel = 2131427463;
 			
+			// aapt resource value: 0x7f0b00b0
+			public const int stationLock = 2131427504;
+			
+			// aapt resource value: 0x7f0b00b1
+			public const int stationNotInstalled = 2131427505;
+			
 			// aapt resource value: 0x7f0b00ab
-			public const int stationLock = 2131427499;
+			public const int stationStats = 2131427499;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int stationNotInstalled = 2131427500;
+			// aapt resource value: 0x7f0b00cc
+			public const int status_bar_latest_event_content = 2131427532;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int stationStats = 2131427494;
-			
-			// aapt resource value: 0x7f0b00c7
-			public const int status_bar_latest_event_content = 2131427527;
-			
-			// aapt resource value: 0x7f0b00b9
-			public const int streetViewPanorama = 2131427513;
+			// aapt resource value: 0x7f0b00be
+			public const int streetViewPanorama = 2131427518;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int submit_area = 2131427440;
@@ -3045,8 +3075,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b00a0
 			public const int text = 2131427488;
 			
-			// aapt resource value: 0x7f0b00cd
-			public const int text2 = 2131427533;
+			// aapt resource value: 0x7f0b00d2
+			public const int text2 = 2131427538;
 			
 			// aapt resource value: 0x7f0b0058
 			public const int textSpacerNoButtons = 2131427416;
@@ -3054,8 +3084,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b009c
 			public const int textView4 = 2131427484;
 			
-			// aapt resource value: 0x7f0b00cb
-			public const int time = 2131427531;
+			// aapt resource value: 0x7f0b00d0
+			public const int time = 2131427536;
 			
 			// aapt resource value: 0x7f0b004e
 			public const int title = 2131427406;
@@ -3066,8 +3096,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f0b0053
 			public const int title_template = 2131427411;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int toolbar = 2131427517;
+			// aapt resource value: 0x7f0b00c2
+			public const int toolbar = 2131427522;
 			
 			// aapt resource value: 0x7f0b003d
 			public const int top = 2131427389;
@@ -3273,73 +3303,76 @@ namespace WCCMobile
 			public const int DrawerItemLayout = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int InfoFooterLayout = 2130903082;
+			public const int FooterSlideUp = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int Main = 2130903083;
+			public const int InfoFooterLayout = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int MainDrawer = 2130903084;
+			public const int Main = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int MapLayout = 2130903085;
+			public const int MainDrawer = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int notification_media_action = 2130903086;
+			public const int MapLayout = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int notification_media_cancel_action = 2130903087;
+			public const int notification_media_action = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int notification_template_big_media = 2130903088;
+			public const int notification_media_cancel_action = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int notification_template_big_media_narrow = 2130903089;
+			public const int notification_template_big_media = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int notification_template_lines = 2130903090;
+			public const int notification_template_big_media_narrow = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int notification_template_media = 2130903091;
+			public const int notification_template_lines = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_template_part_chronometer = 2130903092;
+			public const int notification_template_media = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_template_part_time = 2130903093;
+			public const int notification_template_part_chronometer = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int PhoneBookLayout = 2130903094;
+			public const int notification_template_part_time = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int place_autocomplete_fragment = 2130903095;
+			public const int PhoneBookLayout = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int place_autocomplete_item_powered_by_google = 2130903096;
+			public const int place_autocomplete_fragment = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int place_autocomplete_item_prediction = 2130903097;
+			public const int place_autocomplete_item_powered_by_google = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int place_autocomplete_progress = 2130903098;
+			public const int place_autocomplete_item_prediction = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int ScheduleRow = 2130903099;
+			public const int place_autocomplete_progress = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int select_dialog_item_material = 2130903100;
+			public const int ScheduleRow = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int select_dialog_multichoice_material = 2130903101;
+			public const int select_dialog_item_material = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_singlechoice_material = 2130903102;
+			public const int select_dialog_multichoice_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int support_simple_spinner_dropdown_item = 2130903103;
+			public const int select_dialog_singlechoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int toolbar = 2130903104;
+			public const int support_simple_spinner_dropdown_item = 2130903104;
+			
+			// aapt resource value: 0x7f030041
+			public const int toolbar = 2130903105;
 			
 			static Layout()
 			{
@@ -3371,22 +3404,22 @@ namespace WCCMobile
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int bike = 2131099648;
+			public const int bike_number = 2131099648;
 			
 			// aapt resource value: 0x7f060001
-			public const int bike_number = 2131099649;
+			public const int bike_separator = 2131099649;
 			
 			// aapt resource value: 0x7f060002
-			public const int bike_separator = 2131099650;
+			public const int clock = 2131099650;
 			
 			// aapt resource value: 0x7f060003
-			public const int clock = 2131099651;
+			public const int ic_lock = 2131099651;
 			
 			// aapt resource value: 0x7f060004
-			public const int ic_lock = 2131099652;
+			public const int map_placeholder = 2131099652;
 			
 			// aapt resource value: 0x7f060005
-			public const int map_placeholder = 2131099653;
+			public const int min = 2131099653;
 			
 			// aapt resource value: 0x7f060006
 			public const int not_installed = 2131099654;
@@ -6066,6 +6099,32 @@ namespace WCCMobile
 			
 			// aapt resource value: 2
 			public const int SignInButton_scopeUris = 2;
+			
+			public static int[] SlidingUpPanelLayout = new int[] {
+					2130772277,
+					2130772278,
+					2130772279,
+					2130772280,
+					2130772281,
+					2130772282};
+			
+			// aapt resource value: 0
+			public const int SlidingUpPanelLayout_collapsedHeight = 0;
+			
+			// aapt resource value: 4
+			public const int SlidingUpPanelLayout_dragView = 4;
+			
+			// aapt resource value: 2
+			public const int SlidingUpPanelLayout_fadeColor = 2;
+			
+			// aapt resource value: 3
+			public const int SlidingUpPanelLayout_flingVelocity = 3;
+			
+			// aapt resource value: 5
+			public const int SlidingUpPanelLayout_overlay = 5;
+			
+			// aapt resource value: 1
+			public const int SlidingUpPanelLayout_shadowHeight = 1;
 			
 			public static int[] SnackbarLayout = new int[] {
 					16843039,
