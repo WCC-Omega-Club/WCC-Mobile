@@ -131,6 +131,7 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\footerslideup.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\attrs.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\raw\min.svg
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Java.Interop.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Microsoft.CSharp.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Mono.Android.dll.mdb
