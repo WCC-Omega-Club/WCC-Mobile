@@ -43,7 +43,7 @@ namespace WCCMobile.Models
         [JsonProperty("dx")]
         public int dx { get; set; }
         [JsonProperty("ba")]
-        public int Occurence { get; set; }
+        public int Occurrence { get; set; }
         [JsonProperty("bx")]
         public int bx { get; set; }
 
@@ -61,7 +61,7 @@ namespace WCCMobile.Models
         }
 
         [JsonIgnore]
-        public int Capacity { get { return Occurence + EmptySlotCount; } }
+        public int Capacity { get { return Occurrence + EmptySlotCount; } }
 
 
 
@@ -79,7 +79,7 @@ namespace WCCMobile.Models
         [JsonIgnore]
         public bool Locked
         {
-            get { return !Temporary && (b || (EmptySlotCount == 0 && Occurence == 0)); }
+            get { return !Temporary && (b || (EmptySlotCount == 0 && Occurrence == 0)); }
         }
 
         public override bool Equals(object obj)

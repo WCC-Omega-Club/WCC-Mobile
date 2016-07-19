@@ -726,7 +726,7 @@ class DrawerAroundAdapter : BaseAdapter
 
         scheduleItemName.Text = scheduleItem.Major;
         scheduleItemSecondName.Text = scheduleItem.Name;
-        timeSlot.Text = scheduleItem.Occurence.ToString();
+        timeSlot.Text = scheduleItem.Occurrence.ToString();
         description.Text = scheduleItem.EmptySlotCount.ToString();
 
         return view;

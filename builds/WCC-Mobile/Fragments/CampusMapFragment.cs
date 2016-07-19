@@ -527,7 +527,7 @@ namespace WCCMobile
             var scheduleItemsToUpdate = courses.Where(item =>
             {
                 Marker marker;
-                var stats = item.Occurence + "|" + item.EmptySlotCount;
+                var stats = item.Occurrence + "|" + item.EmptySlotCount;
                 if (existingMarkers.TryGetValue(item.Id, out marker))
                 {
                     if (marker.Snippet == stats && !showedStale)
@@ -545,9 +545,9 @@ namespace WCCMobile
                     return pinFactory.GetClosedPin(w, h);
                 else if (!item.Installed)
                     return pinFactory.GetNonInstalledPin(w, h);
-                var ratio = (float)TruncateDigit(item.Occurence / ((float)item.Capacity), 2);
+                var ratio = (float)TruncateDigit(item.Occurrence / ((float)item.Capacity), 2);
                 return pinFactory.GetPin(ratio,
-                    item.Occurence,
+                    item.Occurrence,
                     w, h,
                     alpha: alpha);
             }));
@@ -556,7 +556,7 @@ namespace WCCMobile
             {
                 var pin = pins[scheduleItem.Id];
 
-                var snippet = scheduleItem.Occurence + "|" + scheduleItem.EmptySlotCount;
+                var snippet = scheduleItem.Occurrence + "|" + scheduleItem.EmptySlotCount;
                 if (scheduleItem.Locked)
                     snippet = string.Empty;
                 else if (!scheduleItem.Installed)
