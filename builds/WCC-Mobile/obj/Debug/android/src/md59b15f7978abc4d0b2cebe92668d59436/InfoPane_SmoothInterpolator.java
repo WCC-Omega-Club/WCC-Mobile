@@ -7,8 +7,7 @@ public class InfoPane_SmoothInterpolator
 		mono.android.IGCUserPeer,
 		android.animation.TimeInterpolator
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_getInterpolation:(F)F:GetGetInterpolation_FHandler:Android.Animation.ITimeInterpolatorInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
@@ -32,7 +31,7 @@ public class InfoPane_SmoothInterpolator
 
 	private native float n_getInterpolation (float p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

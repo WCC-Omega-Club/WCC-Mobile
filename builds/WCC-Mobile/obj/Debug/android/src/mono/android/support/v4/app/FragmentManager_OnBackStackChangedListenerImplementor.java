@@ -7,8 +7,7 @@ public class FragmentManager_OnBackStackChangedListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.app.FragmentManager.OnBackStackChangedListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onBackStackChanged:()V:GetOnBackStackChangedHandler:Android.Support.V4.App.FragmentManager/IOnBackStackChangedListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -32,7 +31,7 @@ public class FragmentManager_OnBackStackChangedListenerImplementor
 
 	private native void n_onBackStackChanged ();
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

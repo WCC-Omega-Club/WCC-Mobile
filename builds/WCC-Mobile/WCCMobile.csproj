@@ -184,6 +184,7 @@
     <Compile Include="Helpers\LocationUtils.cs" />
     <Compile Include="Helpers\ScheduleObserver.cs" />
     <Compile Include="Helpers\CheckGooglePlayServices.cs" />
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ScheduleItem.cs" />
     <Compile Include="Models\ScheduleRootObject.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Adapters\ImageAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Adapters\YellowBookAdapter.cs" />
+    <Compile Include="Storage\CourseRepository.cs" />
     <Compile Include="Storage\Database.cs" />
     <Compile Include="Storage\ICourseRepository.cs" />
     <Compile Include="ORM\SQLite.cs" />

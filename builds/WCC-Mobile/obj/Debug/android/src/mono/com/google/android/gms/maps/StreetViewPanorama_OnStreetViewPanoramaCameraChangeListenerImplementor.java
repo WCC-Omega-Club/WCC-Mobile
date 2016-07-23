@@ -7,8 +7,7 @@ public class StreetViewPanorama_OnStreetViewPanoramaCameraChangeListenerImplemen
 		mono.android.IGCUserPeer,
 		com.google.android.gms.maps.StreetViewPanorama.OnStreetViewPanoramaCameraChangeListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onStreetViewPanoramaCameraChange:(Lcom/google/android/gms/maps/model/StreetViewPanoramaCamera;)V:GetOnStreetViewPanoramaCameraChange_Lcom_google_android_gms_maps_model_StreetViewPanoramaCamera_Handler:Android.Gms.Maps.StreetViewPanorama/IOnStreetViewPanoramaCameraChangeListenerInvoker, Xamarin.GooglePlayServices.Maps\n" +
@@ -32,7 +31,7 @@ public class StreetViewPanorama_OnStreetViewPanoramaCameraChangeListenerImplemen
 
 	private native void n_onStreetViewPanoramaCameraChange (com.google.android.gms.maps.model.StreetViewPanoramaCamera p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

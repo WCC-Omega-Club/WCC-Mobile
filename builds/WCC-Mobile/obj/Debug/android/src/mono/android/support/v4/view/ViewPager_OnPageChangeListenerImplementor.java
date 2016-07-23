@@ -7,8 +7,7 @@ public class ViewPager_OnPageChangeListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.view.ViewPager.OnPageChangeListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onPageScrollStateChanged:(I)V:GetOnPageScrollStateChanged_IHandler:Android.Support.V4.View.ViewPager/IOnPageChangeListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -50,7 +49,7 @@ public class ViewPager_OnPageChangeListenerImplementor
 
 	private native void n_onPageSelected (int p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

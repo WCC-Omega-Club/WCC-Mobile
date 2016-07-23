@@ -7,8 +7,7 @@ public class AlertDialog_IDialogInterfaceOnCancelListenerImplementor
 		mono.android.IGCUserPeer,
 		android.content.DialogInterface.OnCancelListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onCancel:(Landroid/content/DialogInterface;)V:GetOnCancel_Landroid_content_DialogInterface_Handler:Android.Content.IDialogInterfaceOnCancelListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
@@ -32,7 +31,7 @@ public class AlertDialog_IDialogInterfaceOnCancelListenerImplementor
 
 	private native void n_onCancel (android.content.DialogInterface p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

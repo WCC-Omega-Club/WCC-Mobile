@@ -7,8 +7,7 @@ public class Loader_OnLoadCompleteListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.content.Loader.OnLoadCompleteListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onLoadComplete:(Landroid/support/v4/content/Loader;Ljava/lang/Object;)V:GetOnLoadComplete_Landroid_support_v4_content_Loader_Ljava_lang_Object_Handler:Android.Support.V4.Content.Loader/IOnLoadCompleteListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -32,7 +31,7 @@ public class Loader_OnLoadCompleteListenerImplementor
 
 	private native void n_onLoadComplete (android.support.v4.content.Loader p0, java.lang.Object p1);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

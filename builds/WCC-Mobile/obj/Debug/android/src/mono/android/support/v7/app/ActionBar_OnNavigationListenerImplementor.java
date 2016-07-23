@@ -7,8 +7,7 @@ public class ActionBar_OnNavigationListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v7.app.ActionBar.OnNavigationListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onNavigationItemSelected:(IJ)Z:GetOnNavigationItemSelected_IJHandler:Android.Support.V7.App.ActionBar/IOnNavigationListenerInvoker, Xamarin.Android.Support.v7.AppCompat\n" +
@@ -32,7 +31,7 @@ public class ActionBar_OnNavigationListenerImplementor
 
 	private native boolean n_onNavigationItemSelected (int p0, long p1);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

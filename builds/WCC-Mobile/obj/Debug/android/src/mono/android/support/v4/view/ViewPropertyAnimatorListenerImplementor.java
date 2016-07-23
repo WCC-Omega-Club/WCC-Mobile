@@ -7,8 +7,7 @@ public class ViewPropertyAnimatorListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.view.ViewPropertyAnimatorListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onAnimationCancel:(Landroid/view/View;)V:GetOnAnimationCancel_Landroid_view_View_Handler:Android.Support.V4.View.IViewPropertyAnimatorListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -50,7 +49,7 @@ public class ViewPropertyAnimatorListenerImplementor
 
 	private native void n_onAnimationStart (android.view.View p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

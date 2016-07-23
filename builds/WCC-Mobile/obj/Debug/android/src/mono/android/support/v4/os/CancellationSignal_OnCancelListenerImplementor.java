@@ -7,8 +7,7 @@ public class CancellationSignal_OnCancelListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.os.CancellationSignal.OnCancelListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onCancel:()V:GetOnCancelHandler:Android.Support.V4.OS.CancellationSignal/IOnCancelListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -32,7 +31,7 @@ public class CancellationSignal_OnCancelListenerImplementor
 
 	private native void n_onCancel ();
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

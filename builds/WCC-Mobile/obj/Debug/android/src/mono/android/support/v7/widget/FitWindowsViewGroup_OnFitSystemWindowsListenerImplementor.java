@@ -7,8 +7,7 @@ public class FitWindowsViewGroup_OnFitSystemWindowsListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v7.widget.FitWindowsViewGroup.OnFitSystemWindowsListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onFitSystemWindows:(Landroid/graphics/Rect;)V:GetOnFitSystemWindows_Landroid_graphics_Rect_Handler:Android.Support.V7.Widget.IFitWindowsViewGroupOnFitSystemWindowsListenerInvoker, Xamarin.Android.Support.v7.AppCompat\n" +
@@ -32,7 +31,7 @@ public class FitWindowsViewGroup_OnFitSystemWindowsListenerImplementor
 
 	private native void n_onFitSystemWindows (android.graphics.Rect p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

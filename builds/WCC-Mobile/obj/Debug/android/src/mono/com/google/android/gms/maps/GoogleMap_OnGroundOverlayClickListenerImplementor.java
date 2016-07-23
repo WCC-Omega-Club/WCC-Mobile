@@ -7,8 +7,7 @@ public class GoogleMap_OnGroundOverlayClickListenerImplementor
 		mono.android.IGCUserPeer,
 		com.google.android.gms.maps.GoogleMap.OnGroundOverlayClickListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onGroundOverlayClick:(Lcom/google/android/gms/maps/model/GroundOverlay;)V:GetOnGroundOverlayClick_Lcom_google_android_gms_maps_model_GroundOverlay_Handler:Android.Gms.Maps.GoogleMap/IOnGroundOverlayClickListenerInvoker, Xamarin.GooglePlayServices.Maps\n" +
@@ -32,7 +31,7 @@ public class GoogleMap_OnGroundOverlayClickListenerImplementor
 
 	private native void n_onGroundOverlayClick (com.google.android.gms.maps.model.GroundOverlay p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

@@ -7,8 +7,7 @@ public class ActionBar_OnMenuVisibilityListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v7.app.ActionBar.OnMenuVisibilityListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onMenuVisibilityChanged:(Z)V:GetOnMenuVisibilityChanged_ZHandler:Android.Support.V7.App.ActionBar/IOnMenuVisibilityListenerInvoker, Xamarin.Android.Support.v7.AppCompat\n" +
@@ -32,7 +31,7 @@ public class ActionBar_OnMenuVisibilityListenerImplementor
 
 	private native void n_onMenuVisibilityChanged (boolean p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

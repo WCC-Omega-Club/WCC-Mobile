@@ -7,8 +7,7 @@ public class ViewStubCompat_OnInflateListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v7.widget.ViewStubCompat.OnInflateListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onInflate:(Landroid/support/v7/widget/ViewStubCompat;Landroid/view/View;)V:GetOnInflate_Landroid_support_v7_widget_ViewStubCompat_Landroid_view_View_Handler:Android.Support.V7.Widget.ViewStubCompat/IOnInflateListenerInvoker, Xamarin.Android.Support.v7.AppCompat\n" +
@@ -32,7 +31,7 @@ public class ViewStubCompat_OnInflateListenerImplementor
 
 	private native void n_onInflate (android.support.v7.widget.ViewStubCompat p0, android.view.View p1);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

@@ -7,8 +7,7 @@ public class MenuItemCompat_OnActionExpandListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.view.MenuItemCompat.OnActionExpandListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onMenuItemActionCollapse:(Landroid/view/MenuItem;)Z:GetOnMenuItemActionCollapse_Landroid_view_MenuItem_Handler:Android.Support.V4.View.MenuItemCompat/IOnActionExpandListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -41,7 +40,7 @@ public class MenuItemCompat_OnActionExpandListenerImplementor
 
 	private native boolean n_onMenuItemActionExpand (android.view.MenuItem p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

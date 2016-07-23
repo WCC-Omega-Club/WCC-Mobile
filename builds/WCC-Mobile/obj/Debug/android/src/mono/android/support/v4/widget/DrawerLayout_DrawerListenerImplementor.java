@@ -7,8 +7,7 @@ public class DrawerLayout_DrawerListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.widget.DrawerLayout.DrawerListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onDrawerClosed:(Landroid/view/View;)V:GetOnDrawerClosed_Landroid_view_View_Handler:Android.Support.V4.Widget.DrawerLayout/IDrawerListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -59,7 +58,7 @@ public class DrawerLayout_DrawerListenerImplementor
 
 	private native void n_onDrawerStateChanged (int p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

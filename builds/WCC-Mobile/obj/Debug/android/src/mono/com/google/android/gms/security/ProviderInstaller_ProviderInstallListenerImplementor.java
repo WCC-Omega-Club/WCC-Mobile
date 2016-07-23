@@ -7,8 +7,7 @@ public class ProviderInstaller_ProviderInstallListenerImplementor
 		mono.android.IGCUserPeer,
 		com.google.android.gms.security.ProviderInstaller.ProviderInstallListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onProviderInstallFailed:(ILandroid/content/Intent;)V:GetOnProviderInstallFailed_ILandroid_content_Intent_Handler:Android.Gms.Security.ProviderInstaller/IProviderInstallListenerInvoker, Xamarin.GooglePlayServices.Basement\n" +
@@ -41,7 +40,7 @@ public class ProviderInstaller_ProviderInstallListenerImplementor
 
 	private native void n_onProviderInstalled ();
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

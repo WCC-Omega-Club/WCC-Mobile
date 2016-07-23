@@ -7,8 +7,7 @@ public class NestedScrollView_OnScrollChangeListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.widget.NestedScrollView.OnScrollChangeListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onScrollChange:(Landroid/support/v4/widget/NestedScrollView;IIII)V:GetOnScrollChange_Landroid_support_v4_widget_NestedScrollView_IIIIHandler:Android.Support.V4.Widget.NestedScrollView/IOnScrollChangeListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -32,7 +31,7 @@ public class NestedScrollView_OnScrollChangeListenerImplementor
 
 	private native void n_onScrollChange (android.support.v4.widget.NestedScrollView p0, int p1, int p2, int p3, int p4);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

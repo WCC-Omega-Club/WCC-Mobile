@@ -7,8 +7,7 @@ public class ResultCallback_1
 		mono.android.IGCUserPeer,
 		com.google.android.gms.common.api.ResultCallback
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onResult:(Lcom/google/android/gms/common/api/Result;)V:GetOnResult_Lcom_google_android_gms_common_api_Result_Handler:Android.Gms.Common.Apis.IResultCallbackInvoker, Xamarin.GooglePlayServices.Basement\n" +
@@ -32,7 +31,7 @@ public class ResultCallback_1
 
 	private native void n_onResult (com.google.android.gms.common.api.Result p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

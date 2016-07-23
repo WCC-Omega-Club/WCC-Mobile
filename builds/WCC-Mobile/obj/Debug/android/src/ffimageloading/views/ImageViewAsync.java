@@ -6,8 +6,7 @@ public class ImageViewAsync
 	implements
 		mono.android.IGCUserPeer
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onMeasure:(II)V:GetOnMeasure_IIHandler\n" +
@@ -64,7 +63,7 @@ public class ImageViewAsync
 
 	private native boolean n_setFrame (int p0, int p1, int p2, int p3);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

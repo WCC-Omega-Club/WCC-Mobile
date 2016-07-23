@@ -6,8 +6,7 @@ public class SelfDisposingAsyncDrawable
 	implements
 		mono.android.IGCUserPeer
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"";
@@ -78,7 +77,7 @@ public class SelfDisposingAsyncDrawable
 			mono.android.TypeManager.Activate ("FFImageLoading.Drawables.SelfDisposingAsyncDrawable, FFImageLoading.Platform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0 });
 	}
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

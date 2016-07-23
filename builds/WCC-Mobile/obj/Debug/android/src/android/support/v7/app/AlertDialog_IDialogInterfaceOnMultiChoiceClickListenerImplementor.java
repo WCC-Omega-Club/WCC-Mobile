@@ -7,8 +7,7 @@ public class AlertDialog_IDialogInterfaceOnMultiChoiceClickListenerImplementor
 		mono.android.IGCUserPeer,
 		android.content.DialogInterface.OnMultiChoiceClickListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onClick:(Landroid/content/DialogInterface;IZ)V:GetOnClick_Landroid_content_DialogInterface_IZHandler:Android.Content.IDialogInterfaceOnMultiChoiceClickListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
@@ -32,7 +31,7 @@ public class AlertDialog_IDialogInterfaceOnMultiChoiceClickListenerImplementor
 
 	private native void n_onClick (android.content.DialogInterface p0, int p1, boolean p2);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

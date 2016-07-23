@@ -7,8 +7,7 @@ public class AppBarLayout_OnOffsetChangedListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.design.widget.AppBarLayout.OnOffsetChangedListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onOffsetChanged:(Landroid/support/design/widget/AppBarLayout;I)V:GetOnOffsetChanged_Landroid_support_design_widget_AppBarLayout_IHandler:Android.Support.Design.Widget.AppBarLayout/IOnOffsetChangedListenerInvoker, Xamarin.Android.Support.Design\n" +
@@ -32,7 +31,7 @@ public class AppBarLayout_OnOffsetChangedListenerImplementor
 
 	private native void n_onOffsetChanged (android.support.design.widget.AppBarLayout p0, int p1);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

@@ -7,8 +7,7 @@ public class ActionBar_TabListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v7.app.ActionBar.TabListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onTabReselected:(Landroid/support/v7/app/ActionBar$Tab;Landroid/support/v4/app/FragmentTransaction;)V:GetOnTabReselected_Landroid_support_v7_app_ActionBar_Tab_Landroid_support_v4_app_FragmentTransaction_Handler:Android.Support.V7.App.ActionBar/ITabListenerInvoker, Xamarin.Android.Support.v7.AppCompat\n" +
@@ -50,7 +49,7 @@ public class ActionBar_TabListenerImplementor
 
 	private native void n_onTabUnselected (android.support.v7.app.ActionBar.Tab p0, android.support.v4.app.FragmentTransaction p1);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

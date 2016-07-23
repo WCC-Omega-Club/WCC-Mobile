@@ -7,8 +7,7 @@ public class RecyclerView_OnChildAttachStateChangeListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v7.widget.RecyclerView.OnChildAttachStateChangeListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onChildViewAttachedToWindow:(Landroid/view/View;)V:GetOnChildViewAttachedToWindow_Landroid_view_View_Handler:Android.Support.V7.Widget.RecyclerView/IOnChildAttachStateChangeListenerInvoker, Xamarin.Android.Support.v7.RecyclerView\n" +
@@ -41,7 +40,7 @@ public class RecyclerView_OnChildAttachStateChangeListenerImplementor
 
 	private native void n_onChildViewDetachedFromWindow (android.view.View p0);
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

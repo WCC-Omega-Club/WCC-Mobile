@@ -7,8 +7,7 @@ public class SearchView_OnCloseListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v7.widget.SearchView.OnCloseListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onClose:()Z:GetOnCloseHandler:Android.Support.V7.Widget.SearchView/IOnCloseListenerInvoker, Xamarin.Android.Support.v7.AppCompat\n" +
@@ -32,7 +31,7 @@ public class SearchView_OnCloseListenerImplementor
 
 	private native boolean n_onClose ();
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)

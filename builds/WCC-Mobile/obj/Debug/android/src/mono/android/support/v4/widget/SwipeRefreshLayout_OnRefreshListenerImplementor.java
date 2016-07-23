@@ -7,8 +7,7 @@ public class SwipeRefreshLayout_OnRefreshListenerImplementor
 		mono.android.IGCUserPeer,
 		android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener
 {
-/** @hide */
-	public static final String __md_methods;
+	static final String __md_methods;
 	static {
 		__md_methods = 
 			"n_onRefresh:()V:GetOnRefreshHandler:Android.Support.V4.Widget.SwipeRefreshLayout/IOnRefreshListenerInvoker, Xamarin.Android.Support.v4\n" +
@@ -32,7 +31,7 @@ public class SwipeRefreshLayout_OnRefreshListenerImplementor
 
 	private native void n_onRefresh ();
 
-	private java.util.ArrayList refList;
+	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
 	{
 		if (refList == null)
