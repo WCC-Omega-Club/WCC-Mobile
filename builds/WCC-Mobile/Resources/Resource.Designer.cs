@@ -26,6 +26,8 @@ namespace WCCMobile
 		
 		public static void UpdateIdValues()
 		{
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::WCCMobile.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::WCCMobile.Resource.String.Hello;
 			global::XamSvg.Resource.Attribute.colorMapping = global::WCCMobile.Resource.Attribute.colorMapping;
 			global::XamSvg.Resource.Attribute.colorMappingSelected = global::WCCMobile.Resource.Attribute.colorMappingSelected;
 			global::XamSvg.Resource.Attribute.svg = global::WCCMobile.Resource.Attribute.svg;
@@ -3461,14 +3463,14 @@ namespace WCCMobile
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f09003a
-			public const int ApplicationName = 2131296314;
+			// aapt resource value: 0x7f090039
+			public const int ApplicationName = 2131296313;
 			
 			// aapt resource value: 0x7f09003b
 			public const int DiningServices = 2131296315;
 			
-			// aapt resource value: 0x7f090039
-			public const int Hello = 2131296313;
+			// aapt resource value: 0x7f090038
+			public const int Hello = 2131296312;
 			
 			// aapt resource value: 0x7f090021
 			public const int abc_action_bar_home_description = 2131296289;
@@ -3635,8 +3637,8 @@ namespace WCCMobile
 			// aapt resource value: 0x7f090020
 			public const int common_signin_button_text_long = 2131296288;
 			
-			// aapt resource value: 0x7f090038
-			public const int days_prompt = 2131296312;
+			// aapt resource value: 0x7f09003a
+			public const int days_prompt = 2131296314;
 			
 			// aapt resource value: 0x7f090040
 			public const int load_error = 2131296320;

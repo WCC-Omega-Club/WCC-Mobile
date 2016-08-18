@@ -114,6 +114,10 @@ WCCMobile.Resources.YellowBookAdapter, WCCMobile;md5f3a53e1b9332f0a71eefea84a7af
 WCCMobile.Resources.YellowBookAdapter, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5f3a53e1b9332f0a71eefea84a7afa83b.YellowBookAdapter
 WCCMobile.Resources.YellowBookAdapter;md5f3a53e1b9332f0a71eefea84a7afa83b.YellowBookAdapter
 wccmobile.resources.YellowBookAdapter;md5f3a53e1b9332f0a71eefea84a7afa83b.YellowBookAdapter
+WCCMobile.Adapters.CourseViewHolder, WCCMobile;md58b635262c3bfd68bbdcd2f51b17b0d13.CourseViewHolder
+WCCMobile.Adapters.CourseViewHolder, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58b635262c3bfd68bbdcd2f51b17b0d13.CourseViewHolder
+WCCMobile.Adapters.CourseViewHolder;md58b635262c3bfd68bbdcd2f51b17b0d13.CourseViewHolder
+wccmobile.adapters.CourseViewHolder;md58b635262c3bfd68bbdcd2f51b17b0d13.CourseViewHolder
 WCCMobile.Adapters.GenericAdapter`2, WCCMobile;md58b635262c3bfd68bbdcd2f51b17b0d13.GenericAdapter_2
 WCCMobile.Adapters.GenericAdapter`2, WCCMobile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58b635262c3bfd68bbdcd2f51b17b0d13.GenericAdapter_2
 WCCMobile.Adapters.GenericAdapter`2;md58b635262c3bfd68bbdcd2f51b17b0d13.GenericAdapter_2

@@ -1,7 +1,11 @@
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\WCCMobile.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Cheeseknife.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\FFImageLoading.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\FFImageLoading.Platform.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Newtonsoft.Json.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\SQLite.Net.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\SQLite.Net.Platform.XamarinAndroid.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\SQLiteNetExtensions.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Xamarin.Android.Support.Design.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Xamarin.Android.Support.v4.dll

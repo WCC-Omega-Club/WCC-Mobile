@@ -130,8 +130,15 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\uploadflags.txt
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\layout\footerslideup.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\values\attrs.xml
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\res\raw\min.svg
-D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.config
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Cheeseknife.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\SQLite.Net.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\SQLite.Net.Platform.XamarinAndroid.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\SQLiteNetExtensions.dll
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Cheeseknife.xml
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\SQLiteNetExtensions.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\WCCMobile.csprojResolveAssemblyReference.cache
+D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\WCCMobile.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Java.Interop.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Microsoft.CSharp.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\bin\Debug\Mono.Android.dll.mdb
@@ -152,6 +159,7 @@ D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.Android.dll
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.Android.Export.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\Mono.CSharp.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\mscorlib.dll.mdb
+D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\SQLiteNetExtensions.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\System.ComponentModel.Composition.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\System.Core.dll.mdb
 D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\android\assets\System.dll.mdb

@@ -3057,9 +3057,9 @@ containing a value of this type.
         public static int station_lock=0x7f06000e;
     }
     public static final class string {
-        public static int ApplicationName=0x7f09003a;
+        public static int ApplicationName=0x7f090039;
         public static int DiningServices=0x7f09003b;
-        public static int Hello=0x7f090039;
+        public static int Hello=0x7f090038;
         public static int abc_action_bar_home_description=0x7f090021;
         public static int abc_action_bar_home_description_format=0x7f090022;
         public static int abc_action_bar_home_subtitle_description_format=0x7f090023;
@@ -3190,7 +3190,7 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static int common_signin_button_text_long=0x7f090020;
-        public static int days_prompt=0x7f090038;
+        public static int days_prompt=0x7f09003a;
         public static int load_error=0x7f090040;
         public static int menu_item_fontFamily=0x7f090041;
         public static int open_drawer=0x7f09003d;

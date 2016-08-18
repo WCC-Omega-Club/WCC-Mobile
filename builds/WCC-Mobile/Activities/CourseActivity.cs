@@ -14,6 +14,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using WCCMobile.Resources;
+using WCCMobile.ToBeRemoved;
 /*
 * This Class is the CourseActivity. It handles managing the courses for a Student.
 * Files related to the CourseActivity:
@@ -542,6 +543,8 @@ namespace WCCMobile
             inClickEvent = false;
         }
     }
+    namespace ToBeRemoved {
+         
 
     /*
      * This Class represents a Course
@@ -720,48 +723,50 @@ namespace WCCMobile
         {
             return !(a == b);
         }
-         
 
-        /*
-         * This Class represents a Day of the Week and Time Schedule for a course
-         */
-        [Serializable]
-        public class CourseDay
-        {
-            string day;
-            public string DAY
+
+            /*
+             * This Class represents a Day of the Week and Time Schedule for a course
+             */
+            [Serializable]
+            public class CourseDay
             {
-                get { return day; }
-            }
-            TimeSpan startTime;
-            public TimeSpan START_TIME
-            {
-                get { return startTime; }
-            }
-            TimeSpan endTime;
-            public TimeSpan END_TIME
-            {
-                get { return endTime; }
-            }
-            public CourseDay(string day, string startTimeStamp, string startMer,string endTimeStamp, string endMer)
-            {
-                Update(day, startTimeStamp, startMer, endTimeStamp, endMer);
-            }
-            public void Update(string day, string startTimeStamp, string startMer, string endTimeStamp, string endMer)
-            {
-                this.day = day;
-                //12 hr to 24 hr conversion
-                int hours = int.Parse(startTimeStamp.Substring(0, startTimeStamp.IndexOf(":")));
-                int minutes = int.Parse(startTimeStamp.Substring(startTimeStamp.IndexOf(":") + 1));
-                if (startMer == "PM")
-                    hours = (hours + 12) % 24;
-                startTime = new TimeSpan(hours, minutes, 0);
-                hours = int.Parse(endTimeStamp.Substring(0, endTimeStamp.IndexOf(":")));
-                minutes = int.Parse(endTimeStamp.Substring(endTimeStamp.IndexOf(":") + 1));
-                if (endMer == "PM")
-                    hours = (hours + 12) % 24;
-                endTime = new TimeSpan(hours, minutes, 0);
-                //
+                string day;
+                public string DAY
+                {
+                    get { return day; }
+                }
+                TimeSpan startTime;
+                public TimeSpan START_TIME
+                {
+                    get { return startTime; }
+                }
+                TimeSpan endTime;
+                public TimeSpan END_TIME
+                {
+                    get { return endTime; }
+                }
+                public CourseDay(string day, string startTimeStamp, string startMer, string endTimeStamp, string endMer)
+                {
+                    Update(day, startTimeStamp, startMer, endTimeStamp, endMer);
+                }
+                public void Update(string day, string startTimeStamp, string startMer, string endTimeStamp, string endMer)
+                {
+                    this.day = day;
+                    //12 hr to 24 hr conversion
+                    int hours = int.Parse(startTimeStamp.Substring(0, startTimeStamp.IndexOf(":")));
+                    int minutes = int.Parse(startTimeStamp.Substring(startTimeStamp.IndexOf(":") + 1));
+                    if (startMer == "PM")
+                        hours = (hours + 12) % 24;
+                    startTime = new TimeSpan(hours, minutes, 0);
+                    hours = int.Parse(endTimeStamp.Substring(0, endTimeStamp.IndexOf(":")));
+                    minutes = int.Parse(endTimeStamp.Substring(endTimeStamp.IndexOf(":") + 1));
+                    if (endMer == "PM")
+                        hours = (hours + 12) % 24;
+                    endTime = new TimeSpan(hours, minutes, 0);
+                    //
+                }
+
             }
         }
     }

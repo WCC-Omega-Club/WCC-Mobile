@@ -10,9 +10,59 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V7.Widget;
+using Com.Lilarcor.Cheeseknife;
+using WCCMobile.Models;
 
 namespace WCCMobile.Adapters
 {
+    /*Example Usage of BasePopulateViewHolder<T>
+     * public class StoreViewHolder : BasePopulateViewHolder<MerchantLocation>
+    {
+        [InjectView(Resource.Id.stores_rv_item_background_image)]
+        public ImageView _backgroundImage;
+
+        public StoreViewHolder(View itemView) : base(itemView)
+        {
+            Cheeseknife.Inject(this, itemView);
+        }
+
+        #region implemented abstract members of BasePopulateViewHolder
+
+        public override void PopulateFrom(MerchantLocation data)
+        {
+            Picasso.Load(data.MerchantBrandUrl).Fit().CenterCrop().Into(_backgroundImage);
+        }
+
+        #endregion
+    }
+     var feedAdapter = new GenericAdapter<MerchantLocation, StoreViewHolder>(_merchants, Resource.Layout.stores_rv_item, (x) => new StoreViewHolder(x));
+     feedAdapter.ItemClick += HandleItemClick;
+     */
+     public class CourseViewHolder: BasePopulateViewHolder<Course>
+    {
+        public ImageView BackgroundImage;
+
+        public CourseViewHolder(View itemView): base(itemView)
+        {
+            Cheeseknife.Inject(this, itemView);
+        }
+
+        public override void PopulateFrom(Course data)
+        {
+            //Data access layer goes 
+        }
+    }
+
+
+    /// <summary>
+    /// Generic <see cref="RecyclerView.Adapter"/> which binds a data source to a view
+    /// var feedAdapter = new GenericAdapter<MerchantLocation, StoreViewHolder>(_merchants, Resource.Layout.stores_rv_item, (x) => new StoreViewHolder(x));
+    /// feedAdapter.ItemClick += HandleItemClick;
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="X"></typeparam>
+    /// <seealso cref="Android.Support.V7.Widget.RecyclerView.Adapter" />
     public class GenericAdapter<T, X> : RecyclerView.Adapter where X : BasePopulateViewHolder<T>
     {
         public event EventHandler<int> ItemClick;

@@ -99,9 +99,13 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "WCCMobile.dll" comes first in this list. */
 		"WCCMobile.dll",
+		"Cheeseknife.dll",
 		"FFImageLoading.dll",
 		"FFImageLoading.Platform.dll",
 		"Newtonsoft.Json.dll",
+		"SQLite.Net.dll",
+		"SQLite.Net.Platform.XamarinAndroid.dll",
+		"SQLiteNetExtensions.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",

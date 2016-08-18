@@ -82,6 +82,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cheeseknife">
+      <HintPath>Components\cheeseknife-1.0\lib\android\Cheeseknife.dll</HintPath>
+    </Reference>
     <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Xamarin.FFImageLoading.2.1.6\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
       <Private>True</Private>
@@ -95,6 +98,18 @@
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Net, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SQLite.Net-PCL.3.0.5\lib\MonoAndroid\SQLite.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Net.Platform.XamarinAndroid, Version=3.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SQLite.Net-PCL.3.0.5\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLiteNetExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SQLiteNetExtensions.1.3.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -184,16 +199,21 @@
     <Compile Include="Helpers\LocationUtils.cs" />
     <Compile Include="Helpers\ScheduleObserver.cs" />
     <Compile Include="Helpers\CheckGooglePlayServices.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\ScheduleItem.cs" />
     <Compile Include="Models\ScheduleRootObject.cs" />
     <Compile Include="Models\TimeBlock.cs" />
+    <Compile Include="Models\Times.cs" />
+    <Compile Include="ORM\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Adapters\ImageAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Adapters\YellowBookAdapter.cs" />
     <Compile Include="Storage\Database.cs" />
-    <Compile Include="Storage\ICourseRepository.cs" />
+    <Compile Include="Storage\DatabaseConnection.cs" />
     <Compile Include="ORM\SQLite.cs" />
     <Compile Include="ORM\SQLiteAsync.cs" />
     <Compile Include="Storage\BitmapCache.cs" />
@@ -204,6 +224,7 @@
     <Compile Include="Adapters\ViewPagerAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Assets\AboutAssets.txt" />
@@ -483,6 +504,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\attrs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="cheeseknife">
+      <Visible>False</Visible>
+      <Version>1.0</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('packages\Xamarin.GooglePlayServices.Basement.29.0.0.2\build\Xamarin.GooglePlayServices.Basement.targets')" />

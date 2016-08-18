@@ -15,6 +15,7 @@ namespace WCCMobile
 {
     public class SlidingUpPanelLayout : ViewGroup
     {
+        #region Default Fields
         private new readonly string Tag = "SlidingUpPanelLayout";
         private const int DefaultPanelHeight = 68;
         private const int DefaultShadowHeight = 4;
@@ -22,7 +23,9 @@ namespace WCCMobile
         private const bool DefaultOverlayFlag = false;
         private static readonly Color DefaultFadeColor = new Color(0, 0, 0, 99);
         private static readonly int[] DefaultAttrs = { Android.Resource.Attribute.Gravity };
-
+        #endregion
+        
+        #region Fields
         private readonly int minFlingVelocity = DefaultMinFlingVelocity;
         private Color coveredFadeColor = DefaultFadeColor;
         private readonly Paint coveredFadePaint = new Paint();
@@ -31,8 +34,8 @@ namespace WCCMobile
         private readonly bool isSlidingUp;
         private bool canSlide;
         private View dragView;
-        private readonly int dragViewResId = -1;
         private View slideableView;
+        private readonly int dragViewResId = -1;
         private SlideState slideState = SlideState.Collapsed;
         private float slideOffset;
         private int slideRange;
@@ -44,11 +47,16 @@ namespace WCCMobile
         private readonly ViewDragHelper dragHelper;
         private bool firstLayout = true;
         private readonly Rect tmpRect = new Rect();
-
+        #endregion
+        
+        #region Event Handlers
         public event SlidingUpPanelSlideEventHandler PanelSlide;
         public event SlidingUpPanelEventHandler PanelCollapsed;
         public event SlidingUpPanelEventHandler PanelExpanded;
         public event SlidingUpPanelEventHandler PanelAnchored;
+        #endregion
+
+        #region Properties
         /// <summary>
         /// Gets a value indicating whether this instance is expanded.
         /// </summary>
@@ -199,6 +207,9 @@ namespace WCCMobile
                 return slidingPane.Visibility == ViewStates.Visible;
             }
         }
+        #endregion
+
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="SlidingUpPanelLayout"/> class.
         /// </summary>
@@ -284,6 +295,9 @@ namespace WCCMobile
             var vc = ViewConfiguration.Get(context);
             scrollTouchSlop = vc.ScaledTouchSlop;
         }
+        #endregion
+
+        #region Event Methods
         /// <summary>
         /// Finalize inflating a view from XML.
         /// </summary>
@@ -347,67 +361,15 @@ namespace WCCMobile
             SendAccessibilityEvent(EventTypes.WindowStateChanged);
         }
         /// <summary>
-        /// Updates the obscured view to be more or less visible.
+        /// Called when [panel dragged].
         /// </summary>
-        private void UpdateObscuredViewVisibility()
+        /// <param name="newTop">The new top.</param>
+        private void OnPanelDragged(int newTop)
         {
-            if (ChildCount == 0) return;
-
-            var leftBound = PaddingLeft;
-            var rightBound = Width - PaddingLeft;
-            var topBound = PaddingTop;
-            var bottomBound = Height - PaddingBottom;
-            int left;
-            int right;
-            int top;
-            int bottom;
-
-            if (slideableView != null && HasOpaqueBackground(slideableView))
-            {
-                left = slideableView.Left;
-                right = slideableView.Right;
-                top = slideableView.Top;
-                bottom = slideableView.Bottom;
-            }
-            else
-                left = right = top = bottom = 0;
-
-            var child = GetChildAt(0);
-            var clampedChildLeft = Math.Max(leftBound, child.Left);
-            var clampedChildTop = Math.Max(topBound, child.Top);
-            var clampedChildRight = Math.Max(rightBound, child.Right);
-            var clampedChildBottom = Math.Max(bottomBound, child.Bottom);
-            ViewStates vis;
-            if (clampedChildLeft >= left && clampedChildTop >= top &&
-                clampedChildRight <= right && clampedChildBottom <= bottom)
-                vis = ViewStates.Invisible;
-            else
-                vis = ViewStates.Visible;
-            child.Visibility = vis;
-        }
-        /// <summary>
-        /// Sets all children visible.
-        /// </summary>
-        private void SetAllChildrenVisible()
-        {
-            for (var i = 0; i < ChildCount; i++)
-            {
-                var child = GetChildAt(i);
-                if (child.Visibility == ViewStates.Invisible)
-                    child.Visibility = ViewStates.Visible;
-            }
-        }
-        /// <summary>
-        /// Determines whether [has opaque background] [the specified view].
-        /// </summary>
-        /// <param name="view">The view.</param>
-        /// <returns></returns>
-        private static bool HasOpaqueBackground(View view)
-        {
-            var bg = view.Background;
-            if (bg != null)
-                return bg.Opacity == (int)Format.Opaque;
-            return false;
+            slideOffset = isSlidingUp
+                ? (float)(newTop - SlidingTop) / slideRange
+                : (float)(SlidingTop - newTop) / slideRange;
+            OnPanelSlide(slideableView);
         }
         /// <summary>
         /// This is called when the view is attached to a window.
@@ -451,6 +413,7 @@ namespace WCCMobile
             firstLayout = true;
         }
         /// <summary>
+        /// 
         /// </summary>
         /// <param name="widthMeasureSpec">horizontal space requirements as imposed by the parent.
         /// The requirements are encoded with
@@ -458,11 +421,9 @@ namespace WCCMobile
         /// <param name="heightMeasureSpec">vertical space requirements as imposed by the parent.
         /// The requirements are encoded with
         /// <c><see cref="T:Android.Views.View+MeasureSpec" /></c>.</param>
-        /// <exception cref="InvalidOperationException">
-        /// Width must have an exact value or match_parent
+        /// <exception cref="InvalidOperationException">Width must have an exact value or match_parent
         /// or
-        /// Height must have an exact value or match_parent
-        /// </exception>
+        /// Height must have an exact value or match_parent</exception>
         /// <remarks>
         /// <para tool="javadoc-to-mdoc" />
         /// <para tool="javadoc-to-mdoc">
@@ -811,6 +772,72 @@ namespace WCCMobile
 
             return true;
         }
+        #endregion
+
+        /// <summary>
+        /// Updates the obscured view to be more or less visible.
+        /// </summary>
+        private void UpdateObscuredViewVisibility()
+        {
+            if (ChildCount == 0) return;
+
+            var leftBound = PaddingLeft;
+            var rightBound = Width - PaddingLeft;
+            var topBound = PaddingTop;
+            var bottomBound = Height - PaddingBottom;
+            int left;
+            int right;
+            int top;
+            int bottom;
+
+            if (slideableView != null && HasOpaqueBackground(slideableView))
+            {
+                left = slideableView.Left;
+                right = slideableView.Right;
+                top = slideableView.Top;
+                bottom = slideableView.Bottom;
+            }
+            else
+                left = right = top = bottom = 0;
+
+            var child = GetChildAt(0);
+            var clampedChildLeft = Math.Max(leftBound, child.Left);
+            var clampedChildTop = Math.Max(topBound, child.Top);
+            var clampedChildRight = Math.Max(rightBound, child.Right);
+            var clampedChildBottom = Math.Max(bottomBound, child.Bottom);
+            ViewStates vis;
+            if (clampedChildLeft >= left && clampedChildTop >= top &&
+                clampedChildRight <= right && clampedChildBottom <= bottom)
+                vis = ViewStates.Invisible;
+            else
+                vis = ViewStates.Visible;
+            child.Visibility = vis;
+        }
+        /// <summary>
+        /// Sets all children visible.
+        /// </summary>
+        private void SetAllChildrenVisible()
+        {
+            for (var i = 0; i < ChildCount; i++)
+            {
+                var child = GetChildAt(i);
+                if (child.Visibility == ViewStates.Invisible)
+                    child.Visibility = ViewStates.Visible;
+            }
+        }
+        /// <summary>
+        /// Determines whether [has opaque background] [the specified view].
+        /// </summary>
+        /// <param name="view">The view.</param>
+        /// <returns></returns>
+        private static bool HasOpaqueBackground(View view)
+        {
+            var bg = view.Background;
+            if (bg != null)
+                return bg.Opacity == (int)Format.Opaque;
+            return false;
+        }
+         
         /// <summary>
         /// Determines whether [is drag view under] [the specified x].
         /// </summary>
@@ -882,17 +909,7 @@ namespace WCCMobile
             slideableView.Visibility = ViewStates.Gone;
             RequestLayout();
         }
-        /// <summary>
-        /// Called when [panel dragged].
-        /// </summary>
-        /// <param name="newTop">The new top.</param>
-        private void OnPanelDragged(int newTop)
-        {
-            slideOffset = isSlidingUp
-                ? (float)(newTop - SlidingTop) / slideRange
-                : (float)(SlidingTop - newTop) / slideRange;
-            OnPanelSlide(slideableView);
-        }
+        
         /// <summary>
         /// Draw one child of this View Group.
         /// </summary>
@@ -1132,7 +1149,7 @@ namespace WCCMobile
             return new LayoutParams(Context, attrs);
         }
         /// <summary>
-        /// 
+        /// Parameters for handling the margins of <see cref="SlidingUpPanelLayout"/>
         /// </summary>
         /// <seealso cref="Android.Views.ViewGroup.MarginLayoutParams" />
         public new class LayoutParams : MarginLayoutParams
@@ -1206,7 +1223,10 @@ namespace WCCMobile
                 a.Recycle();
             }
         }
-
+        /// <summary>
+        /// A callback object to help with Dragging views
+        /// </summary>
+        /// <seealso cref="Android.Support.V4.Widget.ViewDragHelper.Callback" />
         private class DragHelperCallback : ViewDragHelper.Callback
         {
             /// <summary>

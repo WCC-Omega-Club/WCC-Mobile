@@ -53,28 +53,7 @@ namespace WCCMobile
                 return dic.Select(ds => ds.Value).Take(maxItems).ToArray();
             }
 
-            /*public ScheduleItem[] GetClosestStationTo(ScheduleItem[] events, params Location[] locations)
-            {
-                return GetClosestStationTo(events, null, locations);
-            }
-
-            public ScheduleItem[] GetClosestStationTo(ScheduleItem[] buildings, Func<Location, bool> filter, params Location[] locations)
-            {
-                var distanceToGeoPoints = new SortedDictionary<double, Location>[locations.Length];
-                var ss = filter == null ? buildings : buildings.Where(filter);
-                foreach (var station in ss)
-                {
-                    for (int i = 0; i < locations.Length; i++)
-                    {
-                        if (distanceToGeoPoints[i] == null)
-                            distanceToGeoPoints[i] = new SortedDictionary<double, Location>();
-                        distanceToGeoPoints[i].Add(LocationUtils.Distance(locations[i], station.Location), station);
-                    }
-                }
-
-                return distanceToGeoPoints.Select(ds => ds.First().Value).ToArray();
-            }*/
-
+            
             public bool HasCachedData
             {
                 get
@@ -102,7 +81,6 @@ namespace WCCMobile
                     {
                         try
                         {
-                            //data = await client.GetStringAsync(ProntoApiEndpoint).ConfigureAwait(false);
                             attempt = 0;
                         }
                         catch (Exception e)
@@ -149,7 +127,7 @@ namespace WCCMobile
 
             class ScheduleSubscriber : IDisposable
             {
-                //
+                
                 Func<ScheduleSubscriber, bool> unsubscribe;
 
                 public ScheduleSubscriber(Func<ScheduleSubscriber, bool> unsubscribe, IObserver<ScheduleItem[]> observer)

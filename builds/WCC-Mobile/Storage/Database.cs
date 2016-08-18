@@ -4,9 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using WCCMobile.Models;
 
 namespace WCCMobile
 {
+
+
+   
+
     public interface IRepository<T> where T : class, new()
     {
         /// <summary>
@@ -90,7 +95,7 @@ namespace WCCMobile
             }
             if (orderBy != null)
             {
-                query = query.OrderBy<TValue>(orderBy);
+                query = query.OrderBy(orderBy);
             }
 
             return await query.ToListAsync();
