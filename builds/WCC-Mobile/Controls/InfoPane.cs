@@ -8,7 +8,7 @@ using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Views.Animations;
 
-namespace WCCMobile
+namespace WCCMobile.Controls
 {
     public class InfoPane : LinearLayout
     {

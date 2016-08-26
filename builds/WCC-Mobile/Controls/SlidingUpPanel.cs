@@ -976,13 +976,15 @@ namespace WCCMobile
         /// <returns></returns>
         private bool SmoothSlideTo(float slideOffset)
         {
-            if (!canSlide) return false;
+            if (!canSlide)
+                return false;
 
             var y = isSlidingUp
                 ? (int)(SlidingTop + slideOffset * slideRange)
                 : (int)(SlidingTop - slideOffset * slideRange);
 
-            if (!dragHelper.SmoothSlideViewTo(slideableView, slideableView.Left, y)) return false;
+            if (!dragHelper.SmoothSlideViewTo(slideableView, slideableView.Left, y))
+                return false;
 
             SetAllChildrenVisible();
             ViewCompat.PostInvalidateOnAnimation(this);

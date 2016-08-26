@@ -15,45 +15,39 @@ using WCCMobile.Models;
 
 namespace WCCMobile.Adapters
 {
-    /*Example Usage of BasePopulateViewHolder<T>
-     * public class StoreViewHolder : BasePopulateViewHolder<MerchantLocation>
+    
+    public class ScheduleViewHolder : BasePopulateViewHolder<Schedule>
     {
-        [InjectView(Resource.Id.stores_rv_item_background_image)]
-        public ImageView _backgroundImage;
+        [InjectView(Resource.Id.roomName)]
+        TextView roomName;
+        [InjectView(Resource.Id.courseName)]
+        TextView courseName;
+        [InjectView(Resource.Id.professor)]
+        TextView professor;
+        [InjectView(Resource.Id.timeInterval)]
+        TextView timeInterval;
+        [InjectView(Resource.Id.calenderButton)]
+        ImageButton calenderButton;
+        
 
-        public StoreViewHolder(View itemView) : base(itemView)
+        public ScheduleViewHolder(View itemView) : base(itemView)
         {
             Cheeseknife.Inject(this, itemView);
         }
 
-        #region implemented abstract members of BasePopulateViewHolder
-
-        public override void PopulateFrom(MerchantLocation data)
+        public override void PopulateFrom(Schedule data)
         {
-            Picasso.Load(data.MerchantBrandUrl).Fit().CenterCrop().Into(_backgroundImage);
-        }
+            roomName.Text = data.Course.Room;
+            courseName.Text = data.Course.Name;
+            professor.Text = data.Course.Professor;
 
-        #endregion
-    }
-     var feedAdapter = new GenericAdapter<MerchantLocation, StoreViewHolder>(_merchants, Resource.Layout.stores_rv_item, (x) => new StoreViewHolder(x));
-     feedAdapter.ItemClick += HandleItemClick;
-     */
-     public class CourseViewHolder: BasePopulateViewHolder<Course>
-    {
-        public ImageView BackgroundImage;
+            timeInterval.Text = data.Times.StartTime.ToString() + " - " + data.Times.EndTime.ToString();
 
-        public CourseViewHolder(View itemView): base(itemView)
-        {
-            Cheeseknife.Inject(this, itemView);
-        }
 
-        public override void PopulateFrom(Course data)
-        {
-            //Data access layer goes 
         }
     }
-
-
+  
+    
     /// <summary>
     /// Generic <see cref="RecyclerView.Adapter"/> which binds a data source to a view
     /// var feedAdapter = new GenericAdapter<MerchantLocation, StoreViewHolder>(_merchants, Resource.Layout.stores_rv_item, (x) => new StoreViewHolder(x));
@@ -202,10 +196,7 @@ namespace WCCMobile.Adapters
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         void HandleClick(object sender, EventArgs e)
         {
-            if (listener != null)
-            {
-                listener(base.AdapterPosition);
-            }
+            listener?.Invoke(base.AdapterPosition);
         }
     }
 }

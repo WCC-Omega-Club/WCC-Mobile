@@ -366,7 +366,7 @@ namespace WCCMobile
         {
             base.OnStart();
             isReady = true;
-            Log.Debug("Belief", isReady.ToString());
+            Log.Debug("MainActivity", isReady.ToString());
         }
         /// <summary>
         /// Gets the image bitmap from URL.

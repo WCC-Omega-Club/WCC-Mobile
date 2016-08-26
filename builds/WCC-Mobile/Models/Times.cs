@@ -32,7 +32,7 @@ namespace WCCMobile.Models
         }
         private int scheduleId;
 
-        [ManyToOne]
+        [OneToOne]
         public Schedule schedule { get; set; }
         [NotNull]
         public TimeSpan StartTime

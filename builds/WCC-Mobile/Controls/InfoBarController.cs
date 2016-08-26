@@ -2,7 +2,7 @@
 using Android.Views;
 using Android.Widget;
 
-namespace WCCMobile
+namespace WCCMobile.Controls
 {
 	public class InfoBarController
 	{

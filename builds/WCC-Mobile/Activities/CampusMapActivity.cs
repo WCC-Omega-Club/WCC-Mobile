@@ -16,6 +16,9 @@ using Android.Graphics.Drawables;
 using Android.Graphics;
 using Android.Gms.Common.Apis;
 using Android.Gms.Location;
+using System.Reflection;
+using Android.Util;
+using WCCMobile.Extensions;
 
 namespace WCCMobile
 {
@@ -26,25 +29,27 @@ namespace WCCMobile
         ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize,
         LaunchMode = LaunchMode.SingleTop)]
-[IntentFilter(new[] { "android.intent.action.SEARCH" }, Categories = new[] { "android.intent.category.DEFAULT" })]
-//[MetaData("android.app.searchable", Resource = "@xml/searchable")]
-public class CampusMapActivity
-        : BaseActivity, IObserver<ScheduleItem[]>, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener
-{
-    const int ConnectionFailureResolutionRequest = 9000;
+    [IntentFilter(new[] { "android.intent.action.SEARCH" }, Categories = new[] { "android.intent.category.DEFAULT" })]
+    //[MetaData("android.app.searchable", Resource = "@xml/searchable")]
+    public class CampusMapActivity
+        : BaseActivity, IObserver<Schedule[]>, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener
+    {
+        const int ConnectionFailureResolutionRequest = 9000;
 
-    CampusMapFragment mapFragment;
-    ScheduleFragment scheduleFragment;
+        CampusMapFragment mapFragment;
+        ScheduleFragment scheduleFragment;
 
-    DrawerLayout drawer;
-    Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
-    ListView drawerMenu;
-    ListView drawerAround;
+        DrawerLayout drawer;
+        Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
+        ListView drawerMenu;
+        ListView drawerAround;
 
-    DrawerAroundAdapter aroundAdapter;
-    GoogleApiClient client;
-   
-    Typeface menuNormalTf, menuHighlightTf;
+        DrawerAroundAdapter aroundAdapter;
+        GoogleApiClient client;
+
+        Typeface menuNormalTf, menuHighlightTf;
+        private readonly string ObjectName = "CampusMapActivity";
+
         /// <summary>
         /// Gets the current fragment.
         /// </summary>
@@ -52,16 +57,16 @@ public class CampusMapActivity
         /// The current fragment.
         /// </value>
         Android.Support.V4.App.Fragment CurrentFragment
-    {
-        get
-        {   return new Android.Support.V4.App.Fragment[]
-            {
-                    mapFragment,
-                    scheduleFragment,
-                    
-            }.FirstOrDefault(f => f != null && f.IsAdded && f.IsVisible);
+        {
+            get
+            { return new Android.Support.V4.App.Fragment[]
+              {
+                        mapFragment,
+                        scheduleFragment,
+
+              }.FirstOrDefault(f => f != null && f.IsAdded && f.IsVisible);
+            }
         }
-    }
         /// <summary>
         /// Gets the layout resource.
         /// </summary>
@@ -69,10 +74,10 @@ public class CampusMapActivity
         /// The layout resource.
         /// </value>
         protected override int LayoutResource
-    {
-        get
-        {  return Resource.Layout.MainDrawer; }
-    }
+        {
+            get
+            { return Resource.Layout.MainDrawer; }
+        }
         /// <summary>
         /// Called when [create].
         /// </summary>
@@ -108,147 +113,159 @@ public class CampusMapActivity
                         currentFragment.HasOptionsMenu = true;
                     }
                     InvalidateOptionsMenu();
-            },
-        };
-        drawer.SetDrawerShadow(Resource.Drawable.drawer_shadow, (int)GravityFlags.Left);
-        drawer.AddDrawerListener(drawerToggle);
-        SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-        SupportActionBar.SetHomeButtonEnabled(true);
+                },
+            };
+            drawer.SetDrawerShadow(Resource.Drawable.drawer_shadow, (int)GravityFlags.Left);
+            drawer.AddDrawerListener(drawerToggle);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            SupportActionBar.SetHomeButtonEnabled(true);
 
-        ScheduleObserver.Instance.Subscribe(this);
-       // ScheduleManager.ScheduleChanged += (sender, e) => aroundAdapter.Refresh();
+            ScheduleObserver.Instance.Subscribe(this);
+            // ScheduleManager.ScheduleChanged += (sender, e) => aroundAdapter.Refresh();
 
-        drawerMenu = FindViewById<ListView>(Resource.Id.left_drawer);
-        drawerMenu.AddFooterView(new Android.Support.V4.Widget.Space(this));
-        drawerMenu.ItemClick += HandleSectionItemClick;
-        menuNormalTf = Typeface.Create(Resources.GetString(Resource.String.menu_item_fontFamily),
-            TypefaceStyle.Normal);
+            drawerMenu = FindViewById<ListView>(Resource.Id.left_drawer);
+            drawerMenu.AddFooterView(new Android.Support.V4.Widget.Space(this));
+            drawerMenu.ItemClick += HandleSectionItemClick;
+            menuNormalTf = Typeface.Create(Resources.GetString(Resource.String.menu_item_fontFamily),
+                TypefaceStyle.Normal);
 
-        drawerMenu.Adapter = new DrawerMenuAdapter(this);
+            drawerMenu.Adapter = new DrawerMenuAdapter(this);
 
-        drawerAround = FindViewById<ListView>(Resource.Id.left_drawer_around);
-        drawerAround.ItemClick += HandleAroundItemClick;
-        drawerAround.Adapter = aroundAdapter = new DrawerAroundAdapter(this);
+            drawerAround = FindViewById<ListView>(Resource.Id.left_drawer_around);
+            drawerAround.ItemClick += HandleAroundItemClick;
+            drawerAround.Adapter = aroundAdapter = new DrawerAroundAdapter(this);
 
-        drawerMenu.SetItemChecked(0, true);
+            drawerMenu.SetItemChecked(0, true);
 
-        if (CheckGooglePlayServices())
-        {
-            client = CreateApiClient();
-            SwitchTo(mapFragment = new CampusMapFragment(this));
-            SupportActionBar.Title = ((ICampusSection)mapFragment).Title;
+            if (CheckGooglePlayServices())
+            {
+                client = CreateApiClient();
+                SwitchTo(mapFragment = new CampusMapFragment(this));
+                SupportActionBar.Title = ((ICampusSection)mapFragment).Title;
+            }
         }
-    }
-    /// <summary>
-    /// Creates the API client.
-    /// </summary>
-    /// <returns></returns>
-    private GoogleApiClient CreateApiClient()
-    {
-        return new GoogleApiClient.Builder(this, this, this)
+        /// <summary>
+        /// Creates the API client.
+        /// </summary>
+        /// <returns></returns>
+        private GoogleApiClient CreateApiClient()
+        {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
+            return new GoogleApiClient.Builder(this, this, this)
             .AddApi(LocationServices.API)
             .Build();
-    }
-
-    void HandleAroundItemClick(object sender, AdapterView.ItemClickEventArgs e)
-    {
-        if (mapFragment != null)
+        }
+        /// <summary>
+        /// Handles the around item click.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="AdapterView.ItemClickEventArgs"/> instance containing the event data.</param>
+        void HandleAroundItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            if (mapFragment != null)
+            {
+                Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with args: sender: {sender}, eventargs:{e})");
+
+                drawer.CloseDrawers();
+                mapFragment.CenterAndOpenOnMap(e.Id,
+                    zoom: 17,
+                    animDurationID: Android.Resource.Integer.ConfigLongAnimTime);
+            }
+        }
+        /// <summary>
+        /// Handles the section item click.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="AdapterView.ItemClickEventArgs"/> instance containing the event data.</param>
+        void HandleSectionItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            switch (e.Position)
+            {
+                case 0:
+                    if (mapFragment == null)
+                        mapFragment = new CampusMapFragment(this);
+                    SwitchTo(mapFragment);
+                    break;
+                case 1:
+                    if (scheduleFragment == null)
+                    {
+
+                    }
+                    SwitchTo(scheduleFragment);
+                    break;
+                case 2:
+                    //StartActivity(new Intent(this, typeof(SettingsActivity)));
+                    var data = new Dictionary<string, string>();
+                    data.Add("Section", "Settings");
+                    Xamarin.Insights.Track("Navigated", data);
+                    break;
+
+
+                default:
+                    return;
+            }
+            SetSelectedMenuIndex(e.Position);
+            drawerMenu.SetItemChecked(e.Position, true);
             drawer.CloseDrawers();
-            mapFragment.CenterAndOpenOnMap(e.Id,
-                zoom: 17,
-                animDurationID: Android.Resource.Integer.ConfigLongAnimTime);
         }
-    }
 
-    void HandleSectionItemClick(object sender, AdapterView.ItemClickEventArgs e)
-    {
-        switch (e.Position)
+        private void SwitchTo(Android.Support.V4.App.Fragment fragment)
         {
-            case 0:
-                if (mapFragment == null)
-                    mapFragment = new CampusMapFragment(this);
-                SwitchTo(mapFragment);
-                break;
-            case 1:
-                if (scheduleFragment == null)
-                {
-                    
-                }
-                SwitchTo(scheduleFragment);
-                break;
-            case 2:
-                StartActivity(new Intent(this, typeof(SettingsActivity)));
-                var data = new Dictionary<string, string>();
-                data.Add("Section", "Settings");
-                Xamarin.Insights.Track("Navigated", data);
-                break;
-
-          
-            default:
+            if (fragment.IsVisible)
                 return;
-        }
-        SetSelectedMenuIndex(e.Position);
-        drawerMenu.SetItemChecked(e.Position, true);
-        drawer.CloseDrawers();
-    }
+            var section = fragment as ICampusSection;
+            if (section == null)
+                return;
+            var name = section.Name;
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
 
-    private void SwitchTo(Android.Support.V4.App.Fragment fragment)
-    {
-        if (fragment.IsVisible)
-            return;
-        var section = fragment as ICampusSection;
-        if (section == null)
-            return;
-        var name = section.Name;
+            var data = new Dictionary<string, string>();
+            data.Add("Section", section.Name);
+            Xamarin.Insights.Track("Navigated", data);
 
-        var data = new Dictionary<string, string>();
-        data.Add("Section", section.Name);
-        Xamarin.Insights.Track("Navigated", data);
-
-        var t = SupportFragmentManager.BeginTransaction();
-        var currentFragment = CurrentFragment;
-        if (currentFragment == null)
-        {
-            t.Add(Resource.Id.content_frame, fragment, name);
-        }
-        else
-        {
-            t.SetCustomAnimations(Resource.Animator.frag_slide_in,
-                Resource.Animator.frag_slide_out);
-            var existingFragment = SupportFragmentManager.FindFragmentByTag(name);
-            if (existingFragment != null)
-                existingFragment.View.BringToFront();
-            currentFragment.View.BringToFront();
-            t.Hide(CurrentFragment);
-            if (existingFragment != null)
+            var t = SupportFragmentManager.BeginTransaction();
+            var currentFragment = CurrentFragment;
+            if (currentFragment == null)
             {
-                t.Show(existingFragment);
+                t.Add(Resource.Id.content_frame, fragment, name);
             }
             else
             {
+                t.SetCustomAnimations(Resource.Animator.frag_slide_in,
+                    Resource.Animator.frag_slide_out);
+                var existingFragment = SupportFragmentManager.FindFragmentByTag(name);
+                if (existingFragment != null)
+                    existingFragment.View.BringToFront();
+                currentFragment.View.BringToFront();
+                t.Hide(CurrentFragment);
+                if (existingFragment != null)
+                {
+                    t.Show(existingFragment);
+                }
+                else
+                {
                     t.Add(Resource.Id.content_frame, fragment, name);
-                   
+
+                }
+                section.RefreshData();
             }
-            section.RefreshData();
+            t.Commit();
         }
-        t.Commit();
-    }
 
-    void SetSelectedMenuIndex(int pos)
-    {
-        for (int i = 0; i < 2; i++)
+        void SetSelectedMenuIndex(int pos)
         {
-            var view = drawerMenu.GetChildAt(i);
-            var text = view.FindViewById<TextView>(Resource.Id.roomText);
-            if (i == pos)
-                text.SetTypeface(text.Typeface, TypefaceStyle.Bold);
-            else
-                text.SetTypeface(text.Typeface, TypefaceStyle.Normal);
+            for (int i = 0; i < 2; i++)
+            {
+                var view = drawerMenu.GetChildAt(i);
+                var text = view.FindViewById<TextView>(Resource.Id.roomText);
+                if (i == pos)
+                    text.SetTypeface(text.Typeface, TypefaceStyle.Bold);
+                else
+                    text.SetTypeface(text.Typeface, TypefaceStyle.Normal);
 
+            }
         }
-    }
-    /// <summary>
+        /// <summary>
         /// Called when activity start-up is complete (after <c><see cref="M:Android.App.Activity.OnStart" /></c>
         /// and <c><see cref="M:Android.App.Activity.OnRestoreInstanceState(Android.OS.Bundle)" /></c> have been called).
         /// </summary>
@@ -274,12 +291,12 @@ public class CampusMapActivity
         /// </remarks>
         /// <since version="Added in API level 1" />
         /// <altmember cref="M:Android.App.Activity.OnCreate(Android.OS.Bundle)" />
-    protected override void OnPostCreate(Bundle savedInstanceState)
-    {
-        base.OnPostCreate(savedInstanceState);
-        drawerToggle.SyncState();
-    }
-    /// <summary>
+        protected override void OnPostCreate(Bundle savedInstanceState)
+        {
+            base.OnPostCreate(savedInstanceState);
+            drawerToggle.SyncState();
+        }
+        /// <summary>
         /// Called by the system when the device configuration changes while your
         /// activity is running.
         /// </summary>
@@ -304,42 +321,42 @@ public class CampusMapActivity
         /// </para>
         /// </remarks>
         /// <since version="Added in API level 1" />
-    public override void OnConfigurationChanged(Android.Content.Res.Configuration newConfig)
-    {
-        base.OnConfigurationChanged(newConfig);
-        drawerToggle.OnConfigurationChanged(newConfig);
-    }
-    /// <summary>
-    /// This hook is called whenever an item in your options menu is selected.
-    /// </summary>
-    /// <param name="item">The menu item that was selected.</param>
-    /// <returns>
-    /// To be added.
-    /// </returns>
-    /// <remarks>
-    /// <para tool="javadoc-to-mdoc">This hook is called whenever an item in your options menu is selected.
-    /// The default implementation simply returns false to have the normal
-    /// processing happen (calling the item's Runnable or sending a message to
-    /// its Handler as appropriate).  You can use this method for any items
-    /// for which you would like to do processing without those other
-    /// facilities.
-    /// </para>
-    /// <para tool="javadoc-to-mdoc">Derived classes should call through to the base class for it to
-    /// perform the default menu handling.</para>
-    /// <para tool="javadoc-to-mdoc">
-    ///   <format type="text/html">
-    ///     <a href="http://developer.android.com/reference/android/app/Activity.html#onOptionsItemSelected(android.view.MenuItem)" target="_blank">[Android Documentation]</a>
-    ///   </format>
-    /// </para>
-    /// </remarks>
-    /// <since version="Added in API level 1" />
-    /// <altmember cref="M:Android.App.Activity.OnCreateOptionsMenu(Android.Views.IMenu)" />
-    public override bool OnOptionsItemSelected(IMenuItem item)
-    {
-        if (drawerToggle.OnOptionsItemSelected(item))
-            return true;
-        return base.OnOptionsItemSelected(item);
-    }
+        public override void OnConfigurationChanged(Android.Content.Res.Configuration newConfig)
+        {
+            base.OnConfigurationChanged(newConfig);
+            drawerToggle.OnConfigurationChanged(newConfig);
+        }
+        /// <summary>
+        /// This hook is called whenever an item in your options menu is selected.
+        /// </summary>
+        /// <param name="item">The menu item that was selected.</param>
+        /// <returns>
+        /// To be added.
+        /// </returns>
+        /// <remarks>
+        /// <para tool="javadoc-to-mdoc">This hook is called whenever an item in your options menu is selected.
+        /// The default implementation simply returns false to have the normal
+        /// processing happen (calling the item's Runnable or sending a message to
+        /// its Handler as appropriate).  You can use this method for any items
+        /// for which you would like to do processing without those other
+        /// facilities.
+        /// </para>
+        /// <para tool="javadoc-to-mdoc">Derived classes should call through to the base class for it to
+        /// perform the default menu handling.</para>
+        /// <para tool="javadoc-to-mdoc">
+        ///   <format type="text/html">
+        ///     <a href="http://developer.android.com/reference/android/app/Activity.html#onOptionsItemSelected(android.view.MenuItem)" target="_blank">[Android Documentation]</a>
+        ///   </format>
+        /// </para>
+        /// </remarks>
+        /// <since version="Added in API level 1" />
+        /// <altmember cref="M:Android.App.Activity.OnCreateOptionsMenu(Android.Views.IMenu)" />
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            if (drawerToggle.OnOptionsItemSelected(item))
+                return true;
+            return base.OnOptionsItemSelected(item);
+        }
         /// <summary>
         /// This is called for activities that set launchMode to "singleTop" in
         /// their package, or if a client used the <c><see cref="F:Android.Content.ActivityFlags.SingleTop" /></c>
@@ -371,17 +388,17 @@ public class CampusMapActivity
         /// <altmember cref="P:Android.App.Activity.Intent" />
         /// <altmember cref="M:Android.App.Activity.OnResume" />
         protected override void OnNewIntent(Intent intent)
-    {
-        base.OnNewIntent(intent);
-        try
         {
-            if (mapFragment != null && mapFragment.IsVisible)
-                mapFragment.OnSearchIntent(intent);
+            base.OnNewIntent(intent);
+            try
+            {
+                if (mapFragment != null && mapFragment.IsVisible)
+                    mapFragment.OnSearchIntent(intent);
+            }
+            catch
+            {
+            }
         }
-        catch
-        {
-        }
-    }
         /// <summary>
         /// Called after <c><see cref="M:Android.App.Activity.OnCreate(Android.OS.Bundle)" /></c> &amp;mdash; or after <c><see cref="M:Android.App.Activity.OnRestart" /></c> when
         /// the activity had been stopped, but is now again being displayed to the
@@ -407,12 +424,12 @@ public class CampusMapActivity
         /// <altmember cref="M:Android.App.Activity.OnCreate(Android.OS.Bundle)" />
         /// <altmember cref="M:Android.App.Activity.OnStop" />
         /// <altmember cref="M:Android.App.Activity.OnResume" />
-    protected override void OnStart()
-    {
-        if (client != null)
-            client.Connect();
-        base.OnStart();
-    }
+        protected override void OnStart()
+        {
+            if (client != null)
+                client.Connect();
+            base.OnStart();
+        }
         /// <summary>
         /// Called when you are no longer visible to the user.
         /// </summary>
@@ -441,12 +458,12 @@ public class CampusMapActivity
         /// <altmember cref="M:Android.App.Activity.OnResume" />
         /// <altmember cref="M:Android.App.Activity.OnSaveInstanceState(Android.OS.Bundle)" />
         /// <altmember cref="M:Android.App.Activity.OnDestroy" />
-    protected override void OnStop()
-    {
-        if (client != null)
-            client.Disconnect();
-        base.OnStop();
-    }
+        protected override void OnStop()
+        {
+            if (client != null)
+                client.Disconnect();
+            base.OnStop();
+        }
         /// <summary>
         /// Called when an activity you launched exits, giving you the requestCode
         /// you started it with, the resultCode it returned, and any additional
@@ -479,191 +496,195 @@ public class CampusMapActivity
         /// <altmember cref="M:Android.App.Activity.CreatePendingResult(System.Int32, Android.Content.Intent, Android.Content.Intent)" />
         /// <altmember cref="M:Android.App.Activity.SetResult(Android.App.Result)" />
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-    {
-        if (requestCode == ConnectionFailureResolutionRequest)
         {
-            if (resultCode == Result.Ok && CheckGooglePlayServices())
+            if (requestCode == ConnectionFailureResolutionRequest)
             {
-                if (client == null)
+                if (resultCode == Result.Ok && CheckGooglePlayServices())
                 {
-                    client = CreateApiClient();
-                    client.Connect();
+                    if (client == null)
+                    {
+                        client = CreateApiClient();
+                        client.Connect();
+                    }
+                    SwitchTo(mapFragment = new CampusMapFragment(this));
                 }
-                SwitchTo(mapFragment = new CampusMapFragment(this));
+                else
+                    Finish();
             }
             else
-                Finish();
+            {
+                base.OnActivityResult(requestCode, resultCode, data);
+            }
         }
-        else
+        /// <summary>
+        /// Checks the google play services.
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckGooglePlayServices()
         {
-            base.OnActivityResult(requestCode, resultCode, data);
-        }
-    }
-    /// <summary>
-    /// Checks the google play services.
-    /// </summary>
-    /// <returns></returns>
-    private bool CheckGooglePlayServices()
-    {
-            
-        var result = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
+
+            var result = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
             if (result == ConnectionResult.Success)
-            return true;
-        var dialog = GoogleApiAvailability.Instance.GetErrorDialog(this, result,
-                ConnectionFailureResolutionRequest);
-        if (dialog != null)
-        {
-            var errorDialog = new ErrorDialogFragment { Dialog = dialog };
-            errorDialog.Show(SupportFragmentManager, "Google Services Updates");
+                return true;
+            var dialog = GoogleApiAvailability.Instance.GetErrorDialog(this, result,
+                    ConnectionFailureResolutionRequest);
+            if (dialog != null)
+            {
+                var errorDialog = new ErrorDialogFragment { Dialog = dialog };
+                errorDialog.Show(SupportFragmentManager, "Google Services Updates");
+                return false;
+            }
+
+            Finish();
             return false;
         }
 
-        Finish();
-        return false;
-    }
+        #region IObserver implementation
 
-    #region IObserver implementation
+        public void OnCompleted()
+        {
+        }
 
-    public void OnCompleted()
-    {
-    }
+        public void OnError(Exception error)
+        {
+        }
 
-    public void OnError(Exception error)
-    {
-    }
+        public void OnNext(Schedule[] value)
+        {
+            if (client == null || !client.IsConnected)
+                return;
+            var location = LocationServices.FusedLocationApi.GetLastLocation(client);
+            if (location == null)
+                return;
+            var events = ScheduleObserver.GetEventsAround(value,
+                      new Android.Gms.Maps.Model.LatLng (location.Latitude, location.Longitude),
+                      minDistance: 1,
+                      maxItems: 4);
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
 
-    public void OnNext(ScheduleItem[] value)
-    {
-        if (client == null || !client.IsConnected)
-            return;
-        var location = LocationServices.FusedLocationApi.GetLastLocation(client);
-        if (location == null)
-            return;
-        var events = ScheduleObserver.GetEventsAround(value,
-                  new Location { Lat = location.Latitude, Lon = location.Longitude },
-                  minDistance: 1,
-                  maxItems: 4);
-        RunOnUiThread(() => aroundAdapter.SetSchedule(events));
-    }
+            RunOnUiThread(() => aroundAdapter.SetSchedule(events));
+        }
 
-    #endregion
+        #endregion
 
-    public void OnConnected(Bundle p0)
-    {
-        if (ScheduleObserver.Instance.LastScheduleItems != null)
-            OnNext(ScheduleObserver.Instance.LastScheduleItems);
-    }
+        public void OnConnected(Bundle p0)
+        {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
+            if (ScheduleObserver.Instance.LastScheduleItems != null)
+                OnNext(ScheduleObserver.Instance.LastScheduleItems);
+        }
         /// <summary>
         /// Called when [disconnected].
         /// </summary>
-    public void OnDisconnected()
-    {
+        public void OnDisconnected()
+        {
 
-    }
+        }
         /// <summary>
         /// Called when [connection failed].
         /// </summary>
         /// <param name="p0">The p0.</param>
         public void OnConnectionFailed(ConnectionResult p0)
-    {
+        {
 
-    }
+        }
         /// <summary>
         /// Called when [connection suspended].
         /// </summary>
         /// <param name="reason">The reason.</param>
         public void OnConnectionSuspended(int reason)
-    {
+        {
 
+        }
     }
-}
 
 
-class MyViewHolder : Java.Lang.Object
-{
-    public TextView Title { get; set; }
-}
+    class MyViewHolder : Java.Lang.Object
+    {
+        public TextView Title { get; set; }
+    }
 
-class DrawerMenuAdapter : BaseAdapter
-{
-    Tuple<int, string>[] sections = {
+    class DrawerMenuAdapter : BaseAdapter
+    {
+        Tuple<int, string>[] sections = {
             Tuple.Create(Resource.Drawable.ic_drawer_map, "Campus Map"),
             Tuple.Create(Resource.Drawable.ic_drawer_star, "Schedule"),
             Tuple.Create(Resource.Drawable.ic_about, "Feed"),
             Tuple.Create(Resource.Drawable.ic_map_footer_location_active, "Navigation"),
         };
 
-    Context context;
+        Context context;
 
-    public DrawerMenuAdapter(Context context)
-    {
-        this.context = context;
-    }
-
-    public override Java.Lang.Object GetItem(int position)
-    {
-        return new Java.Lang.String(sections[position - 1].Item2);
-    }
-
-    public override long GetItemId(int position)
-    {
-        return position;
-    }
-
-    public override View GetView(int position, View convertView, ViewGroup parent)
-    {
-        var view = convertView;
-        MyViewHolder holder = null;
-
-        if (view != null)
-            holder = view.Tag as MyViewHolder;
-
-        if (holder == null)
+        public DrawerMenuAdapter(Context context)
         {
-            holder = new MyViewHolder();
-            var inflater = context.GetSystemService(Context.LayoutInflaterService).JavaCast<LayoutInflater>();
-            view = inflater.Inflate(Resource.Layout.DrawerItemLayout, parent, false);
-            holder.Title = view.FindViewById<TextView>(Resource.Id.text);
-            view.Tag = holder;
-
+            this.context = context;
         }
 
-        if (position == 0 && convertView == null)
-            holder.Title.SetTypeface(holder.Title.Typeface, TypefaceStyle.Bold);
-        else
-            holder.Title.SetTypeface(holder.Title.Typeface, TypefaceStyle.Normal);
-
-
-        holder.Title.Text = sections[position].Item2;
-        holder.Title.SetCompoundDrawablesWithIntrinsicBounds(sections[position].Item1, 0, 0, 0);
-
-        return view;
-    }
-
-    public override int Count
-    {
-        get
+        public override Java.Lang.Object GetItem(int position)
         {
-            return sections.Length;
+            return new Java.Lang.String(sections[position - 1].Item2);
+        }
+
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
+
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            var view = convertView;
+            MyViewHolder holder = null;
+
+            if (view != null)
+                holder = view.Tag as MyViewHolder;
+
+            if (holder == null)
+            {
+                holder = new MyViewHolder();
+                var inflater = context.GetSystemService(Context.LayoutInflaterService).JavaCast<LayoutInflater>();
+                view = inflater.Inflate(Resource.Layout.DrawerItemLayout, parent, false);
+                holder.Title = view.FindViewById<TextView>(Resource.Id.text);
+                view.Tag = holder;
+
+            }
+
+            if (position == 0 && convertView == null)
+                holder.Title.SetTypeface(holder.Title.Typeface, TypefaceStyle.Bold);
+            else
+                holder.Title.SetTypeface(holder.Title.Typeface, TypefaceStyle.Normal);
+
+
+            holder.Title.Text = sections[position].Item2;
+            holder.Title.SetCompoundDrawablesWithIntrinsicBounds(sections[position].Item1, 0, 0, 0);
+
+            return view;
+        }
+
+        public override int Count
+        {
+            get
+            {
+                return sections.Length;
+            }
+        }
+
+        public override bool IsEnabled(int position)
+        {
+            return true;
+        }
+
+        public override bool AreAllItemsEnabled()
+        {
+            return false;
         }
     }
 
-    public override bool IsEnabled(int position)
-    {
-        return true;
-    }
-
-    public override bool AreAllItemsEnabled()
-    {
-        return false;
-    }
-}
-
-class DrawerAroundAdapter : BaseAdapter
+    class DrawerAroundAdapter : BaseAdapter
 {
     Context context;
 
-    ScheduleItem[] schedule = null;
+    Schedule[] schedule = null;
     ScheduleManager manager;
     HashSet<int> currentSchedule;
 
@@ -678,7 +699,7 @@ class DrawerAroundAdapter : BaseAdapter
         LoadSchedule();
     }
 
-    public void SetSchedule(ScheduleItem[] schedule)
+    public void SetSchedule(Schedule[] schedule)
     {
         this.schedule = schedule;
         NotifyDataSetChanged();
@@ -697,7 +718,7 @@ class DrawerAroundAdapter : BaseAdapter
 
     public override Java.Lang.Object GetItem(int position)
     {
-        return new Java.Lang.String(schedule[position].Name);
+        return new Java.Lang.String(schedule[position].Course.Name);
     }
 
     public override long GetItemId(int position)
@@ -724,10 +745,10 @@ class DrawerAroundAdapter : BaseAdapter
         navigate.SetImageDrawable(starDrawable);
         navigate.Visibility = currentSchedule.Contains(scheduleItem.Id) ? ViewStates.Visible : ViewStates.Invisible;
 
-        scheduleItemName.Text = scheduleItem.Major;
-        scheduleItemSecondName.Text = scheduleItem.Name;
-        timeSlot.Text = scheduleItem.Occurrence.ToString();
-        description.Text = scheduleItem.EmptySlotCount.ToString();
+        scheduleItemName.Text = scheduleItem.Course.Major;
+        scheduleItemSecondName.Text = scheduleItem.Course.Name;
+        timeSlot.Text = scheduleItem.Times.StartTime + "-" + scheduleItem.Times.EndTime;
+        description.Text = scheduleItem.Course.Description;
 
         return view;
     }
@@ -833,8 +854,8 @@ class WCCMobileActionBarToggle : Android.Support.V7.App.ActionBarDrawerToggle
         /// <param name="drawerView">The drawer view.</param>
         public override void OnDrawerOpened(View drawerView)
         {
-        base.OnDrawerOpened(drawerView);
-        OpenCallback?.Invoke();
+            base.OnDrawerOpened(drawerView);
+            OpenCallback?.Invoke();
         }
         /// <summary>
         /// Called when [drawer closed].
@@ -842,8 +863,8 @@ class WCCMobileActionBarToggle : Android.Support.V7.App.ActionBarDrawerToggle
         /// <param name="drawerView">The drawer view.</param>
         public override void OnDrawerClosed(View drawerView)
         {
-        base.OnDrawerClosed(drawerView);
-        CloseCallback?.Invoke();
+            base.OnDrawerClosed(drawerView);
+            CloseCallback?.Invoke();
         }
 }
 }

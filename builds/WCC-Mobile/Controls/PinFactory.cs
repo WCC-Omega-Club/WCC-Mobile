@@ -8,6 +8,7 @@ using Android.Graphics;
 using Android.Graphics.Drawables;
 using XamSvg;
 using XamSvg.Shared.Cross;
+using WCCMobile.Extensions;
 
 namespace WCCMobile
 {

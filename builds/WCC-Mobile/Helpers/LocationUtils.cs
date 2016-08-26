@@ -10,10 +10,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.IO;
+using Android.Gms.Maps.Model;
 
 namespace WCCMobile
 {
-   public class LocationUtils
+    public class LocationUtils
     {
         /// <summary>
         /// Calculates the geodesic between <paramref name="p1"/> and <paramref name="p2"/> using law of cosines.
@@ -28,6 +29,14 @@ namespace WCCMobile
                               Math.Cos(DegToRad(p1.Lat)) * Math.Cos(DegToRad(p2.Lat)) *
                               Math.Cos(DegToRad(p2.Lon) - DegToRad(p1.Lon))) * EarthRadius;
         }
+
+        public static double Distance(LatLng p1, LatLng p2)
+        {
+            const int EarthRadius = 6371;
+            return Math.Acos(Math.Sin(DegToRad(p1.Latitude)) * Math.Sin(DegToRad(p2.Latitude)) +
+                              Math.Cos(DegToRad(p1.Latitude)) * Math.Cos(DegToRad(p2.Latitude)) *
+                              Math.Cos(DegToRad(p2.Longitude) - DegToRad(p1.Longitude))) * EarthRadius;
+        } 
         /// <summary>
         /// Converts Degrees to Radians.
         /// </summary>
@@ -37,34 +46,6 @@ namespace WCCMobile
         {
             return deg * Math.PI / 180;
         }
-        /// <summary>
-        /// writes the location using <see cref="BinaryWriter"/>.
-        /// </summary>
-        /// <param name="p">The p.</param>
-        /// <param name="stream">The stream.</param>
-        public static void DumpLocation(Location p, Stream stream)
-        {
-            using (var writer = new BinaryWriter(stream, System.Text.Encoding.UTF8, true))
-            {
-                writer.Write(p.Lat);
-                writer.Write(p.Lon);
-            }
-        }
-        /// <summary>
-        /// Parses the location from stream.
-        /// </summary>
-        /// <param name="stream">The stream.</param>
-        /// <returns></returns>
-        public static Location ParseFromStream(Stream stream)
-        {
-            using (var reader = new BinaryReader(stream, System.Text.Encoding.UTF8, true))
-            {
-                return new Location
-                {
-                    Lat = reader.ReadDouble(),
-                    Lon = reader.ReadDouble()
-                };
-            }
-        }
+
     }
 }

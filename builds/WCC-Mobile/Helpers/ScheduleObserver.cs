@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Gms.Maps.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using WCCMobile.Models;
 namespace WCCMobile
 {
   
-        public class ScheduleObserver : IObservable<ScheduleItem[]>
+        public class ScheduleObserver : IObservable<Schedule[]>
         {
             
 
@@ -35,18 +36,18 @@ namespace WCCMobile
                 private set;
             }
 
-            public ScheduleItem[] LastScheduleItems
+            public Schedule[] LastScheduleItems
             {
                 get;
                 private set;
             }
 
-            public static ScheduleItem[] GetEventsAround(ScheduleItem[] stations, Location location, double minDistance = 100, int maxItems = 4)
+            public static Schedule[] GetEventsAround(Schedule[] schedule, LatLng location, double minDistance = 100, int maxItems = 4)
             {
-                var dic = new SortedDictionary<double, ScheduleItem>();
-                foreach (var s in stations)
+                var dic = new SortedDictionary<double, Schedule>();
+                foreach (Schedule s in schedule)
                 {
-                    var d = LocationUtils.Distance(location, s.Location);
+                    var d = LocationUtils.Distance(location, Course.GetLatLng(s.Course.Building));
                     if (d < minDistance)
                         dic.Add(d, s);
                 }
@@ -65,7 +66,7 @@ namespace WCCMobile
         public object LastScheduleItem { get; internal set; }
 
         int attempt = 0;
-            public async Task<ScheduleItem[]> GetStations(bool forceRefresh = false, Action<string> dataCacher = null)
+            public async Task<Schedule[]> GetEvents(bool forceRefresh = false, Action<string> dataCacher = null)
             {
                 string data = null;
 
@@ -89,7 +90,7 @@ namespace WCCMobile
                             if (attempt >= 3)
                             {
                                 attempt = 0;
-                                return new ScheduleItem[] { };
+                                return new Schedule[] { };
                             }
                         }
                         if (data == null)
@@ -100,17 +101,17 @@ namespace WCCMobile
                 if (dataCacher != null)
                     dataCacher(data);
 
-                var stationRoot = Newtonsoft.Json.JsonConvert.DeserializeObject<ScheduleRootObject>(data);
 
-                var stations = stationRoot.Schedule.ToArray();
+            //var eventss =  
 
-                LastUpdateTime = FromUnixTime(stationRoot.Timestamp);
-                LastScheduleItems = stations;
+            //LastUpdateTime = FromUnixTime(stationRoot.Timestamp);
+            //LastScheduleItems = stations;
 
-                if (subscribers.Any())
-                    foreach (var sub in subscribers)
-                        sub.Observer.OnNext(stations);
-                return stations;
+            /*if (subscribers.Any())
+                foreach (var sub in subscribers)
+                    sub.Observer.OnNext(stations);
+            return stations;*/
+            return new Schedule[] { };
             }
 
             DateTime FromUnixTime(long secs)
@@ -118,7 +119,7 @@ namespace WCCMobile
                 return (new DateTime(1970, 1, 1, 0, 0, 1, DateTimeKind.Utc) + TimeSpan.FromSeconds(secs / 1000.0)).ToLocalTime();
             }
 
-            public IDisposable Subscribe(IObserver<ScheduleItem[]> observer)
+            public IDisposable Subscribe(IObserver<Schedule[]> observer)
             {
                 var sub = new ScheduleSubscriber(subscribers.Remove, observer);
                 subscribers.Add(sub);
@@ -130,13 +131,13 @@ namespace WCCMobile
                 
                 Func<ScheduleSubscriber, bool> unsubscribe;
 
-                public ScheduleSubscriber(Func<ScheduleSubscriber, bool> unsubscribe, IObserver<ScheduleItem[]> observer)
+                public ScheduleSubscriber(Func<ScheduleSubscriber, bool> unsubscribe, IObserver<Schedule[]> observer)
                 {
                     Observer = observer;
                     this.unsubscribe = unsubscribe;
                 }
 
-                public IObserver<ScheduleItem[]> Observer
+                public IObserver<Schedule[]> Observer
                 {
                     get;
                     set;

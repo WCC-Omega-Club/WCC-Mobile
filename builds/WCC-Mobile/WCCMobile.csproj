@@ -93,6 +93,12 @@
       <HintPath>packages\Xamarin.FFImageLoading.2.1.6\lib\MonoAndroid10\FFImageLoading.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>Components\hockeyappandroid-4.1.0.2\lib\android\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK.AndroidBindings">
+      <HintPath>Components\hockeyappandroid-4.1.0.2\lib\android\HockeySDK.AndroidBindings.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
@@ -130,6 +136,10 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Xamarin.Android.Support.v7.AppCompat.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Xamarin.Android.Support.v7.CardView.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.CardView.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -203,9 +213,6 @@
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Schedule.cs" />
-    <Compile Include="Models\ScheduleItem.cs" />
-    <Compile Include="Models\ScheduleRootObject.cs" />
-    <Compile Include="Models\TimeBlock.cs" />
     <Compile Include="Models\Times.cs" />
     <Compile Include="ORM\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,7 +220,6 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Adapters\YellowBookAdapter.cs" />
     <Compile Include="Storage\Database.cs" />
-    <Compile Include="Storage\DatabaseConnection.cs" />
     <Compile Include="ORM\SQLite.cs" />
     <Compile Include="ORM\SQLiteAsync.cs" />
     <Compile Include="Storage\BitmapCache.cs" />
@@ -227,10 +233,13 @@
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
-    <None Include="Assets\AboutAssets.txt" />
     <None Include="Resources\AboutResources.txt" />
-    <AndroidResource Include="Resources\layout\MapLayout.axml" />
-    <AndroidResource Include="Resources\layout\InfoFooterLayout.axml" />
+    <AndroidResource Include="Resources\layout\MapLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\InfoFooterLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\toolbar.axml" />
     <AndroidResource Include="Resources\layout\DrawerAroundItem.axml">
       <SubType>Designer</SubType>
@@ -245,6 +254,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\FooterSlideUp.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ScheduleCardView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -509,6 +521,10 @@
     <XamarinComponentReference Include="cheeseknife">
       <Visible>False</Visible>
       <Version>1.0</Version>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="hockeyappandroid">
+      <Visible>False</Visible>
+      <Version>4.1.0.2</Version>
     </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

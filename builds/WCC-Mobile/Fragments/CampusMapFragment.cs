@@ -19,11 +19,17 @@ using Android.Support.V7.View;
 using WCCMobile.Models;
 using Android.Animation;
 using Android.Graphics;
+using System.Reflection;
+using WCCMobile.Controls;
+using WCCMobile.Extensions;
+using WCCMobile.Adapters;
+using WCCMobile.ORM;
 
 namespace WCCMobile
 {
     public class CampusMapFragment : Android.Support.V4.App.Fragment, ViewTreeObserver.IOnGlobalLayoutListener, ICampusSection, IOnMapReadyCallback, IOnStreetViewPanoramaReadyCallback
     {
+        readonly string ObjectName = "CampusMapFragment";
         /// <summary>
         /// The existing markers
         /// </summary>
@@ -62,7 +68,7 @@ namespace WCCMobile
         TextView lastUpdateText;
         PinFactory pinFactory;
         InfoPane pane;
-        SlidingUpPanelLayout slideUpPanel; 
+        ScheduleRepository dataAccess;
         SvgBitmapDrawable starOnDrawable;
         SvgBitmapDrawable starOffDrawable;
         
@@ -123,6 +129,7 @@ namespace WCCMobile
         /// </summary>
         public void RefreshData()
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
             FillUpMap(forceRefresh: false);
         }
         /// <summary>
@@ -131,6 +138,7 @@ namespace WCCMobile
         /// <param name="savedInstanceState">State of the saved instance.</param>
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
             base.OnActivityCreated(savedInstanceState);
             var context = Activity;
             this.pinFactory = new PinFactory(context);
@@ -141,6 +149,8 @@ namespace WCCMobile
         /// </summary>
         public override void OnStart()
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
+
             base.OnStart();
             RefreshData();
         }
@@ -149,7 +159,9 @@ namespace WCCMobile
         /// </summary>
         public void OnGlobalLayout()
         {
-            Activity.RunOnUiThread(() => pane.SetState(InfoPane.State.Closed, animated: false));
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
+
+            Activity.RunOnUiThread(() => pane.SetState(InfoPane.State.Opened, animated: false));
             //View.ViewTreeObserver.RemoveGlobalOnLayoutListener(this);
             View.ViewTreeObserver.RemoveOnGlobalLayoutListener(this);
         }
@@ -162,6 +174,8 @@ namespace WCCMobile
         /// <returns></returns>
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name + $"With args: {inflater} , {container} ");
+
             var view = inflater.Inflate(Resource.Layout.MapLayout, container, false);
             mapFragment = view.FindViewById<MapView>(Resource.Id.Map);
             mapFragment.OnCreate(savedInstanceState);
@@ -169,15 +183,15 @@ namespace WCCMobile
             SetupInfoPane(view);
             flashBar = new InfoBarController(view);
             streetViewFragment = pane.FindViewById<StreetViewPanoramaView>(Resource.Id.streetViewPanorama);
-            SetUpSlideUpPane(view);
+            //SetUpSlideUpPane(view);
             streetViewFragment.OnCreate(savedInstanceState);
-
             return view;
         }
 
-        public void SetUpSlideUpPane(View view)
+        /*public void SetUpSlideUpPane(View view)
         {
-            
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $"With args: {view} ");
+
             slideUpPanel = view.FindViewById<SlidingUpPanelLayout>(Resource.Id.sliding_layout);
 
             slideUpPanel.ShadowDrawable = Resources.GetDrawable(Resource.Drawable.ic_map_footer_details_down);
@@ -198,7 +212,7 @@ namespace WCCMobile
                 }
             };
 
-        }
+        }*/
 
 
         /// <summary>
@@ -207,7 +221,11 @@ namespace WCCMobile
         /// <param name="view">The view.</param>
         private void SetupInfoPane(View view)
         {
+            Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name + $" with argument: {view}");
+
             pane = view.FindViewById<InfoPane>(Resource.Id.infoPane);
+            dataAccess = new ScheduleRepository();
+            GenericAdapter<Schedule, ScheduleViewHolder> scheduleAdapter = new GenericAdapter<Schedule, ScheduleViewHolder>(dataAccess.GetCurrentSchedule().ToList(), Resource.Id.recyclerView, (x) => new ScheduleViewHolder(x));
             pane.StateChanged += HandlePaneStateChanged;
             view.ViewTreeObserver.AddOnGlobalLayoutListener(this);
         }
@@ -218,6 +236,8 @@ namespace WCCMobile
         /// <param name="savedInstanceState">State of the saved instance.</param>
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {view}");
+
             base.OnViewCreated(view, savedInstanceState);
 
             view.SetBackgroundDrawable(AndroidExtensions.DefaultBackground);
@@ -248,6 +268,8 @@ namespace WCCMobile
         /// <param name="resId">The resource identifier.</param>
         private void SetSvgImage(View baseView, int viewId, int resId)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with args: {baseView}, ViewId: {viewId}, ResId{resId}");
+
             var view = baseView.FindViewById<ImageView>(viewId);
             if (view == null)
                 return;
@@ -260,6 +282,8 @@ namespace WCCMobile
         /// <param name="googleMap">The google map.</param>
         public void OnMapReady(GoogleMap googleMap)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {googleMap}");
+
             this.map = googleMap;
             MapsInitializer.Initialize(Activity.ApplicationContext);
 
@@ -284,6 +308,8 @@ namespace WCCMobile
         /// <param name="panorama">The panorama.</param>
         public void OnStreetViewPanoramaReady(StreetViewPanorama panorama)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {panorama}");
+
             this.streetPanorama = panorama;
             panorama.UserNavigationEnabled = false;
             panorama.StreetNamesEnabled = false;
@@ -295,6 +321,8 @@ namespace WCCMobile
         /// <param name="state">The state.</param>
         private void HandlePaneStateChanged(InfoPane.State state)
         {
+            Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name + $" with argument: {state}");
+
             var time = Resources.GetInteger(Android.Resource.Integer.ConfigShortAnimTime);
             var enabled = state != InfoPane.State.FullyOpened;
             map.UiSettings.ScrollGesturesEnabled = enabled;
@@ -321,17 +349,19 @@ namespace WCCMobile
         /// <param name="e">The <see cref="StreetViewPanorama.StreetViewPanoramaClickEventArgs"/> instance containing the event data.</param>
         private void HandleMapButtonClick(object sender, StreetViewPanorama.StreetViewPanoramaClickEventArgs e)
         {
+            Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name);
+
             var items = dataProvider.LastScheduleItems;
             if (items == null || currentShownID == -1)
                 return;
 
-            var itemIndex = Array.FindIndex(items, s => s.Id == currentShownID);
+            int itemIndex = Array.FindIndex(items, s => s.Id == currentShownID);
             if (itemIndex == -1)
                 return;
-            var item = items[itemIndex];
-            var location = item.LocationUrl;
-            var uri = Android.Net.Uri.Parse(location);
-            var intent = new Intent(Intent.ActionView, uri);
+            Schedule item = items[itemIndex];
+            string location = Course.GetLocation(item.Course.Building).ToString();
+            Android.Net.Uri uri = Android.Net.Uri.Parse(location);
+            Intent intent = new Intent(Intent.ActionView, uri);
             StartActivity(intent);
         }
         /// <summary>
@@ -341,6 +371,8 @@ namespace WCCMobile
         /// <param name="inflater">The inflater.</param>
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
         {
+            Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name + $" with argument: {menu}");
+
             inflater.Inflate(Resource.Menu.map_menu, menu);
             searchItem = menu.FindItem(Resource.Id.menu_search);
             var test = MenuItemCompat.GetActionView(searchItem);
@@ -354,6 +386,8 @@ namespace WCCMobile
         /// <param name="searchView">The search view.</param>
         private void SetupSearchInput(Android.Support.V7.Widget.SearchView searchView)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {searchView}");
+
             var searchManager = Activity.GetSystemService(Context.SearchService).JavaCast<SearchManager>();
             searchView.SetIconifiedByDefault(false);
             var searchInfo = searchManager.GetSearchableInfo(Activity.ComponentName);
@@ -366,6 +400,8 @@ namespace WCCMobile
         /// <returns></returns>
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {item}");
+
             if (item.ItemId == Resource.Id.menu_refresh)
             {
                 FillUpMap(forceRefresh: true);
@@ -384,13 +420,15 @@ namespace WCCMobile
         /// <param name="savedInstanceState">State of the saved instance.</param>
         public override void OnViewStateRestored(Bundle savedInstanceState)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {savedInstanceState}");
+
             base.OnViewStateRestored(savedInstanceState);
             if (savedInstanceState != null && savedInstanceState.ContainsKey("previousPosition"))
             {
-                var pos = savedInstanceState.GetParcelable("previousPosition") as CameraPosition;
+                CameraPosition pos = savedInstanceState.GetParcelable("previousPosition") as CameraPosition;
                 if (pos != null)
                 {
-                    var update = CameraUpdateFactory.NewCameraPosition(pos);
+                    CameraUpdate update = CameraUpdateFactory.NewCameraPosition(pos);
                     map.MoveCamera(update);
                 }
             }
@@ -410,7 +448,6 @@ namespace WCCMobile
         public override void OnLowMemory()
         {
             base.OnLowMemory();
-
             mapFragment?.OnLowMemory();
             streetViewFragment?.OnLowMemory();
         }
@@ -451,9 +488,11 @@ namespace WCCMobile
         /// <param name="e">The <see cref="GoogleMap.MapClickEventArgs"/> instance containing the event data.</param>
         private void HandleMapClick(object sender, GoogleMap.MapClickEventArgs e)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {e}");
+
             currentShownID = -1;
             currentShownMarker = null;
-            pane?.SetState(InfoPane.State.Closed);
+            pane?.SetState(InfoPane.State.Opened);
         }
         /// <summary>
         /// Handles the marker click.
@@ -462,6 +501,8 @@ namespace WCCMobile
         /// <param name="e">The <see cref="GoogleMap.MarkerClickEventArgs"/> instance containing the event data.</param>
         private void HandleMarkerClick(object sender, GoogleMap.MarkerClickEventArgs e)
         {
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {e}");
+
             e.Handled = true;
             if (e?.Marker.Title == null)
                 return;
@@ -490,19 +531,20 @@ namespace WCCMobile
                 return;
             loading = true;
             if (pane != null && pane.Opened)
-                pane.SetState(InfoPane.State.Closed, animated: false);
+                //pane.SetState(InfoPane.State.Closed, animated: false);
+                pane.SetState(InfoPane.State.Opened, animated: false);
             flashBar.ShowLoading();
 
             try
             {
-                var stations = await dataProvider.GetStations(forceRefresh);
+                var stations = await dataProvider.GetEvents(forceRefresh);
                 if (stations.Length == 0)
                 {
                     Toast.MakeText(Activity, Resource.String.load_error, ToastLength.Long).Show();
                 }
                 else
                 {
-                    await SetSchedulePins(stations);
+                   // await SetSchedulePins(stations);
                 }
                 lastUpdateText.Text = "Last refreshed: " + DateTime.Now.ToShortTimeString();
             }
@@ -516,18 +558,20 @@ namespace WCCMobile
             showedStale = false;
             loading = false;
         }
+
+      
         /// <summary>
         /// Sets the schedule pins.
         /// </summary>
         /// <param name="courses">The courses.</param>
         /// <param name="alpha">The alpha.</param>
         /// <returns></returns>
-        private async Task SetSchedulePins(ScheduleItem[] courses, float alpha = 1)
+        private async Task SetSchedulePins(Schedule[] courses, float alpha = 1)
         {
             var scheduleItemsToUpdate = courses.Where(item =>
             {
                 Marker marker;
-                var stats = item.Occurrence + "|" + item.EmptySlotCount;
+                var stats = item.Times.StartTime + "-" + item.Times.EndTime;
                 if (existingMarkers.TryGetValue(item.Id, out marker))
                 {
                     if (marker.Snippet == stats && !showedStale)
@@ -541,31 +585,20 @@ namespace WCCMobile
             {
                 var w = 24.ToPixels();
                 var h = 40.ToPixels();
-                if (item.Locked)
-                    return pinFactory.GetClosedPin(w, h);
-                else if (!item.Installed)
-                    return pinFactory.GetNonInstalledPin(w, h);
-                var ratio = (float)TruncateDigit(item.Occurrence / ((float)item.Capacity), 2);
-                return pinFactory.GetPin(ratio,
-                    item.Occurrence,
-                    w, h,
-                    alpha: alpha);
+                return pinFactory.GetClosedPin(w, h);
             }));
 
             foreach (var scheduleItem in scheduleItemsToUpdate)
             {
                 var pin = pins[scheduleItem.Id];
 
-                var snippet = scheduleItem.Occurrence + "|" + scheduleItem.EmptySlotCount;
-                if (scheduleItem.Locked)
-                    snippet = string.Empty;
-                else if (!scheduleItem.Installed)
-                    snippet = "not_installed";
+                var snippet = scheduleItem.Times.StartTime + "|" + scheduleItem.Times.EndTime;
+
 
                 var markerOptions = new MarkerOptions()
-          .SetTitle(scheduleItem.Id + "|" + scheduleItem.Major + "|" + scheduleItem.Name)
+          .SetTitle(scheduleItem.Course.Major + "|" + scheduleItem.Course.Name)
           .SetSnippet(snippet)
-          .SetPosition(new Android.Gms.Maps.Model.LatLng(scheduleItem.Location.Lat, scheduleItem.Location.Lon))
+          .SetPosition(Course.GetLatLng(scheduleItem.Course.Building))
           .SetIcon(BitmapDescriptorFactory.FromBitmap(pin));
                 existingMarkers[scheduleItem.Id] = map.AddMarker(markerOptions);
             }
@@ -606,7 +639,8 @@ namespace WCCMobile
         /// <param name="marker">The marker.</param>
         public void OpenScheduleItemWithMarker(Marker marker)
         {
-           
+            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with argument: {marker}");
+
             var id = pane.FindViewById<TextView>(Resource.Id.InfoViewName);
             var name = pane.FindViewById<TextView>(Resource.Id.InfoViewSecondName);
             var major = pane.FindViewById<TextView>(Resource.Id.InfoViewBikeNumber);
@@ -756,6 +790,7 @@ namespace WCCMobile
                 }
             }
         }
+       
         /// <summary>
         /// Centers the map on user.
         /// </summary>

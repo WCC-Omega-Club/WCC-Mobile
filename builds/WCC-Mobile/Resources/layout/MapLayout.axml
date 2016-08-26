@@ -42,5 +42,5 @@
         android:shadowRadius="0.1"
         android:textSize="8sp" />
     <include
-        layout="@layout/InfoFooterLayout" />
+        layout="@layout/FooterSlideUp" />
 </FrameLayout>

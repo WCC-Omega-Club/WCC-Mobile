@@ -14,7 +14,7 @@ using WCCMobile.Resources;
 using Android.Support.V7.App;
 
 
-namespace WCCMobile
+namespace WCCMobile.Activities
 {
     [Activity(Label = "PhoneBook", ParentActivity = typeof(WCCMobile.MainActivity))]
     public class ContactsActvity : AppCompatActivity
@@ -140,7 +140,6 @@ namespace WCCMobile
                 if (!p2Email.Substring(pos + 12).Contains(empty_email_guard))
                 {
                     var intent = new Intent(Intent.ActionSend);
-                    Log.Debug("Email", p2Email.Substring(pos + 12));
                     intent.PutExtra(Intent.ExtraEmail, new string[] { p2Email.Substring(pos + 12) });
                     intent.SetType("message/rfc822");
                     Mailer.StartActivity(intent);

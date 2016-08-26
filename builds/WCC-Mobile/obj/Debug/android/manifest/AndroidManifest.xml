@@ -24,7 +24,6 @@
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
-    <activity android:label="PhoneBook" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.ContactsActvity" />
     <activity android:label="CourseActivity" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.CourseActivity" />
     <activity android:label="BasicInfoActivity" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.BasicInfoActivity" />
     <activity android:icon="@drawable/wccmainappicon_57x57" android:label="WCC Mobile" android:theme="@style/WCCMobileTheme" android:name="md59b15f7978abc4d0b2cebe92668d59436.MainActivity">
@@ -34,6 +33,7 @@
       </intent-filter>
     </activity>
     <activity android:label="Directory" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md59b15f7978abc4d0b2cebe92668d59436.PhoneBookActivity" />
+    <activity android:label="PhoneBook" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:name="md58892b96bfde9ecf302dc93c79f4d5e83.ContactsActvity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="WCCMobile.WCCMobile.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
@@ -42,5 +42,15 @@
         <category android:name="mono.android.intent.category.SEPPUKU.WCCMobile.WCCMobile" />
       </intent-filter>
     </receiver>
+    <activity android:name="net.hockeyapp.android.UpdateActivity" />
+    <activity android:name="net.hockeyapp.android.FeedbackActivity" />
+    <activity android:name="net.hockeyapp.android.PaintActivity" />
+    <activity android:name="net.hockeyapp.android.LoginActivity" />
+    <activity android:name="net.hockeyapp.android.ExpiryInfoActivity" />
+    <activity android:name="net.hockeyapp.android.UpdateActivity" />
+    <activity android:name="net.hockeyapp.android.FeedbackActivity" />
+    <activity android:name="net.hockeyapp.android.PaintActivity" />
+    <activity android:name="net.hockeyapp.android.LoginActivity" />
+    <activity android:name="net.hockeyapp.android.ExpiryInfoActivity" />
   </application>
 </manifest>

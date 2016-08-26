@@ -12,6 +12,8 @@ using SQLite;
 
 using System.Collections.ObjectModel;
 using WCCMobile.Models;
+using WCCMobile;
+using System.IO;
 
 namespace WCCMobile.ORM
 {
@@ -22,53 +24,64 @@ namespace WCCMobile.ORM
         
         private SQLiteConnection database;
         private static object collisionLock = new object();
-        private IDatabaseConnection dbconnection;
-        private List<Course> courses;
         private List<Schedule> schedules;
-        private List<Times> times;
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="ScheduleRepository"/> class.
         /// </summary>
         public ScheduleRepository()
         {
-            database = dbconnection.DbConnection();
+            string dbName = "Schedule.db3";
+            string path = Path.Combine(System.Environment.
+              GetFolderPath(System.Environment.
+              SpecialFolder.Personal), dbName);
+            database = new SQLiteConnection(path);
             database.CreateTable<Course>();
             database.CreateTable<Schedule>();
             database.CreateTable<Times>();
-            this.courses = new List<Course>(database.Table<Course>());
             this.schedules = new List<Schedule>(database.Table<Schedule>());
-            this.times = new List<Times>(database.Table<Times>());
             if (!database.Table<Course>().Any())
             {
-                AddNewCourse();
+                AddNewSchedule();
             }
         }
 
-
-        public void AddNewCourse()
+        
+        public void AddNewSchedule()
         {
-            this.courses.
-              Add(new Course
+            this.schedules.
+              Add(new Schedule
               {
-                  Name = "English 102",
-                  Building = "TECH",
-                  Description = "Learn real good english!"
+                  Id = 1,
+                  Course = new Course
+                  {
+                      Id = 1,
+                      Name = "English 102",
+                      Building = "TECH",
+                      Description = "Learn real good english!"
+                  },
+                  Times = new Times
+                  {   Id = 1,
+                      StartTime = new TimeSpan(9, 30, 0),
+                      EndTime = new TimeSpan(10, 20, 0)
+                  }
+
               });
         }
 
 
-        public IEnumerable<Course> GetFilteredCourses(string name)
+        public List<Schedule> GetFilteredSchedule(string name)
         {
             lock (collisionLock)
             {
-                var query = from course in database.Table<Course>()
-                            where course.Name == name
-                            select course;
-                return query.AsEnumerable();
+                var query = from schedule in database.Table<Schedule>()
+                            where schedule.Course.Name == name
+                            select schedule;
+                return query.ToList();
             }
         }
 
-        public IEnumerable<Schedule> GetCurrentSchedule()
+        public List<Schedule> GetCurrentSchedule()
         {
             lock (collisionLock)
             {
@@ -77,60 +90,60 @@ namespace WCCMobile.ORM
             }
         }
 
-        public IEnumerable<Course> GetFilteredCourses()
+        public List<Schedule> GetFilteredSchedule()
         {
             lock (collisionLock)
             {
-                return database.Query<Course>(
-                  "SELECT * FROM Courses WHERE Name = 'English 102'").AsEnumerable();
+                return database.Query<Schedule>(
+                  "SELECT * FROM Schedules WHERE Name = 'English 102'");
             }
         }
 
-        public Course GetCourse(int id)
+        public Schedule GetSchedule(int id)
         {
             lock (collisionLock)
             {
-                return database.Table<Course>().
-                  FirstOrDefault(Course => Course.Id == id);
+                return database.Table<Schedule>().
+                  FirstOrDefault(Schedule => Schedule.Id == id);
             }
         }
         /// <summary>
-        ///  Insert or Update a single instance of <see cref="Course"/> object depending on the existance of a customer class ID
+        ///  Insert or Update a single instance of <see cref="Schedule"/> object depending on the existance of a customer class ID
         /// </summary>
-        /// <param name="course">The course instance.</param>
+        /// <param name="schedule">The schedule instance.</param>
         /// <returns></returns>
-        public int SaveCourse(Course course)
+        public int SaveSchedule(Schedule schedule)
         {
             lock (collisionLock)
             {
-                if (course.Id != 0)
+                if (schedule.Id != 0)
                 {
-                    database.Update(course);
-                    return course.Id;
+                    database.Update(schedule);
+                    return schedule.Id;
                 }
                 else
                 {
-                    database.Insert(course);
-                    return course.Id;
+                    database.Insert(schedule);
+                    return schedule.Id;
                 }
             }
         }
         /// <summary>
-        /// Saves all courses.
+        /// Saves all schedules.
         /// </summary>
-        public void SaveAllCourses()
+        public void SaveAllSchedules()
         {
             lock (collisionLock)
             {
-                foreach (Course course in this.courses)
+                foreach (Schedule schedule in schedules)
                 {
-                    if (course.Id != 0)
+                    if (schedule.Id != 0)
                     {
-                        database.Update(course);
+                        database.Update(schedule);
                     }
                     else
                     {
-                        database.Insert(course);
+                        database.Insert(schedule);
                     }
                 }
             }
@@ -139,34 +152,39 @@ namespace WCCMobile.ORM
         /// <summary>
         /// Deletes the course.
         /// </summary>
-        /// <param name="course">The course.</param>
+        /// <param name="schedule">The course.</param>
         /// <returns></returns>
-        public int DeleteCourse(Course course)
+        public int DeleteSchedule(Schedule schedule)
         {
-            int id = course.Id;
+            int id = schedule.Id;
             if (id != 0)
             {
                 lock (collisionLock)
                 {
-                    database.Delete<Course>(id);
+                    database.Delete<Schedule>(id);
                 }
             }
-            this.courses.Remove(course);
+            this.schedules.Remove(schedule);
             return id;
         }
 
         /// <summary>
         /// Deletes all courses.
         /// </summary>
-        public void DeleteAllCourses()
+        public void DeleteAllSchedules()
         {
             lock (collisionLock)
             {
+                database.DropTable<Schedule>();
                 database.DropTable<Course>();
+                database.DropTable<Times>();
+                database.CreateTable<Schedule>();
                 database.CreateTable<Course>();
+                database.CreateTable<Times>();
             }
-            this.courses = null;
-            this.courses = new List<Course>(database.Table<Course>());
+            
+            this.schedules = null;
+            this.schedules = new List<Schedule>(database.Table<Schedule>());
         }
     }
 }

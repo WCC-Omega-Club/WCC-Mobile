@@ -4,7 +4,7 @@ using Android.Gms.Maps;
 using JavaString = Java.Lang.String;
 using Android.Support.V4.App;
 
-namespace WCCMobile
+namespace WCCMobile.Adapters
 {
     public class ViewPagerAdapter : FragmentPagerAdapter
     {

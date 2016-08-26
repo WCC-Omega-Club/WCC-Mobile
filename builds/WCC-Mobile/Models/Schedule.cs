@@ -42,11 +42,11 @@ namespace WCCMobile.Models
         }
         private DayOfWeek day;
 
-        [OneToMany(CascadeOperations = CascadeOperation.CascadeDelete)]
-        public List<Times> Times { get; set; }
+        [OneToOne(CascadeOperations = CascadeOperation.CascadeDelete)]
+        public Times Times { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.CascadeDelete)]
-        public List<Course> Courses { get; set; }
+        [OneToOne(CascadeOperations = CascadeOperation.CascadeDelete)]
+        public Course Course { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)
