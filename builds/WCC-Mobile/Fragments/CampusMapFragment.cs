@@ -68,7 +68,6 @@ namespace WCCMobile
         TextView lastUpdateText;
         PinFactory pinFactory;
         InfoPane pane;
-        ScheduleRepository dataAccess;
         SvgBitmapDrawable starOnDrawable;
         SvgBitmapDrawable starOffDrawable;
         
@@ -183,6 +182,7 @@ namespace WCCMobile
             SetupInfoPane(view);
             flashBar = new InfoBarController(view);
             streetViewFragment = pane.FindViewById<StreetViewPanoramaView>(Resource.Id.streetViewPanorama);
+            
             //SetUpSlideUpPane(view);
             streetViewFragment.OnCreate(savedInstanceState);
             return view;
@@ -222,10 +222,8 @@ namespace WCCMobile
         private void SetupInfoPane(View view)
         {
             Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name + $" with argument: {view}");
-
+           
             pane = view.FindViewById<InfoPane>(Resource.Id.infoPane);
-            dataAccess = new ScheduleRepository();
-            GenericAdapter<Schedule, ScheduleViewHolder> scheduleAdapter = new GenericAdapter<Schedule, ScheduleViewHolder>(dataAccess.GetCurrentSchedule().ToList(), Resource.Id.recyclerView, (x) => new ScheduleViewHolder(x));
             pane.StateChanged += HandlePaneStateChanged;
             view.ViewTreeObserver.AddOnGlobalLayoutListener(this);
         }
@@ -355,7 +353,7 @@ namespace WCCMobile
             if (items == null || currentShownID == -1)
                 return;
 
-            int itemIndex = Array.FindIndex(items, s => s.Id == currentShownID);
+            int itemIndex = Array.FindIndex(items, s => s.TimesId == currentShownID);
             if (itemIndex == -1)
                 return;
             Schedule item = items[itemIndex];
@@ -572,7 +570,7 @@ namespace WCCMobile
             {
                 Marker marker;
                 var stats = item.Times.StartTime + "-" + item.Times.EndTime;
-                if (existingMarkers.TryGetValue(item.Id, out marker))
+                if (existingMarkers.TryGetValue(item.TimesId, out marker))
                 {
                     if (marker.Snippet == stats && !showedStale)
                         return false;
@@ -581,7 +579,7 @@ namespace WCCMobile
                 return true;
             }).ToArray();
 
-            var pins = await Task.Run(() => scheduleItemsToUpdate.ToDictionary(item => item.Id, item =>
+            var pins = await Task.Run(() => scheduleItemsToUpdate.ToDictionary(item => item.TimesId, item =>
             {
                 var w = 24.ToPixels();
                 var h = 40.ToPixels();
@@ -590,7 +588,7 @@ namespace WCCMobile
 
             foreach (var scheduleItem in scheduleItemsToUpdate)
             {
-                var pin = pins[scheduleItem.Id];
+                var pin = pins[scheduleItem.TimesId];
 
                 var snippet = scheduleItem.Times.StartTime + "|" + scheduleItem.Times.EndTime;
 
@@ -600,7 +598,7 @@ namespace WCCMobile
           .SetSnippet(snippet)
           .SetPosition(Course.GetLatLng(scheduleItem.Course.Building))
           .SetIcon(BitmapDescriptorFactory.FromBitmap(pin));
-                existingMarkers[scheduleItem.Id] = map.AddMarker(markerOptions);
+                existingMarkers[scheduleItem.TimesId] = map.AddMarker(markerOptions);
             }
         }
         /// <summary>

@@ -1,25 +1,22 @@
-using System;
-using System.Collections.Generic;
-using SQLite;
-using SQLiteNetExtensions.Attributes;
 using System.ComponentModel;
 using Android.Gms.Maps.Model;
+using SQLite;
 
 namespace WCCMobile.Models
 {
-   [Table("Courses")]
-   public class Course: INotifyPropertyChanged, IModel
+    [Table("Courses")]
+   public class Course: INotifyPropertyChanged
     {
         [PrimaryKey, AutoIncrement]
-        public int Id
+        public int CourseId
         {
-            get { return id; }
+            get { return courseId; }
             set
-            {   id = value;
-                OnPropertyChanged(nameof(id));
+            {   courseId = value;
+                OnPropertyChanged(nameof(courseId));
             }
         }
-        private int id;
+        private int courseId;
         [NotNull]
         public string Name
         {
@@ -86,22 +83,7 @@ namespace WCCMobile.Models
             }
         }
         private string professor;
-
-        [ForeignKey(typeof(Schedule))]
-        public int ScheduleId
-        {
-            get { return scheduleId; }
-            set
-            {
-                scheduleId = value;
-                OnPropertyChanged(nameof(scheduleId));
-            }
-        }
-        private int scheduleId;
-
-        [OneToOne]
-        public Schedule schedule { get; set; }
-
+       
         /// <summary>
         /// Gets the <see cref="LatLng"/> associated with <paramref name="Building"/>.
         /// </summary>
@@ -180,6 +162,17 @@ namespace WCCMobile.Models
         {
             this.PropertyChanged?.Invoke(this,
               new PropertyChangedEventArgs(propertyName));
+        }
+
+        public Course(int courseId, string name, string major, string description, string building, string room, string professor)
+        {
+            this.courseId = courseId;
+            this.name = name;
+            this.major = major;
+            this.description = description;
+            this.building = building;
+            this.room = room;
+            this.professor = professor;
         }
     }
   

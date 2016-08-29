@@ -19,6 +19,8 @@ using Android.Gms.Location;
 using System.Reflection;
 using Android.Util;
 using WCCMobile.Extensions;
+using WCCMobile.Adapters;
+using WCCMobile.ORM;
 
 namespace WCCMobile
 {
@@ -43,6 +45,8 @@ namespace WCCMobile
         Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
         ListView drawerMenu;
         ListView drawerAround;
+        GenericAdapter<Schedule, ScheduleViewHolder> scheduleAdapter;
+        //ScheduleRepository scheduleRepository;
 
         DrawerAroundAdapter aroundAdapter;
         GoogleApiClient client;
@@ -91,6 +95,12 @@ namespace WCCMobile
             Title = "WCCMobile";
             AndroidExtensions.Initialize(this);
             this.drawer = new DrawerLayout(this);
+            //scheduleRepository = new ScheduleRepository();
+            List<Schedule> schedule = new List<Schedule>();
+            schedule.Add(new Schedule(1, DayOfWeek.Monday, new Course(1, "Data Structures 201", "Computer Science", "Learn how to become a meat space architect", "Technology Building", "101", "Steven Miller"),
+                new Times(1, new TimeSpan(9, 20, 0), new TimeSpan(10, 10, 0))));
+            scheduleAdapter = new GenericAdapter<Schedule, ScheduleViewHolder>(schedule, Resource.Layout.ScheduleCardView, (vw) => new ScheduleViewHolder(vw));
+            
             this.drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.drawerToggle = new WCCMobileActionBarToggle(this,
                 drawer,
@@ -208,7 +218,10 @@ namespace WCCMobile
             drawerMenu.SetItemChecked(e.Position, true);
             drawer.CloseDrawers();
         }
-
+        /// <summary>
+        /// Switches to the instance of <see cref="Android.Support.V4.App.Fragment"/>.
+        /// </summary>
+        /// <param name="fragment">The fragment.</param>
         private void SwitchTo(Android.Support.V4.App.Fragment fragment)
         {
             if (fragment.IsVisible)
@@ -251,7 +264,10 @@ namespace WCCMobile
             }
             t.Commit();
         }
-
+        /// <summary>
+        /// Sets the index of the selected menu.
+        /// </summary>
+        /// <param name="pos">The position.</param>
         void SetSelectedMenuIndex(int pos)
         {
             for (int i = 0; i < 2; i++)
@@ -723,7 +739,7 @@ namespace WCCMobile
 
     public override long GetItemId(int position)
     {
-        return schedule[position].Id;
+        return schedule[position].TimesId;
     }
 
     public override View GetView(int position, View convertView, ViewGroup parent)
@@ -743,7 +759,7 @@ namespace WCCMobile
 
         var scheduleItem = schedule[position];
         navigate.SetImageDrawable(starDrawable);
-        navigate.Visibility = currentSchedule.Contains(scheduleItem.Id) ? ViewStates.Visible : ViewStates.Invisible;
+        navigate.Visibility = currentSchedule.Contains(scheduleItem.TimesId) ? ViewStates.Visible : ViewStates.Invisible;
 
         scheduleItemName.Text = scheduleItem.Course.Major;
         scheduleItemSecondName.Text = scheduleItem.Course.Name;
@@ -793,7 +809,7 @@ namespace WCCMobile
     }
 }
 
-class ErrorDialogFragment : Android.Support.V4.App.DialogFragment
+    class ErrorDialogFragment : Android.Support.V4.App.DialogFragment
 {
     public new Dialog Dialog
     {
@@ -811,7 +827,7 @@ class ErrorDialogFragment : Android.Support.V4.App.DialogFragment
     }
 }
 
-class WCCMobileActionBarToggle : Android.Support.V7.App.ActionBarDrawerToggle
+    class WCCMobileActionBarToggle : Android.Support.V7.App.ActionBarDrawerToggle
 {   /// <summary>
     /// 
     /// </summary>

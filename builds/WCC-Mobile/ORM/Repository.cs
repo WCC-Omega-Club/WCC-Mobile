@@ -15,10 +15,11 @@ using WCCMobile.Models;
 using WCCMobile;
 using System.IO;
 
+
 namespace WCCMobile.ORM
 {
     
-
+    /*
     public class ScheduleRepository
     {
         
@@ -31,55 +32,48 @@ namespace WCCMobile.ORM
         /// </summary>
         public ScheduleRepository()
         {
-            string dbName = "Schedule.db3";
-            string path = Path.Combine(System.Environment.
-              GetFolderPath(System.Environment.
-              SpecialFolder.Personal), dbName);
-            database = new SQLiteConnection(path);
-            database.CreateTable<Course>();
-            database.CreateTable<Schedule>();
-            database.CreateTable<Times>();
-            this.schedules = new List<Schedule>(database.Table<Schedule>());
-            if (!database.Table<Course>().Any())
-            {
-                AddNewSchedule();
-            }
+            schedules = new List<Schedule>();
         }
 
-        
+        public void CreateDatabase()
+        {
+            try
+            {
+                string dbName = "Schedule.db3";
+                string path = Path.Combine(System.Environment.
+                GetFolderPath(System.Environment.
+                SpecialFolder.Personal), dbName);
+                database = new SQLiteConnection(path);
+                database.CreateTable<Course>();
+                database.CreateTable<Schedule>();
+                database.CreateTable<Times>();
+                
+                this.schedules = new List<Schedule>(database.Table<Schedule>());
+                if (!database.Table<Schedule>().Any())
+                {
+                    AddNewSchedule();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void AddNewSchedule()
         {
+            
             this.schedules.
               Add(new Schedule
               {
                   Id = 1,
-                  Course = new Course
-                  {
-                      Id = 1,
-                      Name = "English 102",
-                      Building = "TECH",
-                      Description = "Learn real good english!"
-                  },
-                  Times = new Times
-                  {   Id = 1,
-                      StartTime = new TimeSpan(9, 30, 0),
-                      EndTime = new TimeSpan(10, 20, 0)
-                  }
+                  CourseId = 1,
+                  TimesId = 1
 
               });
         }
 
 
-        public List<Schedule> GetFilteredSchedule(string name)
-        {
-            lock (collisionLock)
-            {
-                var query = from schedule in database.Table<Schedule>()
-                            where schedule.Course.Name == name
-                            select schedule;
-                return query.ToList();
-            }
-        }
+        
 
         public List<Schedule> GetCurrentSchedule()
         {
@@ -104,7 +98,7 @@ namespace WCCMobile.ORM
             lock (collisionLock)
             {
                 return database.Table<Schedule>().
-                  FirstOrDefault(Schedule => Schedule.Id == id);
+                  FirstOrDefault(Schedule => Schedule.TimesId == id);
             }
         }
         /// <summary>
@@ -116,15 +110,19 @@ namespace WCCMobile.ORM
         {
             lock (collisionLock)
             {
-                if (schedule.Id != 0)
+                if (schedule.TimesId != 0 && schedule.CourseId != 0 && schedule.TimesId != 0)
                 {
                     database.Update(schedule);
-                    return schedule.Id;
+                    database.Update(schedule.Course);//TODO: fix multple update calls which table with foreign keys
+                    database.Update(schedule.Times);
+                    return schedule.TimesId;
                 }
                 else
                 {
                     database.Insert(schedule);
-                    return schedule.Id;
+                    database.Insert(schedule.Course);//TODO: fix multple update calls which table with foreign keys
+                    database.Insert(schedule.Times);
+                    return schedule.TimesId;
                 }
             }
         }
@@ -137,13 +135,17 @@ namespace WCCMobile.ORM
             {
                 foreach (Schedule schedule in schedules)
                 {
-                    if (schedule.Id != 0)
+                    if (schedule.TimesId != 0 && schedule.CourseId != 0 && schedule.TimesId != 0)
                     {
                         database.Update(schedule);
+                        database.Update(schedule.Course);//TODO: fix multple update calls which table with foreign keys
+                        database.Update(schedule.Times);
                     }
                     else
                     {
                         database.Insert(schedule);
+                        database.Insert(schedule.Course);//TODO: fix multple update calls which table with foreign keys
+                        database.Insert(schedule.Times);
                     }
                 }
             }
@@ -156,7 +158,7 @@ namespace WCCMobile.ORM
         /// <returns></returns>
         public int DeleteSchedule(Schedule schedule)
         {
-            int id = schedule.Id;
+            int id = schedule.TimesId;
             if (id != 0)
             {
                 lock (collisionLock)
@@ -186,5 +188,5 @@ namespace WCCMobile.ORM
             this.schedules = null;
             this.schedules = new List<Schedule>(database.Table<Schedule>());
         }
-    }
+    }*/
 }

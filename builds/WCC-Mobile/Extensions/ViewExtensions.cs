@@ -2,8 +2,7 @@
 
 using Android.Views;
 using Android.Widget;
-using FFImageLoading;
-using FFImageLoading.Views;
+
 namespace WCCMobile {
     public static class ViewExtensions
     {
@@ -53,29 +52,7 @@ namespace WCCMobile {
 
             return editText;
         }
-        /// <summary>
-        /// Inflates an imageview to <paramref name="parentView"/>.
-        /// </summary>
-        /// <param name="parentView">The parent view.</param>
-        /// <param name="imageViewResourceId">The image view resource identifier.</param>
-        /// <param name="imageUrl">The image URL.</param>
-        /// <returns></returns>
-        public static ImageViewAsync InflateAndBindRemoteImageView(this View parentView, int imageViewResourceId, string imageUrl)
-        {
-            ImageViewAsync imageView = null;
-
-            if (parentView != null)
-            {
-                imageView = parentView.FindViewById<ImageViewAsync>(imageViewResourceId);
-
-                if (imageView != null)
-                {
-                //    ImageService.Instance.LoadUrl(imageUrl).Transform(new CircleTransformation()).Into(imageView);
-                }
-            }
-
-            return imageView;
-        }
+       
         /// <summary>
         /// Inflates and binds local image view by resource to <paramref name="parentView"/>.
         /// </summary>

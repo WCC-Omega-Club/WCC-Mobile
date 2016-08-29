@@ -1,23 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using SQLite;
-using SQLiteNetExtensions;
 using System.ComponentModel;
-using SQLiteNetExtensions.Attributes;
+using SQLite;
 
 namespace WCCMobile.Models
 {
     [Table("Schedules")]
-    public class Schedule : INotifyPropertyChanged, IModel
+    public class Schedule : INotifyPropertyChanged
     {
         [PrimaryKey, AutoIncrement]
         public int Id
@@ -30,7 +18,7 @@ namespace WCCMobile.Models
             }
         }
         private int id;
-        [NotNull]
+        [NotNull, Indexed]
         public DayOfWeek Day
         {
             get { return day; }
@@ -42,17 +30,27 @@ namespace WCCMobile.Models
         }
         private DayOfWeek day;
 
-        [OneToOne(CascadeOperations = CascadeOperation.CascadeDelete)]
+       
+        public int CourseId { get; set; }
+        
+        public int TimesId { get; set; }
+        [Ignore]
         public Times Times { get; set; }
-
-        [OneToOne(CascadeOperations = CascadeOperation.CascadeDelete)]
+        [Ignore]
         public Course Course { get; set; }
-
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this,
               new PropertyChangedEventArgs(propertyName));
+        }
+
+        public Schedule(int id, DayOfWeek day, Course course, Times times)
+        {
+            this.id = id;
+            this.day = day;
+            this.Course = course;
+            this.Times = times;
         }
     }
 }

@@ -1,39 +1,25 @@
-using System;
 using SQLite;
-using SQLiteNetExtensions.Attributes;
+using System;
 using System.ComponentModel;
+
 
 namespace WCCMobile.Models
 {
     [Table("Times")]
-    public class Times : INotifyPropertyChanged, IModel
+    public class Times : INotifyPropertyChanged
     {
         [PrimaryKey, AutoIncrement]
-        public int Id
+        public int TimesId
         {
-            get { return id; }
+            get { return timesId; }
             set
             {
-                id = value;
-                OnPropertyChanged(nameof(id));
+                timesId = value;
+                OnPropertyChanged(nameof(timesId));
             }
         }
-        private int id;
+        private int timesId;
 
-        [ForeignKey(typeof(Schedule))]
-        public int ScheduleId
-        {
-            get { return scheduleId; }
-            set
-            {
-                scheduleId = value;
-                OnPropertyChanged(nameof(scheduleId));
-            }
-        }
-        private int scheduleId;
-
-        [OneToOne]
-        public Schedule schedule { get; set; }
         [NotNull]
         public TimeSpan StartTime
         {
@@ -61,8 +47,14 @@ namespace WCCMobile.Models
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
-            this.PropertyChanged?.Invoke(this,
-              new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public Times(int timesId, TimeSpan startTime, TimeSpan endTime)
+        {
+            this.timesId = timesId;
+            this.startTime = startTime;
+            this.endTime = endTime;
         }
 
     }

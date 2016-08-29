@@ -14,6 +14,6 @@ namespace WCCMobile.Models
 {
     public interface IModel
     {
-        int Id { get; set; }
+        int TimesId { get; set; }
     }
 }
