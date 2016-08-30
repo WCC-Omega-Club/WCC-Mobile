@@ -2,25 +2,25 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Cheeseknife\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.AndroidBindings\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Cheeseknife\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.AndroidBindings\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Cheeseknife\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.AndroidBindings\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Cheeseknife\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.AndroidBindings\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Cheeseknife.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.AndroidBindings.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>D:\github\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Cheeseknife.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.AndroidBindings.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\HockeySDK.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\Xamarin.Insights.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\github\Development\WCC-Mobile\builds\WCC-Mobile\obj\Debug\__library_projects__\XamSvg.Droid.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

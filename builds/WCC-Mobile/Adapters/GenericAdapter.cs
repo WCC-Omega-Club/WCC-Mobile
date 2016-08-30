@@ -1,64 +1,29 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using Android.Support.V7.Widget;
-using Com.Lilarcor.Cheeseknife;
-using WCCMobile.Models;
+using Android.Content;
+using System.Reflection;
+using Android.Util;
 
 namespace WCCMobile.Adapters
 {
-    
-    public class ScheduleViewHolder : BasePopulateViewHolder<Schedule>
-    {
-        [InjectView(Resource.Id.roomName)]
-        TextView roomName;
-        [InjectView(Resource.Id.courseName)]
-        TextView courseName;
-        [InjectView(Resource.Id.professor)]
-        TextView professor;
-        [InjectView(Resource.Id.timeInterval)]
-        TextView timeInterval;
-        [InjectView(Resource.Id.calenderButton)]
-        ImageButton calenderButton;
-        
 
-        public ScheduleViewHolder(View itemView) : base(itemView)
-        {
-            Cheeseknife.Inject(this, itemView);
-        }
-
-        public override void PopulateFrom(Schedule data)
-        {
-            roomName.Text = data.Course.Room;
-            courseName.Text = data.Course.Name;
-            professor.Text = data.Course.Professor;
-
-            timeInterval.Text = data.Times.StartTime.ToString() + " - " + data.Times.EndTime.ToString();
-
-
-        }
-    }
-  
-    
     /// <summary>
-    /// Generic <see cref="RecyclerView.Adapter"/> which binds a data source to a view
-    /// var feedAdapter = new GenericAdapter<MerchantLocation, StoreViewHolder>(_merchants, Resource.Layout.stores_rv_item, (x) => new StoreViewHolder(x));
-    /// feedAdapter.ItemClick += HandleItemClick;
-    /// 
+    /// Generic <see cref="RecyclerView.Adapter"/> which binds a data source to a view.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="X"></typeparam>
     /// <seealso cref="Android.Support.V7.Widget.RecyclerView.Adapter" />
     public class GenericAdapter<T, X> : RecyclerView.Adapter where X : BasePopulateViewHolder<T>
     {
+        /// <summary>
+        /// The context
+        /// </summary>
+        private Context context;
+        /// <summary>
+        /// Occurs when [item click].
+        /// </summary>
         public event EventHandler<int> ItemClick;
         /// <summary>
         /// Gets the items.
@@ -87,11 +52,14 @@ namespace WCCMobile.Adapters
         /// <param name="items">The items.</param>
         /// <param name="resourceId">The resource identifier.</param>
         /// <param name="creator">The creator.</param>
-        public GenericAdapter(IList<T> items, int resourceId, Func<View, X> creator)
+        public GenericAdapter(IList<T> items, int resourceId, Func<View, X> creator, Context context)
         {
+            Log.Debug("GenericAdapter", MethodBase.GetCurrentMethod().Name + $" with args: resourceId: {resourceId}, creator: {creator}, context: {context})");
+
             this.items = items;
             this.resourceId = resourceId;
             this.creator = creator;
+            this.context = context;
         }
         /// <summary>
         /// Sets the list items.
@@ -110,6 +78,8 @@ namespace WCCMobile.Adapters
         /// <param name="position">The position.</param>
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
+            Log.Debug("GenericAdapter", MethodBase.GetCurrentMethod().Name + $" with args: holder: {holder}, position: {position}");
+
             X vh = (X)holder;
             vh.PopulateFrom(items[position]);
         }
@@ -121,7 +91,8 @@ namespace WCCMobile.Adapters
         /// <returns></returns>
         public override RecyclerView.ViewHolder OnCreateViewHolder(Android.Views.ViewGroup parent, int viewType)
         {
-            //Have to use delegate because we cannot invoke generic constructor
+            Log.Debug("GenericAdapter", MethodBase.GetCurrentMethod().Name + $" with args: parent: {parent}, {parent.RootView}, viewType: {viewType})");
+
             var vh = creator(LayoutInflater.From(parent.Context).Inflate(resourceId, parent, false));
             vh.SetClickListener(clickPosition => OnClick(clickPosition));
             return vh;
@@ -153,7 +124,11 @@ namespace WCCMobile.Adapters
 
         #endregion
     }
-
+    /// <summary>
+    /// Generic <see cref="RecyclerView.ViewHolder"/>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <seealso cref="Android.Support.V7.Widget.RecyclerView.ViewHolder" />
     public abstract class BasePopulateViewHolder<T> : RecyclerView.ViewHolder
     {
         /// <summary>

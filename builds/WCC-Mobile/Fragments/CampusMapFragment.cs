@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,18 +11,16 @@ using Android.Views;
 using Android.Widget;
 using Android.Gms.Maps.Model;
 using Android.Gms.Maps;
-using XamSvg;
-using System.Threading.Tasks;
 using Android.Support.V4.View;
-using Android.Support.V7.View;
-using WCCMobile.Models;
 using Android.Animation;
 using Android.Graphics;
 using System.Reflection;
 using WCCMobile.Controls;
 using WCCMobile.Extensions;
+using WCCMobile.Models;
+using XamSvg;
+using Android.Support.V7.Widget;
 using WCCMobile.Adapters;
-using WCCMobile.ORM;
 
 namespace WCCMobile
 {
@@ -68,6 +65,9 @@ namespace WCCMobile
         TextView lastUpdateText;
         PinFactory pinFactory;
         InfoPane pane;
+        RecyclerView recyclerView;
+        GenericAdapter<Schedule, ScheduleViewHolder> scheduleAdapter;
+
         SvgBitmapDrawable starOnDrawable;
         SvgBitmapDrawable starOffDrawable;
         
@@ -161,7 +161,6 @@ namespace WCCMobile
             Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
 
             Activity.RunOnUiThread(() => pane.SetState(InfoPane.State.Opened, animated: false));
-            //View.ViewTreeObserver.RemoveGlobalOnLayoutListener(this);
             View.ViewTreeObserver.RemoveOnGlobalLayoutListener(this);
         }
         /// <summary>
@@ -187,7 +186,6 @@ namespace WCCMobile
             streetViewFragment.OnCreate(savedInstanceState);
             return view;
         }
-
         /*public void SetUpSlideUpPane(View view)
         {
             Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $"With args: {view} ");
@@ -213,8 +211,6 @@ namespace WCCMobile
             };
 
         }*/
-
-
         /// <summary>
         /// Sets up the information pane.
         /// </summary>
@@ -224,6 +220,17 @@ namespace WCCMobile
             Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name + $" with argument: {view}");
            
             pane = view.FindViewById<InfoPane>(Resource.Id.infoPane);
+            List<Schedule> schedule = new List<Schedule>();
+            schedule.Add(new Schedule(1, DayOfWeek.Monday, new Course(1, "Data Structures 201", "Computer Science", "Learn how to become a meat space architect", "Technology Building", "101", "Steven Miller"),
+                new Times(1, new TimeSpan(9, 20, 0), new TimeSpan(10, 10, 0))));
+            schedule.Add(new Schedule(2, DayOfWeek.Monday, new Course(2, "Computer Programing 2", "Computer Science", "Learn how to become a meat space architect", "Technology Building", "101", "Robert Sciabarrasci"),
+                new Times(2, new TimeSpan(9, 20, 0), new TimeSpan(10, 10, 0))));
+            scheduleAdapter = new GenericAdapter<Schedule, ScheduleViewHolder>(schedule, Resource.Layout.ScheduleCardView, (vw) => new ScheduleViewHolder(vw), this.Context);
+
+            recyclerView = pane.FindViewById<RecyclerView>(Resource.Id.recyclerView);
+           
+            recyclerView.SetAdapter(scheduleAdapter);
+            recyclerView.SetLayoutManager(new LinearLayoutManager(this.Context));
             pane.StateChanged += HandlePaneStateChanged;
             view.ViewTreeObserver.AddOnGlobalLayoutListener(this);
         }
@@ -535,29 +542,27 @@ namespace WCCMobile
 
             try
             {
-                var stations = await dataProvider.GetEvents(forceRefresh);
-                if (stations.Length == 0)
+                var events = await dataProvider.GetEvents(forceRefresh);
+                if (events.Length == 0)
                 {
                     Toast.MakeText(Activity, Resource.String.load_error, ToastLength.Long).Show();
                 }
                 else
                 {
-                   // await SetSchedulePins(stations);
+                   // await SetSchedulePins(events);
                 }
                 lastUpdateText.Text = "Last refreshed: " + DateTime.Now.ToShortTimeString();
             }
             catch (Exception e)
             {
-               
-                Android.Util.Log.Debug("DataFetcher", e.ToString());
+
+                Log.Debug("DataFetcher", e.ToString());
             }
 
             flashBar.ShowLoaded();
             showedStale = false;
             loading = false;
         }
-
-      
         /// <summary>
         /// Sets the schedule pins.
         /// </summary>
@@ -590,10 +595,10 @@ namespace WCCMobile
             {
                 var pin = pins[scheduleItem.TimesId];
 
-                var snippet = scheduleItem.Times.StartTime + "|" + scheduleItem.Times.EndTime;
+                var snippet = scheduleItem.Times.StartTime + "-" + scheduleItem.Times.EndTime;
 
 
-                var markerOptions = new MarkerOptions()
+           MarkerOptions markerOptions = new MarkerOptions()
           .SetTitle(scheduleItem.Course.Major + "|" + scheduleItem.Course.Name)
           .SetSnippet(snippet)
           .SetPosition(Course.GetLatLng(scheduleItem.Course.Building))

@@ -18,13 +18,11 @@ using Android.Gms.Common.Apis;
 using Android.Gms.Location;
 using System.Reflection;
 using Android.Util;
-using WCCMobile.Extensions;
-using WCCMobile.Adapters;
-using WCCMobile.ORM;
-
+using Android.Support.V7.Widget;
 namespace WCCMobile
 {
-
+    using Adapters;
+    using Extensions;
     [Activity(Label = "Campus Map",
        MainLauncher = false, ParentActivity = typeof(WCCMobile.MainActivity),
         Theme = "@style/WCCMobileTheme",
@@ -45,9 +43,8 @@ namespace WCCMobile
         Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
         ListView drawerMenu;
         ListView drawerAround;
-        GenericAdapter<Schedule, ScheduleViewHolder> scheduleAdapter;
-        //ScheduleRepository scheduleRepository;
-
+       //ScheduleRepository scheduleRepository;
+        
         DrawerAroundAdapter aroundAdapter;
         GoogleApiClient client;
 
@@ -96,10 +93,6 @@ namespace WCCMobile
             AndroidExtensions.Initialize(this);
             this.drawer = new DrawerLayout(this);
             //scheduleRepository = new ScheduleRepository();
-            List<Schedule> schedule = new List<Schedule>();
-            schedule.Add(new Schedule(1, DayOfWeek.Monday, new Course(1, "Data Structures 201", "Computer Science", "Learn how to become a meat space architect", "Technology Building", "101", "Steven Miller"),
-                new Times(1, new TimeSpan(9, 20, 0), new TimeSpan(10, 10, 0))));
-            scheduleAdapter = new GenericAdapter<Schedule, ScheduleViewHolder>(schedule, Resource.Layout.ScheduleCardView, (vw) => new ScheduleViewHolder(vw));
             
             this.drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.drawerToggle = new WCCMobileActionBarToggle(this,
@@ -160,7 +153,7 @@ namespace WCCMobile
         /// <returns></returns>
         private GoogleApiClient CreateApiClient()
         {
-            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
+            Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name);
             return new GoogleApiClient.Builder(this, this, this)
             .AddApi(LocationServices.API)
             .Build();
@@ -174,7 +167,7 @@ namespace WCCMobile
         {
             if (mapFragment != null)
             {
-                Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name + $" with args: sender: {sender}, eventargs:{e})");
+                Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name + $" with args: sender: {sender}, eventargs:{e})");
 
                 drawer.CloseDrawers();
                 mapFragment.CenterAndOpenOnMap(e.Id,

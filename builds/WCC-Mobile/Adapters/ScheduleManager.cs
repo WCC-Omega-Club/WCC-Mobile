@@ -27,6 +27,11 @@ namespace WCCMobile
                 return prefs ?? (prefs = context.GetSharedPreferences("preferences", FileCreationMode.Private));
             }
         }
+        /// <summary>
+        /// Obtains the specified context.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <returns></returns>
         public static ScheduleManager Obtain(Context context)
         {
             return instance ?? (instance = new ScheduleManager(context));

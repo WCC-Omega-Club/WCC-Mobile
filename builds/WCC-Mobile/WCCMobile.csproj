@@ -168,6 +168,7 @@
     <Compile Include="Activities\CampusMapActivity.cs" />
     <Compile Include="Activities\ContactsActvity.cs" />
     <Compile Include="Activities\CourseActivity.cs" />
+    <Compile Include="Adapters\ScheduleViewHolder.cs" />
     <Compile Include="Controls\SlideUpState.cs" />
     <Compile Include="Controls\SlidingUpPanel.cs" />
     <Compile Include="Controls\SlidingUpPanelEventArgs.cs" />
