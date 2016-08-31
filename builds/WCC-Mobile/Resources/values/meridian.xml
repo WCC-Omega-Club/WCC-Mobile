@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <string-array name="meridian_array">
     <item>AM</item>
     <item>PM</item>
   </string-array>
 </resources>
-=======
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<resources>
-  <string-array name="meridian_array">
-    <item>AM</item>
-    <item>PM</item>
-  </string-array>
-</resources>
->>>>>>> origin/master
+

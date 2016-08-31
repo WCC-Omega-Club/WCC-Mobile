@@ -1,0 +1,55 @@
+\hypertarget{class_w_c_c_mobile_1_1_schedule_observer}{}\section{W\+C\+C\+Mobile.\+Schedule\+Observer Class Reference}
+\label{class_w_c_c_mobile_1_1_schedule_observer}\index{W\+C\+C\+Mobile.\+Schedule\+Observer@{W\+C\+C\+Mobile.\+Schedule\+Observer}}
+Inheritance diagram for W\+C\+C\+Mobile.\+Schedule\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_w_c_c_mobile_1_1_schedule_observer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Schedule\+Observer} (Time\+Span freshness\+Timeout)\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_aa2671067f6f4e653c53bbd18d30ef138}{}\label{class_w_c_c_mobile_1_1_schedule_observer_aa2671067f6f4e653c53bbd18d30ef138}
+
+\item 
+async Task$<$ \hyperlink{class_w_c_c_mobile_1_1_models_1_1_schedule_item}{Schedule\+Item}\mbox{[}$\,$\mbox{]}$>$ {\bfseries Get\+Stations} (bool force\+Refresh=false, Action$<$ string $>$ data\+Cacher=null)\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a188eb1decb6645152cc60c818b660109}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a188eb1decb6645152cc60c818b660109}
+
+\item 
+I\+Disposable {\bfseries Subscribe} (I\+Observer$<$ \hyperlink{class_w_c_c_mobile_1_1_models_1_1_schedule_item}{Schedule\+Item}\mbox{[}$\,$\mbox{]}$>$ observer)\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a65071c6f65680de277f70531e2719d25}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a65071c6f65680de277f70531e2719d25}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_w_c_c_mobile_1_1_models_1_1_schedule_item}{Schedule\+Item}\mbox{[}$\,$\mbox{]} {\bfseries Get\+Stations\+Around} (\hyperlink{class_w_c_c_mobile_1_1_models_1_1_schedule_item}{Schedule\+Item}\mbox{[}$\,$\mbox{]} stations, \hyperlink{struct_w_c_c_mobile_1_1_location}{Location} location, double min\+Distance=100, int max\+Items=4)\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a36bc0a2987055ca966664ada81e5088c}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a36bc0a2987055ca966664ada81e5088c}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static readonly Func$<$ \hyperlink{class_w_c_c_mobile_1_1_models_1_1_schedule_item}{Schedule\+Item}, bool $>$ {\bfseries Available\+Bike\+Station\+Predicate} = s =$>$ s.\+Bike\+Count $>$ 1 \&\& s.\+Empty\+Slot\+Count $>$ 1\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a718156c9e114254fbcdf9ce3d7fcbad7}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a718156c9e114254fbcdf9ce3d7fcbad7}
+
+\item 
+static readonly \hyperlink{class_w_c_c_mobile_1_1_schedule_observer}{Schedule\+Observer} {\bfseries Instance} = new \hyperlink{class_w_c_c_mobile_1_1_schedule_observer}{Schedule\+Observer}()\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a8e5563a0a73e96a376a84767c5e05849}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a8e5563a0a73e96a376a84767c5e05849}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Date\+Time {\bfseries Last\+Update\+Time}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a1e670ceb3c93e76eabf3b9603f9e3136}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a1e670ceb3c93e76eabf3b9603f9e3136}
+
+\item 
+\hyperlink{class_w_c_c_mobile_1_1_models_1_1_schedule_item}{Schedule\+Item}\mbox{[}$\,$\mbox{]} {\bfseries Last\+Schedule\+Items}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a0ea021f1a7c4e0d4dd0dd0f6c9364500}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a0ea021f1a7c4e0d4dd0dd0f6c9364500}
+
+\item 
+bool {\bfseries Has\+Cached\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a9e4207b94e505bb9b8fb83661942d9cd}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a9e4207b94e505bb9b8fb83661942d9cd}
+
+\item 
+object {\bfseries Last\+Schedule\+Item}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}\hypertarget{class_w_c_c_mobile_1_1_schedule_observer_a99d10a1c554bc9c71532795d62b4c3f0}{}\label{class_w_c_c_mobile_1_1_schedule_observer_a99d10a1c554bc9c71532795d62b4c3f0}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Source/\+Helpers/Schedule\+Observer.\+cs\end{DoxyCompactItemize}
