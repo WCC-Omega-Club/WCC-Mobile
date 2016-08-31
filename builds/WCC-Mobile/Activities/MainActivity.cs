@@ -1,13 +1,10 @@
 ﻿using System;
 using Android.App;
 using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Util;
 using WCCMobile.Resources;
-using Java.IO;
 using Android.Graphics;
 using System.Net;
 using System.IO;
@@ -15,10 +12,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Android.Support.V7.App;
-
+using HockeyApp.Android;
 namespace WCCMobile
 {
-    //[Activity(MainLauncher = true, ParentActivity = typeof(MainActivity))]
+    
     [Activity( Label = "WCC Mobile", MainLauncher = true, Icon = "@drawable/WCCMainAppIcon_57x57", Theme ="@style/WCCMobileTheme")]
     public class MainActivity : AppCompatActivity
     {
@@ -103,6 +100,7 @@ namespace WCCMobile
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            CrashManager.Register(this);
             SetContentView(Resource.Layout.Main);
             ImageContainer = (ImageView)FindViewById(Resource.Id.ImageContainer);
             ImageContainer.SetAdjustViewBounds(true);
@@ -110,7 +108,7 @@ namespace WCCMobile
             ImageContainer.SetScaleType(ImageView.ScaleType.FitXy);
             ImageContainer.SetImageBitmap(IMGSRC[LOKI.Next(0, IMGSRC.Count)]);
 
-            LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, 400);
+            LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, 400);
             l.Height = (int)Android.Util.TypedValue.ApplyDimension(Android.Util.ComplexUnitType.Dip, 205, Resources.DisplayMetrics);
             ImageContainer.LayoutParameters = l;
 

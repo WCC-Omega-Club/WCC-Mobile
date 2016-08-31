@@ -148,7 +148,7 @@ namespace WCCMobile
         /// </summary>
         public override void OnStart()
         {
-            Log.Debug(ObjectName, MethodInfo.GetCurrentMethod().Name);
+            Log.Debug(ObjectName, MethodBase.GetCurrentMethod().Name);
 
             base.OnStart();
             RefreshData();

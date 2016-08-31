@@ -17,6 +17,7 @@
   <application android:label="WCCMobile" android:theme="@style/WCCMobileTheme" android:icon="@drawable/wccmainappicon_57x57" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBltyBPLJBRYR2bKEfefZYivoKhyW3e70w" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <meta-data android:name="net.hockeyapp.android.appIdentifier" android:value="fe063e5ac46847e091692ee7e8ec9f49" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <activity android:configChanges="orientation|screenSize" android:label="Campus Map" android:launchMode="singleTop" android:parentActivityName="md59b15f7978abc4d0b2cebe92668d59436.MainActivity" android:screenOrientation="portrait" android:theme="@style/WCCMobileTheme" android:name="md59b15f7978abc4d0b2cebe92668d59436.CampusMapActivity">
       <intent-filter>

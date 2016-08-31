@@ -16,7 +16,7 @@ using Android.App;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Application(Theme = "@style/WCCMobileTheme")]
-
+[assembly: MetaData("net.hockeyapp.android.appIdentifier", Value = "")]
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
